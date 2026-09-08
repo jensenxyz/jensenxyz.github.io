@@ -126,16 +126,26 @@ ul { list-style: none; }
 }
 .carousel-container::-webkit-scrollbar { display: none; }
 
-/* 3. Tighter, elegant project cards */
+/* 3. Tighter, elegant project cards with shadow */
 .project-card {
     min-width: 380px;
-    background-color: var(--bg-light); /* Makes cards pop out against the white background */
+    background-color: var(--bg-light); 
     scroll-snap-align: start;
-    border-radius: 24px; /* Rounder corners */
+    border-radius: 24px; 
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    /* --- NEW SHADOW --- */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation for hover */
 }
+
+/* --- NEW HOVER EFFECT --- */
+.project-card:hover {
+    transform: translateY(-5px); /* Lifts the card up slightly */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12); /* Makes the shadow slightly darker and larger */
+}
+
 .project-card img {
     width: 100%;
     aspect-ratio: 1 / 1; 
