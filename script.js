@@ -52,20 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
             siblingItems.forEach(item => {
                 if (item !== parentItem && item.classList.contains("active")) {
                     item.classList.remove("active");
-                    item.querySelector(".icon").textContent = "+";
                 }
             });
 
             // Toggle active state
             parentItem.classList.toggle("active");
-            
-            // Toggle + / - Icon
-            const icon = title.querySelector(".icon");
-            if (parentItem.classList.contains("active")) {
-                icon.textContent = "-";
-            } else {
-                icon.textContent = "+";
-            }
         });
     });
 });
