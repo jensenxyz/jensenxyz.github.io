@@ -290,7 +290,7 @@ ul { list-style: none; }
     /* Mobile Spacing - Reduces massive empty space at the top */
     .pt-large { padding-top: 50px; }
     .pb-large { padding-bottom: 60px; }
-    .section-title { font-size: 2.2rem; margin-bottom: 30px;}
+    .section-title { font-size: 1.9rem; margin-bottom: 30px;}
 
     /* Mobile Hero Layout: Title -> Image -> Bio */
     .hero { 
