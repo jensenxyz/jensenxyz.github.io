@@ -32,16 +32,9 @@ ul { list-style: none; }
 .bg-black { background-color: var(--bg-dark); color: var(--text-light); }
 
 /* Force text colors inside dark sections */
-.bg-black h1, .bg-black h2, .bg-black h3, .bg-black h4, .bg-black p, .bg-black .section-title {
-    color: var(--text-light);
-}
-/* Ensure cards inside dark sections keep dark text */
-.bg-black .project-card, .bg-black .expertise-card, .bg-black .research-card {
-    color: var(--text-dark);
-}
-.bg-black .project-card h3, .bg-black .project-card p {
-    color: var(--text-dark);
-}
+.bg-black h1, .bg-black h2, .bg-black h3, .bg-black h4, .bg-black p, .bg-black .section-title { color: var(--text-light); }
+.bg-black .project-card, .bg-black .expertise-card, .bg-black .research-card { color: var(--text-dark); }
+.bg-black .project-card h3, .bg-black .project-card p { color: var(--text-dark); }
 
 /* Layout Utilities */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
@@ -76,7 +69,6 @@ ul { list-style: none; }
 }
 .btn-small { padding: 10px 20px; font-size: 0.8rem; }
 
-/* Button variations for Black background sections */
 .bg-black .btn-black { border-color: var(--text-light); }
 .bg-black .btn-black:hover {
     background-color: var(--text-light);
@@ -87,25 +79,47 @@ ul { list-style: none; }
 .highlight { border-bottom: 3px solid var(--accent-orange); }
 .link-underline { font-size: 1.1rem; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; }
 
-/* --- Header --- */
-.site-header { padding: 30px 0; }
-.logo { font-weight: 400; font-size: 1.2rem; letter-spacing: 1px; }
+/* --- Header (Sticky & Frosted Glass) --- */
+.site-header { 
+    padding: 15px 0; 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(248, 244, 243, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.03); 
+}
+.logo { font-weight: 500; font-size: 1.2rem; letter-spacing: 1px; }
 
-/* --- Hero Section --- */
-.hero { display: flex; align-items: center; justify-content: space-between; gap: 50px; }
-.hero-content { flex: 1; max-width: 600px; }
-.hero-title { font-size: 3.5rem; margin-bottom: 30px; }
+/* --- Hero Section (Grid Layout) --- */
+.hero { 
+    display: grid; 
+    grid-template-columns: 1.2fr 1fr; 
+    grid-template-areas: 
+        "title image" 
+        "bio image"; 
+    align-items: center; 
+    gap: 20px 50px; 
+}
+.hero-title { grid-area: title; font-size: 3.5rem; margin-bottom: 0; }
+.hero-bio-action { grid-area: bio; max-width: 600px; }
 .hero-bio { margin-bottom: 30px; }
 .hero-bio p { font-size: 1.1rem; margin-bottom: 15px; }
-.hero-image { flex: 1; display: flex; justify-content: flex-end; }
-
-/* 1. TV Screen Shape Hero Image */
-.tv-img {
+.hero-image { 
+    grid-area: image; 
+    justify-self: end; 
     width: 100%;
-    max-width: 500px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Original Asymmetrical Blob Shape */
+.blob-img {
+    width: 100%;
+    max-width: 450px;
     aspect-ratio: 1 / 1;
-    /* This border radius creates the CRT TV Tube shape */
-    border-radius: 15% 15% 15% 15% / 10% 10% 10% 10%;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
     object-fit: cover;
     background-color: #e0e0e0;
 }
@@ -126,7 +140,7 @@ ul { list-style: none; }
 }
 .carousel-container::-webkit-scrollbar { display: none; }
 
-/* 3. Tighter, elegant project cards with shadow */
+/* Elegant project cards with shadow */
 .project-card {
     min-width: 380px;
     background-color: var(--bg-light); 
@@ -135,17 +149,13 @@ ul { list-style: none; }
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    /* --- NEW SHADOW --- */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation for hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
-
-/* --- NEW HOVER EFFECT --- */
 .project-card:hover {
-    transform: translateY(-5px); /* Lifts the card up slightly */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12); /* Makes the shadow slightly darker and larger */
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12); 
 }
-
 .project-card img {
     width: 100%;
     aspect-ratio: 1 / 1; 
@@ -154,34 +164,16 @@ ul { list-style: none; }
     background-color: #f0f0f0;
 }
 .project-info {
-    padding: 20px 20px 25px 20px; /* Reduced padding/white space */
+    padding: 20px 20px 25px 20px;
     display: flex;
     flex-direction: column;
     flex: 1;
 }
-.project-info h3 {
-    font-size: 1.4rem;
-    margin-bottom: 8px; /* Tighter spacing */
-}
-.project-info p {
-    font-size: 0.95rem;
-    color: var(--text-grey);
-    margin-bottom: 18px; /* Tighter spacing */
-    flex: 1;
-}
-.carousel-controls {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-.carousel-controls button {
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    font-weight: 300;
-}
+.project-info h3 { font-size: 1.4rem; margin-bottom: 8px; }
+.project-info p { font-size: 0.95rem; color: var(--text-grey); margin-bottom: 18px; flex: 1; }
+
+.carousel-controls { display: flex; justify-content: center; gap: 20px; margin-top: 20px; }
+.carousel-controls button { background: none; border: none; font-size: 2rem; cursor: pointer; font-weight: 300; }
 
 /* --- Expertise Section --- */
 .expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -190,8 +182,7 @@ ul { list-style: none; }
     border: 2px solid var(--text-dark);
     border-radius: 20px;
     padding: 40px 30px;
-    /* This locks the card height so the section never jumps/shrinks */
-    height: 560px; 
+    height: 560px; /* Locks height to prevent jumping */
     display: flex;
     flex-direction: column;
 }
@@ -206,7 +197,7 @@ ul { list-style: none; }
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0; /* Large touch target */
+    padding: 20px 0; 
 }
 
 /* Base state for the animated + icon */
@@ -228,19 +219,17 @@ ul { list-style: none; }
 }
 .accordion-title .icon::before {
     width: 100%;
-    height: 2.5px; /* Horizontal line */
+    height: 2.5px;
     border-radius: 2px;
 }
 .accordion-title .icon::after {
-    width: 2.5px; /* Vertical line */
+    width: 2.5px;
     height: 100%;
     border-radius: 2px;
 }
 
-/* Active state (Spins and hides vertical line to become a minus) */
-.accordion-item.active .icon {
-    transform: rotate(180deg);
-}
+/* Active state (Spins and hides vertical line) */
+.accordion-item.active .icon { transform: rotate(180deg); }
 .accordion-item.active .icon::after {
     opacity: 0;
     transform: translate(-50%, -50%) scaleY(0);
@@ -256,7 +245,7 @@ ul { list-style: none; }
     opacity: 0;
 }
 .accordion-item.active .accordion-content {
-    max-height: 200px; /* Increased to accommodate your longer text */
+    max-height: 200px; 
     margin-top: 5px;
     padding-bottom: 20px;
     opacity: 1;
@@ -298,14 +287,32 @@ ul { list-style: none; }
 
 /* --- Responsive --- */
 @media (max-width: 992px) {
-    .hero { flex-direction: column; text-align: center; }
-    .hero-title { font-size: 2.8rem; }
-    .hero-image { justify-content: center; }
-    .passion-grid, .tech-grid, .tech-details, .research-grid { grid-template-columns: 1fr; }
+    /* Mobile Spacing - Reduces massive empty space at the top */
+    .pt-large { padding-top: 50px; }
+    .pb-large { padding-bottom: 60px; }
+    .section-title { font-size: 2.2rem; margin-bottom: 30px;}
+
+    /* Mobile Hero Layout: Title -> Image -> Bio */
+    .hero { 
+        grid-template-columns: 1fr; 
+        grid-template-areas: 
+            "title" 
+            "image" 
+            "bio"; 
+        text-align: left; /* Left align everything */
+        gap: 25px; 
+    }
+    .hero-title { font-size: 2.6rem; }
+    .hero-image { justify-content: center; justify-self: center; }
+    .blob-img { max-width: 320px; } /* Slightly smaller image on phones */
+    
+    /* Stack remaining grids */
+    .passion-grid, .tech-grid, .tech-details, .research-grid, .expertise-grid { 
+        grid-template-columns: 1fr; 
+    }
     .tech-image { max-width: 250px; margin: 0 auto; }
-    .expertise-grid { grid-template-columns: 1fr; }
 }
+
 @media (max-width: 768px) {
-    .section-title { font-size: 2rem; }
     .project-card { min-width: 300px; }
 }
