@@ -1,20 +1,42 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // --- 1. Project Carousel Logic ---
+    // --- 1. Infinite Project Carousel Logic ---
     const carousel = document.getElementById("project-carousel");
     const scrollLeftBtn = document.getElementById("scroll-left");
     const scrollRightBtn = document.getElementById("scroll-right");
 
-    if(carousel && scrollLeftBtn && scrollRightBtn) {
-        // Calculate scroll amount based on card width + gap
-        const scrollAmount = 410; // Approx card width (380) + gap (30)
+    if (carousel && scrollLeftBtn && scrollRightBtn) {
+        
+        // Clone the original items and append them to create the infinite track
+        const originalCards = Array.from(carousel.children);
+        originalCards.forEach(card => {
+            const clone = card.cloneNode(true);
+            carousel.appendChild(clone);
+        });
 
+        // The exact distance to scroll horizontally for 1 card
+        const scrollAmount = 410; // Card width (380) + gap (30)
+
+        // Arrow Buttons Smooth Scrolling
         scrollLeftBtn.addEventListener("click", () => {
+            if (carousel.scrollLeft === 0) {
+                // If at the very beginning, jump instantly to the cloned mirrored position before scrolling
+                carousel.scrollLeft = carousel.scrollWidth / 2;
+            }
             carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
         });
 
         scrollRightBtn.addEventListener("click", () => {
             carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        });
+
+        // Seamless Jump Listener
+        carousel.addEventListener("scroll", () => {
+            // Once the user has scrolled past the original set of cards,
+            // jump back silently (auto without smooth behavior) to the exact same visual spot at the start
+            if (carousel.scrollLeft >= carousel.scrollWidth / 2) {
+                carousel.scrollLeft = carousel.scrollLeft - (carousel.scrollWidth / 2);
+            }
         });
     }
 
@@ -23,10 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     accordionTitles.forEach(title => {
         title.addEventListener("click", () => {
-            // Find the parent item (.accordion-item)
             const parentItem = title.parentElement;
             
-            // Optional: Close other active items in the same card
+            // Close other items in the same column
             const siblingItems = parentItem.parentElement.querySelectorAll(".accordion-item");
             siblingItems.forEach(item => {
                 if (item !== parentItem && item.classList.contains("active")) {
@@ -35,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
-            // Toggle active class on clicked item
+            // Toggle active state
             parentItem.classList.toggle("active");
             
             // Toggle + / - Icon
