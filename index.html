@@ -30,7 +30,12 @@
         /* Fix expertise boxes expanding rigidly */
         /* Aligning items to start prevents them from stretching to the height of the tallest sibling */
         .expertise-grid {
-            align-items: flex-start !important; 
+            align-items: start !important; 
+        }
+        
+        .expertise-card {
+            height: fit-content !important;
+            padding-bottom: 2rem !important; /* Adjust if needed to make it cuter/tighter */
         }
 
         /* Styles for the new Image Overlay (Lightbox) */
