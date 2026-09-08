@@ -24,23 +24,22 @@
         .project-card {
             box-shadow: none !important;
             border: 1px solid #e2e8f0 !important;
-            border-radius: 8px; /* Optional: keeps corners smooth */
+            border-radius: 8px;
         }
 
         /* Fix expertise boxes expanding rigidly */
-        /* Aligning items to start prevents them from stretching to the height of the tallest sibling */
         .expertise-grid {
             align-items: start !important; 
         }
         
         .expertise-card {
             height: fit-content !important;
-            padding-bottom: 2rem !important; /* Adjust if needed to make it cuter/tighter */
+            padding-bottom: 2rem !important;
         }
 
-        /* Styles for the new Image Overlay (Lightbox) */
+        /* Styles for the Image Overlay (Lightbox) */
         .overlay {
-            display: none; /* Hidden by default */
+            display: none;
             position: fixed;
             z-index: 9999;
             left: 0;
@@ -72,15 +71,6 @@
         @keyframes popIn {
             from { transform: scale(0.95); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
-        }
-        
-        /* Cursor pointer for mockups */
-        .app-mockups img {
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-        .app-mockups img:hover {
-            transform: scale(1.02);
         }
     </style>
 </head>
@@ -135,7 +125,7 @@
                         <div class="project-info">
                             <h3>FontStar for Safari</h3>
                             <p>A Safari extension designed and built for Safari users. Curates beautiful, legible fonts for browsing the web. Works perfectly on iPhone, iPad, and Mac.</p>
-                            <a href="https://fontstar.github.io" class="btn btn-small btn-black">READ MORE</a>
+                            <a href="/projects/fontstar.html" class="btn btn-small btn-black">READ MORE</a>
                         </div>
                     </div>
                     <!-- Project 2: Scantrust -->
@@ -386,20 +376,12 @@
         <div class="container text-center">
             <h2 class="section-title text-left mb-spacer">Currently Working On:</h2>
             
-            <!-- Converted Mockups to Carousel structure with overlay onclick trigger -->
-            <div class="carousel-wrapper" style="margin-bottom: 2rem;">
-                <div class="carousel-container app-mockups" id="mockup-carousel">
-                    <img src="assets/howfar_mockup_1.webp" alt="How Far Did I Go Mockup 1" onclick="openOverlay(this.src)">
-                    <img src="assets/howfar_mockup_2.webp" alt="How Far Did I Go Mockup 2" onclick="openOverlay(this.src)">
-                    <img src="assets/howfar_mockup_3.webp" alt="How Far Did I Go Mockup 3" onclick="openOverlay(this.src)">
-                    <img src="assets/howfar_mockup_4.webp" alt="How Far Did I Go Mockup 4" onclick="openOverlay(this.src)">
-                </div>
-                
-                <!-- Reusing your carousel controls classes -->
-                <div class="carousel-controls">
-                    <button id="mockup-scroll-left" aria-label="Previous Mockup">←</button>
-                    <button id="mockup-scroll-right" aria-label="Next Mockup">→</button>
-                </div>
+            <!-- All 4 Screenshots in 1 Row -->
+            <div class="mockups-grid mb-spacer">
+                <img src="assets/howfar_mockup_1.webp" alt="How Far Did I Go Mockup 1" onclick="openOverlay(this.src)">
+                <img src="assets/howfar_mockup_2.webp" alt="How Far Did I Go Mockup 2" onclick="openOverlay(this.src)">
+                <img src="assets/howfar_mockup_3.webp" alt="How Far Did I Go Mockup 3" onclick="openOverlay(this.src)">
+                <img src="assets/howfar_mockup_4.webp" alt="How Far Did I Go Mockup 4" onclick="openOverlay(this.src)">
             </div>
 
             <p class="text-large mt-spacer">How Far Did I Go will be released to the public soon ✨</p>
@@ -420,11 +402,11 @@
             <h2 class="section-title text-left">Contact Me:</h2>
             <div class="contact-grid">
                 <div class="contact-item">
-                    <img src="assets/linkedin_logo_outline.webp" alt="LinkedIn Logo" class="icon-outline" style="width: 32px; margin-bottom: 15px;">
+                    <img src="assets/linkedin_logo_outline.webp" alt="LinkedIn Logo" class="icon-outline">
                     <a href="https://www.linkedin.com/in/jensenearth/" target="_blank" class="btn btn-black">LINKEDIN</a>
                 </div>
                 <div class="contact-item">
-                    <img src="assets/email_outline.webp" alt="Email Icon" class="icon-outline" style="width: 32px; margin-bottom: 15px;">
+                    <img src="assets/email_outline.webp" alt="Email Icon" class="icon-outline">
                     <a href="mailto:slick.87.wackos@icloud.com" class="btn btn-black">EMAIL</a>
                 </div>
             </div>
@@ -452,7 +434,7 @@
 
     <script src="script.js"></script>
 
-    <!-- Inline Script for Carousel and Overlay functions -->
+    <!-- Inline Script for Overlay function -->
     <script>
         // Image Overlay Logic
         function openOverlay(src) {
@@ -468,26 +450,6 @@
         document.addEventListener('keydown', function(event) {
             if (event.key === "Escape") {
                 closeOverlay();
-            }
-        });
-
-        // Mockup Carousel Logic
-        document.addEventListener('DOMContentLoaded', () => {
-            const mockupCarousel = document.getElementById('mockup-carousel');
-            const scrollLeftBtn = document.getElementById('mockup-scroll-left');
-            const scrollRightBtn = document.getElementById('mockup-scroll-right');
-            
-            // Adjust scroll amount as needed based on your CSS
-            const scrollAmount = 300; 
-
-            if(scrollLeftBtn && scrollRightBtn && mockupCarousel) {
-                scrollLeftBtn.addEventListener('click', () => {
-                    mockupCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                });
-                
-                scrollRightBtn.addEventListener('click', () => {
-                    mockupCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                });
             }
         });
     </script>
