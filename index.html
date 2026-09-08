@@ -10,6 +10,74 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Inline Styles for requested updates -->
+    <style>
+        /* Mobile font size adjustment for section titles */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.9rem !important;
+            }
+        }
+
+        /* Remove shadow and add thin grey border to project cards */
+        .project-card {
+            box-shadow: none !important;
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 8px; /* Optional: keeps corners smooth */
+        }
+
+        /* Fix expertise boxes expanding rigidly */
+        /* Aligning items to start prevents them from stretching to the height of the tallest sibling */
+        .expertise-grid {
+            align-items: flex-start !important; 
+        }
+
+        /* Styles for the new Image Overlay (Lightbox) */
+        .overlay {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.85);
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            animation: popIn 0.3s ease;
+        }
+        .overlay .close-btn {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10000;
+        }
+        @keyframes popIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        /* Cursor pointer for mockups */
+        .app-mockups img {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .app-mockups img:hover {
+            transform: scale(1.02);
+        }
+    </style>
 </head>
 <body class="bg-beige">
 
@@ -62,7 +130,7 @@
                         <div class="project-info">
                             <h3>FontStar for Safari</h3>
                             <p>A Safari extension designed and built for Safari users. Curates beautiful, legible fonts for browsing the web. Works perfectly on iPhone, iPad, and Mac.</p>
-                            <a href="/projects/fontstar" class="btn btn-small btn-black">READ MORE</a>
+                            <a href="/projects/fontstar.html" class="btn btn-small btn-black">READ MORE</a>
                         </div>
                     </div>
                     <!-- Project 2: Scantrust -->
@@ -71,7 +139,7 @@
                         <div class="project-info">
                             <h3>Scantrust</h3>
                             <p>The all-in-one QR code solution for global brands to connect with customers, comply with digital labeling laws, and detect counterfeits.</p>
-                            <a href="/projects/scantrust" class="btn btn-small btn-black">READ MORE</a>
+                            <a href="/projects/scantrust.html" class="btn btn-small btn-black">READ MORE</a>
                         </div>
                     </div>
                     <!-- Project 3: Sciences & Data -->
@@ -80,7 +148,7 @@
                         <div class="project-info">
                             <h3>Sciences & Data</h3>
                             <p>My research projects cover subjects such as climate econometrics, biodiversity, remote sensing technologies, and sustainability reporting.</p>
-                            <a href="/projects/sciences-data" class="btn btn-small btn-black">READ MORE</a>
+                            <a href="/projects/sciences-data.html" class="btn btn-small btn-black">READ MORE</a>
                         </div>
                     </div>
                     <!-- Project 4: FunkaCoins -->
@@ -89,7 +157,7 @@
                         <div class="project-info">
                             <h3>FunkaCoins</h3>
                             <p>A comprehensive app integrated with WeChat, in-store POS, and online shop to enhance customer loyalty and expand sales channels.</p>
-                            <a href="/projects/funkacoins" class="btn btn-small btn-black">READ MORE</a>
+                            <a href="/projects/funkacoins.html" class="btn btn-small btn-black">READ MORE</a>
                         </div>
                     </div>
                     <!-- Project 5: VibesApp -->
@@ -98,7 +166,7 @@
                         <div class="project-info">
                             <h3>VibesApp</h3>
                             <p>VibesApp lets you see the real-time vibe of local spots before you go. Powered by AI, it's a smart way for businesses to attract spontaneous visitors.</p>
-                            <a href="/projects/vibesapp" class="btn btn-small btn-black">READ MORE</a>
+                            <a href="/projects/vibesapp.html" class="btn btn-small btn-black">READ MORE</a>
                         </div>
                     </div>
                     <!-- Project 6: Happy Hour App -->
@@ -107,7 +175,7 @@
                         <div class="project-info">
                             <h3>Happy Hour App</h3>
                             <p>Olifun uses location-based services, social media, and mobile commerce to help people discover up-to-date events at top bars in megacities.</p>
-                            <a href="/projects/happyhour" class="btn btn-small btn-black">READ MORE</a>
+                            <a href="/projects/happyhour.html" class="btn btn-small btn-black">READ MORE</a>
                         </div>
                     </div>
                     <!-- Project 7: Metro Design -->
@@ -116,7 +184,7 @@
                         <div class="project-info">
                             <h3>Metro Design</h3>
                             <p>An urban planning thesis on designing the Beijing Subway Line 9. Feasibility research, engineering calculation & CAD drawing.</p>
-                            <a href="/projects/metro-design" class="btn btn-small btn-black">READ MORE</a>
+                            <a href="/projects/metro-design.html" class="btn btn-small btn-black">READ MORE</a>
                         </div>
                     </div>
                 </div>
@@ -209,7 +277,7 @@
             <h2 class="section-title">My Tech Stack:</h2>
             <div class="tech-grid">
                 <div class="tech-image">
-                    <img src="pro_pic_0571_lift.webp" alt="Jensen Portrait" class="circle-img" onerror="this.src='https://via.placeholder.com/350x350/333333/FFFFFF?text=B%26W+Portrait'">
+                    <img src="assets/pro_pic_0571_lift.webp" alt="Jensen Portrait" class="circle-img" onerror="this.src='https://via.placeholder.com/350x350/333333/FFFFFF?text=B%26W+Portrait'">
                 </div>
                 <div class="tech-details">
                     <div class="tech-column">
@@ -280,20 +348,20 @@
             <h2 class="section-title">My Climate Research:</h2>
             <div class="research-grid">
                 <div class="research-card">
-                    <img src="MSc.+Thesis+Presentation+Public+1.webp" alt="Tuscan Wine in a Changing Climate" onerror="this.src='https://via.placeholder.com/600x350/F4F4F4/333333?text=Tuscan+Wine+Research+Slide'">
+                    <img src="assets/MSc.+Thesis+Presentation+Public+1.webp" alt="Tuscan Wine in a Changing Climate" onerror="this.src='https://via.placeholder.com/600x350/F4F4F4/333333?text=Tuscan+Wine+Research+Slide'">
                     <div class="research-action">
-                        <a href="/research/tuscan-wine-presentation" class="btn btn-black">VIEW PRESENTATION</a>
+                        <a href="/projects/research/tuscan-wine-presentation" class="btn btn-black">VIEW PRESENTATION</a>
                     </div>
                 </div>
                 <div class="research-card">
-                    <img src="Thesis+Trivia+by+JSZ+2026+1.webp" alt="The Smart Buys Thesis Trivia" onerror="this.src='https://via.placeholder.com/600x350/F4F4F4/333333?text=Smart+Buys+Trivia+Slide'">
+                    <img src="assets/Thesis+Trivia+by+JSZ+2026+1.webp" alt="The Smart Buys Thesis Trivia" onerror="this.src='https://via.placeholder.com/600x350/F4F4F4/333333?text=Smart+Buys+Trivia+Slide'">
                     <div class="research-action">
-                        <a href="/research/thesis-trivia" class="btn btn-black">PLAY THESIS TRIVIA</a>
+                        <a href="/projects/research/thesis-trivia" class="btn btn-black">PLAY THESIS TRIVIA</a>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-spacer">
-                <a href="/research/thesis-detail" class="link-underline">View Thesis Detail Page ></a>
+                <a href="/projects/research/index.html" class="link-underline">View Thesis Detail Page ></a>
             </div>
         </div>
     </section>
@@ -303,7 +371,6 @@
         <div class="container">
             <h2 class="section-title">5-Min Intro Video:</h2>
             <div class="video-wrapper">
-                 <!-- Replaced image placeholder with the actual YouTube embed iframe -->
                  <iframe width="100%" height="500" src="https://www.youtube.com/embed/9h9QcYYQO08" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 12px;"></iframe>
             </div>
         </div>
@@ -313,12 +380,23 @@
     <section class="working-on-section pt-large pb-large bg-black">
         <div class="container text-center">
             <h2 class="section-title text-left mb-spacer">Currently Working On:</h2>
-            <div class="app-mockups">
-                <img src="howfar_mockup_1.webp" alt="How Far Did I Go Mockup 1">
-                <img src="howfar_mockup_2.webp" alt="How Far Did I Go Mockup 2">
-                <img src="howfar_mockup_3.webp" alt="How Far Did I Go Mockup 3">
-                <img src="howfar_mockup_4.jpg" alt="How Far Did I Go Mockup 4">
+            
+            <!-- Converted Mockups to Carousel structure with overlay onclick trigger -->
+            <div class="carousel-wrapper" style="margin-bottom: 2rem;">
+                <div class="carousel-container app-mockups" id="mockup-carousel">
+                    <img src="assets/howfar_mockup_1.webp" alt="How Far Did I Go Mockup 1" onclick="openOverlay(this.src)">
+                    <img src="assets/howfar_mockup_2.webp" alt="How Far Did I Go Mockup 2" onclick="openOverlay(this.src)">
+                    <img src="assets/howfar_mockup_3.webp" alt="How Far Did I Go Mockup 3" onclick="openOverlay(this.src)">
+                    <img src="assets/howfar_mockup_4.webp" alt="How Far Did I Go Mockup 4" onclick="openOverlay(this.src)">
+                </div>
+                
+                <!-- Reusing your carousel controls classes -->
+                <div class="carousel-controls">
+                    <button id="mockup-scroll-left" aria-label="Previous Mockup">←</button>
+                    <button id="mockup-scroll-right" aria-label="Next Mockup">→</button>
+                </div>
             </div>
+
             <p class="text-large mt-spacer">How Far Did I Go will be released to the public soon ✨</p>
             <p class="text-large">Stay tuned!</p>
             <p class="text-large mb-spacer">Check out the demo below:</p>
@@ -337,13 +415,11 @@
             <h2 class="section-title text-left">Contact Me:</h2>
             <div class="contact-grid">
                 <div class="contact-item">
-                    <img src="linkedin_logo_outline.webp" alt="LinkedIn Logo" class="icon-outline" style="width: 32px; margin-bottom: 15px;">
-                    <!-- Updated LinkedIn URL -->
+                    <img src="assets/linkedin_logo_outline.webp" alt="LinkedIn Logo" class="icon-outline" style="width: 32px; margin-bottom: 15px;">
                     <a href="https://www.linkedin.com/in/jensenearth/" target="_blank" class="btn btn-black">LINKEDIN</a>
                 </div>
                 <div class="contact-item">
-                    <img src="email_outline.webp" alt="Email Icon" class="icon-outline" style="width: 32px; margin-bottom: 15px;">
-                    <!-- Updated Email URL -->
+                    <img src="assets/email_outline.webp" alt="Email Icon" class="icon-outline" style="width: 32px; margin-bottom: 15px;">
                     <a href="mailto:slick.87.wackos@icloud.com" class="btn btn-black">EMAIL</a>
                 </div>
             </div>
@@ -355,7 +431,6 @@
         <div class="container footer-content">
             <div class="footer-links">
                 <a href="/">Home</a>
-                <!-- Updated LinkedIn URL in footer -->
                 <a href="https://www.linkedin.com/in/jensenearth/" target="_blank">LinkedIn</a>
             </div>
             <div class="footer-copy">
@@ -364,6 +439,52 @@
         </div>
     </footer>
 
+    <!-- Overlay Container for clicking Mockups -->
+    <div id="image-overlay" class="overlay" onclick="closeOverlay()">
+        <span class="close-btn">&times;</span>
+        <img id="overlay-img" src="" alt="Enlarged Mockup">
+    </div>
+
     <script src="script.js"></script>
+
+    <!-- Inline Script for Carousel and Overlay functions -->
+    <script>
+        // Image Overlay Logic
+        function openOverlay(src) {
+            document.getElementById('overlay-img').src = src;
+            document.getElementById('image-overlay').style.display = 'flex';
+        }
+        
+        function closeOverlay() {
+            document.getElementById('image-overlay').style.display = 'none';
+        }
+
+        // Add event listener to close overlay on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeOverlay();
+            }
+        });
+
+        // Mockup Carousel Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const mockupCarousel = document.getElementById('mockup-carousel');
+            const scrollLeftBtn = document.getElementById('mockup-scroll-left');
+            const scrollRightBtn = document.getElementById('mockup-scroll-right');
+            
+            // Adjust scroll amount as needed based on your CSS
+            const scrollAmount = 300; 
+
+            if(scrollLeftBtn && scrollRightBtn && mockupCarousel) {
+                scrollLeftBtn.addEventListener('click', () => {
+                    mockupCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+                
+                scrollRightBtn.addEventListener('click', () => {
+                    mockupCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
