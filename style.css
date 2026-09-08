@@ -12,41 +12,39 @@
 }
 
 /* --- Global Reset & Typography --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-light);
-    color: var(--text-dark);
     line-height: 1.6;
     overflow-x: hidden;
 }
-
 h1, h2, h3, h4 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     line-height: 1.2;
 }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
 
-a {
-    text-decoration: none;
-    color: inherit;
+/* --- Alternating Background Utilities --- */
+.bg-beige { background-color: var(--bg-light); color: var(--text-dark); }
+.bg-white { background-color: var(--bg-white); color: var(--text-dark); }
+.bg-black { background-color: var(--bg-dark); color: var(--text-light); }
+
+/* Force text colors inside dark sections */
+.bg-black h1, .bg-black h2, .bg-black h3, .bg-black h4, .bg-black p, .bg-black .section-title {
+    color: var(--text-light);
+}
+/* Ensure cards inside dark sections keep dark text */
+.bg-black .project-card, .bg-black .expertise-card, .bg-black .research-card {
+    color: var(--text-dark);
+}
+.bg-black .project-card h3, .bg-black .project-card p {
+    color: var(--text-dark);
 }
 
-ul {
-    list-style: none;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
+/* Layout Utilities */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 .pt-large { padding-top: 100px; }
 .pb-large { padding-bottom: 100px; }
 .mt-spacer { margin-top: 40px; }
@@ -54,10 +52,9 @@ ul {
 .mx-auto { margin-left: auto; margin-right: auto; }
 .text-center { text-align: center; }
 .text-left { text-align: left; }
-.text-white { color: var(--text-light); }
 .text-large { font-size: 1.2rem; margin-bottom: 15px; }
 
-/* --- Components --- */
+/* --- Buttons --- */
 .btn {
     display: inline-block;
     padding: 12px 30px;
@@ -68,135 +65,77 @@ ul {
     cursor: pointer;
     text-align: center;
 }
-
 .btn-black {
     background-color: var(--text-dark);
     color: var(--text-light);
     border: 2px solid var(--text-dark);
 }
-
 .btn-black:hover {
     background-color: transparent;
     color: var(--text-dark);
 }
+.btn-small { padding: 10px 20px; font-size: 0.8rem; }
 
-.btn-small {
-    padding: 10px 20px;
-    font-size: 0.8rem;
-}
-
-.dark-section {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-}
-
-.dark-section .btn-black {
-    border-color: var(--text-light);
-}
-
-.dark-section .btn-black:hover {
+/* Button variations for Black background sections */
+.bg-black .btn-black { border-color: var(--text-light); }
+.bg-black .btn-black:hover {
     background-color: var(--text-light);
     color: var(--bg-dark);
 }
 
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    letter-spacing: -0.5px;
-}
-
-.highlight {
-    border-bottom: 3px solid var(--accent-orange);
-}
-
-.link-underline {
-    font-size: 1.1rem;
-    font-weight: 500;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-}
+.section-title { font-size: 2.5rem; margin-bottom: 40px; letter-spacing: -0.5px; }
+.highlight { border-bottom: 3px solid var(--accent-orange); }
+.link-underline { font-size: 1.1rem; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; }
 
 /* --- Header --- */
-.site-header {
-    padding: 30px 0;
-}
-.logo {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-}
+.site-header { padding: 30px 0; }
+.logo { font-weight: 400; font-size: 1.2rem; letter-spacing: 1px; }
 
 /* --- Hero Section --- */
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-}
-.hero-content {
-    flex: 1;
-    max-width: 600px;
-}
-.hero-title {
-    font-size: 3.5rem;
-    margin-bottom: 30px;
-}
-.hero-bio p {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-}
-.hero-bio {
-    margin-bottom: 30px;
-}
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-.blob-img {
+.hero { display: flex; align-items: center; justify-content: space-between; gap: 50px; }
+.hero-content { flex: 1; max-width: 600px; }
+.hero-title { font-size: 3.5rem; margin-bottom: 30px; }
+.hero-bio { margin-bottom: 30px; }
+.hero-bio p { font-size: 1.1rem; margin-bottom: 15px; }
+.hero-image { flex: 1; display: flex; justify-content: flex-end; }
+
+/* 1. TV Screen Shape Hero Image */
+.tv-img {
     width: 100%;
     max-width: 500px;
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; /* Irregular shape */
+    aspect-ratio: 1 / 1;
+    /* This border radius creates the CRT TV Tube shape */
+    border-radius: 15% 15% 15% 15% / 10% 10% 10% 10%;
     object-fit: cover;
+    background-color: #e0e0e0;
 }
 
 /* --- Passion Section --- */
-.passion-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    font-size: 1.1rem;
-}
+.passion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; font-size: 1.1rem; }
 
 /* --- Projects Carousel --- */
-.carousel-wrapper {
-    position: relative;
-}
+.carousel-wrapper { position: relative; }
 .carousel-container {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 30px;
     padding-bottom: 20px;
-    -ms-overflow-style: none; /* IE/Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
 }
-.carousel-container::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
-}
+.carousel-container::-webkit-scrollbar { display: none; }
+
+/* 3. Tighter, elegant project cards */
 .project-card {
     min-width: 380px;
-    background-color: var(--bg-white);
+    background-color: var(--bg-light); /* Makes cards pop out against the white background */
     scroll-snap-align: start;
-    border-radius: var(--border-radius);
+    border-radius: 24px; /* Rounder corners */
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
 }
-
-/* Updated for perfect square 1:1 images */
 .project-card img {
     width: 100%;
     aspect-ratio: 1 / 1; 
@@ -204,21 +143,20 @@ ul {
     object-fit: cover;
     background-color: #f0f0f0;
 }
-
 .project-info {
-    padding: 30px;
+    padding: 20px 20px 25px 20px; /* Reduced padding/white space */
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 .project-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.4rem;
+    margin-bottom: 8px; /* Tighter spacing */
 }
 .project-info p {
     font-size: 0.95rem;
     color: var(--text-grey);
-    margin-bottom: 25px;
+    margin-bottom: 18px; /* Tighter spacing */
     flex: 1;
 }
 .carousel-controls {
@@ -236,32 +174,29 @@ ul {
 }
 
 /* --- Expertise Section --- */
-.expertise-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
+.expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .expertise-card {
-    background-color: #F1EAE8;
+    background-color: var(--bg-white);
     border: 2px solid var(--text-dark);
-    border-radius: var(--border-radius);
+    border-radius: 20px;
     padding: 40px 30px;
 }
-.card-header h4 {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    text-align: center;
-}
-.accordion-item {
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    padding: 15px 0;
-}
+.card-header h4 { font-size: 1.2rem; margin-bottom: 30px; text-align: center; }
+.accordion-item { border-bottom: 1px solid rgba(0,0,0,0.1); }
+
+/* 5. Bigger, bolder mobile-friendly touch targets */
 .accordion-title {
     font-weight: 600;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 0; /* Larger clickable padding */
+}
+.accordion-title .icon {
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 0.8;
 }
 .accordion-content {
     max-height: 0;
@@ -273,127 +208,52 @@ ul {
 }
 .accordion-item.active .accordion-content {
     max-height: 150px;
-    margin-top: 10px;
+    margin-top: 5px;
+    padding-bottom: 20px;
 }
 
 /* --- Tech Stack Section --- */
-.tech-grid {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 50px;
-    align-items: start;
-}
-.circle-img {
-    width: 100%;
-    border-radius: 50%;
-}
-.tech-details {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-.tech-column h4 {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-.tech-column ul li {
-    font-size: 0.95rem;
-    margin-bottom: 8px;
-    color: #CCCCCC;
-}
+.tech-grid { display: grid; grid-template-columns: 300px 1fr; gap: 50px; align-items: start; }
+.circle-img { width: 100%; border-radius: 50%; }
+.tech-details { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.tech-column h4 { font-size: 1.2rem; margin-bottom: 20px; }
+.tech-column ul li { font-size: 0.95rem; margin-bottom: 8px; color: #CCCCCC; }
 .italic { font-style: italic; }
-.footnotes {
-    margin-top: 20px;
-    font-size: 0.75rem;
-    color: #888;
-    font-style: italic;
-}
+.footnotes { margin-top: 20px; font-size: 0.75rem; color: #888; font-style: italic; }
 
 /* --- Research Section --- */
-.research-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
+.research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 .research-card {
-    background-color: var(--bg-white);
+    background-color: var(--bg-light);
     padding: 20px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 20px;
     text-align: center;
 }
-.research-card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
+.research-card img { width: 100%; border-radius: 8px; margin-bottom: 20px; }
 
 /* --- Video / Media --- */
-.video-wrapper img, .app-mockups img {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    display: block;
-}
-.vertical-video-wrapper {
-    max-width: 300px;
-}
-.vertical-video-wrapper img {
-    width: 100%;
-    border-radius: 20px;
-}
+.video-wrapper img, .app-mockups img { width: 100%; max-width: 900px; margin: 0 auto; display: block; }
+.vertical-video-wrapper { max-width: 300px; }
+.vertical-video-wrapper img { width: 100%; border-radius: 20px; }
 
 /* --- Contact Section --- */
-.contact-grid {
-    display: flex;
-    justify-content: center;
-    gap: 80px;
-    margin-top: 40px;
-}
-.contact-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-.icon-outline {
-    font-size: 4rem;
-    font-weight: 300;
-    line-height: 1;
-    color: var(--text-dark);
-}
+.contact-grid { display: flex; justify-content: center; gap: 80px; margin-top: 40px; }
+.contact-item { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.icon-outline { font-size: 4rem; font-weight: 300; line-height: 1; color: var(--text-dark); }
 
 /* --- Footer --- */
-.site-footer {
-    padding: 30px 0;
-    border-top: 1px solid #222;
-}
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9rem;
-}
-.footer-links a {
-    margin-right: 20px;
-    text-decoration: underline;
-}
+.site-footer { padding: 30px 0; border-top: 1px solid #222; }
+.footer-content { display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; }
+.footer-links a { margin-right: 20px; text-decoration: underline; }
 
-/* --- Responsive (Mobile / Tablet) --- */
+/* --- Responsive --- */
 @media (max-width: 992px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
+    .hero { flex-direction: column; text-align: center; }
     .hero-title { font-size: 2.8rem; }
     .hero-image { justify-content: center; }
-    .passion-grid, .tech-grid, .tech-details, .research-grid {
-        grid-template-columns: 1fr;
-    }
+    .passion-grid, .tech-grid, .tech-details, .research-grid { grid-template-columns: 1fr; }
     .tech-image { max-width: 250px; margin: 0 auto; }
-    .expertise-grid {
-        grid-template-columns: 1fr;
-    }
+    .expertise-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
     .section-title { font-size: 2rem; }
