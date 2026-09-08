@@ -434,7 +434,7 @@
 
     <script src="script.js"></script>
 
-    <!-- Inline Script for Overlay function -->
+    <!-- Inline Script for Carousel and Overlay functions -->
     <script>
         // Image Overlay Logic
         function openOverlay(src) {
@@ -450,6 +450,29 @@
         document.addEventListener('keydown', function(event) {
             if (event.key === "Escape") {
                 closeOverlay();
+            }
+        });
+
+        // Project Carousel Precise Scroll Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectCarousel = document.getElementById('project-carousel');
+            const scrollLeftBtn = document.getElementById('scroll-left');
+            const scrollRightBtn = document.getElementById('scroll-right');
+
+            if (scrollLeftBtn && scrollRightBtn && projectCarousel) {
+                scrollLeftBtn.addEventListener('click', () => {
+                    const firstCard = projectCarousel.querySelector('.project-card');
+                    const gap = 30; // Matches CSS gap
+                    const scrollAmount = firstCard ? firstCard.offsetWidth + gap : 410;
+                    projectCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+                
+                scrollRightBtn.addEventListener('click', () => {
+                    const firstCard = projectCarousel.querySelector('.project-card');
+                    const gap = 30; // Matches CSS gap
+                    const scrollAmount = firstCard ? firstCard.offsetWidth + gap : 410;
+                    projectCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
             }
         });
     </script>
