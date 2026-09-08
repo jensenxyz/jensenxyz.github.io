@@ -179,9 +179,8 @@ ul { list-style: none; }
     font-size: 2rem; 
     cursor: pointer; 
     font-weight: 300; 
-    color: #000000; /* Set arrow text color to black */
+    color: #000000; /* Arrows set to black */
 }
-/* White arrows specifically inside dark/black sections */
 .bg-black .carousel-controls button {
     color: #ffffff;
 }
@@ -193,7 +192,7 @@ ul { list-style: none; }
     border: 2px solid var(--text-dark);
     border-radius: 20px;
     padding: 40px 30px;
-    height: 560px; /* Locks height to prevent jumping */
+    height: 560px;
     display: flex;
     flex-direction: column;
 }
@@ -281,15 +280,53 @@ ul { list-style: none; }
 }
 .research-card img { width: 100%; border-radius: 8px; margin-bottom: 20px; }
 
-/* --- Video / Media --- */
-.video-wrapper img, .app-mockups img { width: 100%; max-width: 900px; margin: 0 auto; display: block; }
+/* --- Video / Media / Currently Working On Grid --- */
+.video-wrapper img { width: 100%; max-width: 900px; margin: 0 auto; display: block; }
 .vertical-video-wrapper { max-width: 300px; }
 .vertical-video-wrapper img { width: 100%; border-radius: 20px; }
 
+/* 4 Mockups in 1 Row Layout (Desktop & Mobile) */
+.mockups-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.mockups-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    object-fit: cover;
+}
+.mockups-grid img:hover {
+    transform: scale(1.04);
+}
+
 /* --- Contact Section --- */
-.contact-grid { display: flex; justify-content: center; gap: 80px; margin-top: 40px; }
-.contact-item { display: flex; flex-direction: column; align-items: center; gap: 20px; }
-.icon-outline { font-size: 4rem; font-weight: 300; line-height: 1; color: var(--text-dark); }
+.contact-grid { 
+    display: flex; 
+    justify-content: center; 
+    gap: 60px; 
+    margin-top: 40px; 
+}
+.contact-item { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 15px; 
+    width: 160px; /* Fixed width container to match icon and button */
+}
+.contact-item .btn {
+    width: 100%;
+}
+.contact-item img.icon-outline {
+    width: 100%; /* Matches width of button below */
+    height: auto;
+    object-fit: contain;
+}
 
 /* --- Footer --- */
 .site-footer { padding: 30px 0; border-top: 1px solid #222; }
@@ -298,26 +335,23 @@ ul { list-style: none; }
 
 /* --- Responsive --- */
 @media (max-width: 992px) {
-    /* Mobile Spacing - Reduces massive empty space at the top */
     .pt-large { padding-top: 50px; }
     .pb-large { padding-bottom: 60px; }
     .section-title { font-size: 1.9rem; margin-bottom: 30px;}
 
-    /* Mobile Hero Layout: Title -> Image -> Bio */
     .hero { 
         grid-template-columns: 1fr; 
         grid-template-areas: 
             "title" 
             "image" 
             "bio"; 
-        text-align: left; /* Left align everything */
+        text-align: left;
         gap: 25px; 
     }
     .hero-title { font-size: 2.6rem; }
     .hero-image { justify-content: center; justify-self: center; }
-    .blob-img { max-width: 320px; } /* Slightly smaller image on phones */
+    .blob-img { max-width: 320px; }
     
-    /* Stack remaining grids */
     .passion-grid, .tech-grid, .tech-details, .research-grid, .expertise-grid { 
         grid-template-columns: 1fr; 
     }
@@ -326,4 +360,5 @@ ul { list-style: none; }
 
 @media (max-width: 768px) {
     .project-card { min-width: 300px; }
+    .mockups-grid { gap: 8px; } /* Tighter gaps on mobile screens */
 }
