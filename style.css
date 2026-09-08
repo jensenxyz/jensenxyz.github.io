@@ -190,36 +190,76 @@ ul { list-style: none; }
     border: 2px solid var(--text-dark);
     border-radius: 20px;
     padding: 40px 30px;
+    /* This locks the card height so the section never jumps/shrinks */
+    height: 560px; 
+    display: flex;
+    flex-direction: column;
 }
 .card-header h4 { font-size: 1.2rem; margin-bottom: 30px; text-align: center; }
+.accordion { flex: 1; }
 .accordion-item { border-bottom: 1px solid rgba(0,0,0,0.1); }
 
-/* 5. Bigger, bolder mobile-friendly touch targets */
+/* Animated Icon & Touch Targets */
 .accordion-title {
     font-weight: 600;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0; /* Larger clickable padding */
+    padding: 20px 0; /* Large touch target */
 }
+
+/* Base state for the animated + icon */
 .accordion-title .icon {
-    font-size: 1.8rem;
-    font-weight: 900;
-    line-height: 0.8;
+    position: relative;
+    width: 18px;
+    height: 18px;
+    transition: transform 0.4s ease;
 }
+.accordion-title .icon::before,
+.accordion-title .icon::after {
+    content: '';
+    position: absolute;
+    background-color: var(--text-dark);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.accordion-title .icon::before {
+    width: 100%;
+    height: 2.5px; /* Horizontal line */
+    border-radius: 2px;
+}
+.accordion-title .icon::after {
+    width: 2.5px; /* Vertical line */
+    height: 100%;
+    border-radius: 2px;
+}
+
+/* Active state (Spins and hides vertical line to become a minus) */
+.accordion-item.active .icon {
+    transform: rotate(180deg);
+}
+.accordion-item.active .icon::after {
+    opacity: 0;
+    transform: translate(-50%, -50%) scaleY(0);
+}
+
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.4s ease;
     font-size: 0.9rem;
     color: var(--text-grey);
     margin-top: 0;
+    opacity: 0;
 }
 .accordion-item.active .accordion-content {
-    max-height: 150px;
+    max-height: 200px; /* Increased to accommodate your longer text */
     margin-top: 5px;
     padding-bottom: 20px;
+    opacity: 1;
 }
 
 /* --- Tech Stack Section --- */
