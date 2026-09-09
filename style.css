@@ -14,13 +14,13 @@
 /* --- Global Reset & Typography --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html {
-    overflow-x: hidden;
+    overflow-x: clip;
     width: 100%;
 }
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: clip;
     width: 100%;
 }
 h1, h2, h3, h4 {
@@ -87,6 +87,7 @@ ul { list-style: none; }
 /* --- Header (Sticky & Frosted Glass) --- */
 .site-header { 
     padding: 15px 0; 
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1000;
