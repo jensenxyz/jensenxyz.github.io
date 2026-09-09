@@ -7,7 +7,7 @@
     <meta name="description" content="Portfolio of empirical research, climate econometrics, spatial modeling (MaxEnt), satellite remote sensing, and environmental studies conducted by Jensen (Sentao ZENG).">
     <meta property="og:title" content="Scientific Studies & Climate Research | JENSEN">
     <meta property="og:description" content="Portfolio of empirical research, climate econometrics, spatial modeling (MaxEnt), satellite remote sensing, and environmental studies conducted by Jensen (Sentao ZENG).">
-    <meta property="og:image" content="./science-1.png">
+    <meta property="og:image" content="./science-japanese-beetles.png">
     <meta property="og:type" content="website">
 
     <!-- Favicon & App Icons -->
@@ -87,68 +87,107 @@
         <div class="research-hero-banner">
             <h1 class="research-hero-title">Scientific Studies & Climate Research</h1>
             <p class="research-hero-desc">
-                Empirical investigations spanning biodiversity conservation, satellite remote sensing, high-dimensional econometrics, biotechnology remediation, and climate scenario modeling. Click any figure to expand or explore the complete study manuscripts via the direct PDF links.
+                Empirical investigations spanning invasive species risk modeling, biodiversity conservation, satellite remote sensing, high-dimensional econometrics, biotechnology remediation, and climate scenario modeling. Click any figure to expand or explore the complete study manuscripts via the direct PDF links.
             </p>
         </div>
 
-        <!-- 6 Studies Grid -->
+        <!-- 7 Studies Grid -->
         <div class="studies-grid">
 
-            <!-- Card 1: Biodiversity & Species Conservation -->
-            <article class="study-card">
+            <!-- Card 1: Ecological Modeling & Invasive Species Risk -->
+            <article class="study-card" id="study-japanese-beetle">
                 <div class="study-media-wrapper">
-                    <img src="./science-1.png" alt="Dendrobates tinctorius habitat modeling and IUCN assessment" class="study-img" onclick="openOverlay(this.src)" loading="lazy">
+                    <img src="./science-japanese-beetles.png" alt="Global Habitat Suitability Modeling for an Invasive Species: Japanese Beetle (Popillia japonica)" class="study-img" onclick="openOverlay(this.src)" loading="lazy">
+                </div>
+                <div class="study-action-bar">
+                    <button type="button" class="btn-pdf" onclick="openOverlay('./science-japanese-beetles.png')">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                        View High-Res Figures
+                    </button>
+                    <span class="zoom-hint" onclick="openOverlay('./science-japanese-beetles.png')">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                        Click image to zoom
+                    </span>
+                </div>
+                <div class="study-content">
+                    <span class="study-category">1. Ecological Modeling & Invasive Species Risk</span>
+                    <h2 class="study-title">Global Habitat Suitability Modeling for an Invasive Species: Japanese Beetle (<em>Popillia japonica</em>)</h2>
+                    <div class="study-tags">
+                        <span class="study-tag">MaxEnt Species Distribution Modeling</span>
+                        <span class="study-tag">Invasive Species Ecology</span>
+                        <span class="study-tag">Climate Projections (RCP 4.5)</span>
+                        <span class="study-tag">iNaturalist Data Processing</span>
+                    </div>
+                    <p class="study-desc">
+                        Evaluated current and projected global habitat suitability for the invasive Japanese Beetle (<em>Popillia japonica</em>) using Maximum Entropy (MaxEnt) species distribution modeling. By integrating crowdsourced occurrence data from iNaturalist with key bioclimatic variables, the study compared native-to-invasive model transferability against a global random-split validation strategy. Under current climate conditions, high suitability was identified in the Eastern USA and Northern Italy (Milan/Lombardy region). Under the RCP 4.5 greenhouse gas trajectory, projections indicate a major range expansion into Central USA and Canada, alongside a dramatic shift in Europe where the species is projected to move out of Italy toward Northern Europe.
+                    </p>
+                    <div class="study-highlights-block">
+                        <div class="study-highlights-title">Skills & Key Highlights</div>
+                        <ul class="study-highlights">
+                            <li><strong>MaxEnt Modeling & Strategy Validation:</strong> Implemented Maximum Entropy species distribution modeling in MaxEnt, comparing a native-trained model (AUC = 0.468) against a global 80/20 train/test split model (AUC = 0.71) to demonstrate the necessity of pooled occurrence data for invasive species predictions.</li>
+                            <li><strong>Eco-Physiological Risk Mapping:</strong> Analyzed bioclimatic variable response curves against known physiological thresholds of <em>P. japonica</em>, including thermal activity limits (21°C to 35°C), relative humidity constraints (60%), and moisture requirements for larval development.</li>
+                            <li><strong>Climate Scenario Forecasting:</strong> Projected spatial distribution shifts under the RCP 4.5 emission scenario, forecasting that changing temperature seasonality will push the species out of its current Italian hotspot and drive expansion into higher latitudes across Europe and North America.</li>
+                            <li><strong>Biodiversity Data Integration:</strong> Extracted, filtered, and processed global occurrence records from iNaturalist to establish training and testing datasets across native and invasive ranges.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2: Biodiversity & Species Conservation -->
+            <article class="study-card" id="study-poison-frog">
+                <div class="study-media-wrapper">
+                    <img src="./science-dyeing-poison-frog.png" alt="Dendrobates tinctorius habitat reclassification and IUCN assessment" class="study-img" onclick="openOverlay(this.src)" loading="lazy">
                 </div>
                 <div class="study-action-bar">
                     <a href="./Habitat%20Loss%20-%20A%20Dyeing%20Poison%20Frog%20Study.pdf" target="_blank" rel="noopener noreferrer" class="btn-pdf">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                         View PDF
                     </a>
-                    <span class="zoom-hint" onclick="openOverlay('./science-1.png')">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    <span class="zoom-hint" onclick="openOverlay('./science-dyeing-poison-frog.png')">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                         Click image to zoom
                     </span>
                 </div>
                 <div class="study-content">
-                    <span class="study-category">1. Biodiversity & Species Conservation</span>
+                    <span class="study-category">2. Biodiversity & Species Conservation</span>
                     <h2 class="study-title">Habitat Loss & IUCN Red List Assessment: <em>Dendrobates tinctorius</em></h2>
                     <div class="study-tags">
-                        <span class="study-tag">Ecological Niche Modeling</span>
-                        <span class="study-tag">MaxEnt</span>
+                        <span class="study-tag">Spatial Land-Use Reclassification</span>
                         <span class="study-tag">RStudio</span>
-                        <span class="study-tag">GIS & Conservation</span>
+                        <span class="study-tag">Area of Occupancy (AOO)</span>
+                        <span class="study-tag">IUCN Red List Assessment</span>
                     </div>
                     <p class="study-desc">
-                        Evaluated the impact of land-use change on the suitable habitat and Area of Occupancy (AOO) of the Dyeing Poison Dart Frog (<em>Dendrobates tinctorius</em>) across French Guiana. By combining spatial reclassification with <strong>MaxEnt ecological niche modeling</strong> and IUCN Red List Criteria in RStudio, this study projects a <strong>39.5% future habitat loss</strong>, supporting a reclassification recommendation to <strong>Near Threatened (NT)</strong>.
+                        Evaluated historical and projected land-use impacts on the Area of Occupancy (AOO) for the Dyeing Poison Dart Frog (<em>Dendrobates tinctorius</em>) across French Guiana. Using RStudio to process spatial land-use datasets and custom reclassification matrices (<code>&lt;reclass_dentin.txt&gt;</code>), the study estimated suitable habitat surfaces across past (2005), current (2012), and future land-use scenarios. While historical habitat loss between 2005 and 2012 was minimal at under <strong>0.2%</strong>, future projections indicate a <strong>39.5% AOO loss</strong>, justifying a proposed IUCN Red List status reclassification to <strong>Near Threatened (NT)</strong> under future population reduction criteria.
                     </p>
                     <div class="study-highlights-block">
                         <div class="study-highlights-title">Skills & Key Highlights</div>
                         <ul class="study-highlights">
-                            <li><strong>Species Distribution & MaxEnt Modeling:</strong> Modeled environmental suitability and species occurrence across forest and wetland ecosystems in the Guiana Shield.</li>
-                            <li><strong>Spatial Data Reclassification:</strong> Custom-scripted <code>&lt;reclass_dentin.txt&gt;</code> in RStudio to filter land-use categories (e.g., forest, inland wetlands) and compute AOO raster surfaces.</li>
-                            <li><strong>IUCN Red List Criteria Application:</strong> Quantified historical habitat change (&lt;0.2% loss between 2005 and 2012) versus future land-use projections to assess extinction risk under Criterion A3.</li>
+                            <li><strong>Spatial Data Reclassification in RStudio:</strong> Scripted custom reclassification files (<code>&lt;reclass_dentin.txt&gt;</code>) in RStudio to filter suitable habitat categories (e.g., forest, inland wetlands, inselbergs) from non-suitable land-use types (e.g., urban, mining, arable land).</li>
+                            <li><strong>AOO & Suitable Habitat Estimation:</strong> Quantified the species' Area of Occupancy (AOO) by calculating surface area changes across raster land-use maps for 2005 (past), 2012 (current), and future land-use projections.</li>
+                            <li><strong>IUCN Red List Quantitative Assessment:</strong> Evaluated species extinction risk against IUCN Red List criteria, demonstrating that a projected 39.5% future AOO reduction moves the species toward a "Vulnerable" threshold and supports a <strong>Near Threatened (NT)</strong> recommendation.</li>
                         </ul>
                     </div>
                 </div>
             </article>
 
-            <!-- Card 2: Satellite Remote Sensing & Hydrology -->
-            <article class="study-card">
+            <!-- Card 3: Satellite Remote Sensing & Hydrology -->
+            <article class="study-card" id="study-lake-surface">
                 <div class="study-media-wrapper">
-                    <img src="./science-2.png" alt="Qinghai Lake Landsat multi-decadal water surface analysis" class="study-img" onclick="openOverlay(this.src)" loading="lazy">
+                    <img src="./science-lake-surface.png" alt="Qinghai Lake Landsat multi-decadal water surface analysis" class="study-img" onclick="openOverlay(this.src)" loading="lazy">
                 </div>
                 <div class="study-action-bar">
                     <a href="./Lake%20Surface%20Area%20Change%20Using%20Satellite%20Imagery.pdf" target="_blank" rel="noopener noreferrer" class="btn-pdf">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                         View PDF
                     </a>
-                    <span class="zoom-hint" onclick="openOverlay('./science-2.png')">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    <span class="zoom-hint" onclick="openOverlay('./science-lake-surface.png')">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                         Click image to zoom
                     </span>
                 </div>
                 <div class="study-content">
-                    <span class="study-category">2. Satellite Remote Sensing & Hydrology</span>
+                    <span class="study-category">3. Satellite Remote Sensing & Hydrology</span>
                     <h2 class="study-title">Multi-Decadal Surface Area Dynamics of Qinghai Lake</h2>
                     <div class="study-tags">
                         <span class="study-tag">Remote Sensing</span>
@@ -170,23 +209,23 @@
                 </div>
             </article>
 
-            <!-- Card 3: Applied Econometrics & Public Health -->
-            <article class="study-card">
+            <!-- Card 4: Applied Econometrics & Public Health -->
+            <article class="study-card" id="study-pm25-mortality">
                 <div class="study-media-wrapper">
-                    <img src="./science-3.png" alt="PM2.5 and child mortality panel econometrics regression curves" class="study-img" onclick="openOverlay(this.src)" loading="lazy">
+                    <img src="./science-pm25-child-mortality.png" alt="PM2.5 and child mortality panel econometrics regression curves" class="study-img" onclick="openOverlay(this.src)" loading="lazy">
                 </div>
                 <div class="study-action-bar">
                     <a href="./PM2.5%20and%20Child%20Mortality%20-%20An%20Econometric%20Study.pdf" target="_blank" rel="noopener noreferrer" class="btn-pdf">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                         View PDF
                     </a>
-                    <span class="zoom-hint" onclick="openOverlay('./science-3.png')">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    <span class="zoom-hint" onclick="openOverlay('./science-pm25-child-mortality.png')">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                         Click image to zoom
                     </span>
                 </div>
                 <div class="study-content">
-                    <span class="study-category">3. Applied Econometrics & Public Health</span>
+                    <span class="study-category">4. Applied Econometrics & Public Health</span>
                     <h2 class="study-title">Global PM2.5 Air Pollution and Child Mortality Econometric Model</h2>
                     <div class="study-tags">
                         <span class="study-tag">STATA</span>
@@ -208,23 +247,23 @@
                 </div>
             </article>
 
-            <!-- Card 4: Environmental Remediation & Biotechnology -->
-            <article class="study-card">
+            <!-- Card 5: Environmental Remediation & Biotechnology -->
+            <article class="study-card" id="study-phytoremediation">
                 <div class="study-media-wrapper">
-                    <img src="./science-4.png" alt="Phytoremediation mechanisms and rhizobacteria interactions diagram" class="study-img" onclick="openOverlay(this.src)" loading="lazy">
+                    <img src="./science-phytoremediation.png" alt="Phytoremediation mechanisms and rhizobacteria interactions diagram" class="study-img" onclick="openOverlay(this.src)" loading="lazy">
                 </div>
                 <div class="study-action-bar">
                     <a href="./Phytoremediation%20Case%20Study.pdf" target="_blank" rel="noopener noreferrer" class="btn-pdf">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                         View PDF
                     </a>
-                    <span class="zoom-hint" onclick="openOverlay('./science-4.png')">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    <span class="zoom-hint" onclick="openOverlay('./science-phytoremediation.png')">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                         Click image to zoom
                     </span>
                 </div>
                 <div class="study-content">
-                    <span class="study-category">4. Environmental Remediation & Biotechnology</span>
+                    <span class="study-category">5. Environmental Remediation & Biotechnology</span>
                     <h2 class="study-title">PGPR-Assisted Phytoremediation of Cadmium-Contaminated Soils</h2>
                     <div class="study-tags">
                         <span class="study-tag">Biotechnology</span>
@@ -246,23 +285,23 @@
                 </div>
             </article>
 
-            <!-- Card 5: Climate Modeling & Scenario Analysis -->
-            <article class="study-card">
+            <!-- Card 6: Climate Modeling & Scenario Analysis -->
+            <article class="study-card" id="study-air-temp">
                 <div class="study-media-wrapper">
-                    <img src="./science-5.png" alt="CMIP6 regional temperature anomaly projections chart" class="study-img" onclick="openOverlay(this.src)" loading="lazy">
+                    <img src="./science-near-surface-air-temp.png" alt="CMIP6 regional temperature anomaly projections chart" class="study-img" onclick="openOverlay(this.src)" loading="lazy">
                 </div>
                 <div class="study-action-bar">
                     <a href="./Regional%20Near-Surface%20Air%20Temperature%20Regression%20Analysis.pdf" target="_blank" rel="noopener noreferrer" class="btn-pdf">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                         View PDF
                     </a>
-                    <span class="zoom-hint" onclick="openOverlay('./science-5.png')">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    <span class="zoom-hint" onclick="openOverlay('./science-near-surface-air-temp.png')">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                         Click image to zoom
                     </span>
                 </div>
                 <div class="study-content">
-                    <span class="study-category">5. Climate Modeling & Scenario Analysis</span>
+                    <span class="study-category">6. Climate Modeling & Scenario Analysis</span>
                     <h2 class="study-title">Regional Near-Surface Air Temperature Projections (CMIP6 Data)</h2>
                     <div class="study-tags">
                         <span class="study-tag">CMIP6</span>
@@ -284,23 +323,23 @@
                 </div>
             </article>
 
-            <!-- Card 6: Master's Thesis: Climate Econometrics & Agribusiness -->
-            <article class="study-card">
+            <!-- Card 7: Master's Thesis: Climate Econometrics & Agribusiness -->
+            <article class="study-card" id="study-wine-thesis">
                 <div class="study-media-wrapper">
-                    <img src="./science-6.png" alt="Tuscan wine viticulture climate econometrics and hedonic pricing map" class="study-img" onclick="openOverlay(this.src)" loading="lazy">
+                    <img src="./science-wine-climate-thesis.png" alt="Tuscan wine viticulture climate econometrics and hedonic pricing map" class="study-img" onclick="openOverlay(this.src)" loading="lazy">
                 </div>
                 <div class="study-action-bar">
                     <a href="./msc_thesis_by_jensen_public.pdf" target="_blank" rel="noopener noreferrer" class="btn-pdf">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                         View PDF
                     </a>
-                    <span class="zoom-hint" onclick="openOverlay('./science-6.png')">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    <span class="zoom-hint" onclick="openOverlay('./science-wine-climate-thesis.png')">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                         Click image to zoom
                     </span>
                 </div>
                 <div class="study-content">
-                    <span class="study-category">6. Master's Thesis: Climate Econometrics & Agribusiness</span>
+                    <span class="study-category">7. Master's Thesis: Climate Econometrics & Agribusiness</span>
                     <h2 class="study-title">Tuscan Wine in a Changing Climate: Impact of Extreme Weather on Quality and Price</h2>
                     <div class="study-tags">
                         <span class="study-tag">Climate Econometrics</span>
