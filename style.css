@@ -13,10 +13,15 @@
 
 /* --- Global Reset & Typography --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
+html {
+    overflow-x: hidden;
+    width: 100%;
+}
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
 }
 h1, h2, h3, h4 {
     font-family: 'Montserrat', sans-serif;
@@ -778,17 +783,20 @@ ul { list-style: none; }
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 28px;
+    width: 100%;
 }
 
 .canva-presentation-card {
     background-color: var(--bg-white);
-    padding: 20px;
-    border-radius: 28px;
+    padding: 22px;
+    border-radius: 26px;
     text-align: center;
     border: 1px solid #e6e0d9;
     display: flex;
     flex-direction: column;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .canva-presentation-card:hover {
@@ -831,11 +839,12 @@ ul { list-style: none; }
     color: var(--accent-orange);
     display: block;
     margin-bottom: 4px;
+    white-space: nowrap;
 }
 
 .canva-presentation-card .card-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.05rem;
+    font-size: 1.08rem;
     font-weight: 800;
     line-height: 1.35;
     color: var(--text-dark);
@@ -848,7 +857,13 @@ ul { list-style: none; }
 .canva-presentation-card .btn {
     width: 100%;
     text-align: center;
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 20px;
+    white-space: nowrap;
+    border-radius: 12px;
 }
 
 .research-hero-banner {
@@ -881,5 +896,72 @@ ul { list-style: none; }
     }
     .study-content {
         padding: 22px;
+    }
+    .canva-presentations-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    .canva-presentations-section {
+        margin-top: 48px;
+        padding-top: 40px;
+    }
+    .canva-presentations-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        width: 100%;
+    }
+    .canva-presentation-card {
+        padding: 20px;
+        border-radius: 22px;
+        width: 100%;
+    }
+    .canva-card-img-wrapper {
+        border-radius: 14px;
+        margin-bottom: 14px;
+    }
+    .canva-presentation-card .card-title {
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+    .canva-presentation-card .btn {
+        min-height: 48px;
+        font-size: 0.88rem;
+    }
+    .research-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        margin-bottom: 28px;
+    }
+    .filter-group {
+        width: 100%;
+    }
+    .filter-pills {
+        width: 100%;
+        gap: 6px;
+    }
+    .filter-pill {
+        padding: 7px 14px;
+        font-size: 0.8rem;
+    }
+    .toolbar-actions {
+        width: 100%;
+    }
+    .btn-toggle-all {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 16px;
+        min-height: 44px;
+    }
+    .research-hero-title {
+        font-size: 1.95rem;
+        margin-bottom: 14px;
+    }
+    .research-hero-desc {
+        font-size: 0.98rem;
+        line-height: 1.6;
     }
 }
