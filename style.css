@@ -283,7 +283,13 @@ ul { list-style: none; }
 /* --- Video / Media / Currently Working On Grid --- */
 .video-wrapper img { width: 100%; max-width: 900px; margin: 0 auto; display: block; }
 .vertical-video-wrapper { max-width: 300px; }
-.vertical-video-wrapper img { width: 100%; border-radius: 20px; }
+.vertical-video-wrapper img,
+.vertical-video-wrapper video { 
+    width: 100%; 
+    border-radius: 20px; 
+    display: block;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
 
 /* 4 Mockups in 1 Row Layout (Desktop & Mobile) */
 .mockups-grid {
