@@ -337,9 +337,39 @@ ul { list-style: none; }
 }
 
 /* --- Footer --- */
-.site-footer { padding: 30px 0; border-top: 1px solid #222; }
-.footer-content { display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; }
-.footer-links a { margin-right: 20px; text-decoration: underline; }
+.site-footer { 
+    padding: 36px 0; 
+    border-top: 1px solid #222; 
+    background-color: var(--bg-dark);
+}
+.footer-content { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    font-size: 0.95rem; 
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.footer-links a { 
+    text-decoration: underline; 
+    text-underline-offset: 4px;
+    color: var(--text-light);
+    transition: opacity var(--transition);
+}
+.footer-links a:hover {
+    opacity: 0.75;
+}
+.footer-copy {
+    color: #999999;
+    font-size: 0.9rem;
+    letter-spacing: 0.2px;
+}
 
 /* --- Responsive --- */
 @media (max-width: 992px) {
@@ -369,6 +399,35 @@ ul { list-style: none; }
 @media (max-width: 768px) {
     .project-card { min-width: 300px; }
     .mockups-grid { gap: 8px; } /* Tighter gaps on mobile screens */
+
+    /* Footer Mobile Enhancement */
+    .site-footer {
+        padding: 40px 0 36px;
+    }
+    .footer-content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    .footer-links {
+        justify-content: center;
+        gap: 8px 24px;
+    }
+    .footer-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px; /* Accessible 44px touch target */
+        padding: 6px 12px;
+        font-size: 0.95rem;
+    }
+    .footer-copy {
+        font-size: 0.85rem;
+        color: #888888;
+        padding-top: 2px;
+    }
 }
 
 /* --- Research Subpage & Studies Grid --- */
