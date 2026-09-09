@@ -568,6 +568,171 @@ ul { list-style: none; }
     line-height: 1.65;
 }
 
+/* --- Research Toolbar & Filtering --- */
+.research-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 36px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #e5dfd9;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+}
+
+.filter-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-grey);
+    margin-right: 4px;
+}
+
+.filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filter-pill {
+    background-color: transparent;
+    border: 1px solid #cfc7c0;
+    padding: 7px 16px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #444444;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.filter-pill:hover {
+    border-color: var(--text-dark);
+    color: var(--text-dark);
+    background-color: #f7f4ef;
+}
+
+.filter-pill.active {
+    background-color: var(--text-dark);
+    border-color: var(--text-dark);
+    color: var(--text-light);
+}
+
+.btn-toggle-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background-color: transparent;
+    border: 1px solid #cfc7c0;
+    padding: 7px 16px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #333333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.btn-toggle-all:hover {
+    border-color: var(--text-dark);
+    background-color: #f2ede7;
+    color: var(--text-dark);
+}
+
+/* --- Interactive Accordion for Highlights (Improves Card Readability) --- */
+.study-accordion {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid #eee8e2;
+}
+
+.study-accordion-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background-color: #f8f6f3;
+    border: 1px solid #e7e0d9;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    list-style: none;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+.study-accordion-summary::-webkit-details-marker {
+    display: none;
+}
+
+.study-accordion-summary:hover {
+    background-color: #efeae2;
+    border-color: #dbd2c8;
+}
+
+.summary-left {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.summary-title {
+    font-size: 0.82rem;
+    letter-spacing: 0.2px;
+}
+
+.summary-badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    background-color: #e4ddd4;
+    color: #4a4a4a;
+    padding: 2px 7px;
+    border-radius: 10px;
+}
+
+.summary-arrow {
+    transition: transform 0.25s ease;
+    color: #666666;
+    flex-shrink: 0;
+}
+
+.study-accordion[open] .summary-arrow {
+    transform: rotate(180deg);
+}
+
+.study-accordion[open] .study-accordion-summary {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #f2ece4;
+}
+
+.study-accordion-body {
+    padding: 16px 16px 8px;
+    border: 1px solid #e7e0d9;
+    border-top: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #faf9f7;
+    animation: fadeInAccordion 0.2s ease;
+}
+
+@keyframes fadeInAccordion {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .study-highlights-block {
     margin-top: auto;
     padding-top: 14px;
@@ -596,6 +761,94 @@ ul { list-style: none; }
 
 .study-highlights li strong {
     color: var(--text-dark);
+}
+
+/* --- Canva Presentations on Research Page --- */
+.canva-presentations-section {
+    margin-top: 70px;
+    padding-top: 60px;
+    border-top: 1px solid #ded8d2;
+}
+
+.canva-header-block {
+    margin-bottom: 32px;
+}
+
+.canva-presentations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.canva-presentation-card {
+    background-color: var(--bg-white);
+    padding: 20px;
+    border-radius: 28px;
+    text-align: center;
+    border: 1px solid #e6e0d9;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.canva-presentation-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+
+.canva-card-img-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 18px;
+    margin-bottom: 18px;
+    background-color: #f1efeb;
+}
+
+.canva-presentation-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.canva-presentation-card:hover img {
+    transform: scale(1.03);
+}
+
+.canva-presentation-card .card-info {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.canva-presentation-card .card-category {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--accent-orange);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.canva-presentation-card .card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    line-height: 1.35;
+    color: var(--text-dark);
+}
+
+.canva-presentation-card .research-action {
+    margin-top: auto;
+}
+
+.canva-presentation-card .btn {
+    width: 100%;
+    text-align: center;
+    display: block;
 }
 
 .research-hero-banner {

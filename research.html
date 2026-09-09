@@ -90,11 +90,32 @@
             </p>
         </div>
 
+        <!-- Interactive Topic Filter & Reading Controls -->
+        <div class="research-toolbar">
+            <div class="filter-group">
+                <span class="filter-label">Filter:</span>
+                <div class="filter-pills" id="research-filters">
+                    <button type="button" class="filter-pill active" data-filter="all">All (7)</button>
+                    <button type="button" class="filter-pill" data-filter="ecology">Ecology & Conservation (2)</button>
+                    <button type="button" class="filter-pill" data-filter="remote-sensing">Remote Sensing (1)</button>
+                    <button type="button" class="filter-pill" data-filter="econometrics">Econometrics (2)</button>
+                    <button type="button" class="filter-pill" data-filter="biotech">Biotechnology (1)</button>
+                    <button type="button" class="filter-pill" data-filter="climate">Climate Projections (1)</button>
+                </div>
+            </div>
+            <div class="toolbar-actions">
+                <button type="button" class="btn-toggle-all" id="btn-toggle-details" onclick="toggleAllHighlights()">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    <span id="toggle-all-text">Expand All Highlights</span>
+                </button>
+            </div>
+        </div>
+
         <!-- 7 Studies Grid -->
         <div class="studies-grid">
 
             <!-- Card 1: Ecological Modeling & Invasive Species Risk -->
-            <article class="study-card" id="study-japanese-beetle">
+            <article class="study-card" id="study-japanese-beetle" data-category="ecology">
                 <div class="study-media-wrapper">
                     <img src="/research/science-japanese-beetles.png" alt="Global Habitat Suitability Modeling for an Invasive Species: Japanese Beetle (Popillia japonica)" class="study-img" onclick="openOverlay(this.src)" loading="lazy">
                 </div>
@@ -120,20 +141,28 @@
                     <p class="study-desc">
                         Evaluated current and projected global habitat suitability for the invasive Japanese Beetle (<em>Popillia japonica</em>) using Maximum Entropy (MaxEnt) species distribution modeling. By integrating crowdsourced occurrence data from iNaturalist with key bioclimatic variables, the study compared native-to-invasive model transferability against a global random-split validation strategy. Under current climate conditions, high suitability was identified in the Eastern USA and Northern Italy (Milan/Lombardy region). Under the RCP 4.5 greenhouse gas trajectory, projections indicate a major range expansion into Central USA and Canada, alongside a dramatic shift in Europe where the species is projected to move out of Italy toward Northern Europe.
                     </p>
-                    <div class="study-highlights-block">
-                        <div class="study-highlights-title">Skills & Key Highlights</div>
-                        <ul class="study-highlights">
-                            <li><strong>MaxEnt Modeling & Strategy Validation:</strong> Implemented Maximum Entropy species distribution modeling in MaxEnt, comparing a native-trained model (AUC = 0.468) against a global 80/20 train/test split model (AUC = 0.71) to demonstrate the necessity of pooled occurrence data for invasive species predictions.</li>
-                            <li><strong>Eco-Physiological Risk Mapping:</strong> Analyzed bioclimatic variable response curves against known physiological thresholds of <em>P. japonica</em>, including thermal activity limits (21°C to 35°C), relative humidity constraints (60%), and moisture requirements for larval development.</li>
-                            <li><strong>Climate Scenario Forecasting:</strong> Projected spatial distribution shifts under the RCP 4.5 emission scenario, forecasting that changing temperature seasonality will push the species out of its current Italian hotspot and drive expansion into higher latitudes across Europe and North America.</li>
-                            <li><strong>Biodiversity Data Integration:</strong> Extracted, filtered, and processed global occurrence records from iNaturalist to establish training and testing datasets across native and invasive ranges.</li>
-                        </ul>
-                    </div>
+                    <details class="study-accordion">
+                        <summary class="study-accordion-summary">
+                            <span class="summary-left">
+                                <span class="summary-title">Skills & Key Highlights</span>
+                                <span class="summary-badge">4 points</span>
+                            </span>
+                            <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="study-accordion-body">
+                            <ul class="study-highlights">
+                                <li><strong>MaxEnt Modeling & Strategy Validation:</strong> Implemented Maximum Entropy species distribution modeling in MaxEnt, comparing a native-trained model (AUC = 0.468) against a global 80/20 train/test split model (AUC = 0.71) to demonstrate the necessity of pooled occurrence data for invasive species predictions.</li>
+                                <li><strong>Eco-Physiological Risk Mapping:</strong> Analyzed bioclimatic variable response curves against known physiological thresholds of <em>P. japonica</em>, including thermal activity limits (21°C to 35°C), relative humidity constraints (60%), and moisture requirements for larval development.</li>
+                                <li><strong>Climate Scenario Forecasting:</strong> Projected spatial distribution shifts under the RCP 4.5 emission scenario, forecasting that changing temperature seasonality will push the species out of its current Italian hotspot and drive expansion into higher latitudes across Europe and North America.</li>
+                                <li><strong>Biodiversity Data Integration:</strong> Extracted, filtered, and processed global occurrence records from iNaturalist to establish training and testing datasets across native and invasive ranges.</li>
+                            </ul>
+                        </div>
+                    </details>
                 </div>
             </article>
 
             <!-- Card 2: Biodiversity & Species Conservation -->
-            <article class="study-card" id="study-poison-frog">
+            <article class="study-card" id="study-poison-frog" data-category="ecology">
                 <div class="study-media-wrapper">
                     <img src="/research/science-dyeing-poison-frog.png" alt="Dendrobates tinctorius habitat reclassification and IUCN assessment" class="study-img" onclick="openOverlay(this.src)" loading="lazy">
                 </div>
@@ -159,19 +188,27 @@
                     <p class="study-desc">
                         Evaluated historical and projected land-use impacts on the Area of Occupancy (AOO) for the Dyeing Poison Dart Frog (<em>Dendrobates tinctorius</em>) across French Guiana. Using RStudio to process spatial land-use datasets and custom reclassification matrices (<code>&lt;reclass_dentin.txt&gt;</code>), the study estimated suitable habitat surfaces across past (2005), current (2012), and future land-use scenarios. While historical habitat loss between 2005 and 2012 was minimal at under <strong>0.2%</strong>, future projections indicate a <strong>39.5% AOO loss</strong>, justifying a proposed IUCN Red List status reclassification to <strong>Near Threatened (NT)</strong> under future population reduction criteria.
                     </p>
-                    <div class="study-highlights-block">
-                        <div class="study-highlights-title">Skills & Key Highlights</div>
-                        <ul class="study-highlights">
-                            <li><strong>Spatial Data Reclassification in RStudio:</strong> Scripted custom reclassification files (<code>&lt;reclass_dentin.txt&gt;</code>) in RStudio to filter suitable habitat categories (e.g., forest, inland wetlands, inselbergs) from non-suitable land-use types (e.g., urban, mining, arable land).</li>
-                            <li><strong>AOO & Suitable Habitat Estimation:</strong> Quantified the species' Area of Occupancy (AOO) by calculating surface area changes across raster land-use maps for 2005 (past), 2012 (current), and future land-use projections.</li>
-                            <li><strong>IUCN Red List Quantitative Assessment:</strong> Evaluated species extinction risk against IUCN Red List criteria, demonstrating that a projected 39.5% future AOO reduction moves the species toward a "Vulnerable" threshold and supports a <strong>Near Threatened (NT)</strong> recommendation.</li>
-                        </ul>
-                    </div>
+                    <details class="study-accordion">
+                        <summary class="study-accordion-summary">
+                            <span class="summary-left">
+                                <span class="summary-title">Skills & Key Highlights</span>
+                                <span class="summary-badge">3 points</span>
+                            </span>
+                            <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="study-accordion-body">
+                            <ul class="study-highlights">
+                                <li><strong>Spatial Data Reclassification in RStudio:</strong> Scripted custom reclassification files (<code>&lt;reclass_dentin.txt&gt;</code>) in RStudio to filter suitable habitat categories (e.g., forest, inland wetlands, inselbergs) from non-suitable land-use types (e.g., urban, mining, arable land).</li>
+                                <li><strong>AOO & Suitable Habitat Estimation:</strong> Quantified the species' Area of Occupancy (AOO) by calculating surface area changes across raster land-use maps for 2005 (past), 2012 (current), and future land-use projections.</li>
+                                <li><strong>IUCN Red List Quantitative Assessment:</strong> Evaluated species extinction risk against IUCN Red List criteria, demonstrating that a projected 39.5% future AOO reduction moves the species toward a "Vulnerable" threshold and supports a <strong>Near Threatened (NT)</strong> recommendation.</li>
+                            </ul>
+                        </div>
+                    </details>
                 </div>
             </article>
 
             <!-- Card 3: Satellite Remote Sensing & Hydrology -->
-            <article class="study-card" id="study-lake-surface">
+            <article class="study-card" id="study-lake-surface" data-category="remote-sensing">
                 <div class="study-media-wrapper">
                     <img src="/research/science-lake-surface.png" alt="Qinghai Lake Landsat multi-decadal water surface analysis" class="study-img" onclick="openOverlay(this.src)" loading="lazy">
                 </div>
@@ -197,19 +234,27 @@
                     <p class="study-desc">
                         Quantified a <strong>10.49% expansion</strong> (4,099.40 km² to 4,529.52 km²) of Qinghai Lake—China’s largest endorheic saline lake—over a 20-year period (2002–2022) using Landsat 7 ETM+ and Landsat 9 satellite data. The analysis integrated multi-band image stitching, cloud/ice mitigation, and Normalized Difference Water Index (NDWI) thresholding to evaluate climate-driven hydrological shifts.
                     </p>
-                    <div class="study-highlights-block">
-                        <div class="study-highlights-title">Skills & Key Highlights</div>
-                        <ul class="study-highlights">
-                            <li><strong>Multi-Sensor Satellite Processing:</strong> Merged sequential path-row Landsat scenes (LE07_L1TP) to resolve coverage gaps and screened acquisition dates to eliminate seasonal ice/cloud interference.</li>
-                            <li><strong>Index-Based Surface Extraction:</strong> Applied sensor-specific NDWI thresholds (0.1 for Landsat 7; 0.0 for Landsat 8/9) to segment water bodies from surrounding terrain.</li>
-                            <li><strong>GIS Polygonization & Spatial Statistics:</strong> Executed vector polygonization in QGIS to compute surface area trends, linking lake expansion to rising precipitation and declining daily temperature ranges.</li>
-                        </ul>
-                    </div>
+                    <details class="study-accordion">
+                        <summary class="study-accordion-summary">
+                            <span class="summary-left">
+                                <span class="summary-title">Skills & Key Highlights</span>
+                                <span class="summary-badge">3 points</span>
+                            </span>
+                            <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="study-accordion-body">
+                            <ul class="study-highlights">
+                                <li><strong>Multi-Sensor Satellite Processing:</strong> Merged sequential path-row Landsat scenes (LE07_L1TP) to resolve coverage gaps and screened acquisition dates to eliminate seasonal ice/cloud interference.</li>
+                                <li><strong>Index-Based Surface Extraction:</strong> Applied sensor-specific NDWI thresholds (0.1 for Landsat 7; 0.0 for Landsat 8/9) to segment water bodies from surrounding terrain.</li>
+                                <li><strong>GIS Polygonization & Spatial Statistics:</strong> Executed vector polygonization in QGIS to compute surface area trends, linking lake expansion to rising precipitation and declining daily temperature ranges.</li>
+                            </ul>
+                        </div>
+                    </details>
                 </div>
             </article>
 
             <!-- Card 4: Applied Econometrics & Public Health -->
-            <article class="study-card" id="study-pm25-mortality">
+            <article class="study-card" id="study-pm25-mortality" data-category="econometrics">
                 <div class="study-media-wrapper">
                     <img src="/research/science-pm25-child-mortality.png" alt="PM2.5 and child mortality panel econometrics regression curves" class="study-img" onclick="openOverlay(this.src)" loading="lazy">
                 </div>
@@ -235,19 +280,27 @@
                     <p class="study-desc">
                         Investigated the empirical relationship between population-weighted ambient PM2.5 exposure and under-five child mortality using a global panel dataset covering 216 countries and territories from 1960 to 2022. Implemented high-dimensional fixed-effects models and log-log specifications in STATA to control for macro-level economic development (GDP per capita) and country-specific unobserved heterogeneity.
                     </p>
-                    <div class="study-highlights-block">
-                        <div class="study-highlights-title">Skills & Key Highlights</div>
-                        <ul class="study-highlights">
-                            <li><strong>High-Dimensional Panel Econometrics:</strong> Executed <code>reghdfe</code> linear and quadratic fixed-effects regressions controlling for country-specific and year fixed effects.</li>
-                            <li><strong>Non-Linear & EKC Testing:</strong> Modeled Environmental Kuznets Curve (EKC) dynamics to prove that omitting GDP per capita overestimates the health impacts of PM2.5 by over 20%.</li>
-                            <li><strong>Logarithmic Data Transformation:</strong> Addressed severe right-skewness across global datasets using natural log transformations (ln), improving model within-R² explanatory power from 0.89–0.90 to 0.98.</li>
-                        </ul>
-                    </div>
+                    <details class="study-accordion">
+                        <summary class="study-accordion-summary">
+                            <span class="summary-left">
+                                <span class="summary-title">Skills & Key Highlights</span>
+                                <span class="summary-badge">3 points</span>
+                            </span>
+                            <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="study-accordion-body">
+                            <ul class="study-highlights">
+                                <li><strong>High-Dimensional Panel Econometrics:</strong> Executed <code>reghdfe</code> linear and quadratic fixed-effects regressions controlling for country-specific and year fixed effects.</li>
+                                <li><strong>Non-Linear & EKC Testing:</strong> Modeled Environmental Kuznets Curve (EKC) dynamics to prove that omitting GDP per capita overestimates the health impacts of PM2.5 by over 20%.</li>
+                                <li><strong>Logarithmic Data Transformation:</strong> Addressed severe right-skewness across global datasets using natural log transformations (ln), improving model within-R² explanatory power from 0.89–0.90 to 0.98.</li>
+                            </ul>
+                        </div>
+                    </details>
                 </div>
             </article>
 
             <!-- Card 5: Environmental Remediation & Biotechnology -->
-            <article class="study-card" id="study-phytoremediation">
+            <article class="study-card" id="study-phytoremediation" data-category="biotech">
                 <div class="study-media-wrapper">
                     <img src="/research/science-phytoremediation.png" alt="Phytoremediation mechanisms and rhizobacteria interactions diagram" class="study-img" onclick="openOverlay(this.src)" loading="lazy">
                 </div>
@@ -273,19 +326,27 @@
                     <p class="study-desc">
                         Synthesized cutting-edge experimental research on bio-assisted phytoremediation, evaluating how Plant Growth-Promoting Rhizobacteria (PGPR) strains (e.g., <em>Bacillus</em>, <em>Burkholderia</em>) enhance heavy metal (Cd) uptake in hyperaccumulators like sorghum and dandelion. The comparative review highlights microbial community shifts, enzyme activation, and synergies with biosurfactants (tea saponin).
                     </p>
-                    <div class="study-highlights-block">
-                        <div class="study-highlights-title">Skills & Key Highlights</div>
-                        <ul class="study-highlights">
-                            <li><strong>Systematic Literature Screening:</strong> Conducted targeted bibliographic queries across SciFinder-n and Minerva databases using Boolean filters, screening 324 high-impact studies down to core experimental papers.</li>
-                            <li><strong>Analytical Method Evaluation:</strong> Analyzed spectroscopic (ICP-OES, GFAAS) and molecular (PCR amplification, Illumina MiSeq DNA sequencing) techniques used to measure Cd translocation and microbial diversity.</li>
-                            <li><strong>Rhizosphere Mechanism Synthesis:</strong> Evaluated bioconcentration factors (BCF), transport factors (TF), root length expansions (+33% to +53%), and antioxidant enzyme activities (CAT, POD) under co-contamination conditions (Cd + microplastics PE).</li>
-                        </ul>
-                    </div>
+                    <details class="study-accordion">
+                        <summary class="study-accordion-summary">
+                            <span class="summary-left">
+                                <span class="summary-title">Skills & Key Highlights</span>
+                                <span class="summary-badge">3 points</span>
+                            </span>
+                            <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="study-accordion-body">
+                            <ul class="study-highlights">
+                                <li><strong>Systematic Literature Screening:</strong> Conducted targeted bibliographic queries across SciFinder-n and Minerva databases using Boolean filters, screening 324 high-impact studies down to core experimental papers.</li>
+                                <li><strong>Analytical Method Evaluation:</strong> Analyzed spectroscopic (ICP-OES, GFAAS) and molecular (PCR amplification, Illumina MiSeq DNA sequencing) techniques used to measure Cd translocation and microbial diversity.</li>
+                                <li><strong>Rhizosphere Mechanism Synthesis:</strong> Evaluated bioconcentration factors (BCF), transport factors (TF), root length expansions (+33% to +53%), and antioxidant enzyme activities (CAT, POD) under co-contamination conditions (Cd + microplastics PE).</li>
+                            </ul>
+                        </div>
+                    </details>
                 </div>
             </article>
 
             <!-- Card 6: Climate Modeling & Scenario Analysis -->
-            <article class="study-card" id="study-air-temp">
+            <article class="study-card" id="study-air-temp" data-category="climate">
                 <div class="study-media-wrapper">
                     <img src="/research/science-near-surface-air-temp.png" alt="CMIP6 regional temperature anomaly projections chart" class="study-img" onclick="openOverlay(this.src)" loading="lazy">
                 </div>
@@ -311,19 +372,27 @@
                     <p class="study-desc">
                         Modeled future near-surface air temperature anomalies across a 30°×30° East Asian domain (20°N–50°N, 90°E–120°E) from 2015 to 2099. Extracted global climate model output (EC-Earth3 and EC-Earth3CC) from the Copernicus Climate Data Store (CDS) to evaluate warming trajectories under low-emissions (SSP1-1.9) versus high-emissions (SSP5-8.5) Shared Socioeconomic Pathways.
                     </p>
-                    <div class="study-highlights-block">
-                        <div class="study-highlights-title">Skills & Key Highlights</div>
-                        <ul class="study-highlights">
-                            <li><strong>NetCDF & Climate Data Extraction:</strong> Processed high-resolution climate projection data from Copernicus CDS for CMIP6 multi-model ensembles.</li>
-                            <li><strong>Regression & Moving Averages:</strong> Fitted linear trendlines and calculated 5-year and 21-year moving averages in RStudio to isolate long-term climate signals from interannual variability.</li>
-                            <li><strong>Scenario Comparative Analysis:</strong> Demonstrated a moderate warming trend under SSP1-1.9 (~9°C to ~10.6°C) versus an accelerated warming trajectory exceeding +15°C anomalies by 2100 under SSP5-8.5.</li>
-                        </ul>
-                    </div>
+                    <details class="study-accordion">
+                        <summary class="study-accordion-summary">
+                            <span class="summary-left">
+                                <span class="summary-title">Skills & Key Highlights</span>
+                                <span class="summary-badge">3 points</span>
+                            </span>
+                            <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="study-accordion-body">
+                            <ul class="study-highlights">
+                                <li><strong>NetCDF & Climate Data Extraction:</strong> Processed high-resolution climate projection data from Copernicus CDS for CMIP6 multi-model ensembles.</li>
+                                <li><strong>Regression & Moving Averages:</strong> Fitted linear trendlines and calculated 5-year and 21-year moving averages in RStudio to isolate long-term climate signals from interannual variability.</li>
+                                <li><strong>Scenario Comparative Analysis:</strong> Demonstrated a moderate warming trend under SSP1-1.9 (~9°C to ~10.6°C) versus an accelerated warming trajectory exceeding +15°C anomalies by 2100 under SSP5-8.5.</li>
+                            </ul>
+                        </div>
+                    </details>
                 </div>
             </article>
 
             <!-- Card 7: Master's Thesis: Climate Econometrics & Agribusiness -->
-            <article class="study-card" id="study-wine-thesis">
+            <article class="study-card" id="study-wine-thesis" data-category="econometrics">
                 <div class="study-media-wrapper">
                     <img src="/research/science-wine-climate-thesis.png" alt="Tuscan wine viticulture climate econometrics and hedonic pricing map" class="study-img" onclick="openOverlay(this.src)" loading="lazy">
                 </div>
@@ -349,18 +418,81 @@
                     <p class="study-desc">
                         Investigated the economic and sensory impacts of shifting climate baselines and acute thermal shocks on Tuscan viticulture. Constructed a 15-vintage panel dataset (2004–2018; 1,079 observations) combining Wine Spectator expert scores, inflation-adjusted release prices, downscaled ECMWF AgERA5 climate data, and EU Geographical Indication (PDO/PGI) frameworks.
                     </p>
-                    <div class="study-highlights-block">
-                        <div class="study-highlights-title">Skills & Key Highlights</div>
-                        <ul class="study-highlights">
-                            <li><strong>Vineyard-Weighted Spatial Downscaling:</strong> Downscaled AgERA5 gridded daily weather variables to municipality (comune) boundaries, weighted specifically by CORINE Land Cover (CLC 2018) vineyard rasters.</li>
-                            <li><strong>Bioclimatic Indexing & Degree-Day Logic:</strong> Calculated Huglin Heliothermic Index (HI), Growing Season Temperature (GST), Growing Season Precipitation (GSP), and 99th-percentile heatwave indicators.</li>
-                            <li><strong>Hedonic Pricing & Spatial Heterogeneity Analysis:</strong> Implemented multi-dimensional panel fixed effects models, discovering an inverted U-shaped thermal optimum (~20°C GST), an August heatwave score penalty, maritime moderating effects in coastal terroirs, and quality buffering under PDO designations.</li>
-                        </ul>
-                    </div>
+                    <details class="study-accordion">
+                        <summary class="study-accordion-summary">
+                            <span class="summary-left">
+                                <span class="summary-title">Skills & Key Highlights</span>
+                                <span class="summary-badge">3 points</span>
+                            </span>
+                            <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="study-accordion-body">
+                            <ul class="study-highlights">
+                                <li><strong>Vineyard-Weighted Spatial Downscaling:</strong> Downscaled AgERA5 gridded daily weather variables to municipality (comune) boundaries, weighted specifically by CORINE Land Cover (CLC 2018) vineyard rasters.</li>
+                                <li><strong>Bioclimatic Indexing & Degree-Day Logic:</strong> Calculated Huglin Heliothermic Index (HI), Growing Season Temperature (GST), Growing Season Precipitation (GSP), and 99th-percentile heatwave indicators.</li>
+                                <li><strong>Hedonic Pricing & Spatial Heterogeneity Analysis:</strong> Implemented multi-dimensional panel fixed effects models, discovering an inverted U-shaped thermal optimum (~20°C GST), an August heatwave score penalty, maritime moderating effects in coastal terroirs, and quality buffering under PDO designations.</li>
+                            </ul>
+                        </div>
+                    </details>
                 </div>
             </article>
 
         </div>
+
+        <!-- Canva Presentations Section -->
+        <section class="canva-presentations-section" id="canva-presentations">
+            <div class="canva-header-block">
+                <span class="study-category" style="font-size: 0.85rem; letter-spacing: 1.5px;">Interactive Slide Decks</span>
+                <h2 class="section-title" style="margin-top: 8px; margin-bottom: 14px;">Presentations on Canva:</h2>
+                <p style="color: var(--text-grey); max-width: 720px; font-size: 1.05rem; line-height: 1.6;">
+                    Explore interactive slide decks, thesis defense materials, and literature reviews prepared for academic defense and research presentation.
+                </p>
+            </div>
+            
+            <div class="canva-presentations-grid">
+                <!-- Presentation 1: Thesis Defense -->
+                <div class="canva-presentation-card">
+                    <div class="canva-card-img-wrapper">
+                        <img src="/assets/MSc.+Thesis+Presentation+Public+1.webp" alt="Tuscan Wine in a Changing Climate - Thesis Defense Presentation" loading="lazy" onerror="this.src='https://via.placeholder.com/600x350/F4F4F4/333333?text=Thesis+Defense+Slide'">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">Thesis Defense</span>
+                        <h3 class="card-title">Tuscan Wine in a Changing Climate</h3>
+                    </div>
+                    <div class="research-action">
+                        <a href="https://canva.link/awteqqwrh8po8x9" target="_blank" rel="noopener noreferrer" class="btn btn-black">VIEW PRESENTATION</a>
+                    </div>
+                </div>
+
+                <!-- Presentation 2: Thesis Trivia -->
+                <div class="canva-presentation-card">
+                    <div class="canva-card-img-wrapper">
+                        <img src="/assets/Thesis+Trivia+by+JSZ+2026+1.webp" alt="The Smart Buys Thesis Trivia" loading="lazy" onerror="this.src='https://via.placeholder.com/600x350/F4F4F4/333333?text=Smart+Buys+Trivia+Slide'">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">Interactive Quiz</span>
+                        <h3 class="card-title">The Smart Buys Thesis Trivia</h3>
+                    </div>
+                    <div class="research-action">
+                        <a href="https://canva.link/xumlgbb5kk6hw78" target="_blank" rel="noopener noreferrer" class="btn btn-black">PLAY THESIS TRIVIA</a>
+                    </div>
+                </div>
+
+                <!-- Presentation 3: Chemistry Paper Review -->
+                <div class="canva-presentation-card">
+                    <div class="canva-card-img-wrapper">
+                        <img src="/assets/chemistry-paper-review.png" alt="PGPR Phytoremediation Chemistry Paper Review" loading="lazy" onerror="this.src='https://via.placeholder.com/600x350/F4F4F4/333333?text=Chemistry+Paper+Review'">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">Literature Review</span>
+                        <h3 class="card-title">PGPR Phytoremediation Paper Review</h3>
+                    </div>
+                    <div class="research-action">
+                        <a href="https://canva.link/qx227re6n27mwz2" target="_blank" rel="noopener noreferrer" class="btn btn-black">VIEW PRESENTATION</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer (Black) -->
@@ -400,6 +532,42 @@
                 closeOverlay();
             }
         });
+
+        // Topic Filtering Logic
+        const filterPills = document.querySelectorAll('.filter-pill');
+        const studyCards = document.querySelectorAll('.study-card');
+        
+        filterPills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                filterPills.forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+                
+                const filter = pill.getAttribute('data-filter');
+                studyCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Expand / Collapse All Highlights Logic
+        let allExpanded = false;
+        function toggleAllHighlights() {
+            const accordions = document.querySelectorAll('.study-accordion');
+            const toggleText = document.getElementById('toggle-all-text');
+            allExpanded = !allExpanded;
+            
+            accordions.forEach(acc => {
+                acc.open = allExpanded;
+            });
+            
+            if (toggleText) {
+                toggleText.textContent = allExpanded ? 'Collapse All Highlights' : 'Expand All Highlights';
+            }
+        }
     </script>
 </body>
 </html>
