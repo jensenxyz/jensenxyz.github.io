@@ -133,13 +133,17 @@ ul { list-style: none; }
 .passion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; font-size: 1.1rem; }
 
 /* --- Projects Carousel --- */
-.carousel-wrapper { position: relative; }
+.carousel-wrapper { 
+    position: relative; 
+    margin-top: -8px;
+}
 .carousel-container {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 30px;
-    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 26px;
     -ms-overflow-style: none; 
     scrollbar-width: none; 
 }
@@ -402,7 +406,23 @@ ul { list-style: none; }
 }
 
 @media (max-width: 768px) {
-    .project-card { min-width: 300px; }
+    .carousel-wrapper {
+        margin-top: -10px;
+    }
+    .carousel-container {
+        padding-top: 20px;
+        padding-bottom: 26px;
+        gap: 20px;
+    }
+    .project-card { 
+        min-width: 290px;
+        max-width: 85vw;
+        border-radius: 26px;
+    }
+    .project-card img {
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+    }
     .mockups-grid { gap: 8px; } /* Tighter gaps on mobile screens */
 
     /* Footer Mobile Enhancement */
