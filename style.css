@@ -7,7 +7,7 @@
     --text-light: #FFFFFF;
     --text-grey: #666666;
     --accent-orange: #F39C12;
-    --border-radius: 12px;
+    --border-radius: 30px;
     --transition: 0.3s ease;
 }
 
@@ -53,7 +53,7 @@ ul { list-style: none; }
     padding: 12px 30px;
     font-weight: 600;
     font-size: 0.9rem;
-    border-radius: 6px;
+    border-radius: 10px;
     transition: var(--transition);
     cursor: pointer;
     text-align: center;
@@ -67,7 +67,7 @@ ul { list-style: none; }
     background-color: transparent;
     color: var(--text-dark);
 }
-.btn-small { padding: 10px 20px; font-size: 0.8rem; }
+.btn-small { padding: 10px 20px; font-size: 0.8rem; border-radius: 10px; }
 
 .bg-black .btn-black { border-color: var(--text-light); }
 .bg-black .btn-black:hover {
@@ -145,7 +145,7 @@ ul { list-style: none; }
     min-width: 380px;
     background-color: var(--bg-light); 
     scroll-snap-align: start;
-    border-radius: 24px; 
+    border-radius: 30px; 
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -162,6 +162,8 @@ ul { list-style: none; }
     height: auto;
     object-fit: cover;
     background-color: #f0f0f0;
+    border-top-left-radius: 29px;
+    border-top-right-radius: 29px;
 }
 .project-info {
     padding: 20px 20px 25px 20px;
@@ -190,7 +192,7 @@ ul { list-style: none; }
 .expertise-card {
     background-color: var(--bg-white);
     border: 2px solid var(--text-dark);
-    border-radius: 20px;
+    border-radius: 30px;
     padding: 40px 30px;
     height: 560px;
     display: flex;
@@ -275,10 +277,10 @@ ul { list-style: none; }
 .research-card {
     background-color: var(--bg-light);
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 30px;
     text-align: center;
 }
-.research-card img { width: 100%; border-radius: 8px; margin-bottom: 20px; }
+.research-card img { width: 100%; border-radius: 16px; margin-bottom: 20px; }
 
 /* --- Video / Media / Currently Working On Grid --- */
 .video-wrapper img { width: 100%; max-width: 900px; margin: 0 auto; display: block; }
@@ -286,7 +288,7 @@ ul { list-style: none; }
 .vertical-video-wrapper img,
 .vertical-video-wrapper video { 
     width: 100%; 
-    border-radius: 20px; 
+    border-radius: 30px; 
     display: block;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
@@ -302,7 +304,7 @@ ul { list-style: none; }
 .mockups-grid img {
     width: 100%;
     height: auto;
-    border-radius: 12px;
+    border-radius: 16px;
     cursor: pointer;
     transition: transform 0.2s ease;
     object-fit: cover;

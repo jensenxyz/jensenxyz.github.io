@@ -1,6 +1,6 @@
 {
-  "name": "Jensen Portfolio",
-  "description": "Portfolio website of Jensen (Sentao ZENG) - product designer, city biker, and nature explorer.",
+  "name": "JENSEN: Tech, Design, Planet, Data",
+  "description": "Portfolio of Jensen (Sentao ZENG) - product designer, city biker, and nature explorer working at the intersection of technology, design, climate research, and data.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

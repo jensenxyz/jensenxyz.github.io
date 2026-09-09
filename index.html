@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jensen (Sentao ZENG) | Portfolio</title>
+    <title>JENSEN: Tech, Design, Planet, Data</title>
+    <meta name="description" content="Portfolio of Jensen (Sentao ZENG) - product designer, city biker, and nature explorer working at the intersection of technology, design, climate research, and data.">
+    <meta property="og:title" content="JENSEN: Tech, Design, Planet, Data">
+    <meta property="og:description" content="Portfolio of Jensen (Sentao ZENG) - product designer, city biker, and nature explorer working at the intersection of technology, design, climate research, and data.">
+    <meta property="og:image" content="/assets/hero-portrait.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/site.webmanifest">
+    <meta name="apple-mobile-web-app-title" content="JENSEN">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,11 +34,17 @@
             }
         }
 
-        /* Remove shadow and add thin grey border to project cards */
+        /* Harmonious 30px border radius for project cards matching the rest of the site */
         .project-card {
             box-shadow: none !important;
             border: 1px solid #e2e8f0 !important;
-            border-radius: 8px;
+            border-radius: 30px !important;
+            overflow: hidden !important;
+        }
+
+        .project-card img {
+            border-top-left-radius: 29px;
+            border-top-right-radius: 29px;
         }
 
         /* Fix expertise boxes expanding rigidly */
@@ -54,7 +74,7 @@
         .overlay img {
             max-width: 90%;
             max-height: 90%;
-            border-radius: 12px;
+            border-radius: 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             animation: popIn 0.3s ease;
         }
@@ -79,7 +99,7 @@
     <!-- Header Navigation (Sticky & Translucent) -->
     <header class="site-header">
         <div class="container">
-            <a href="/" class="logo">JENSEN</a>
+            <a href="/" class="logo">JENSEN ✨</a>
         </div>
     </header>
 
@@ -366,7 +386,7 @@
         <div class="container">
             <h2 class="section-title">5-Min Intro Video:</h2>
             <div class="video-wrapper">
-                 <iframe width="100%" height="500" src="https://www.youtube.com/embed/9h9QcYYQO08" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 12px;"></iframe>
+                 <iframe width="100%" height="500" src="https://www.youtube.com/embed/9h9QcYYQO08" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 30px;"></iframe>
             </div>
         </div>
     </section>
