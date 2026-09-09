@@ -91,10 +91,10 @@ ul { list-style: none; }
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: rgba(248, 244, 243, 0.85);
+    background-color: rgba(248, 244, 243, 0.55);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0,0,0,0.03); 
+    border-bottom: 1px solid rgba(0,0,0,0.05); 
 }
 .logo { font-weight: 500; font-size: 1.2rem; letter-spacing: 1px; }
 
