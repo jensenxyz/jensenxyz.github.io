@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Downloads | JENSEN</title>
+    
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="JENSEN">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        .download-hub {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .download-card {
+            background-color: var(--bg-white);
+            padding: 40px 30px;
+            border-radius: 28px;
+            border: 1px solid #e6e0d9;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.05);
+            max-width: 450px;
+            width: 100%;
+        }
+
+        .download-card h1 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .download-card p {
+            color: var(--text-grey);
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+
+        .action-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .btn-download {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            min-height: 56px;
+            font-size: 1rem;
+            border-radius: 14px;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-dark);
+            border: 2px solid #cfc7c0;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-dark);
+            background-color: #f7f4ef;
+        }
+
+        .file-meta {
+            display: block;
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="bg-beige">
+    <main class="download-hub">
+        <div class="download-card">
+            <h1>Curriculum Vitae</h1>
+            <p>Access the latest versions of Jensen's CV. Formatted for easy viewing on mobile devices.</p>
+            
+            <div class="action-list">
+                <a href="/downloads/cv2026sep-compressed.pdf" class="btn btn-black btn-download" target="_blank" rel="noopener noreferrer">
+                    <div>
+                        View Compressed CV
+                        <span class="file-meta" style="color: #bbb;">Mobile Optimized (Fast) • ~2MB</span>
+                    </div>
+                </a>
+                
+                <a href="/downloads/cv2026sep.pdf" class="btn btn-outline btn-download" target="_blank" rel="noopener noreferrer">
+                    <div>
+                        View High-Res CV
+                        <span class="file-meta">Print Quality • ~9MB</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div style="margin-top: 30px;">
+                <a href="/" class="link-underline" style="font-size: 0.9rem; color: #888;">&larr; Back to Homepage</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

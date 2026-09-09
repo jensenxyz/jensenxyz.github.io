@@ -8,6 +8,19 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = 3000;
 
+// Routes for CV downloads (both /download and /downloads)
+app.get(['/download', '/downloads', '/download/', '/downloads/'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'downloads', 'index.html'));
+});
+
+// Support file requests under /download/
+app.get('/download/:file', (req, res, next) => {
+  const filePath = path.join(__dirname, 'downloads', req.params.file);
+  res.sendFile(filePath, (err) => {
+    if (err) next();
+  });
+});
+
 app.use(express.static(__dirname, {
   extensions: ['html', 'htm']
 }));
