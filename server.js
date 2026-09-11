@@ -10,12 +10,12 @@ const PORT = 3000;
 
 // Routes for CV downloads (/cv, /download, and /downloads)
 app.get(['/cv', '/cv/', '/download', '/downloads', '/download/', '/downloads/'], (req, res) => {
-  res.sendFile(path.join(__dirname, 'downloads', 'index.html'));
+  res.sendFile(path.join(__dirname, 'cv', 'index.html'));
 });
 
 // Support file requests under /cv/ and /download/
 app.get(['/cv/:file', '/download/:file'], (req, res, next) => {
-  const filePath = path.join(__dirname, 'downloads', req.params.file);
+  const filePath = path.join(__dirname, 'cv', req.params.file);
   res.sendFile(filePath, (err) => {
     if (err) next();
   });
