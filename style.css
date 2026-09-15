@@ -157,7 +157,7 @@ ul { list-style: none; }
 
 /* Elegant project cards with shadow */
 .project-card {
-    min-width: 290px;
+    min-width: 260px;
     background-color: var(--bg-light); 
     scroll-snap-align: start;
     border-radius: 30px; 
@@ -170,7 +170,7 @@ ul { list-style: none; }
     transform: translateZ(0); /* Hardware acceleration to stabilize layout */
 }
 .project-card:hover {
-    transform: scale(1.02); 
+    transform: translateY(-5px); 
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12); 
 }
 .project-card img {
@@ -318,7 +318,51 @@ ul { list-style: none; }
 .research-card img { width: 100%; border-radius: 16px; margin-bottom: 20px; }
 
 /* --- Video / Media / Currently Working On Grid --- */
-.video-wrapper img { width: 100%; max-width: 900px; margin: 0 auto; display: block; }
+.video-wrapper { display: flex; justify-content: center; }
+.video-link {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 30px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.video-link img { 
+    width: 100%; 
+    display: block; 
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    max-height: 500px;
+    transition: opacity 0.3s ease;
+}
+.video-link:hover img { opacity: 0.85; }
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+.play-icon svg {
+    width: 36px;
+    height: 36px;
+    fill: white;
+    margin-left: 3px;
+}
+.video-link:hover .play-icon {
+    transform: translate(-50%, -50%) scale(1.1);
+    background-color: rgba(0, 0, 0, 0.9);
+}
 .vertical-video-wrapper { max-width: 300px; }
 .vertical-video-wrapper img,
 .vertical-video-wrapper video { 
@@ -442,7 +486,7 @@ ul { list-style: none; }
         gap: 20px;
     }
     .project-card { 
-        min-width: 290px;
+        min-width: 250px;
         max-width: 85vw;
         border-radius: 26px;
     }
