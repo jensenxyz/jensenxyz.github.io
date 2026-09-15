@@ -25,7 +25,7 @@ body {
 }
 h1, h2, h3, h4 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
+    font-weight: 800;
     line-height: 1.2;
 }
 a { text-decoration: none; color: inherit; }
@@ -99,6 +99,7 @@ ul { list-style: none; }
 .logo { font-weight: 500; font-size: 1.2rem; letter-spacing: 1px; }
 
 /* --- Hero Section (Grid Layout) --- */
+.hero.pt-large { padding-top: 60px; } /* Custom padding to reduce space below sticky header */
 .hero { 
     display: grid; 
     grid-template-columns: 1.2fr 1fr; 
@@ -108,7 +109,7 @@ ul { list-style: none; }
     align-items: center; 
     gap: 20px 50px; 
 }
-.hero-title { grid-area: title; font-size: 3.5rem; margin-bottom: 0; }
+.hero-title { grid-area: title; font-size: 3.5rem; margin-bottom: 0; font-weight: 900; }
 .hero-bio-action { grid-area: bio; max-width: 600px; }
 .hero-bio { margin-bottom: 30px; }
 .hero-bio p { font-size: 1.1rem; margin-bottom: 15px; }
@@ -137,14 +138,15 @@ ul { list-style: none; }
 .carousel-wrapper { 
     position: relative; 
     margin-top: -8px;
+    margin-left: -10px;
+    margin-right: -10px;
 }
 .carousel-container {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 30px;
-    padding-top: 20px;
-    padding-bottom: 26px;
+    padding: 20px 10px 26px 10px;
     -ms-overflow-style: none; 
     scrollbar-width: none; 
 }
@@ -152,7 +154,7 @@ ul { list-style: none; }
 
 /* Elegant project cards with shadow */
 .project-card {
-    min-width: 380px;
+    min-width: 340px;
     background-color: var(--bg-light); 
     scroll-snap-align: start;
     border-radius: 30px; 
@@ -163,7 +165,7 @@ ul { list-style: none; }
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 .project-card:hover {
-    transform: translateY(-5px); 
+    transform: scale(1.02); 
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12); 
 }
 .project-card img {
@@ -176,7 +178,7 @@ ul { list-style: none; }
     border-top-right-radius: 29px;
 }
 .project-info {
-    padding: 20px 20px 25px 20px;
+    padding: 32px 32px 36px 32px;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -188,10 +190,21 @@ ul { list-style: none; }
 .carousel-controls button { 
     background: none; 
     border: none; 
-    font-size: 2rem; 
     cursor: pointer; 
-    font-weight: 300; 
     color: #000000; /* Arrows set to black */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 50%;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.carousel-controls button:hover {
+    opacity: 0.6;
+}
+.carousel-controls button svg {
+    width: 24px;
+    height: 24px;
 }
 .bg-black .carousel-controls button {
     color: #ffffff;
