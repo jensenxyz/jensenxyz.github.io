@@ -52,9 +52,9 @@ jobs:
         if: steps.changed-files.outputs.any_changed == 'true'
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
 
-      - name: Install Tinify
+      - name: Install Dependencies
         if: steps.changed-files.outputs.any_changed == 'true'
         run: npm install tinify
 

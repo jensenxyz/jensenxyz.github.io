@@ -3,14 +3,28 @@ const fs = require('fs');
 
 const apiKey = process.env.TINIFY_API_KEY;
 if (!apiKey) {
-  console.error("Error: TINIFY_API_KEY secret is not set in GitHub Actions.");
-  console.error("Please add it to your repository settings: Settings > Secrets and variables > Actions");
+  console.error("=====================================================");
+  console.error("🚨 CRITICAL ERROR: MISSING API KEY 🚨");
+  console.error("The TINIFY_API_KEY secret is completely empty.");
+  console.error("Google AI Studio settings do NOT sync to GitHub automatically.");
+  console.error("You MUST go to GitHub.com -> Your Repository -> Settings -> Secrets and variables -> Actions");
+  console.error("And add a 'New repository secret' named TINIFY_API_KEY.");
+  console.error("=====================================================");
   process.exit(1);
 }
 tinify.key = apiKey;
 
-// Parse the JSON array of changed files passed from the tj-actions/changed-files step
-const files = JSON.parse(process.env.CHANGED_FILES || "[]");
+console.log("Raw CHANGED_FILES input:", process.env.CHANGED_FILES);
+
+let files = [];
+try {
+  files = JSON.parse(process.env.CHANGED_FILES || "[]");
+} catch (e) {
+  console.error("❌ Failed to parse CHANGED_FILES as JSON. Falling back to space-separated split.");
+  console.error("Error:", e.message);
+  // Fallback if tj-actions didn't output valid JSON
+  files = (process.env.CHANGED_FILES || "").split(/\s+/).filter(f => f.trim().length > 0);
+}
 if (files.length === 0) {
   console.log("No newly added or modified images to optimize.");
   process.exit(0);
