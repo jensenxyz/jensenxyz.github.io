@@ -63,7 +63,7 @@ jobs:
         env:
           TINIFY_API_KEY: ${{ secrets.TINIFY_API_KEY }}
           CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
-        run: node .github/scripts/optimize.js
+        run: node .github/scripts/optimize.cjs
 
       - name: Commit optimized images
         if: steps.changed-files.outputs.any_changed == 'true'
