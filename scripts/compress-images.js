@@ -1,6 +1,7 @@
 import tinify from 'tinify';
 import { glob } from 'glob';
 import fs from 'fs/promises';
+import crypto from 'crypto';
 
 const apiKey = process.env.TINIFY_API_KEY;
 if (!apiKey) {
@@ -12,6 +13,13 @@ tinify.key = apiKey;
 
 // We store the compression state to avoid re-compressing and wasting API credits
 const STATE_FILE = 'compressed-images.json';
+
+async function getFileHash(filePath) {
+  const fileBuffer = await fs.readFile(filePath);
+  const hashSum = crypto.createHash('sha256');
+  hashSum.update(fileBuffer);
+  return hashSum.digest('hex');
+}
 
 async function run() {
   let state = {};
@@ -37,11 +45,10 @@ async function run() {
   let failedCount = 0;
 
   for (const file of images) {
-    const stats = await fs.stat(file);
-    const lastModified = stats.mtimeMs; // Track by file modification time
+    const currentHash = await getFileHash(file);
 
-    // Skip if file hasn't been modified since we last compressed it
-    if (state[file] && state[file] === lastModified) {
+    // Skip if file hash matches the one we saved (meaning it's already compressed and hasn't changed)
+    if (state[file] && state[file] === currentHash) {
       continue;
     }
 
@@ -50,9 +57,9 @@ async function run() {
       const source = tinify.fromFile(file);
       await source.toFile(file); // Overwrite the original image
       
-      // Re-read stats to get the post-compression modification time
-      const newStats = await fs.stat(file);
-      state[file] = newStats.mtimeMs;
+      // Get the new hash of the compressed file
+      const newHash = await getFileHash(file);
+      state[file] = newHash;
       
       compressedCount++;
       console.log(`✅ Successfully optimized: ${file}`);
@@ -80,3 +87,4 @@ async function run() {
 }
 
 run();
+
