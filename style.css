@@ -161,8 +161,9 @@ ul { list-style: none; }
 
 /* Elegant project cards */
 .project-card {
-    flex: 0 0 auto;
-    min-width: 250px;
+    flex: 0 0 280px;
+    width: 280px;
+    min-width: 280px;
     background-color: var(--bg-light); 
     scroll-snap-align: start;
     scroll-snap-stop: normal;
@@ -190,25 +191,36 @@ ul { list-style: none; }
     height: auto;
     object-fit: cover;
     background-color: #f0f0f0;
+    display: block;
 }
 .project-info {
-    padding: 20px 20px 24px 20px;
+    padding: 30px 28px 34px 28px;
     display: flex;
     flex-direction: column;
     flex: 1;
     text-align: left;
 }
 .project-info h3 { 
-    font-size: 1.15rem; 
-    margin-bottom: 6px;
+    font-size: 1.25rem; 
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    margin-bottom: 12px;
     color: var(--text-dark);
+    line-height: 1.3;
 }
 .project-info p { 
-    font-size: 0.85rem; 
+    font-size: 0.92rem; 
     color: var(--text-grey); 
-    margin-bottom: 20px; 
-    line-height: 1.4;
+    margin-bottom: 26px; 
+    line-height: 1.6;
     flex: 1;
+}
+.project-info .btn {
+    align-self: flex-start;
+    padding: 10px 22px;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    border-radius: 10px;
 }
 
 .carousel-controls { 
@@ -514,21 +526,29 @@ ul { list-style: none; }
         scroll-padding-right: 20px;
     }
     .project-card { 
-        flex: 0 0 auto;
-        min-width: 200px;
-        max-width: 75vw;
+        flex: 0 0 250px;
+        width: 250px;
+        min-width: 250px;
+        max-width: 78vw;
     }
     .project-info {
-        padding: 16px 16px 20px 16px;
+        padding: 24px 22px 28px 22px;
     }
     .project-info h3 {
-        font-size: 1.05rem;
-        margin-bottom: 4px;
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        line-height: 1.3;
     }
     .project-info p {
-        font-size: 0.8rem;
-        margin-bottom: 16px;
-        line-height: 1.35;
+        font-size: 0.86rem;
+        margin-bottom: 22px;
+        line-height: 1.55;
+    }
+    .project-info .btn {
+        align-self: flex-start;
+        padding: 9px 20px;
+        font-size: 0.78rem;
     }
     .project-card:last-child {
         scroll-snap-align: end;
