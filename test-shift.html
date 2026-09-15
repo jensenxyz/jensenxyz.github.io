@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 20px; padding: 20px; }
+  .card { min-width: 300px; height: 300px; background: red; scroll-snap-align: start; transition: transform 0.3s; transform-origin: left center; }
+  .card:hover { transform: scale(1.02); }
+</style>
+</head>
+<body>
+  <div class="carousel">
+    <div class="card"></div><div class="card"></div><div class="card"></div>
+  </div>
+</body>
+</html>
