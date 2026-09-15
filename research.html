@@ -516,14 +516,53 @@
     </div>
 
     <script>
+        // Scroll Lock Utility (iOS Safari Safe)
+        let savedScrollY = 0;
+        let isScrollLocked = false;
+
+        function lockBodyScroll() {
+            if (isScrollLocked) return;
+            savedScrollY = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+            document.documentElement.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${savedScrollY}px`;
+            document.body.style.left = '0';
+            document.body.style.right = '0';
+            document.body.style.width = '100%';
+            isScrollLocked = true;
+        }
+
+        function unlockBodyScroll() {
+            if (!isScrollLocked) return;
+            document.documentElement.style.overflow = '';
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.left = '';
+            document.body.style.right = '';
+            document.body.style.width = '';
+            window.scrollTo(0, savedScrollY);
+            isScrollLocked = false;
+        }
+
         // Image Overlay Logic
         function openOverlay(src) {
             document.getElementById('overlay-img').src = src;
             document.getElementById('image-overlay').style.display = 'flex';
+            lockBodyScroll();
         }
         
         function closeOverlay() {
             document.getElementById('image-overlay').style.display = 'none';
+            unlockBodyScroll();
+        }
+
+        const overlayElem = document.getElementById('image-overlay');
+        if (overlayElem) {
+            overlayElem.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+            }, { passive: false });
         }
 
         // Close overlay on Escape key
