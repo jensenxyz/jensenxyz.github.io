@@ -12,6 +12,7 @@
     "express": "^4.21.2"
   },
   "devDependencies": {
+    "glob": "^13.0.6",
     "tinify": "^1.8.3"
   }
 }

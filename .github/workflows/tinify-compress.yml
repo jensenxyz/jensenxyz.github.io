@@ -1,0 +1,43 @@
+name: Compress Images with Tinify
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.jpg'
+      - '**/*.jpeg'
+      - '**/*.png'
+      - '**/*.webp'
+      - '**/*.JPG'
+      - '**/*.JPEG'
+      - '**/*.PNG'
+      - '**/*.WEBP'
+
+jobs:
+  compress:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install tinify glob
+
+      - name: Compress Images
+        env:
+          TINIFY_API_KEY: ${{ secrets.TINIFY_API_KEY }}
+        run: node scripts/compress-images.js
+
+      - name: Commit optimized images
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: optimize images via Tinify API"
