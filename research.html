@@ -45,7 +45,7 @@
         <div class="research-hero-banner">
             <h1 class="research-hero-title">Scientific Studies & Academic Presentations</h1>
             <p class="research-hero-desc">
-                Explore a portfolio of empirical research, spatial modeling, and climate econometrics. This collection features full academic manuscripts, literature reviews, and interactive slide decks spanning ecology, hydrology, public health, and agricultural economics. Click any figure to view it full-screen or access the complete studies via direct PDF links.
+                Explore a portfolio of empirical research, spatial modeling, and climate econometrics. This collection features full academic manuscripts, literature reviews, and interactive slide decks spanning ecology, hydrology, public health, and agricultural economics.
             </p>
         </div>
 
@@ -63,8 +63,13 @@
                 </div>
             </div>
             <div class="toolbar-actions">
-                <button type="button" class="btn-toggle-all" id="btn-toggle-details" onclick="toggleAllHighlights()">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <button type="button" class="btn-toggle-all" id="btn-toggle-details" onclick="toggleAllHighlights()" aria-label="Toggle all study highlights">
+                    <span class="toggle-icon-box">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="7 13 12 18 17 13"></polyline>
+                            <polyline points="7 6 12 11 17 6"></polyline>
+                        </svg>
+                    </span>
                     <span id="toggle-all-text">Expand All Highlights</span>
                 </button>
             </div>
@@ -870,6 +875,7 @@
         function toggleAllHighlights() {
             const accordions = document.querySelectorAll('.study-accordion');
             const toggleText = document.getElementById('toggle-all-text');
+            const toggleBtn = document.getElementById('btn-toggle-details');
             allExpanded = !allExpanded;
             
             accordions.forEach(acc => {
@@ -878,6 +884,9 @@
             
             if (toggleText) {
                 toggleText.textContent = allExpanded ? 'Collapse All Highlights' : 'Expand All Highlights';
+            }
+            if (toggleBtn) {
+                toggleBtn.classList.toggle('is-expanded', allExpanded);
             }
         }
     </script>

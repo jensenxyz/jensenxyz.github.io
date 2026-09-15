@@ -905,23 +905,50 @@ ul { list-style: none; }
 .btn-toggle-all {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
+    gap: 9px;
     background-color: transparent;
-    border: 1px solid #cfc7c0;
-    padding: 7px 16px;
-    border-radius: 20px;
-    font-size: 0.82rem;
+    border: none;
+    padding: 6px 2px;
+    font-size: 0.85rem;
     font-weight: 600;
-    color: #333333;
+    color: var(--text-dark);
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: color 0.2s ease;
     font-family: inherit;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: #baa99b;
 }
 
 .btn-toggle-all:hover {
-    border-color: var(--text-dark);
-    background-color: #f2ede7;
+    color: #000000;
+    text-decoration-color: var(--text-dark);
+}
+
+.btn-toggle-all .toggle-icon-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    background-color: #eae4dc;
     color: var(--text-dark);
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-toggle-all:hover .toggle-icon-box {
+    background-color: #ded6cb;
+}
+
+.btn-toggle-all .toggle-icon-box svg {
+    transition: transform 0.25s ease;
+}
+
+.btn-toggle-all.is-expanded .toggle-icon-box svg {
+    transform: rotate(180deg);
 }
 
 /* --- Interactive Accordions (Overview & Highlights) --- */
@@ -1266,9 +1293,9 @@ ul { list-style: none; }
         width: 100%;
     }
     .btn-toggle-all {
-        width: 100%;
-        justify-content: center;
-        padding: 10px 16px;
+        width: auto;
+        justify-content: flex-start;
+        padding: 8px 0;
         min-height: 44px;
     }
     .research-hero-title {
