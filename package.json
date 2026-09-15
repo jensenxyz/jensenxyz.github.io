@@ -10,5 +10,8 @@
   },
   "dependencies": {
     "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "tinify": "^1.8.3"
   }
 }

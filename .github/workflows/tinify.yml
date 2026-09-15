@@ -1,0 +1,72 @@
+name: Optimize Images with Tinify
+
+on:
+  push:
+    paths:
+      - '**/*.jpg'
+      - '**/*.jpeg'
+      - '**/*.png'
+      - '**/*.webp'
+      - '**/*.avif'
+      - '**/*.heic'
+      - '**/*.jxl'
+      - '**/*.apng'
+      - '**/*.JPG'
+      - '**/*.JPEG'
+      - '**/*.PNG'
+      - '**/*.WEBP'
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2 # Fetch history to accurately detect newly added/modified files
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+        with:
+          json: true
+          escape_json: false
+          files: |
+            **/*.jpg
+            **/*.jpeg
+            **/*.png
+            **/*.webp
+            **/*.avif
+            **/*.heic
+            **/*.jxl
+            **/*.apng
+            **/*.JPG
+            **/*.JPEG
+            **/*.PNG
+            **/*.WEBP
+
+      - name: Setup Node.js
+        if: steps.changed-files.outputs.any_changed == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Tinify
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: npm install tinify
+
+      - name: Optimize Images
+        if: steps.changed-files.outputs.any_changed == 'true'
+        env:
+          TINIFY_API_KEY: ${{ secrets.TINIFY_API_KEY }}
+          CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: node .github/scripts/optimize.js
+
+      - name: Commit optimized images
+        if: steps.changed-files.outputs.any_changed == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: optimize images via Tinify API"
