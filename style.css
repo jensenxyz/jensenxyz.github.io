@@ -602,7 +602,7 @@ ul { list-style: none; }
         max-width: 82vw;
     }
     .project-info {
-        padding: 16px 24px 28px 24px;
+        padding: 12px 24px 28px 24px;
     }
     .project-info h3 {
         font-size: 1.15rem;
@@ -704,20 +704,16 @@ ul { list-style: none; }
     overflow: hidden;
     border-top-left-radius: 29px;
     border-top-right-radius: 29px;
+    width: 100%;
 }
 
 .study-img {
     width: 100%;
-    height: 195px;
-    object-fit: cover;
-    object-position: center top;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
     display: block;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.study-img:hover {
-    transform: scale(1.02);
+    cursor: default;
 }
 
 .study-card-action {
@@ -793,9 +789,10 @@ ul { list-style: none; }
 }
 
 .study-desc {
-    font-size: 0.77rem;
-    color: #3e3e3e;
-    line-height: 1.46;
+    font-size: 0.81rem;
+    color: #383838;
+    line-height: 1.62;
+    margin: 0;
 }
 
 /* --- Research Toolbar & Filtering --- */
@@ -879,8 +876,21 @@ ul { list-style: none; }
     color: var(--text-dark);
 }
 
-/* --- Interactive Accordion for Highlights (Improves Card Readability) --- */
+/* --- Interactive Accordions (Overview & Highlights) --- */
+.study-accordions-group {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding-top: 8px;
+    border-top: 1px solid #eee8e2;
+}
+
 .study-accordion {
+    width: 100%;
+}
+
+.study-accordion:not(.study-accordions-group .study-accordion) {
     margin-top: auto;
     padding-top: 8px;
     border-top: 1px solid #eee8e2;
@@ -949,13 +959,20 @@ ul { list-style: none; }
 }
 
 .study-accordion-body {
-    padding: 10px 12px 6px;
+    padding: 10px 12px 8px;
     border: 1px solid #e7e0d9;
     border-top: none;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     background-color: #faf9f7;
     animation: fadeInAccordion 0.2s ease;
+}
+
+.study-accordion-body .study-desc {
+    font-size: 0.81rem;
+    color: #383838;
+    line-height: 1.62;
+    padding: 2px 2px;
 }
 
 @keyframes fadeInAccordion {
@@ -983,10 +1000,10 @@ ul { list-style: none; }
     padding-left: 15px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    font-size: 0.74rem;
+    gap: 6px;
+    font-size: 0.76rem;
     color: #444444;
-    line-height: 1.42;
+    line-height: 1.56;
 }
 
 .study-highlights li strong {
@@ -1035,7 +1052,7 @@ ul { list-style: none; }
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
-    border-radius: 18px;
+    border-radius: 0;
     margin-bottom: 18px;
     background-color: #f1efeb;
 }
@@ -1044,7 +1061,7 @@ ul { list-style: none; }
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 18px;
+    border-radius: 0;
     display: block;
     transition: transform 0.3s ease;
 }
@@ -1147,7 +1164,7 @@ ul { list-style: none; }
         width: 100%;
     }
     .canva-card-img-wrapper {
-        border-radius: 14px;
+        border-radius: 0;
         margin-bottom: 14px;
     }
     .canva-presentation-card .card-title {
