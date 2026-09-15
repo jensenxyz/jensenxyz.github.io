@@ -161,9 +161,9 @@ ul { list-style: none; }
 
 /* Elegant project cards */
 .project-card {
-    flex: 0 0 280px;
-    width: 280px;
-    min-width: 280px;
+    flex: 0 0 320px;
+    width: 320px;
+    min-width: 320px;
     background-color: var(--bg-light); 
     scroll-snap-align: start;
     scroll-snap-stop: normal;
@@ -194,7 +194,7 @@ ul { list-style: none; }
     display: block;
 }
 .project-info {
-    padding: 30px 28px 34px 28px;
+    padding: 36px 32px 40px 32px;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -526,13 +526,13 @@ ul { list-style: none; }
         scroll-padding-right: 20px;
     }
     .project-card { 
-        flex: 0 0 250px;
-        width: 250px;
-        min-width: 250px;
-        max-width: 78vw;
+        flex: 0 0 300px;
+        width: 300px;
+        min-width: min(300px, 82vw);
+        max-width: 82vw;
     }
     .project-info {
-        padding: 24px 22px 28px 22px;
+        padding: 28px 26px 32px 26px;
     }
     .project-info h3 {
         font-size: 1.15rem;
