@@ -145,7 +145,7 @@
                         <div class="project-info">
                             <h3>FontStar for Safari</h3>
                             <p>A Safari extension designed and built for Safari users. Curates beautiful, legible fonts for browsing the web. Works perfectly on iPhone, iPad, and Mac.</p>
-                            <a href="https://fontstar.github.io" class="btn btn-small btn-black">READ MORE</a>
+                            <a href="https://fontstar.github.io" class="btn btn-small btn-black" target="_blank">READ MORE</a>
                         </div>
                     </div>
                     <!-- Project 2: Scantrust -->
@@ -154,7 +154,7 @@
                         <div class="project-info">
                             <h3>Scantrust</h3>
                             <p>The all-in-one QR code solution for global brands to connect with customers, comply with digital labeling laws, and detect counterfeits.</p>
-                            <a href="https://www.jensenstars.app/scantrust" class="btn btn-small btn-black">READ MORE</a>
+                            <a href="https://www.jensenstars.app/scantrust" class="btn btn-small btn-black" target="_blank">READ MORE</a>
                         </div>
                     </div>
                     <!-- Project 3: Sciences & Data -->
@@ -163,7 +163,7 @@
                         <div class="project-info">
                             <h3>Sciences & Data</h3>
                             <p>My research projects cover subjects such as climate econometrics, biodiversity, remote sensing technologies, and sustainability reporting.</p>
-                            <a href="https://jensenxyz.github.io/research" class="btn btn-small btn-black">READ MORE</a>
+                            <a href="https://jensenxyz.github.io/research" class="btn btn-small btn-black" target="_blank">READ MORE</a>
                         </div>
                     </div>
                     <!-- Project 4: FunkaCoins -->
@@ -172,7 +172,7 @@
                         <div class="project-info">
                             <h3>FunkaCoins</h3>
                             <p>A comprehensive app integrated with WeChat, in-store POS, and online shop to enhance customer loyalty and expand sales channels.</p>
-                            <a href="https://www.jensenstars.app/funkacoins" class="btn btn-small btn-black">READ MORE</a>
+                            <a href="https://www.jensenstars.app/funkacoins" class="btn btn-small btn-black" target="_blank">READ MORE</a>
                         </div>
                     </div>
                     <!-- Project 5: VibesApp -->
@@ -181,7 +181,7 @@
                         <div class="project-info">
                             <h3>VibesApp</h3>
                             <p>VibesApp lets you see the real-time vibe of local spots before you go. Powered by AI, it's a smart way for businesses to attract spontaneous visitors.</p>
-                            <a href="https://www.jensenstars.app/vibesapp" class="btn btn-small btn-black">READ MORE</a>
+                            <a href="https://www.jensenstars.app/vibesapp" class="btn btn-small btn-black" target="_blank">READ MORE</a>
                         </div>
                     </div>
                     <!-- Project 6: Happy Hour App -->
@@ -190,7 +190,7 @@
                         <div class="project-info">
                             <h3>Happy Hour App</h3>
                             <p>Olifun uses location-based services, social media, and mobile commerce to help people discover up-to-date events at top bars in megacities.</p>
-                            <a href="https://www.jensenstars.app/happyhour" class="btn btn-small btn-black">READ MORE</a>
+                            <a href="https://www.jensenstars.app/happyhour" class="btn btn-small btn-black" target="_blank">READ MORE</a>
                         </div>
                     </div>
                     <!-- Project 7: Metro Design -->
@@ -199,7 +199,7 @@
                         <div class="project-info">
                             <h3>Metro Design</h3>
                             <p>An urban planning thesis on designing the Beijing Subway Line 9. Feasibility research, engineering calculation & CAD drawing.</p>
-                            <a href="https://www.jensenstars.app/metro" class="btn btn-small btn-black">READ MORE</a>
+                            <a href="https://www.jensenstars.app/metro" class="btn btn-small btn-black" target="_blank">READ MORE</a>
                         </div>
                     </div>
                 </div>
@@ -415,10 +415,10 @@
             
             <!-- All 4 Screenshots in 1 Row -->
             <div class="mockups-grid mb-spacer">
-                <img src="assets/howfar_mockup_1.webp" alt="How Far Did I Go Mockup 1" onclick="openOverlay(this.src)">
-                <img src="assets/howfar_mockup_2.webp" alt="How Far Did I Go Mockup 2" onclick="openOverlay(this.src)">
-                <img src="assets/howfar_mockup_3.webp" alt="How Far Did I Go Mockup 3" onclick="openOverlay(this.src)">
-                <img src="assets/howfar_mockup_4.webp" alt="How Far Did I Go Mockup 4" onclick="openOverlay(this.src)">
+                <img src="assets/howfar_mockup_1.webp" alt="How Far Did I Go Mockup 1" onclick="openOverlay(this.getAttribute('src'))">
+                <img src="assets/howfar_mockup_2.webp" alt="How Far Did I Go Mockup 2" onclick="openOverlay(this.getAttribute('src'))">
+                <img src="assets/howfar_mockup_3.webp" alt="How Far Did I Go Mockup 3" onclick="openOverlay(this.getAttribute('src'))">
+                <img src="assets/howfar_mockup_4.webp" alt="How Far Did I Go Mockup 4" onclick="openOverlay(this.getAttribute('src'))">
             </div>
 
             <p class="text-large mt-spacer">How Far Did I Go will be released to the public soon ✨</p>
@@ -466,9 +466,24 @@
     </footer>
 
     <!-- Overlay Container for clicking Mockups -->
-    <div id="image-overlay" class="overlay" onclick="closeOverlay()">
-        <span class="close-btn">&times;</span>
-        <img id="overlay-img" src="" alt="Enlarged Mockup">
+    <div id="image-overlay" class="overlay">
+        <span class="close-btn" onclick="closeOverlay()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </span>
+        <button class="nav-btn prev-btn" aria-label="Previous image" onclick="navigateOverlay(-1)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+        </button>
+        <img id="overlay-img" src="" alt="Enlarged Mockup" onclick="event.stopPropagation()">
+        <button class="nav-btn next-btn" aria-label="Next image" onclick="navigateOverlay(1)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18l6-6-6-6"/>
+            </svg>
+        </button>
     </div>
 
     <script src="script.js"></script>
@@ -476,19 +491,62 @@
     <!-- Inline Script for Carousel and Overlay functions -->
     <script>
         // Image Overlay Logic
+        const mockupImages = [
+            "assets/howfar_mockup_1.webp",
+            "assets/howfar_mockup_2.webp",
+            "assets/howfar_mockup_3.webp",
+            "assets/howfar_mockup_4.webp"
+        ];
+        let currentImageIndex = 0;
+
         function openOverlay(src) {
-            document.getElementById('overlay-img').src = src;
+            // Find the index of the clicked image
+            const filename = src.substring(src.lastIndexOf('/') + 1);
+            currentImageIndex = mockupImages.findIndex(img => img.includes(filename));
+            if (currentImageIndex === -1) currentImageIndex = 0;
+            
+            updateOverlayImage();
             document.getElementById('image-overlay').style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Lock scroll
+        }
+        
+        function updateOverlayImage() {
+            document.getElementById('overlay-img').src = mockupImages[currentImageIndex];
+        }
+
+        function navigateOverlay(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) {
+                currentImageIndex = mockupImages.length - 1; // loop to end
+            } else if (currentImageIndex >= mockupImages.length) {
+                currentImageIndex = 0; // loop to start
+            }
+            updateOverlayImage();
         }
         
         function closeOverlay() {
             document.getElementById('image-overlay').style.display = 'none';
+            document.body.style.overflow = ''; // Unlock scroll
         }
-
-        // Add event listener to close overlay on escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape") {
+        
+        // Close when clicking outside the image
+        document.getElementById('image-overlay').addEventListener('click', function(e) {
+            if (e.target === this) {
                 closeOverlay();
+            }
+        });
+
+        // Add event listener to close overlay on escape key and navigate on arrows
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('image-overlay').style.display === 'flex') {
+                if (event.key === "Escape") {
+                    closeOverlay();
+                } else if (event.key === "ArrowLeft") {
+                    navigateOverlay(-1);
+                } else if (event.key === "ArrowRight") {
+                    navigateOverlay(1);
+                }
             }
         });
 
@@ -497,8 +555,24 @@
             const projectCarousel = document.getElementById('project-carousel');
             const scrollLeftBtn = document.getElementById('scroll-left');
             const scrollRightBtn = document.getElementById('scroll-right');
-
+            
             if (scrollLeftBtn && scrollRightBtn && projectCarousel) {
+                
+                const updateButtonStates = () => {
+                    const isAtStart = projectCarousel.scrollLeft <= 10;
+                    const isAtEnd = projectCarousel.scrollLeft + projectCarousel.clientWidth >= projectCarousel.scrollWidth - 10;
+                    
+                    scrollLeftBtn.style.opacity = isAtStart ? '0.3' : '1';
+                    scrollLeftBtn.style.cursor = isAtStart ? 'default' : 'pointer';
+                    
+                    scrollRightBtn.style.opacity = isAtEnd ? '0.3' : '1';
+                    scrollRightBtn.style.cursor = isAtEnd ? 'default' : 'pointer';
+                };
+                
+                projectCarousel.addEventListener('scroll', updateButtonStates);
+                // Initial check
+                updateButtonStates();
+
                 scrollLeftBtn.addEventListener('click', () => {
                     const firstCard = projectCarousel.querySelector('.project-card');
                     const gap = 30; // Matches CSS gap
