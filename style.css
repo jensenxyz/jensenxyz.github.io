@@ -146,7 +146,7 @@ ul { list-style: none; }
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 30px;
-    padding: 20px 4px 26px 4px;
+    padding: 20px 4px 16px 4px;
     scroll-padding-left: 4px;
     scroll-padding-right: 4px;
     -ms-overflow-style: none; 
@@ -226,10 +226,23 @@ ul { list-style: none; }
 .carousel-controls { 
     display: flex; 
     justify-content: flex-end; 
-    gap: 12px; 
-    margin-top: 5px; 
+    align-items: center;
+    gap: 16px; 
+    margin-top: -2px; 
     margin-right: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 6px;
+}
+.carousel-hint {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-grey);
+    user-select: none;
+    letter-spacing: 0.2px;
+}
+.carousel-arrows {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 .carousel-controls button { 
     background: none; 
@@ -258,6 +271,9 @@ ul { list-style: none; }
 }
 .bg-black .carousel-controls button {
     color: #ffffff;
+}
+.bg-black .carousel-hint {
+    color: #aaaaaa;
 }
 
 /* --- Expertise Section --- */
@@ -520,7 +536,7 @@ ul { list-style: none; }
         margin-right: -20px;
     }
     .carousel-container {
-        padding: 20px 20px 26px 20px;
+        padding: 20px 20px 14px 20px;
         gap: 20px;
         scroll-padding-left: 20px;
         scroll-padding-right: 20px;
@@ -552,6 +568,15 @@ ul { list-style: none; }
     }
     .project-card:last-child {
         scroll-snap-align: end;
+    }
+    .carousel-controls {
+        margin-top: -4px;
+        margin-right: 0;
+        padding: 0 20px 8px 20px;
+        gap: 12px;
+    }
+    .carousel-hint {
+        font-size: 0.82rem;
     }
     .mockups-grid { gap: 8px; } /* Tighter gaps on mobile screens */
 
