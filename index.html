@@ -442,19 +442,19 @@
 
     <!-- Overlay Container for clicking Mockups -->
     <div id="image-overlay" class="overlay">
-        <span class="close-btn" onclick="closeOverlay()">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button type="button" class="close-btn" aria-label="Close image viewer" onclick="closeOverlay()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
-        </span>
-        <button class="nav-btn prev-btn" aria-label="Previous image" onclick="navigateOverlay(-1)">
+        </button>
+        <button type="button" class="nav-btn prev-btn" aria-label="Previous image" onclick="navigateOverlay(-1)">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M15 18l-6-6 6-6"/>
             </svg>
         </button>
         <img id="overlay-img" src="" alt="Enlarged Mockup" onclick="event.stopPropagation()">
-        <button class="nav-btn next-btn" aria-label="Next image" onclick="navigateOverlay(1)">
+        <button type="button" class="nav-btn next-btn" aria-label="Next image" onclick="navigateOverlay(1)">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9 18l6-6-6-6"/>
             </svg>

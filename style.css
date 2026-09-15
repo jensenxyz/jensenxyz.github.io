@@ -8,6 +8,7 @@
     --text-grey: #666666;
     --accent-orange: #F39C12;
     --border-radius: 30px;
+    --btn-radius: 30px;
     --transition: 0.3s ease;
 }
 
@@ -58,7 +59,7 @@ ul { list-style: none; }
     padding: 12px 30px;
     font-weight: 600;
     font-size: 0.9rem;
-    border-radius: 10px;
+    border-radius: var(--btn-radius);
     transition: var(--transition);
     cursor: pointer;
     text-align: center;
@@ -72,7 +73,7 @@ ul { list-style: none; }
     background-color: transparent;
     color: var(--text-dark);
 }
-.btn-small { padding: 10px 20px; font-size: 0.8rem; border-radius: 10px; }
+.btn-small { padding: 10px 20px; font-size: 0.8rem; border-radius: var(--btn-radius); }
 
 .bg-black .btn-black { border-color: var(--text-light); }
 .bg-black .btn-black:hover {
@@ -220,7 +221,7 @@ ul { list-style: none; }
     padding: 10px 22px;
     font-size: 0.8rem;
     letter-spacing: 0.5px;
-    border-radius: 10px;
+    border-radius: var(--btn-radius);
 }
 
 .carousel-controls { 
@@ -234,7 +235,7 @@ ul { list-style: none; }
 }
 .carousel-hint {
     font-size: 0.88rem;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--text-grey);
     user-select: none;
     letter-spacing: 0.2px;
@@ -420,7 +421,7 @@ ul { list-style: none; }
     padding: 10px 22px;
     font-size: 0.8rem;
     letter-spacing: 0.5px;
-    border-radius: 10px;
+    border-radius: var(--btn-radius);
     font-weight: 600;
     text-align: center;
 }
@@ -776,7 +777,7 @@ ul { list-style: none; }
     padding: 10px 26px;
     font-size: 0.82rem;
     font-weight: 600;
-    border-radius: 10px;
+    border-radius: var(--btn-radius);
     background-color: var(--text-dark);
     color: var(--text-light);
     border: 2px solid var(--text-dark);
@@ -1156,7 +1157,7 @@ ul { list-style: none; }
     font-size: 0.82rem;
     font-weight: 600;
     letter-spacing: 0.5px;
-    border-radius: 10px;
+    border-radius: var(--btn-radius);
     border: 2px solid var(--text-dark);
     background-color: var(--text-dark);
     color: var(--text-light);
@@ -1294,7 +1295,85 @@ ul { list-style: none; }
     -webkit-backdrop-filter: blur(12px);
     touch-action: none;
     overscroll-behavior: contain;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glass Navigation & Close Buttons for Lightbox (Homepage Mockups) */
+.close-btn {
+    position: absolute;
+    top: 28px;
+    right: 32px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10002;
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    padding: 0;
+    outline: none;
+}
+
+.close-btn:hover {
+    background: rgba(239, 68, 68, 0.85);
+    border-color: rgba(239, 68, 68, 0.9);
+    transform: scale(1.08);
+    color: #ffffff;
+}
+
+.close-btn:active {
+    transform: scale(0.95);
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10001;
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    padding: 0;
+    outline: none;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-50%) scale(1.08);
+    color: #ffffff;
+}
+
+.nav-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.prev-btn {
+    left: 28px;
+}
+
+.next-btn {
+    right: 28px;
 }
 
 /* Floating Control Toolbar */
@@ -1427,6 +1506,26 @@ ul { list-style: none; }
 }
 
 @media (max-width: 768px) {
+    .close-btn {
+        top: 16px;
+        right: 16px;
+        width: 42px;
+        height: 42px;
+    }
+    .nav-btn {
+        width: 44px;
+        height: 44px;
+    }
+    .prev-btn {
+        left: 12px;
+    }
+    .next-btn {
+        right: 12px;
+    }
+    .overlay #overlay-img {
+        max-width: 82vw;
+        max-height: 80vh;
+    }
     .overlay-toolbar {
         top: 14px;
         right: 14px;
