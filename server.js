@@ -13,6 +13,11 @@ app.get(['/cv', '/cv/', '/download', '/downloads', '/download/', '/downloads/'],
   res.sendFile(path.join(__dirname, 'cv', 'index.html'));
 });
 
+// Route for research page (/research and /research/)
+app.get(['/research', '/research/'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'research', 'index.html'));
+});
+
 // Support file requests under /cv/ and /download/
 app.get(['/cv/:file', '/download/:file'], (req, res, next) => {
   const filePath = path.join(__dirname, 'cv', req.params.file);
