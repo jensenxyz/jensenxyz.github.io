@@ -703,12 +703,12 @@ ul { list-style: none; }
 
 .study-media-wrapper {
     position: relative;
-    background-color: #161920;
+    background-color: #eae5de;
     overflow: hidden;
     border-top-left-radius: 29px;
     border-top-right-radius: 29px;
     width: 100%;
-    padding: 16px 18px;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -719,11 +719,9 @@ ul { list-style: none; }
 .study-img {
     width: 100%;
     height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: contain;
     display: block;
-    border-radius: 8px;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
+    border-radius: 0;
+    box-shadow: none;
     transition: transform 0.25s ease, filter 0.25s ease;
     cursor: zoom-in;
 }
