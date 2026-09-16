@@ -86,6 +86,10 @@ ul { list-style: none; }
 .link-underline { font-size: 1.1rem; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; }
 
 /* --- Header (Sticky & Frosted Glass) --- */
+/* --- Global Layout Utilities --- */
+.pt-medium { padding-top: 24px; }
+.pb-medium { padding-bottom: 24px; }
+
 .site-header { 
     padding: 15px 0; 
     position: -webkit-sticky;
@@ -97,7 +101,74 @@ ul { list-style: none; }
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(0,0,0,0.05); 
 }
+.site-header .header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.back-to-home {
+    display: inline-flex; 
+    align-items: center; 
+    gap: 6px; 
+    font-size: 0.95rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    transform: translateY(2px);
+}
+.back-to-home.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
 .logo { font-weight: 500; font-size: 1.2rem; letter-spacing: 1px; }
+
+/* --- Breadcrumb Navigation --- */
+.breadcrumb {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--text-grey);
+    margin-bottom: 24px;
+}
+.breadcrumb a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    color: var(--text-dark);
+}
+.breadcrumb a:hover {
+    color: var(--text-grey);
+}
+
+/* --- Flush Accordion (No Background, Just Borders) --- */
+.accordion-flush {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(0,0,0,0.15) !important;
+    margin-bottom: 0 !important;
+    padding: 8px 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+.accordion-flush .study-accordion-summary {
+    background: transparent !important;
+    border: none !important;
+    padding: 16px 0 !important;
+}
+.accordion-flush .study-accordion-summary:hover {
+    background: transparent !important;
+}
+.accordion-flush .study-accordion-body {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 0 24px 0 !important;
+}
+.accordion-flush[open] .study-accordion-summary {
+    background-color: transparent !important;
+}
+.accordion-flush .summary-title {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+}
 
 /* --- Hero Section (Grid Layout) --- */
 .hero.pt-large { padding-top: 15px; } /* Custom padding to reduce space below sticky header */ /* Custom padding to reduce space below sticky header */

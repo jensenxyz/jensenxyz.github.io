@@ -30,9 +30,9 @@
 
     <!-- Header Navigation (Sticky & Translucent) -->
     <header class="site-header">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="container header-flex">
             <a href="/" class="logo">JENSEN ✨</a>
-            <a href="/" class="link-underline" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.95rem;">
+            <a href="/" class="link-underline back-to-home">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
                 Back to Home
             </a>
@@ -40,7 +40,10 @@
     </header>
 
     <!-- Main Content Section -->
-    <main class="container pt-large pb-large">
+    <main class="container pt-medium pb-large">
+        <div class="breadcrumb">
+            <a href="/">Home</a> > Scientific Studies & Climate Research
+        </div>
         <!-- Hero Header -->
         <div class="research-hero-banner">
             <h1 class="research-hero-title">Scientific Studies & Academic Presentations</h1>
@@ -536,19 +539,6 @@
         </section>
     </main>
 
-    <!-- Footer (Black) -->
-    <footer class="site-footer bg-black">
-        <div class="container footer-content">
-            <div class="footer-links">
-                <a href="/">Home</a>
-                <a href="/research">Research</a>
-                <a href="https://www.linkedin.com/in/jensenearth/" target="_blank">LinkedIn</a>
-            </div>
-            <div class="footer-copy">
-                © JENSEN S.Z. ✨
-            </div>
-        </div>
-    </footer>
 
     <!-- Full-Screen Interactive Research Image Viewer -->
     <div id="image-overlay" class="overlay" role="dialog" aria-modal="true" aria-label="Research Figure Viewer">
@@ -890,5 +880,20 @@
             }
         }
     </script>
+
+    <!-- Footer -->
+    <footer class="site-footer bg-black">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/research">Research</a>
+                <a href="https://www.linkedin.com/in/jensenearth/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-copy">
+                &copy; JENSEN S.Z. ✨
+            </div>
+        </div>
+    </footer>
+<script src="/layout.js"></script>
 </body>
 </html>

@@ -387,3 +387,47 @@ When instructing Google AI Studio or an AI web assistant to build or modify elem
 - **Add a secondary action**: *"Add a secondary outline button (`btn-outline`) next to the primary button with text '[Text]'."*
 - **Add a back navigation link**: *"Add a text link button (`link-underline`) with an inline left arrow SVG pointing to '/back'."*
 - **Add a dark section**: *"Add a `.bg-black` section with `.container.pt-large.pb-large` containing white headings and white-bordered inverted primary buttons."*
+
+## 10. Subpage Global Layout Standards
+
+### Header (Back to Home)
+Subpages should reuse the same sticky header as the homepage, but additionally include a "Back to Home" button using the `.header-flex` and `.back-to-home` utility classes:
+```html
+<header class="site-header">
+    <div class="container header-flex">
+        <a href="/" class="logo">JENSEN ✨</a>
+        <a href="/" class="link-underline back-to-home">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Home
+        </a>
+    </div>
+</header>
+```
+
+### Breadcrumbs
+For nested content like case studies, standardize breadcrumbs using the `.breadcrumb` class:
+```html
+<div class="breadcrumb">
+    <a href="/">Home</a> > Scantrust: Product QR Codes & SaaS
+</div>
+```
+
+### Footer
+All subpages throughout the site must reuse the exact same black footer as the homepage:
+```html
+<footer class="site-footer bg-black">
+    <div class="container footer-content">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/research">Research</a>
+            <a href="https://www.linkedin.com/in/jensenearth/" target="_blank">LinkedIn</a>
+        </div>
+        <div class="footer-copy">
+            &copy; JENSEN S.Z. ✨
+        </div>
+    </div>
+</footer>
+```

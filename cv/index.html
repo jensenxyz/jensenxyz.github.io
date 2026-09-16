@@ -22,7 +22,7 @@
 
     <style>
         .download-hub {
-            min-height: 100vh;
+            min-height: calc(100vh - 150px);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -91,6 +91,18 @@
     </style>
 </head>
 <body class="bg-beige">
+
+    <!-- Header Navigation (Sticky & Translucent) -->
+    <header class="site-header">
+        <div class="container header-flex">
+            <a href="/" class="logo">JENSEN ✨</a>
+            <a href="/" class="link-underline back-to-home">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Back to Home
+            </a>
+        </div>
+    </header>
+
     <main class="download-hub">
         <div class="download-card">
             <h1>Curriculum Vitae</h1>
@@ -118,11 +130,22 @@
                     </div>
                 </a>
             </div>
-            
-            <div style="margin-top: 30px;">
-                <a href="/" class="link-underline" style="font-size: 0.9rem; color: #888;">&larr; Back to Homepage</a>
-            </div>
         </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="site-footer bg-black">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/research">Research</a>
+                <a href="https://www.linkedin.com/in/jensenearth/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-copy">
+                &copy; JENSEN S.Z. ✨
+            </div>
+        </div>
+    </footer>
+<script src="/layout.js"></script>
 </body>
 </html>
