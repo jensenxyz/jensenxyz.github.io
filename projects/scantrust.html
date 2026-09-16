@@ -1,1 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scantrust: Product QR Codes & SaaS | JENSEN</title>
+    <meta name="description" content="Case study of Scantrust - The all-in-one QR code solution for global brands to connect with customers, comply with digital labeling laws, and detect counterfeits.">
+    <meta property="og:title" content="Scantrust: Product QR Codes & SaaS | JENSEN">
+    <meta property="og:description" content="Case study of Scantrust - The all-in-one QR code solution for global brands to connect with customers, comply with digital labeling laws, and detect counterfeits.">
 
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="JENSEN">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Global Stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="bg-beige">
+
+    <!-- Header Navigation (Sticky & Translucent) -->
+    <header class="site-header" id="site-header">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="/" class="logo" id="header-logo">JENSEN ✨</a>
+            <a href="/" class="link-underline" id="header-back-link" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.95rem;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Back to Home
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <div class="breadcrumb-container" id="breadcrumb-bar">
+            <nav class="scantrust-breadcrumb" aria-label="Breadcrumb">
+                <a href="/" id="crumb-home">Home</a>
+                <span class="breadcrumb-sep">&gt;</span>
+                <span class="breadcrumb-current" id="crumb-current">Scantrust: Product QR Codes &amp; SaaS</span>
+            </nav>
+        </div>
+
+        <!-- Hero Laptop Media Showcase -->
+        <section class="scantrust-hero-media" id="hero-media-section">
+            <div class="scantrust-hero-img-box">
+                <img src="/assets/project-scantrust.jpg" alt="Scantrust: Weekly Brand Protection Report dashboard displayed on a laptop" class="scantrust-hero-img" id="hero-laptop-img">
+            </div>
+        </section>
+
+        <!-- Section: The Story -->
+        <section class="scantrust-story-section" id="story-section">
+            <h1 class="scantrust-section-title" id="story-title">The Story:</h1>
+            <p class="scantrust-story-lead" id="story-lead">What if we can instantly verify any product in the world?</p>
+            <div class="scantrust-divider" aria-hidden="true"></div>
+
+            <!-- Story Accordion -->
+            <div class="scantrust-accordion" id="story-accordion" role="region" aria-label="Story Accordion">
+                <!-- Item 1: Founding Designer (Default Open) -->
+                <div class="accordion-item" id="accordion-item-founding">
+                    <button type="button" class="accordion-header" id="acc-btn-1" aria-expanded="true" aria-controls="acc-content-1" onclick="toggleAccordion(1)">
+                        <span class="accordion-header-text">
+                            <span class="accordion-icon">👨‍💻</span> Founding Designer
+                        </span>
+                        <span class="accordion-arrow" id="acc-arrow-1">⌃</span>
+                    </button>
+                    <div class="accordion-content open" id="acc-content-1" role="region" aria-labelledby="acc-btn-1">
+                        <p>Everyone deserves to know if the product they buy is genuine — this simple, powerful idea sparked the birth of Scantrust. The core problem Scantrust set out to solve was the <strong>global issue of counterfeit products</strong>.</p>
+                        <p>In 2014, I met the founders in a Shanghai co-working space and something clicked. I joined as the <strong>founding designer</strong>, turning their idea into tangible interfaces and workflows. Since then I've participated in every aspect of Scantrust's product development and company growth.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2: The Hustle & The Growth -->
+                <div class="accordion-item" id="accordion-item-hustle">
+                    <button type="button" class="accordion-header" id="acc-btn-2" aria-expanded="false" aria-controls="acc-content-2" onclick="toggleAccordion(2)">
+                        <span class="accordion-header-text">
+                            <span class="accordion-icon">🧗</span> The Hustle &amp; The Growth
+                        </span>
+                        <span class="accordion-arrow" id="acc-arrow-2">⌄</span>
+                    </button>
+                    <div class="accordion-content" id="acc-content-2" role="region" aria-labelledby="acc-btn-2">
+                        <p>Building a brand and product from the ground up required wearing many hats — from early customer discovery interviews with packaging manufacturers to white-boarding core user flows for brand protection teams.</p>
+                        <p>We iterated tirelessly across time zones, collaborating with cross-functional teams in Lausanne, Shanghai, and Singapore, turning complex anti-counterfeiting algorithms into effortless, lightning-fast scan experiences.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3: From Prototypes to Global Impact -->
+                <div class="accordion-item" id="accordion-item-impact">
+                    <button type="button" class="accordion-header" id="acc-btn-3" aria-expanded="false" aria-controls="acc-content-3" onclick="toggleAccordion(3)">
+                        <span class="accordion-header-text">
+                            <span class="accordion-icon">🌍</span> From Prototypes to Global Impact
+                        </span>
+                        <span class="accordion-arrow" id="acc-arrow-3">⌄</span>
+                    </button>
+                    <div class="accordion-content" id="acc-content-3" role="region" aria-labelledby="acc-btn-3">
+                        <p>What began as rapid prototypes in co-working labs expanded into an enterprise platform protecting billions of items worldwide. Our technology enabled Fortune 500 enterprises and global leaders to safeguard consumer trust, eliminate gray-market diversion, and engage millions of customers across 185+ countries.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Section: The Challenge Banner (Mountain Silhouette + Sunset Sky) -->
+    <section class="scantrust-challenge-banner" id="challenge-banner">
+        <div class="scantrust-challenge-content">
+            <h2 class="scantrust-challenge-title" id="challenge-heading">The Challenge:</h2>
+            <p class="scantrust-challenge-quote" id="challenge-quote">Big Picture POV — There was no playbook for designing a brand-new platform. Everything had to be built from scratch. I had to lean heavily on my ability to learn fast and adapt on the fly.</p>
+        </div>
+        
+        <!-- Mountain Silhouette Graphic -->
+        <div class="mountain-silhouette-layer" aria-hidden="true">
+            <svg viewBox="0 0 1440 220" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Back Ridge -->
+                <path opacity="0.3" d="M0 220L0 125L95 85L210 130L340 70L480 115L620 50L770 120L910 65L1060 110L1200 45L1320 95L1440 60L1440 220H0Z" fill="#1b2836"/>
+                <!-- Mid Ridge -->
+                <path opacity="0.6" d="M0 220L0 150L120 110L240 160L390 95L520 145L660 85L800 150L950 100L1090 140L1230 80L1350 130L1440 100L1440 220H0Z" fill="#131c26"/>
+                <!-- Front Sharp Ridge -->
+                <path d="M0 220L0 170L80 140L180 175L310 120L440 165L580 115L710 170L850 125L990 160L1120 105L1260 155L1380 125L1440 140L1440 220H0Z" fill="#0b1117"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Sub-section: On the Ground POV -->
+    <div class="container">
+        <section class="ground-pov-section" id="ground-pov-section">
+            <h3 class="ground-pov-title" id="ground-pov-title">On the Ground POV — The challenges evolved as the company grew.</h3>
+            <div class="scantrust-divider" aria-hidden="true"></div>
+
+            <div class="stage-block" id="stage-early">
+                <h4 class="stage-label">— Early Stage:</h4>
+                <ul class="stage-list">
+                    <li>Designing complex systems for B2B2C and B2P (Professionals with domain-specific knowledge).</li>
+                    <li>Moving fast—trusting intuition, testing features, scrapping what didn't work, and iterating quickly.</li>
+                    <li>Demos, demos, demos! Lots of demos :)</li>
+                </ul>
+            </div>
+
+            <div class="scantrust-divider" aria-hidden="true"></div>
+
+            <div class="stage-block" id="stage-scaling">
+                <h4 class="stage-label">— Scaling Stage:</h4>
+                <ul class="stage-list">
+                    <li>Balancing customization for paying clients with the need to keep the product scalable (customization vs scalability).</li>
+                    <li>Shifting to a more data-driven approach: deeper user research, more testing.</li>
+                    <li>Barrier of change gets higher as the product matured and more customers came on board.</li>
+                </ul>
+            </div>
+
+            <div class="scantrust-divider" aria-hidden="true"></div>
+        </section>
+
+        <!-- The Platform Big Rounded Card -->
+        <section class="platform-card-container" id="platform-card-section">
+            <h2 class="platform-title" id="platform-title">The Platform:</h2>
+            <p class="platform-desc" id="platform-desc">The Scantrust platform is designed to provide a complete QR code solution for global brands.</p>
+            <p class="platform-subdesc" id="platform-subdesc">To understand my work at Scantrust, one must first understand the platform's 3 fundamental pillars that I've contributed to: <strong>Core Technology</strong>, <strong>Digital Products</strong>, and <strong>Physical Products</strong>.</p>
+
+            <!-- 3 Pillars Stepper / Connector -->
+            <div class="pillars-stepper" id="pillars-stepper" role="navigation" aria-label="Platform Pillars Navigation">
+                <div class="pillars-line" aria-hidden="true"></div>
+                <a href="#core-tech" class="pillar-step" id="pillar-link-1" title="Jump to 1. Core Technology">
+                    <div class="pillar-icon-box">
+                        <img src="/assets/1-core.png" alt="Core Technology Icon">
+                    </div>
+                    <span class="pillar-name">Core Technology</span>
+                </a>
+                <a href="#digital-products" class="pillar-step" id="pillar-link-2" title="Jump to 2. Digital Products">
+                    <div class="pillar-icon-box">
+                        <img src="/assets/2-digital.png" alt="Digital Products Icon">
+                    </div>
+                    <span class="pillar-name">Digital Products</span>
+                </a>
+                <a href="#physical-products" class="pillar-step" id="pillar-link-3" title="Jump to 3. Physical Products">
+                    <div class="pillar-icon-box">
+                        <img src="/assets/3-physical.png" alt="Physical Products Icon">
+                    </div>
+                    <span class="pillar-name">Physical Products</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Pillar 1: Core Technology -->
+        <section class="scantrust-section" id="core-tech">
+            <h2 class="section-heading-number" id="core-tech-heading">1. Core Technology</h2>
+            <p class="scantrust-section-lead">While I'm not directly part of the Core Tech team, I worked closely with them in the early years to translate this complex, patented anti-counterfeit technology into something tangible and understandable for real-world users who are brand owners, business managers, and consumers.</p>
+            <p class="scantrust-section-sublead">My involvement in Core Tech includes:</p>
+
+            <div class="core-cards-grid" id="core-cards-grid">
+                <!-- Card 1: Authentication UI & SDK -->
+                <div class="core-card" id="core-card-auth">
+                    <div class="core-card-header">
+                        <div class="card-badge-icon badge-coral" aria-hidden="true">🥫</div>
+                        <h3 class="core-card-title">Authentication UI &amp; SDK</h3>
+                    </div>
+                    <p class="core-card-desc">Designing how end users scan and verify the Scantrust QR code within seconds. Countless prototype iterations and updates of the authentication UI in the Scantrust SDK for Android, iOS, and PWA applications.</p>
+                    <div class="core-card-visual">
+                        <div class="diagram-frame">
+                            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+                                <div style="flex: 1; min-width: 260px;">
+                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                                        <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #10b981;"></span>
+                                        <span style="font-weight: 700; font-size: 0.95rem; color: #111827;">Instant Scan &amp; Verification Flow</span>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: #6b7280; line-height: 1.5; margin-bottom: 16px;">Patented high-density secure graphic detects 1:1 copy degradation via standard smartphone camera lenses without specialized hardware.</p>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                        <span style="font-size: 0.8rem; font-weight: 600; padding: 4px 12px; background: #ecfdf5; color: #047857; border-radius: 20px;">✓ Authentic Verified</span>
+                                        <span style="font-size: 0.8rem; font-weight: 600; padding: 4px 12px; background: #fef2f2; color: #b91c1c; border-radius: 20px;">✕ Suspicious Code Alert</span>
+                                        <span style="font-size: 0.8rem; font-weight: 600; padding: 4px 12px; background: #eff6ff; color: #1d4ed8; border-radius: 20px;">SDK iOS / Android</span>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: center; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 16px; padding: 24px 30px; text-align: center; min-width: 240px;">
+                                    <div>
+                                        <div style="font-size: 2.2rem; margin-bottom: 8px;">📱 ⚡ 🔍</div>
+                                        <div style="font-size: 0.88rem; font-weight: 700; color: #1e293b;">Sub-second Verification</div>
+                                        <div style="font-size: 0.78rem; color: #64748b;">99.98% Cryptographic Precision</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: The Printer App -->
+                <div class="core-card" id="core-card-printer">
+                    <div class="core-card-header">
+                        <div class="card-badge-icon badge-amber" aria-hidden="true">📕</div>
+                        <h3 class="core-card-title">The Printer App</h3>
+                    </div>
+                    <p class="core-card-desc">Designed for printing operators at the print manufacturer. It manages the calibration of new printers, print orders from brand owners, and quality control of secure QR codes during production.</p>
+                    <div class="core-card-visual">
+                        <div class="diagram-frame">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                                <div style="background: #fffbeb; border: 1px solid #fef3c7; border-radius: 14px; padding: 16px;">
+                                    <div style="font-weight: 700; font-size: 0.95rem; color: #92400e; margin-bottom: 6px;">1. Calibration</div>
+                                    <p style="font-size: 0.85rem; color: #78350f; line-height: 1.4;">Automated dot-gain measurement &amp; substrate profile calibration.</p>
+                                </div>
+                                <div style="background: #fffbeb; border: 1px solid #fef3c7; border-radius: 14px; padding: 16px;">
+                                    <div style="font-weight: 700; font-size: 0.95rem; color: #92400e; margin-bottom: 6px;">2. Job Dispatch</div>
+                                    <p style="font-size: 0.85rem; color: #78350f; line-height: 1.4;">Secure serialization batches and unique code generation queue.</p>
+                                </div>
+                                <div style="background: #fffbeb; border: 1px solid #fef3c7; border-radius: 14px; padding: 16px;">
+                                    <div style="font-weight: 700; font-size: 0.95rem; color: #92400e; margin-bottom: 6px;">3. In-line QC</div>
+                                    <p style="font-size: 0.85rem; color: #78350f; line-height: 1.4;">High-speed optical inspection pass/fail verification on the press line.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Implementation Expertise -->
+                <div class="core-card" id="core-card-implementation">
+                    <div class="core-card-header">
+                        <div class="card-badge-icon badge-purple" aria-hidden="true">🛢️</div>
+                        <h3 class="core-card-title">Implementation Expertise</h3>
+                    </div>
+                    <p class="core-card-desc">Provide brand owners with expert guidance informed by a deep understanding of the Scantrust secure QR code specs when it comes to printing and incorporating them into client product labels or packaging design.</p>
+                    <div class="core-card-visual">
+                        <div class="diagram-frame">
+                            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+                                <div style="flex: 1; min-width: 260px;">
+                                    <h5 style="font-size: 0.98rem; font-weight: 700; color: #111827; margin-bottom: 8px;">Packaging Architecture &amp; Print Tolerances</h5>
+                                    <p style="font-size: 0.9rem; color: #4b5563; line-height: 1.5; margin-bottom: 12px;">Spec guidelines covering quiet-zone requirements, varnish layer boundaries, ink density standards, and label placement across glass bottles, flex-packs, and cartons.</p>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                        <span style="font-size: 0.78rem; font-weight: 600; padding: 4px 10px; background: #f3e8ff; color: #6b21a8; border-radius: 16px;">600+ DPI Calibration</span>
+                                        <span style="font-size: 0.78rem; font-weight: 600; padding: 4px 10px; background: #f3e8ff; color: #6b21a8; border-radius: 16px;">Flexo / Offset / Digital</span>
+                                        <span style="font-size: 0.78rem; font-weight: 600; padding: 4px 10px; background: #f3e8ff; color: #6b21a8; border-radius: 16px;">Substrate Verification</span>
+                                    </div>
+                                </div>
+                                <div style="background: #faf5ff; border: 1px solid #e9d5ff; border-radius: 14px; padding: 18px 24px; text-align: center; min-width: 220px;">
+                                    <div style="font-size: 1.8rem; margin-bottom: 6px;">🍾 📦 🏷️</div>
+                                    <div style="font-size: 0.86rem; font-weight: 700; color: #581c87;">Global Packaging Specs</div>
+                                    <div style="font-size: 0.76rem; color: #7e22ce;">Wine, Luxury, Seeds, FMCG</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Non-technical Comms -->
+                <div class="core-card" id="core-card-comms">
+                    <div class="core-card-header">
+                        <div class="card-badge-icon badge-blue" aria-hidden="true">👥</div>
+                        <h3 class="core-card-title">Non-technical Comms</h3>
+                    </div>
+                    <p class="core-card-desc">Designing key graphics and component animations to demonstrate and explain the complex Core Technology for both internal teams and external stakeholders across apps, websites, and marketing materials.</p>
+                    <div class="core-card-visual">
+                        <div class="diagram-frame">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px;">
+                                <div style="background: #f0f9ff; border: 1px solid #e0f2fe; border-radius: 14px; padding: 16px;">
+                                    <div style="font-weight: 700; font-size: 0.92rem; color: #0369a1; margin-bottom: 6px;">🎨 Visual Metaphors</div>
+                                    <p style="font-size: 0.84rem; color: #0c4a6e; line-height: 1.4;">Translating optical entropy &amp; degradation into intuitive scan animations.</p>
+                                </div>
+                                <div style="background: #f0f9ff; border: 1px solid #e0f2fe; border-radius: 14px; padding: 16px;">
+                                    <div style="font-weight: 700; font-size: 0.92rem; color: #0369a1; margin-bottom: 6px;">📑 Sales &amp; Pitch Collateral</div>
+                                    <p style="font-size: 0.84rem; color: #0c4a6e; line-height: 1.4;">Clear whitepapers, executive decks, and one-pagers for Fortune 500 pitches.</p>
+                                </div>
+                                <div style="background: #f0f9ff; border: 1px solid #e0f2fe; border-radius: 14px; padding: 16px;">
+                                    <div style="font-weight: 700; font-size: 0.92rem; color: #0369a1; margin-bottom: 6px;">🌐 Interactive Web Demos</div>
+                                    <p style="font-size: 0.84rem; color: #0c4a6e; line-height: 1.4;">Web-based simulators allowing prospects to test scan verification online.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button: FIND OUT MORE -->
+            <div class="section-action text-center">
+                <a href="#digital-products" class="btn btn-black" id="btn-more-core">FIND OUT MORE</a>
+            </div>
+        </section>
+
+        <!-- Pillar 2: Digital Products -->
+        <section class="scantrust-section" id="digital-products">
+            <h2 class="section-heading-number" id="digital-products-heading">2. Digital Products</h2>
+            <p class="scantrust-section-lead">I led the end-to-end UI and UX design for the entire Scantrust web and mobile systems, including the Customer Login Portal (B2B), white-label software, windows application for industrial use, and the core digital products/offering listed below:</p>
+
+            <!-- 4 Digital Offering Feature Items -->
+            <div class="digital-features-grid" id="digital-features-grid">
+                <div class="digital-feature-item" id="feat-qr-generator">
+                    <h4>• Enterprise QR Code Generator</h4>
+                    <p>Built-in intelligent redirection engine.<br>Non-coding environment.</p>
+                </div>
+                <div class="digital-feature-item" id="feat-landing-builder">
+                    <h4>• QR Code Landing Page Builder</h4>
+                    <p>No-code tools designed for enterprise.<br>Scalable landing page designs.</p>
+                </div>
+                <div class="digital-feature-item" id="feat-branded-apps">
+                    <h4>• Branded Mobile Apps</h4>
+                    <p>iOS, Android, Web PWA.<br>Product authentication.<br>Loyalty modules, multi-national.</p>
+                </div>
+                <div class="digital-feature-item" id="feat-supply-chain">
+                    <h4>• Supply Chain Workflow App</h4>
+                    <p>Range Scan / NFC / Parent-child Code Association / Task Management</p>
+                </div>
+            </div>
+
+            <!-- 4 Visual Showcase Cards -->
+            <div class="digital-showcase-grid" id="digital-showcase-grid">
+                <!-- Showcase 1: DuPont Authenticity Experience -->
+                <div class="digital-showcase-card" id="showcase-dupont">
+                    <div class="showcase-media" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #fff; position: relative; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div style="font-size: 0.8rem; font-weight: 800; letter-spacing: 1px; opacity: 0.9;">DUPONT™ WATER SOLUTIONS</div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2.4rem; margin-bottom: 6px;">💧</div>
+                            <div style="font-size: 1.1rem; font-weight: 800;">Authentic Filter Verified</div>
+                        </div>
+                        <div style="font-size: 0.75rem; text-align: center; opacity: 0.85;">FilmTec™ Reverse Osmosis Elements</div>
+                    </div>
+                    <div class="digital-showcase-info">
+                        <h4>Brand Protection Experience</h4>
+                        <p>Instant authentication and warranty verification for industrial components.</p>
+                    </div>
+                </div>
+
+                <!-- Showcase 2: Consumer App & Loyalty Experience -->
+                <div class="digital-showcase-card" id="showcase-loyalty">
+                    <div class="showcase-media" style="background: linear-gradient(135deg, #059669 0%, #047857 100%); color: #fff; position: relative; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div style="font-size: 0.8rem; font-weight: 800; letter-spacing: 1px; opacity: 0.9;">CONSUMER LOYALTY</div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2.4rem; margin-bottom: 6px;">🎁</div>
+                            <div style="font-size: 1.1rem; font-weight: 800;">Points &amp; Rewards Engine</div>
+                        </div>
+                        <div style="font-size: 0.75rem; text-align: center; opacity: 0.85;">Origin Story, Sustainability &amp; Direct Engagement</div>
+                    </div>
+                    <div class="digital-showcase-info">
+                        <h4>Consumer Engagement App</h4>
+                        <p>Turn every product scan into a personalized, rewarding brand relationship.</p>
+                    </div>
+                </div>
+
+                <!-- Showcase 3: Enterprise Portal & Analytics -->
+                <div class="digital-showcase-card" id="showcase-portal">
+                    <div class="showcase-media" style="background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%); color: #fff; position: relative; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div style="font-size: 0.8rem; font-weight: 800; letter-spacing: 1px; opacity: 0.9;">B2B SAAS PORTAL</div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2.4rem; margin-bottom: 6px;">📊</div>
+                            <div style="font-size: 1.1rem; font-weight: 800;">Global Scan Telemetry</div>
+                        </div>
+                        <div style="font-size: 0.75rem; text-align: center; opacity: 0.85;">Real-Time Diversion Maps &amp; Anomaly Detection</div>
+                    </div>
+                    <div class="digital-showcase-info">
+                        <h4>Enterprise Intelligence Portal</h4>
+                        <p>Live heatmaps and audit trails for supply chain integrity worldwide.</p>
+                    </div>
+                </div>
+
+                <!-- Showcase 4: No-Code Campaign Builder -->
+                <div class="digital-showcase-card" id="showcase-builder">
+                    <div class="showcase-media" style="background: linear-gradient(135deg, #d97706 0%, #b45309 100%); color: #fff; position: relative; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div style="font-size: 0.8rem; font-weight: 800; letter-spacing: 1px; opacity: 0.9;">NO-CODE BUILDER</div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2.4rem; margin-bottom: 6px;">🛠️</div>
+                            <div style="font-size: 1.1rem; font-weight: 800;">Modular Campaign Studio</div>
+                        </div>
+                        <div style="font-size: 0.75rem; text-align: center; opacity: 0.85;">Multi-language, Mobile First &amp; Scalable Layouts</div>
+                    </div>
+                    <div class="digital-showcase-info">
+                        <h4>QR Landing Page Builder</h4>
+                        <p>Drag-and-drop campaign creation for marketing and compliance teams.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pillar 3: Physical Products -->
+        <section class="scantrust-section" id="physical-products">
+            <h2 class="section-heading-number" id="physical-products-heading">3. Physical Products</h2>
+            <p class="scantrust-section-lead">Scantrust's physical products are the printed Secure QR codes, which are essential catalysts connecting tangible goods to Scantrust's digital platform, enabling a range of solutions from authentication and traceability to compliance and customer engagement.</p>
+            <p class="scantrust-section-lead">I designed a wide range of Security Labels, i.e. Anti-Counterfeit Labels, which feature technologies such as the ScanTrust Secure QR codes to prevent fakes and ensure product integrity.</p>
+
+            <div class="scantrust-divider" aria-hidden="true"></div>
+
+            <!-- Anti-Counterfeit Technologies List -->
+            <div style="margin: 28px 0;" id="anti-counterfeit-tech-block">
+                <h4 style="font-size: 1.2rem; font-weight: 700; color: #111827; margin-bottom: 12px;">— Anti-counterfeit Technologies:</h4>
+                <p style="font-size: 1.02rem; color: #4b5563; margin-bottom: 14px;">I've experience designing and working with these Anti-counterfeit Technologies:</p>
+                <ol class="tech-numbered-list" id="tech-list">
+                    <li>Holograms</li>
+                    <li>Tamper-evident features ("void", self-destructing)</li>
+                    <li>Special inks and printing (heat, UV, infrared)</li>
+                    <li>Serialized barcodes or QR codes (tracking, tracing, individual product authentication)</li>
+                    <li>RFID/NFC tags/chips</li>
+                    <li>Microtext or nano-text</li>
+                </ol>
+            </div>
+
+            <div class="scantrust-divider" aria-hidden="true"></div>
+
+            <!-- State-of-the-art Security Labels Header & Carousel Controls -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin: 36px 0 16px 0; flex-wrap: wrap; gap: 14px;">
+                <h4 style="font-size: 1.25rem; font-weight: 700; color: #111827;">+ State-of-the-art Security Labels:</h4>
+                <div class="carousel-arrows" id="label-carousel-controls">
+                    <button type="button" class="arrow-btn" id="btn-carousel-prev" onclick="scrollCarousel(-1)" aria-label="Previous security labels" style="background: #ffffff; border: 1px solid #dcd3c8; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: background 0.2s;">‹</button>
+                    <button type="button" class="arrow-btn" id="btn-carousel-next" onclick="scrollCarousel(1)" aria-label="Next security labels" style="background: #ffffff; border: 1px solid #dcd3c8; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: background 0.2s;">›</button>
+                </div>
+            </div>
+
+            <!-- Labels Carousel -->
+            <div class="physical-carousel-wrapper">
+                <div class="physical-carousel-container" id="physical-carousel">
+                    <!-- Item 1: WWF Gifts -->
+                    <div class="physical-card" id="card-wwf-traceable">
+                        <div class="physical-card-media" style="background: linear-gradient(135deg, #fef9c3 0%, #fef08a 100%);">
+                            <div style="text-align: center; padding: 24px;">
+                                <div style="font-size: 3.2rem; margin-bottom: 8px;">🦁</div>
+                                <div style="font-weight: 800; font-size: 0.95rem; color: #854d0e;">WWF GIFTS</div>
+                                <div style="font-size: 0.75rem; color: #a16207;">Certified Traceability Seal</div>
+                            </div>
+                        </div>
+                        <div class="physical-card-info">
+                            <h4>WWF Gifts</h4>
+                            <p>Traceable Security Label For Authenticity</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: WWF Gifts Unique Label -->
+                    <div class="physical-card" id="card-wwf-design">
+                        <div class="physical-card-media" style="background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);">
+                            <div style="text-align: center; padding: 24px;">
+                                <div style="font-size: 3.2rem; margin-bottom: 8px;">🐼</div>
+                                <div style="font-weight: 800; font-size: 0.95rem; color: #166534;">SECURE QR TAG</div>
+                                <div style="font-size: 0.75rem; color: #15803d;">Custom Diamond Security Cut</div>
+                            </div>
+                        </div>
+                        <div class="physical-card-info">
+                            <h4>WWF Gifts</h4>
+                            <p>Unique Label Design</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Oxford University Press Textbooks -->
+                    <div class="physical-card" id="card-oxford">
+                        <div class="physical-card-media" style="background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);">
+                            <div style="text-align: center; padding: 24px;">
+                                <div style="font-size: 3.2rem; margin-bottom: 8px;">📚</div>
+                                <div style="font-weight: 800; font-size: 0.95rem; color: #6b21a8;">OXFORD UNIVERSITY PRESS</div>
+                                <div style="font-size: 0.75rem; color: #7e22ce;">Tamper-Evident Book Seal</div>
+                            </div>
+                        </div>
+                        <div class="physical-card-info">
+                            <h4>Middle School Textbooks</h4>
+                            <p>Oxford University Press Pakistan</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Covid-19 Response -->
+                    <div class="physical-card" id="card-covid">
+                        <div class="physical-card-media" style="background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);">
+                            <div style="text-align: center; padding: 24px;">
+                                <div style="font-size: 3.2rem; margin-bottom: 8px;">🧪</div>
+                                <div style="font-weight: 800; font-size: 0.95rem; color: #075985;">DIAGNOSTIC VERIFY</div>
+                                <div style="font-size: 0.75rem; color: #0284c7;">Serial Authenticated Test Kit</div>
+                            </div>
+                        </div>
+                        <div class="physical-card-info">
+                            <h4>Covid-19 Response</h4>
+                            <p>Rapid Test Kit</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button: FIND OUT MORE -->
+            <div class="section-action text-center">
+                <a href="#impact" class="btn btn-black" id="btn-more-physical">FIND OUT MORE</a>
+            </div>
+        </section>
+
+        <!-- Section: The Impact -->
+        <section class="scantrust-impact-section" id="impact">
+            <h2 class="scantrust-section-title" id="impact-title">The Impact:</h2>
+            <p class="impact-lead" id="impact-lead">Nowadays, Scantrust connects billions of products. I'm proud to share that millions of people have interacted with the digital and physical designs I made or contributed to.</p>
+
+            <!-- 3 3D Metallic Spheres -->
+            <div class="impact-badges-row" id="impact-spheres-row">
+                <!-- Badge 1: 1 Billion+ -->
+                <div class="impact-badge-item" id="sphere-item-products">
+                    <div class="impact-sphere sphere-green" aria-label="1 billion plus products protected">
+                        <span class="sphere-val">1 billion+</span>
+                    </div>
+                    <span class="impact-badge-label">Products Protected</span>
+                </div>
+
+                <!-- Badge 2: 185+ -->
+                <div class="impact-badge-item" id="sphere-item-countries">
+                    <div class="impact-sphere sphere-blue" aria-label="185 plus countries reached">
+                        <span class="sphere-val">185+</span>
+                    </div>
+                    <span class="impact-badge-label">Countries Reached</span>
+                </div>
+
+                <!-- Badge 3: 80+ -->
+                <div class="impact-badge-item" id="sphere-item-projects">
+                    <div class="impact-sphere sphere-coral" aria-label="80 plus projects launched">
+                        <span class="sphere-val">80+</span>
+                    </div>
+                    <span class="impact-badge-label">Projects Launched</span>
+                </div>
+            </div>
+
+            <!-- Bullet Summaries with > -->
+            <ul class="impact-bullets" id="impact-bullets-list">
+                <li><span class="impact-bullet-symbol" aria-hidden="true">&gt;</span> More than 1 billion products connected and protected.</li>
+                <li><span class="impact-bullet-symbol" aria-hidden="true">&gt;</span> Scantrust codes scanned in over 185 countries.</li>
+                <li><span class="impact-bullet-symbol" aria-hidden="true">&gt;</span> 80+ projects to which I made essential contributions successfully launched.</li>
+            </ul>
+        </section>
+
+        <!-- Section: Brands I've worked with -->
+        <section class="scantrust-brands-section" id="brands-section">
+            <h2 class="brands-section-title" id="brands-heading">
+                <span aria-hidden="true">🧑‍🔧</span> Brands I've worked with:
+            </h2>
+
+            <div class="brands-pill-cloud" id="brands-pill-cloud">
+                <div class="brand-pill" id="brand-zespri">
+                    <span class="brand-icon-circ">🥝</span> Zespri Kiwifruit
+                </div>
+                <div class="brand-pill" id="brand-dupont">
+                    <span class="brand-icon-circ">💧</span> DuPont
+                </div>
+                <div class="brand-pill" id="brand-wwf">
+                    <span class="brand-icon-circ">🐼</span> WWF World Wide Fund
+                </div>
+                <div class="brand-pill" id="brand-oxford">
+                    <span class="brand-icon-circ">📖</span> Oxford University Press
+                </div>
+                <div class="brand-pill" id="brand-exxon">
+                    <span class="brand-icon-circ">⛽</span> ExxonMobil
+                </div>
+                <div class="brand-pill" id="brand-remy">
+                    <span class="brand-icon-circ">🍷</span> Rémy Cointreau
+                </div>
+                <div class="brand-pill" id="brand-unilever">
+                    <span class="brand-icon-circ">🌿</span> Unilever
+                </div>
+                <div class="brand-pill" id="brand-syngenta">
+                    <span class="brand-icon-circ">🌾</span> Syngenta
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Section: Executive Summary (Dark) -->
+    <section class="exec-summary-section" id="exec-summary">
+        <div class="container">
+            <div class="exec-grid">
+                <!-- Col 1: Title -->
+                <div>
+                    <h2 class="exec-title" id="exec-heading">Executive Summary:</h2>
+                </div>
+
+                <!-- Col 2: Development -->
+                <div id="exec-development-col">
+                    <h3 class="exec-col-title">
+                        <span aria-hidden="true">🛠️</span> Development
+                    </h3>
+                    <ul class="exec-list">
+                        <li>10 Years of Global Startup Experience</li>
+                        <li>Pivotal Role in a Core Team Position</li>
+                        <li>Familiarity with B2B/B2C/B2P Models</li>
+                        <li>Technical &amp; Non-technical Bridging</li>
+                        <li>Team Efficiency Advocate</li>
+                        <li>Global Project Driver</li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Design -->
+                <div id="exec-design-col">
+                    <h3 class="exec-col-title">
+                        <span aria-hidden="true">📐</span> Design
+                    </h3>
+                    <ul class="exec-list">
+                        <li>Head of Product Design</li>
+                        <li>Complex Systems Design</li>
+                        <li>Vision Conceptualization &amp; Workflows</li>
+                        <li>Human-Centric Design</li>
+                        <li>Multi-Language UX/UI Design</li>
+                        <li>Designing for Scale</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Black) -->
+    <footer class="site-footer bg-black" id="site-footer">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/research">Research</a>
+                <a href="/cv">CV</a>
+                <a href="https://www.linkedin.com/in/jensenearth/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+            <div class="footer-copy">
+                © JENSEN S.Z. ✨
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Story Accordion Toggle
+        function toggleAccordion(index) {
+            const content = document.getElementById(`acc-content-${index}`);
+            const btn = document.getElementById(`acc-btn-${index}`);
+            const arrow = document.getElementById(`acc-arrow-${index}`);
+            
+            if (!content || !btn) return;
+            
+            const isOpen = content.classList.contains('open');
+            
+            if (isOpen) {
+                content.classList.remove('open');
+                btn.setAttribute('aria-expanded', 'false');
+                if (arrow) arrow.textContent = '⌄';
+            } else {
+                content.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+                if (arrow) arrow.textContent = '⌃';
+            }
+        }
+
+        // Security Label Carousel Scroll
+        function scrollCarousel(direction) {
+            const carousel = document.getElementById('physical-carousel');
+            if (carousel) {
+                const scrollAmount = direction * 300;
+                carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    const targetEl = document.querySelector(targetId);
+                    if (targetEl) {
+                        e.preventDefault();
+                        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
