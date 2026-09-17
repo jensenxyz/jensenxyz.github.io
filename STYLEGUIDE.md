@@ -394,6 +394,12 @@ function unlockBodyScroll() {
      TINIFY_API_KEY=your_key node scripts/compress-images.js
      ```
    - Automated in CI via `.github/workflows/tinify-compress.yml`.
+3. **Directory & Subfolder Organization**:
+   - **Global & Shared Assets**: Placed directly in `/assets/` (favicons, manifest, global brand outlines, personal portrait).
+   - **Module & Project Subfolders**: Grouped into dedicated subfolders under `/assets/<section>/`:
+     - `/assets/scantrust/`: All banners, diagrams, mockups, and client logos for Scantrust.
+     - `/assets/research/`: All scientific study preview graphics (`science-*.png`).
+   - **Downloadable Deliverables**: Standalone documents and manuscripts (such as printable CV PDFs and research study PDFs) reside within their route directories (`/cv/*.pdf`, `/research/*.pdf`).
 
 ---
 
