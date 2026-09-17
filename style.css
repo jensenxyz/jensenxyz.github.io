@@ -770,6 +770,25 @@ ul { list-style: none; }
         color: #888888;
         padding-top: 2px;
     }
+
+    /* Disable all hover effects for mobile view */
+    .project-card:hover,
+    .study-card:hover,
+    .research-card:hover {
+        transform: none !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+    }
+    .study-media-wrapper:hover .study-img {
+        transform: none !important;
+    }
+    .carousel-controls button:hover:not(:disabled) {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    .btn:hover,
+    .btn-black:hover {
+        transform: none !important;
+    }
 }
 
 /* --- Research Subpage & Studies Grid --- */
