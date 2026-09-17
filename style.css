@@ -19,15 +19,19 @@ html {
     width: 100%;
 }
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
     line-height: 1.6;
     overflow-x: clip;
     width: 100%;
 }
 h1, h2, h3, h4 {
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.page-title, .section-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
-    line-height: 1.2;
 }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
@@ -143,7 +147,7 @@ ul { list-style: none; }
 .accordion-flush {
     background: transparent !important;
     border: none !important;
-    border-bottom: 1px solid rgba(0,0,0,0.15) !important;
+    border-bottom: 1px solid rgba(0,0,0,0.3) !important;
     margin-bottom: 0 !important;
     padding: 8px 0 !important;
     border-radius: 0 !important;
@@ -881,9 +885,9 @@ ul { list-style: none; }
 }
 
 .study-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
     font-size: 1.08rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.35;
     color: var(--text-dark);
     margin-bottom: 2px;
@@ -1229,9 +1233,9 @@ ul { list-style: none; }
 }
 
 .canva-presentation-card .card-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
     font-size: 1.08rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.35;
     color: var(--text-dark);
 }
@@ -1604,6 +1608,10 @@ ul { list-style: none; }
 }
 
 @media (max-width: 768px) {
+    .contact-grid {
+        gap: 16px;
+        padding: 0 10px;
+    }
     .close-btn {
         top: 16px;
         right: 16px;

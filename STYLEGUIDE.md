@@ -55,12 +55,13 @@ Global design tokens are declared on `:root` in `style.css`. Always use custom p
 
 ### Typography System
 
-The repository loads two primary font families from Google Fonts:
-- **Headings (`h1`, `h2`, `h3`, `h4`)**: `'Montserrat', sans-serif`
+The repository loads two primary font families from Google Fonts and uses system fonts as a fallback:
+- **Page Titles and Main Section Headings**: `'Montserrat', sans-serif`
   - Font weights: `800`, `900`
   - Line height: `1.2`
   - Letter spacing: `-0.5px` on titles
-- **Body Text, Navigation, & Controls**: `'Inter', sans-serif`
+- **All other text (Subtitles, Body, Navigation, Controls, etc.)**: `-apple-system, BlinkMacSystemFont, "Inter", sans-serif`
+  - *Rule*: Use `-apple-system` by default for Apple devices; it will fallback to `"Inter"` for non-Apple devices.
   - Font weights: `400` (Regular), `500` (Medium), `600` (Semi-bold), `700` (Bold)
   - Line height: `1.6`
 
