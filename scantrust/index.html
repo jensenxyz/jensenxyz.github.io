@@ -29,17 +29,25 @@
         }
         .scantrust-hero-img {
             width: 100%;
+            max-width: 560px;
             height: auto;
-            aspect-ratio: 4 / 3;
-            object-fit: contain;
+            object-fit: cover;
             border-radius: var(--border-radius, 30px);
-            margin-top: 16px;
-            margin-bottom: 24px;
+            margin: 16px auto 28px auto;
             display: block;
         }
         .scantrust-story {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0 auto 60px auto;
+        }
+        .scantrust-story .study-accordions-group {
+            border-top: 1px solid rgba(0, 0, 0, 0.15);
+            margin-top: 24px;
+        }
+        .scantrust-story .study-accordion.accordion-flush {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important;
+            border-top: none !important;
+            padding: 4px 0 !important;
         }
         .scantrust-story-title {
             font-size: 3.2rem;
@@ -87,7 +95,9 @@
 
         @media (max-width: 768px) {
             .scantrust-hero-img {
-                aspect-ratio: 16 / 9;
+                max-width: 100%;
+                border-radius: 24px;
+                margin: 12px auto 20px auto;
             }
             .scantrust-story-title {
                 font-size: 1.95rem;
@@ -113,7 +123,6 @@
                         url('/assets/scantrust/challenge-mountains.jpg') center center / cover no-repeat;
             padding: 56px 48px;
             color: #FFFFFF;
-            /* Full bleed */
             margin-left: calc(-50vw + 50%);
             margin-right: calc(-50vw + 50%);
         }
@@ -144,7 +153,7 @@
         }
         .challenge-pov-sheet-bottom {
             text-align: left;
-            margin-bottom: 24px;
+            margin-bottom: 12px;
         }
         .challenge-pov-phrase {
             font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
@@ -182,9 +191,8 @@
             margin-bottom: 0;
         }
         
-        /* Challenge Tabs Unified Component */
         .challenge-tabs-unified {
-            margin-top: 16px;
+            margin-top: 8px;
             background: #FFFFFF;
             border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 20px;
@@ -213,9 +221,9 @@
             font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
             font-weight: 700;
             font-size: 0.95rem;
-            color: rgba(0, 0, 0, 0.6);
+            color: rgba(0, 0, 0, 0.5);
             cursor: pointer;
-            transition: all 0.25s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             white-space: nowrap;
         }
         .challenge-tab-btn:hover {
@@ -225,7 +233,7 @@
         .challenge-tab-btn.active {
             background: #FFFFFF;
             color: #000000;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
         }
         .challenge-tabs-viewport {
             overflow: hidden;
@@ -295,7 +303,6 @@
             margin-bottom: 0;
         }
 
-        /* Swiper Container */
         .platform-pillar-swiper {
             display: flex;
             flex-direction: column;
@@ -355,7 +362,6 @@
             -webkit-user-drag: none;
         }
 
-        /* Nav Group with Arrow on each side of Title */
         .pillar-nav-group {
             display: inline-flex;
             align-items: center;
@@ -367,12 +373,15 @@
             background: transparent;
             border: none;
             cursor: pointer;
-            padding: 8px 10px;
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            flex-shrink: 0;
             color: #000000;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
+            border-radius: 50% !important;
             transition: transform 0.18s ease, background-color 0.18s ease, opacity 0.18s ease;
             -webkit-tap-highlight-color: transparent;
         }
@@ -393,9 +402,9 @@
             min-width: 220px;
             transition: opacity 0.15s ease, transform 0.15s ease;
             white-space: nowrap;
+            cursor: default !important;
         }
 
-        /* Scantrust Platform Subsections (1. Core Tech, 2. Digital Products, 3. Physical Products) */
         .scantrust-subsection {
             margin-top: 64px;
             padding-top: 36px;
@@ -447,7 +456,6 @@
             text-align: left;
         }
 
-        /* Project Cards styling matching Home Page */
         .scantrust-platform-card .project-card {
             box-shadow: none !important;
             border: 1px solid #e2e8f0 !important;
@@ -496,7 +504,6 @@
             line-height: 1.5;
         }
 
-        /* Color Block Placeholder for Digital & Physical Products */
         .color-block-placeholder {
             border-top-left-radius: 29px;
             border-top-right-radius: 29px;
@@ -552,7 +559,6 @@
             letter-spacing: 0.2px;
         }
 
-        /* Physical Products: Expandables & Dividers */
         .physical-thin-divider {
             border: none;
             height: 1px;
@@ -579,7 +585,6 @@
         .physical-expandable-summary:hover {
             background-color: rgba(0, 0, 0, 0.03);
         }
-        /* removed expandable-icon-plus styles */
         .expandable-heading-text {
             font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
             font-weight: 400;
@@ -692,7 +697,6 @@
             margin-bottom: 48px;
         }
 
-        /* Impact Metric Cards (3 Icons in stack/grid matching user uploaded mockup) */
         .impact-metrics-container {
             display: flex;
             flex-direction: row;
@@ -735,7 +739,6 @@
             line-height: 1.3;
         }
 
-        /* Impact Bullet Points Blockquote */
         .impact-quotes-list {
             max-width: 820px;
             margin: 0 auto 56px auto;
@@ -757,7 +760,6 @@
             text-align: left;
         }
 
-        /* Brands Subsection */
         .brands-subsection {
             margin-top: 48px;
             margin-bottom: 56px;
@@ -781,7 +783,7 @@
             justify-content: center;
             position: relative;
             margin: 0 auto;
-            max-width: 900px; /* Max width for desktop */
+            max-width: 900px;
             width: 100vw;
             margin-left: calc(-50vw + 50%);
             margin-right: calc(-50vw + 50%);
@@ -799,7 +801,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            padding-bottom: 24px; /* Space for dots overlay */
+            padding-bottom: 24px;
         }
         .brand-logo-slide {
             max-width: 90%;
@@ -814,7 +816,6 @@
             display: block;
             opacity: 1;
         }
-        /* Dots Navigation */
         .brands-dots-container {
             position: absolute;
             bottom: 0px;
@@ -908,7 +909,6 @@
             line-height: 1.3;
         }
 
-        /* Scantrust Page Contact Section Wrapper */
         .scantrust-contact-section {
             padding-top: 48px;
             padding-bottom: 24px;
@@ -1047,10 +1047,6 @@
             .expandable-heading-text {
                 font-size: 1.18rem;
             }
-            .expandable-icon-plus {
-                width: 28px;
-                height: 28px;
-            }
             .physical-expandable-content {
                 padding: 12px 0 8px 0;
             }
@@ -1123,12 +1119,12 @@
                 <h2 class="scantrust-story-subtitle">What if we can instantly verify any product in the world? This is my story with Scantrust.</h2>
                 
                 <div class="study-accordions-group">
-                    <details class="study-accordion accordion-flush" name="scantrust-accordion" open>
+                    <details class="study-accordion accordion-flush" open>
                         <summary class="study-accordion-summary">
                             <span class="summary-left">
                                 <span class="summary-title">👨‍🎨 Founding Designer</span>
                             </span>
-                            <svg class="summary-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg class="summary-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </summary>
                         <div class="study-accordion-body">
                             <p class="story-text">
@@ -1140,12 +1136,12 @@
                         </div>
                     </details>
                     
-                    <details class="study-accordion accordion-flush" name="scantrust-accordion">
+                    <details class="study-accordion accordion-flush">
                         <summary class="study-accordion-summary">
                             <span class="summary-left">
                                 <span class="summary-title">🧗 The Hustle & The Growth</span>
                             </span>
-                            <svg class="summary-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg class="summary-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </summary>
                         <div class="study-accordion-body">
                             <p class="story-text">
@@ -1167,12 +1163,12 @@
                         </div>
                     </details>
                     
-                    <details class="study-accordion accordion-flush" name="scantrust-accordion">
+                    <details class="study-accordion accordion-flush">
                         <summary class="study-accordion-summary">
                             <span class="summary-left">
                                 <span class="summary-title">🌏 From Prototypes to Global Impact</span>
                             </span>
-                            <svg class="summary-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg class="summary-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </summary>
                         <div class="study-accordion-body">
                             <p class="story-text">
@@ -1205,7 +1201,6 @@
                     <p class="challenge-pov-desc-dark" style="margin-bottom: 0;">The challenges evolved as the company grew.</p>
                 </div>
 
-                <!-- Tabs Component for Challenge Details (Unified Sheet with Horizontal Slide) -->
                 <div class="challenge-tabs-unified">
                     <div class="challenge-tabs-header">
                         <div class="challenge-tabs-nav" role="tablist" aria-label="Challenge stage tabs">
@@ -1293,7 +1288,6 @@
 
                 <div class="carousel-wrapper">
                     <div class="carousel-container" id="core-tech-carousel">
-                        <!-- Card 1: Authentication UI & SDK -->
                         <div class="project-card">
                             <img src="/assets/scantrust/placeholder-auth-sdk.svg" alt="Authentication UI &amp; SDK illustration" width="800" height="500" loading="lazy">
                             <div class="project-info">
@@ -1305,7 +1299,6 @@
                             </div>
                         </div>
 
-                        <!-- Card 2: The Printer App -->
                         <div class="project-card">
                             <img src="/assets/scantrust/placeholder-printer-app.svg" alt="The Printer App illustration" width="800" height="500" loading="lazy">
                             <div class="project-info">
@@ -1317,7 +1310,6 @@
                             </div>
                         </div>
 
-                        <!-- Card 3: Implementation Expertise -->
                         <div class="project-card">
                             <img src="/assets/scantrust/placeholder-implementation.svg" alt="Implementation Expertise illustration" width="800" height="500" loading="lazy">
                             <div class="project-info">
@@ -1328,7 +1320,6 @@
                             </div>
                         </div>
 
-                        <!-- Card 4: Non-technical Comms -->
                         <div class="project-card">
                             <img src="/assets/scantrust/placeholder-nontech-comms.svg" alt="Non-technical Comms illustration" width="800" height="500" loading="lazy">
                             <div class="project-info">
@@ -1340,7 +1331,6 @@
                         </div>
                     </div>
 
-                    <!-- Carousel Controls -->
                     <div class="carousel-controls">
                         <span class="carousel-hint" id="core-carousel-hint">Swipe to browse</span>
                         <div class="carousel-arrows">
@@ -1371,7 +1361,6 @@
 
                 <div class="carousel-wrapper">
                     <div class="carousel-container" id="digital-products-carousel">
-                        <!-- Project 1: Enterprise QR Code Generator -->
                         <div class="project-card">
                             <img src="/assets/scantrust/qr-manager.png" alt="Enterprise QR Code Generator" width="800" height="500" loading="lazy">
                             <div class="project-info">
@@ -1383,7 +1372,6 @@
                             </div>
                         </div>
 
-                        <!-- Project 2: QR Code Landing Page Builder -->
                         <div class="project-card">
                             <img src="/assets/scantrust/no-code-lp-builder.png" alt="QR Code Landing Page Builder" width="800" height="500" loading="lazy">
                             <div class="project-info">
@@ -1395,7 +1383,6 @@
                             </div>
                         </div>
 
-                        <!-- Project 3: Branded Mobile Apps -->
                         <div class="project-card">
                             <img src="/assets/scantrust/remy-martin-auth.png" alt="Branded Mobile Apps" width="800" height="500" loading="lazy">
                             <div class="project-info">
@@ -1408,7 +1395,6 @@
                             </div>
                         </div>
 
-                        <!-- Project 4: Supply Chain Workflow App -->
                         <div class="project-card">
                             <img src="/assets/scantrust/traceability-dashboard.png" alt="Supply Chain Workflow App" width="800" height="500" loading="lazy">
                             <div class="project-info">
@@ -1422,7 +1408,6 @@
                         </div>
                     </div>
 
-                    <!-- Carousel Controls -->
                     <div class="carousel-controls">
                         <span class="carousel-hint" id="digital-carousel-hint">Swipe to browse</span>
                         <div class="carousel-arrows">
@@ -1444,7 +1429,6 @@
             </section>
 
             <!-- 3. Physical Products Subsection -->
-            
             <section class="scantrust-subsection scantrust-physical-products-section" id="physicalProductsSection">
                 <h2 class="scantrust-subsection-title">3. Physical Products</h2>
                 
@@ -1591,128 +1575,122 @@
             </section>
             
             <!-- The Impact Section -->
-        <section class="scantrust-impact-section" id="impactSection">
-            <h2 class="impact-title">The Impact:</h2>
-            <p class="impact-lead-text">
-                Nowadays, Scantrust connects billions of products. I’m proud to share that millions of people have interacted with the digital and physical designs I made or contributed to.
-            </p>
+            <section class="scantrust-impact-section" id="impactSection">
+                <h2 class="impact-title">The Impact:</h2>
+                <p class="impact-lead-text">
+                    Nowadays, Scantrust connects billions of products. I’m proud to share that millions of people have interacted with the digital and physical designs I made or contributed to.
+                </p>
 
-            <!-- 3 Stat Badges / Icons -->
-            <div class="impact-metrics-container">
-                <!-- 1 Billion+ -->
-                <div class="impact-metric-item">
-                    <img src="/assets/scantrust/1bn.png" alt="1 Billion+ Products Protected" class="impact-metric-icon" width="260" height="260" loading="lazy">
-                    <h3 class="impact-metric-label">Products Protected</h3>
-                </div>
-
-                <!-- 185+ -->
-                <div class="impact-metric-item">
-                    <img src="/assets/scantrust/185.png" alt="185+ Countries Reached" class="impact-metric-icon" width="260" height="260" loading="lazy">
-                    <h3 class="impact-metric-label">Countries Reached</h3>
-                </div>
-
-                <!-- 80+ -->
-                <div class="impact-metric-item">
-                    <img src="/assets/scantrust/80+.png" alt="80+ Projects Launched" class="impact-metric-icon" width="260" height="260" loading="lazy">
-                    <h3 class="impact-metric-label">Projects Launched</h3>
-                </div>
-            </div>
-
-            <!-- Body text / quote items -->
-            <div class="impact-quotes-list">
-                <blockquote class="impact-quote-item">
-                    &gt; More than 1 billion products connected and protected.
-                </blockquote>
-                <blockquote class="impact-quote-item">
-                    &gt; Scantrust codes scanned in over 185 countries.
-                </blockquote>
-                <blockquote class="impact-quote-item">
-                    &gt; 80+ projects to which I made essential contributions successfully launched.
-                </blockquote>
-            </div>
-
-            <!-- Subsection: Brands I've worked with -->
-            <div class="brands-subsection">
-                <h3 class="brands-subsection-title">🏌️Brands I’ve worked with:</h3>
-                
-                <div class="brands-slideshow-card">
-                    <div class="brands-logo-viewport" id="brandsLogoViewport" aria-label="Brands client logos slideshow">
-                        <img src="/assets/scantrust/client-logo-1.png" alt="Client Logo 1" class="brand-logo-slide active" loading="lazy">
-                        <img src="/assets/scantrust/client-logo-2.png" alt="Client Logo 2" class="brand-logo-slide" loading="lazy">
-                        <img src="/assets/scantrust/client-logo-3.png" alt="Client Logo 3" class="brand-logo-slide" loading="lazy">
-                        <img src="/assets/scantrust/client-logo-4.png" alt="Client Logo 4" class="brand-logo-slide" loading="lazy">
-                        <img src="/assets/scantrust/client-logo-5.png" alt="Client Logo 5" class="brand-logo-slide" loading="lazy">
-                        <img src="/assets/scantrust/client-logo-6.png" alt="Client Logo 6" class="brand-logo-slide" loading="lazy">
-                        <img src="/assets/scantrust/client-logo-7.png" alt="Client Logo 7" class="brand-logo-slide" loading="lazy">
-                        <img src="/assets/scantrust/client-logo-8.png" alt="Client Logo 8" class="brand-logo-slide" loading="lazy">
-                        <img src="/assets/scantrust/client-logo-9.png" alt="Client Logo 9" class="brand-logo-slide" loading="lazy">
-                        <img src="/assets/scantrust/client-logo-10.png" alt="Client Logo 10" class="brand-logo-slide" loading="lazy">
-                        <img src="/assets/scantrust/client-logo-11.png" alt="Client Logo 11" class="brand-logo-slide" loading="lazy">
-                        <img src="/assets/scantrust/client-logo-12.png" alt="Client Logo 12" class="brand-logo-slide" loading="lazy">
-                        <img src="/assets/scantrust/client-logo-13.png" alt="Client Logo 13" class="brand-logo-slide" loading="lazy">
-                        <img src="/assets/scantrust/client-logo-14.png" alt="Client Logo 14" class="brand-logo-slide" loading="lazy">
-                        <img src="/assets/scantrust/client-logo-15.png" alt="Client Logo 15" class="brand-logo-slide" loading="lazy">
-                        <img src="/assets/scantrust/client-logo-16.png" alt="Client Logo 16" class="brand-logo-slide" loading="lazy">
-                        <img src="/assets/scantrust/client-logo-17.png" alt="Client Logo 17" class="brand-logo-slide" loading="lazy">
+                <div class="impact-metrics-container">
+                    <div class="impact-metric-item">
+                        <img src="/assets/scantrust/1bn.png" alt="1 Billion+ Products Protected" class="impact-metric-icon" width="260" height="260" loading="lazy">
+                        <h3 class="impact-metric-label">Products Protected</h3>
                     </div>
-                    <div class="brands-dots-container" id="brandsDotsContainer" aria-hidden="true">
-                        <!-- Populated by JavaScript -->
+
+                    <div class="impact-metric-item">
+                        <img src="/assets/scantrust/185.png" alt="185+ Countries Reached" class="impact-metric-icon" width="260" height="260" loading="lazy">
+                        <h3 class="impact-metric-label">Countries Reached</h3>
+                    </div>
+
+                    <div class="impact-metric-item">
+                        <img src="/assets/scantrust/80+.png" alt="80+ Projects Launched" class="impact-metric-icon" width="260" height="260" loading="lazy">
+                        <h3 class="impact-metric-label">Projects Launched</h3>
                     </div>
                 </div>
-            </div>
 
-            <!-- Subsection: Executive Summary -->
-            <div class="exec-summary-subsection">
-                <div class="exec-summary-inner">
-                    <h3 class="exec-summary-title">Executive Summary:</h3>
+                <div class="impact-quotes-list">
+                    <blockquote class="impact-quote-item">
+                        &gt; More than 1 billion products connected and protected.
+                    </blockquote>
+                    <blockquote class="impact-quote-item">
+                        &gt; Scantrust codes scanned in over 185 countries.
+                    </blockquote>
+                    <blockquote class="impact-quote-item">
+                        &gt; 80+ projects to which I made essential contributions successfully launched.
+                    </blockquote>
+                </div>
+
+                <div class="brands-subsection">
+                    <h3 class="brands-subsection-title">🏌️Brands I’ve worked with:</h3>
                     
-                    <div class="exec-summary-grid">
-                    <!-- Column 1: Development -->
-                    <div class="exec-pillar-card">
-                        <h4 class="exec-pillar-heading">🛠️ Development</h4>
-                        <ul class="exec-pillar-list">
-                            <li>10 Years of Global Startup Experience</li>
-                            <li>Pivotal Role in a Core Team Position</li>
-                            <li>Familiarity with B2B/B2C/B2P Models</li>
-                            <li>Technical &amp; Non-technical Bridging</li>
-                            <li>Team Efficiency Advocate</li>
-                            <li>Global Project Driver</li>
-                        </ul>
-                    </div>
-
-                    <!-- Column 2: Design -->
-                    <div class="exec-pillar-card">
-                        <h4 class="exec-pillar-heading">📐 Design</h4>
-                        <ul class="exec-pillar-list">
-                            <li>Head of Product Design</li>
-                            <li>Complex Systems Design</li>
-                            <li>Vision Conceptualization &amp; Workflows</li>
-                            <li>Human-Centric Design</li>
-                            <li>Multi-Language UX/UI Design</li>
-                            <li>Designing for Scale</li>
-                        </ul>
-                    </div>
+                    <div class="brands-slideshow-card">
+                        <div class="brands-logo-viewport" id="brandsLogoViewport" aria-label="Brands client logos slideshow">
+                            <img src="/assets/scantrust/client-logo-1.png" alt="Client Logo 1" class="brand-logo-slide active" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-2.png" alt="Client Logo 2" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-3.png" alt="Client Logo 3" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-4.png" alt="Client Logo 4" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-5.png" alt="Client Logo 5" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-6.png" alt="Client Logo 6" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-7.png" alt="Client Logo 7" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-8.png" alt="Client Logo 8" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-9.png" alt="Client Logo 9" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-10.png" alt="Client Logo 10" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-11.png" alt="Client Logo 11" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-12.png" alt="Client Logo 12" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-13.png" alt="Client Logo 13" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-14.png" alt="Client Logo 14" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-15.png" alt="Client Logo 15" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-16.png" alt="Client Logo 16" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-17.png" alt="Client Logo 17" class="brand-logo-slide" loading="lazy">
+                        </div>
+                        <div class="brands-dots-container" id="brandsDotsContainer" aria-hidden="true">
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Contact Me Section (Reused from Homepage) -->
-        <section id="contact" class="contact-section scantrust-contact-section bg-white text-center">
-            <div class="container">
-                <h2 class="section-title text-left">Contact Me:</h2>
-                <div class="contact-grid">
-                    <div class="contact-item">
-                        <img src="/assets/linkedin_logo_outline.webp" alt="LinkedIn Logo" class="icon-outline">
-                        <a href="https://www.linkedin.com/in/jensenearth/" target="_blank" class="btn btn-black">LINKEDIN</a>
-                    </div>
-                    <div class="contact-item">
-                        <img src="/assets/email_outline.webp" alt="Email Icon" class="icon-outline">
-                        <a href="mailto:slick.87.wackos@icloud.com" class="btn btn-black">EMAIL</a>
+                <div class="exec-summary-subsection">
+                    <div class="exec-summary-inner">
+                        <h3 class="exec-summary-title">Executive Summary:</h3>
+                        
+                        <div class="exec-summary-grid">
+                            <div class="exec-pillar-card">
+                                <h4 class="exec-pillar-heading">🛠️ Development</h4>
+                                <ul class="exec-pillar-list">
+                                    <li>10 Years of Global Startup Experience</li>
+                                    <li>Pivotal Role in a Core Team Position</li>
+                                    <li>Familiarity with B2B/B2C/B2P Models</li>
+                                    <li>Technical &amp; Non-technical Bridging</li>
+                                    <li>Team Efficiency Advocate</li>
+                                    <li>Global Project Driver</li>
+                                </ul>
+                            </div>
+
+                            <div class="exec-pillar-card">
+                                <h4 class="exec-pillar-heading">📐 Design</h4>
+                                <ul class="exec-pillar-list">
+                                    <li>Head of Product Design</li>
+                                    <li>Complex Systems Design</li>
+                                    <li>Vision Conceptualization &amp; Workflows</li>
+                                    <li>Human-Centric Design</li>
+                                    <li>Multi-Language UX/UI Design</li>
+                                    <li>Designing for Scale</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            <!-- Contact Me Section -->
+            <section id="contact" class="contact-section scantrust-contact-section bg-white text-center">
+                <div class="container">
+                    <h2 class="section-title text-left">Contact Me:</h2>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <div class="icon-wrapper">
+                                <img src="/assets/icon-linkedin.png" alt="LinkedIn Logo" class="icon-outline">
+                            </div>
+                            <a href="https://www.linkedin.com/in/jensenearth/" target="_blank" class="btn btn-black">LINKEDIN</a>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-wrapper">
+                                <img src="/assets/icon-email.png" alt="Email Icon" class="icon-outline">
+                            </div>
+                            <a href="mailto:slick.87.wackos@icloud.com" class="btn btn-black">EMAIL</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
@@ -1729,6 +1707,7 @@
             </div>
         </div>
     </footer>
+
     <script>
         function switchChallengeTab(tabName) {
             const earlyBtn = document.getElementById('tab-btn-early');
@@ -1757,20 +1736,6 @@
             }
         }
 
-        // Fallback for details[name] exclusivity on older browsers
-        document.querySelectorAll('details[name="scantrust-accordion"]').forEach((detail) => {
-            detail.addEventListener("toggle", (e) => {
-                if (detail.open) {
-                    document.querySelectorAll('details[name="scantrust-accordion"]').forEach((otherDetail) => {
-                        if (otherDetail !== detail) {
-                            otherDetail.removeAttribute("open");
-                        }
-                    });
-                }
-            });
-        });
-
-        // Manual Swiper for Scantrust Platform Pillars
         (function initPillarSwiper() {
             const viewport = document.getElementById('pillarViewport');
             const track = document.getElementById('pillarTrack');
@@ -1787,7 +1752,6 @@
             const total = pillars.length;
             let currentIndex = 0;
 
-            // Clone slides for infinite loop
             const slides = Array.from(track.querySelectorAll('.pillar-slide'));
             if (slides.length !== total) return;
             
@@ -1800,7 +1764,6 @@
             track.appendChild(firstClone);
             track.insertBefore(lastClone, slides[0]);
             
-            // Adjust track to show the actual first slide (index 1 in the new DOM)
             track.style.transition = 'none';
             track.style.transform = `translateX(-100%)`;
 
@@ -1810,8 +1773,7 @@
                 if (isTransitioning) return;
                 isTransitioning = true;
                 
-                // newIndex is the logical index (0 to total-1), but we also accept -1 and total
-                let actualIndex = newIndex + 1; // +1 because of the clone at the start
+                let actualIndex = newIndex + 1;
                 
                 track.style.transition = 'transform 0.35s cubic-bezier(0.25, 1, 0.5, 1)';
                 track.style.transform = `translateX(-${actualIndex * 100}%)`;
@@ -1832,7 +1794,6 @@
 
                 setTimeout(() => {
                     isTransitioning = false;
-                    // Snap back if we hit a clone
                     if (newIndex === -1) {
                         track.style.transition = 'none';
                         track.style.transform = `translateX(-${total * 100}%)`;
@@ -1843,62 +1804,17 @@
                 }, 350);
             }
 
-            const sectionIds = [
-                'coreTechnologySection',
-                'digitalProductsSection',
-                'physicalProductsSection'
-            ];
-
-            // Make active title clickable to scroll to section
-            titleEl.style.cursor = 'pointer';
-            titleEl.title = 'Click to jump to this section';
-            titleEl.addEventListener('click', () => {
-                const targetEl = document.getElementById(sectionIds[currentIndex]);
-                if (targetEl) {
-                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-
-            // Make slides clickable
-            track.addEventListener('click', (e) => {
-                const slide = e.target.closest('.pillar-slide');
-                if (!slide) return;
-                
-                // Find logical index
-                const allSlides = Array.from(track.children);
-                const domIndex = allSlides.indexOf(slide);
-                const logicalIdx = domIndex - 1; // subtract the clone
-                
-                if (logicalIdx >= 0 && logicalIdx < total) {
-                    if (currentIndex !== logicalIdx) {
-                        updateUI(logicalIdx);
-                    } else {
-                        const targetEl = document.getElementById(sectionIds[logicalIdx]);
-                        if (targetEl) {
-                            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                    }
-                }
-            });
-
             prevBtn.addEventListener('click', () => updateUI(currentIndex - 1));
             nextBtn.addEventListener('click', () => updateUI(currentIndex + 1));
 
-            // Keyboard navigation
             viewport.addEventListener('keydown', (e) => {
                 if (e.key === 'ArrowLeft') {
                     updateUI(currentIndex - 1);
                 } else if (e.key === 'ArrowRight') {
                     updateUI(currentIndex + 1);
-                } else if (e.key === 'Enter') {
-                    const targetEl = document.getElementById(sectionIds[currentIndex]);
-                    if (targetEl) {
-                        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
                 }
             });
 
-            // Touch & Mouse Drag swiping
             let isDragging = false;
             let startX = 0;
             let currentX = 0;
@@ -1930,7 +1846,7 @@
                 viewport.classList.remove('is-dragging');
                 
                 const width = viewport.offsetWidth || 280;
-                const threshold = width * 0.2; // 20% swipe threshold
+                const threshold = width * 0.2;
 
                 if (diffX < -threshold) {
                     updateUI(currentIndex + 1);
@@ -1952,7 +1868,6 @@
             viewport.addEventListener('touchcancel', onPointerUp);
         })();
 
-        // --- 4. Subsections Carousel Controller Helper ---
         function initSubCarousel(carouselId, leftBtnId, rightBtnId) {
             const carousel = document.getElementById(carouselId);
             const scrollLeftBtn = document.getElementById(leftBtnId);
@@ -1996,7 +1911,6 @@
                     }
                 }
                 
-                // Left Button State
                 scrollLeftBtn.disabled = isAtStart;
                 if (isAtStart) {
                     scrollLeftBtn.classList.add('disabled');
@@ -2010,7 +1924,6 @@
                     scrollLeftBtn.style.pointerEvents = 'auto';
                 }
                 
-                // Right Button State
                 scrollRightBtn.disabled = isAtEnd;
                 if (isAtEnd) {
                     scrollRightBtn.classList.add('disabled');
@@ -2052,12 +1965,10 @@
             setTimeout(updateButtonStates, 100);
         }
 
-        // Initialize carousels across all three subsections
         initSubCarousel("core-tech-carousel", "core-scroll-left", "core-scroll-right");
         initSubCarousel("digital-products-carousel", "digital-scroll-left", "digital-scroll-right");
         initSubCarousel("physical-labels-carousel", "physical-scroll-left", "physical-scroll-right");
 
-        // Handle expandable toggle for physical labels carousel
         const securityLabelsExpandable = document.getElementById("securityLabelsExpandable");
         if (securityLabelsExpandable) {
             securityLabelsExpandable.addEventListener("toggle", () => {
@@ -2070,7 +1981,6 @@
             });
         }
 
-        // Brands Logo Slideshow (Rapid fade in/fade out in loop)
         (function initBrandsSlideshow() {
             const viewport = document.getElementById("brandsLogoViewport");
             const dotsContainer = document.getElementById("brandsDotsContainer");
@@ -2079,7 +1989,6 @@
             const slides = viewport.querySelectorAll(".brand-logo-slide");
             if (!slides || slides.length === 0) return;
 
-            // Generate progress dots
             dotsContainer.innerHTML = "";
             slides.forEach((_, idx) => {
                 const dot = document.createElement("span");
@@ -2090,7 +1999,7 @@
             const dots = dotsContainer.querySelectorAll(".brand-dot");
             let currentIndex = 0;
             const totalSlides = slides.length;
-            const slideInterval = 1600; // 1.6s rapid loop
+            const slideInterval = 1600;
 
             function showNextBrand() {
                 slides[currentIndex].classList.remove("active");
