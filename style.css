@@ -90,7 +90,6 @@ ul { list-style: none; }
 .link-underline { font-size: 1.1rem; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; }
 
 /* --- Header (Sticky & Frosted Glass) --- */
-/* --- Global Layout Utilities --- */
 .pt-medium { padding-top: 12px; }
 .pb-medium { padding-bottom: 24px; }
 
@@ -147,9 +146,9 @@ ul { list-style: none; }
 .accordion-flush {
     background: transparent !important;
     border: none !important;
-    border-bottom: 1px solid rgba(0,0,0,0.3) !important;
+    border-bottom: 1px solid rgba(0,0,0,0.15) !important;
     margin-bottom: 0 !important;
-    padding: 8px 0 !important;
+    padding: 4px 0 !important;
     border-radius: 0 !important;
     box-shadow: none !important;
 }
@@ -170,12 +169,20 @@ ul { list-style: none; }
     background-color: transparent !important;
 }
 .accordion-flush .summary-title {
-    font-size: 1.2rem !important;
-    font-weight: 600 !important;
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+@media (max-width: 768px) {
+    .accordion-flush .summary-title {
+        font-size: 0.88rem !important;
+    }
 }
 
 /* --- Hero Section (Grid Layout) --- */
-.hero.pt-large { padding-top: 15px; } /* Custom padding to reduce space below sticky header */ /* Custom padding to reduce space below sticky header */
+.hero.pt-large { padding-top: 15px; }
 .hero { 
     display: grid; 
     grid-template-columns: 1.2fr 1fr; 
@@ -197,7 +204,6 @@ ul { list-style: none; }
     justify-content: flex-end;
 }
 
-/* Original Asymmetrical Blob Shape */
 .blob-img {
     width: 100%;
     max-width: 450px;
@@ -230,12 +236,11 @@ ul { list-style: none; }
 }
 @media (hover: hover) {
     .carousel-container:has(.project-card:hover) {
-        scroll-snap-type: none; /* Prevents shifting when a scaled card tries to re-snap on hover devices */
+        scroll-snap-type: none;
     }
 }
 .carousel-container::-webkit-scrollbar { display: none; }
 
-/* Elegant project cards */
 .project-card {
     flex: 0 0 320px;
     width: 320px;
@@ -250,10 +255,10 @@ ul { list-style: none; }
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
     will-change: transform;
-    transform: translateZ(0); /* Hardware acceleration to stabilize layout */
+    transform: translateZ(0);
 }
 .project-card:last-child {
-    scroll-snap-align: end; /* Snaps the last card's trailing edge to prevent scrolling into blank space */
+    scroll-snap-align: end;
 }
 @media (hover: hover) {
     .project-card:hover {
@@ -324,7 +329,7 @@ ul { list-style: none; }
     background: none; 
     border: none; 
     cursor: pointer; 
-    color: #000000; /* Arrows set to black */
+    color: #000000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -367,7 +372,6 @@ ul { list-style: none; }
 .accordion { flex: 1; }
 .accordion-item { border-bottom: 1px solid rgba(0,0,0,0.1); }
 
-/* Animated Icon & Touch Targets */
 .accordion-title {
     font-weight: 600;
     cursor: pointer;
@@ -377,7 +381,6 @@ ul { list-style: none; }
     padding: 20px 0; 
 }
 
-/* Base state for the animated + icon */
 .accordion-title .icon {
     position: relative;
     width: 18px;
@@ -405,7 +408,6 @@ ul { list-style: none; }
     border-radius: 2px;
 }
 
-/* Active state (Spins and hides vertical line) */
 .accordion-item.active .icon { transform: rotate(180deg); }
 .accordion-item.active .icon::after {
     opacity: 0;
@@ -556,7 +558,6 @@ ul { list-style: none; }
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* 4 Mockups in 1 Row Layout (Desktop & Mobile) */
 .mockups-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -580,6 +581,7 @@ ul { list-style: none; }
 .contact-grid { 
     display: flex; 
     justify-content: center; 
+    align-items: flex-end;
     gap: 60px; 
     margin-top: 40px; 
 }
@@ -588,15 +590,25 @@ ul { list-style: none; }
     flex-direction: column; 
     align-items: center; 
     gap: 15px; 
-    width: 160px; /* Fixed width container to match icon and button */
+    width: 160px;
+}
+.contact-item .icon-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 90px;
+    width: 100%;
 }
 .contact-item .btn {
     width: 100%;
 }
 .contact-item img.icon-outline {
-    width: 100%; /* Matches width of button below */
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
     height: auto;
     object-fit: contain;
+    display: block;
 }
 
 /* --- Footer --- */
@@ -708,7 +720,7 @@ ul { list-style: none; }
     .carousel-hint {
         font-size: 0.82rem;
     }
-    .mockups-grid { gap: 8px; } /* Tighter gaps on mobile screens */
+    .mockups-grid { gap: 8px; }
 
     .research-card {
         padding: 18px;
@@ -722,7 +734,6 @@ ul { list-style: none; }
         font-size: 0.78rem;
     }
 
-    /* Footer Mobile Enhancement */
     .site-footer {
         padding: 40px 0 36px;
     }
@@ -741,7 +752,7 @@ ul { list-style: none; }
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-height: 44px; /* Accessible 44px touch target */
+        min-height: 44px;
         padding: 6px 12px;
         font-size: 0.95rem;
     }
@@ -1090,7 +1101,8 @@ ul { list-style: none; }
 
 .summary-arrow {
     transition: transform 0.25s ease;
-    color: #666666;
+    color: #000000 !important;
+    stroke: #000000 !important;
     flex-shrink: 0;
 }
 
@@ -1401,7 +1413,6 @@ ul { list-style: none; }
     align-items: center;
 }
 
-/* Glass Navigation & Close Buttons for Lightbox (Homepage Mockups) */
 .close-btn {
     position: absolute;
     top: 28px;
@@ -1478,7 +1489,6 @@ ul { list-style: none; }
     right: 28px;
 }
 
-/* Floating Control Toolbar */
 .overlay-toolbar {
     position: absolute;
     top: 24px;
@@ -1550,7 +1560,6 @@ ul { list-style: none; }
     margin: 0 2px;
 }
 
-/* Stage Area */
 .overlay-stage {
     width: 100%;
     height: 100%;
@@ -1583,7 +1592,6 @@ ul { list-style: none; }
     transition: none !important;
 }
 
-/* Mobile Rotation / Zoom Instruction Hint */
 .overlay-hint {
     position: absolute;
     bottom: 24px;
