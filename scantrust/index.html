@@ -12,136 +12,1093 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
     <meta name="apple-mobile-web-app-title" content="JENSEN">
 
-    <!-- Fonts (Now including 300 weight for Exec Summary) -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/style.css">
     <style>
-        body { background-color: #FFFFFF !important; }
-        .scantrust-hero-banner { max-width: 800px; margin: 0 auto; }
-        .scantrust-hero-img { width: 100%; max-width: 560px; height: auto; object-fit: cover; border-radius: var(--border-radius, 30px); margin: 16px auto 28px auto; display: block; }
-        .scantrust-story { max-width: 800px; margin: 0 auto 60px auto; }
-        .scantrust-story .study-accordions-group { border-top: 1px solid rgba(0, 0, 0, 0.15); margin-top: 24px; }
-        .scantrust-story .study-accordion.accordion-flush { border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important; border-top: none !important; }
-        .scantrust-story-title { font-size: 3.2rem; font-family: 'Montserrat', sans-serif; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 20px; line-height: 1.2; text-align: center; }
-        .scantrust-story-subtitle { font-size: 1.15rem; font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif; font-weight: 400; color: var(--text-grey); line-height: 1.7; margin-bottom: 28px; text-align: center; }
-        .story-text { font-size: 1.05rem; line-height: 1.7; color: var(--text-dark); margin-bottom: 16px; }
-        .story-list { list-style: disc; padding-left: 24px; margin-bottom: 16px; }
-        .story-list li { font-size: 1.05rem; line-height: 1.7; color: var(--text-dark); margin-bottom: 8px; }
-
-        @media (max-width: 992px) { .scantrust-story-title { font-size: 2.3rem; } }
-        @media (max-width: 768px) {
-            .scantrust-hero-img { max-width: 100%; border-radius: 24px; margin: 12px auto 20px auto; }
-            .scantrust-story-title { font-size: 1.95rem; margin-bottom: 14px; }
-            .scantrust-story-subtitle { font-size: 0.98rem; margin-bottom: 20px; }
-            .story-text, .story-list li { font-size: 0.98rem; }
+        body {
+            background-color: #FFFFFF !important;
+        }
+        .scantrust-hero-banner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .scantrust-hero-img {
+            width: 100%;
+            max-width: 560px;
+            height: auto;
+            object-fit: cover;
+            border-radius: var(--border-radius, 30px);
+            margin: 16px auto 28px auto;
+            display: block;
+        }
+        .scantrust-story {
+            max-width: 800px;
+            margin: 0 auto 60px auto;
+        }
+        .scantrust-story .study-accordions-group {
+            border-top: 1px solid rgba(0, 0, 0, 0.15);
+            margin-top: 24px;
+        }
+        .scantrust-story .study-accordion.accordion-flush {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important;
+            border-top: none !important;
+            padding: 4px 0 !important;
+        }
+        .scantrust-story-title {
+            font-size: 3.2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+            text-align: left;
+            line-height: 1.2;
+        }
+        .scantrust-story-subtitle {
+            font-size: 1.15rem;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 400;
+            color: var(--text-grey);
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+        .story-text {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+        .story-text:last-child {
+            margin-bottom: 0;
+        }
+        .story-list {
+            list-style: disc;
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .story-list li {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+            margin-bottom: 8px;
         }
 
-        /* The Challenge Section */
+        @media (max-width: 992px) {
+            .scantrust-story-title {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .scantrust-hero-img {
+                max-width: 100%;
+                border-radius: 24px;
+                margin: 12px auto 20px auto;
+            }
+            .scantrust-story-title {
+                font-size: 1.95rem;
+                margin-bottom: 14px;
+            }
+            .scantrust-story-subtitle {
+                font-size: 0.98rem;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+            .story-text,
+            .story-list li {
+                font-size: 0.98rem;
+                line-height: 1.6;
+            }
+        }
+
+        /* --- The Challenge Section --- */
         .challenge-photo-wrapper {
             position: relative;
             margin-top: 64px;
-            /* Brightened Overlay */
-            background: linear-gradient(135deg, rgba(8, 12, 18, 0.45) 0%, rgba(15, 20, 28, 0.6) 100%),
+            background: linear-gradient(135deg, rgba(8, 12, 18, 0.78) 0%, rgba(15, 20, 28, 0.85) 100%),
                         url('/assets/scantrust/challenge-mountains.jpg') center center / cover no-repeat;
             padding: 56px 48px;
             color: #FFFFFF;
             margin-left: calc(-50vw + 50%);
             margin-right: calc(-50vw + 50%);
         }
-        .challenge-photo-inner { max-width: 1160px; margin: 0 auto; }
-        .challenge-white-wrapper { background: #FFFFFF; padding: 40px 0; }
-        .challenge-header { margin-bottom: 24px; text-align: center; }
-        .challenge-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 2.5rem; letter-spacing: -0.5px; line-height: 1.2; color: #FFFFFF; margin-bottom: 8px; text-align: center; }
+        .challenge-photo-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+        .challenge-white-wrapper {
+            background: #FFFFFF;
+            padding: 40px 0;
+        }
+        .challenge-header {
+            margin-bottom: 24px;
+            text-align: left;
+        }
+        .challenge-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+        .challenge-pov-sheet-top {
+            text-align: left;
+        }
+        .challenge-pov-sheet-bottom {
+            text-align: left;
+            margin-bottom: 12px;
+        }
+        .challenge-pov-phrase {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #FFFFFF;
+            letter-spacing: -0.2px;
+            margin: 0 0 8px 0;
+            text-align: left;
+        }
+        .challenge-pov-phrase-dark {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #000000;
+            letter-spacing: -0.2px;
+            margin: 0 0 8px 0;
+            text-align: left;
+        }
+        .challenge-pov-desc {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #E2E6EC;
+            margin: 0 0 20px 0;
+            text-align: left;
+        }
+        .challenge-pov-desc-dark {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #374151;
+            margin: 0 0 20px 0;
+            text-align: left;
+        }
+        .challenge-pov-desc:last-child {
+            margin-bottom: 0;
+        }
         
-        .challenge-tabs-unified { margin-top: 8px; background: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 20px; overflow: hidden; box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04); }
-        .challenge-tabs-header { padding: 12px 18px; border-bottom: 1px solid rgba(0, 0, 0, 0.1); display: flex; align-items: center; }
-        
-        /* Animated Tabs Logic */
-        .challenge-tabs-nav { position: relative; display: flex; width: 100%; padding: 4px; background: #FAF6F4; border-radius: 30px; z-index: 1; }
-        .challenge-tab-btn { flex: 1; position: relative; z-index: 3; font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif; font-weight: 700; font-size: 0.95rem; color: rgba(0, 0, 0, 0.5); cursor: pointer; padding: 8px 22px; border: none; background: transparent !important; box-shadow: none !important; transition: color 0.3s ease; white-space: nowrap; text-align: center; }
-        .challenge-tab-btn.active { color: #000000 !important; }
-        .challenge-tab-highlight { position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); background: #FFFFFF; border-radius: 24px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12); transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1); z-index: 2; }
-        
-        .challenge-tabs-viewport { overflow: hidden; width: 100%; }
-        .challenge-tabs-track { display: flex; width: 200%; transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1); will-change: transform; }
-        .challenge-tab-panel { width: 50%; box-sizing: border-box; padding: 28px 32px; flex-shrink: 0; }
-        .challenge-tab-panel ul { list-style: disc; padding-left: 22px; margin: 0; }
-        .challenge-tab-panel li { font-size: 1.05rem; line-height: 1.7; color: #374151; margin-bottom: 12px; }
+        .challenge-tabs-unified {
+            margin-top: 8px;
+            background: #FFFFFF;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+        }
+        .challenge-tabs-header {
+            padding: 12px 18px;
+            background: #FFFFFF;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+        .challenge-tabs-nav {
+            display: inline-flex;
+            gap: 6px;
+            padding: 4px;
+            background: #FAF6F4;
+            border-radius: 30px;
+        }
+        .challenge-tab-btn {
+            background: transparent;
+            border: none;
+            padding: 8px 22px;
+            border-radius: 24px;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+        }
+        .challenge-tab-btn:hover {
+            color: #000000;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .challenge-tab-btn.active {
+            background: #FFFFFF;
+            color: #000000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        }
+        .challenge-tabs-viewport {
+            overflow: hidden;
+            width: 100%;
+        }
+        .challenge-tabs-track {
+            display: flex;
+            width: 200%;
+            transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1);
+            will-change: transform;
+        }
+        .challenge-tab-panel {
+            width: 50%;
+            box-sizing: border-box;
+            padding: 28px 32px;
+            flex-shrink: 0;
+        }
+        .challenge-tab-panel ul {
+            list-style: disc;
+            padding-left: 22px;
+            margin: 0;
+        }
+        .challenge-tab-panel li {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #374151;
+            margin-bottom: 12px;
+        }
+        .challenge-tab-panel li:last-child {
+            margin-bottom: 0;
+        }
 
-        /* The Platform Section */
-        .scantrust-platform-card { margin-top: 60px; background: #F8F4F3; border: 2px solid #000000; border-radius: 32px; padding: 48px 40px 52px 40px; box-sizing: border-box; position: relative; }
-        .platform-card-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 2.35rem; text-align: center; margin-bottom: 26px; }
-        .platform-intro-p { font-size: 1.12rem; line-height: 1.65; margin-bottom: 16px; }
+        /* The Platform Section: Bounded Card */
+        .scantrust-platform-card {
+            margin-top: 60px;
+            background: #F8F4F3;
+            border: 2px solid #000000;
+            border-radius: 32px;
+            padding: 48px 40px 52px 40px;
+            box-sizing: border-box;
+            color: #000000;
+            position: relative;
+        }
+        .platform-card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.35rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: #000000;
+            margin-bottom: 26px;
+            text-align: center;
+        }
+        .platform-card-intro {
+            max-width: 820px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .platform-intro-p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.12rem;
+            line-height: 1.65;
+            color: #111827;
+            margin-bottom: 16px;
+        }
+        .platform-intro-p:last-child {
+            margin-bottom: 0;
+        }
+
+        .platform-pillar-swiper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 0px;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .pillar-viewport-wrapper {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
         
-        .pillar-viewport { width: 280px; height: 280px; overflow: hidden; position: relative; border-radius: 20px; background: #F8F4F3; cursor: grab; }
-        .pillar-track { display: flex; width: 100%; height: 100%; transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1); }
-        .pillar-slide { flex: 0 0 100%; display: flex; align-items: center; justify-content: center; }
-        .pillar-img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
-        .pillar-nav-group { display: inline-flex; align-items: center; justify-content: center; gap: 16px; margin-top: 20px; }
-        .pillar-nav-btn { width: 44px; height: 44px; border-radius: 50% !important; border: none; background: transparent; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
-        .pillar-active-title { font-weight: 700; font-size: 1.25rem; min-width: 220px; text-align: center; }
+        .pillar-viewport {
+            width: 280px;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+            cursor: grab;
+            touch-action: pan-y;
+            border-radius: 20px;
+            background: #F8F4F3;
+        }
+        .pillar-viewport.is-dragging {
+            cursor: grabbing;
+        }
+        .pillar-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            gap: 0;
+            transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform;
+        }
+        .pillar-slide {
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+        .pillar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
 
-        .scantrust-subsection { margin-top: 64px; padding-top: 36px; border-top: 1px solid rgba(0, 0, 0, 0.1); }
-        .scantrust-core-tech-section { margin-top: 56px; padding-top: 0; border-top: none; }
-        .core-tech-section-title, .scantrust-subsection-title { font-weight: 700; font-size: 1.25rem; margin-bottom: 18px; }
+        .pillar-nav-group {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .pillar-nav-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            flex-shrink: 0;
+            color: #000000;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50% !important;
+            transition: transform 0.18s ease, background-color 0.18s ease, opacity 0.18s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .pillar-nav-btn:hover {
+            background-color: rgba(0, 0, 0, 0.08);
+            transform: scale(1.15);
+        }
+        .pillar-nav-btn:active {
+            transform: scale(0.92);
+        }
+        .pillar-active-title {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #000000;
+            letter-spacing: -0.2px;
+            text-align: center;
+            min-width: 220px;
+            transition: opacity 0.15s ease, transform 0.15s ease;
+            white-space: nowrap;
+            cursor: default !important;
+        }
+
+        .scantrust-subsection {
+            margin-top: 64px;
+            padding-top: 36px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .scantrust-core-tech-section {
+            margin-top: 56px;
+            padding-top: 0;
+            border-top: none;
+        }
+        .scantrust-subsection-title {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #000000;
+            letter-spacing: -0.2px;
+            line-height: 1.25;
+            margin-bottom: 18px;
+            text-align: left;
+        }
+        .core-tech-section-title {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #000000;
+            letter-spacing: -0.2px;
+            line-height: 1.25;
+            margin-bottom: 18px;
+            text-align: left;
+        }
+        .scantrust-intro-text,
+        .core-tech-intro-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.68;
+            color: #111827;
+            margin-bottom: 20px;
+            max-width: 900px;
+            text-align: left;
+        }
+        .scantrust-intro-lead,
+        .core-tech-intro-lead {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.12rem;
+            font-weight: 400;
+            line-height: 1.6;
+            color: #111827;
+            margin-bottom: 28px;
+            text-align: left;
+        }
+
+        .scantrust-platform-card .project-card {
+            box-shadow: none !important;
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 30px !important;
+            overflow: hidden !important;
+            background-color: #FFFFFF !important;
+        }
+        .scantrust-platform-card .project-card img {
+            border-top-left-radius: 29px;
+            border-top-right-radius: 29px;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            background-color: #F8F4F3;
+            width: 100%;
+            display: block;
+        }
+        .scantrust-platform-card .project-info {
+            padding: 22px 28px 30px 28px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            text-align: left;
+        }
+        .scantrust-platform-card .project-info h3 {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-size: 1.22rem;
+            font-weight: 800;
+            letter-spacing: -0.2px;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+            line-height: 1.35;
+        }
+        .scantrust-platform-card .project-info p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.94rem;
+            color: #4B5563;
+            margin-bottom: 0;
+            line-height: 1.62;
+            flex: 1;
+        }
+        .scantrust-platform-card .project-info p strong {
+            color: #111827;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .color-block-placeholder {
+            border-top-left-radius: 29px;
+            border-top-right-radius: 29px;
+            aspect-ratio: 16 / 10;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            box-sizing: border-box;
+            position: relative;
+            text-align: center;
+            user-select: none;
+            -webkit-user-select: none;
+            overflow: hidden;
+            transition: filter 0.25s ease;
+        }
+        .project-card:hover .color-block-placeholder {
+            filter: brightness(1.04);
+        }
+        .color-block-placeholder::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.08;
+            background-image: radial-gradient(#FFFFFF 1.5px, transparent 1.5px);
+            background-size: 16px 16px;
+            pointer-events: none;
+        }
+        .placeholder-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 16px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 0.4px;
+            margin-bottom: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+        }
+        .placeholder-hint {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78rem;
+            opacity: 0.9;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+
+        .physical-thin-divider {
+            border: none;
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.1);
+            margin: 32px 0 24px 0;
+        }
+        .physical-expandable {
+            margin-bottom: 8px;
+        }
+        .physical-expandable-summary {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+            padding: 12px 4px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            transition: background-color 0.2s ease;
+        }
+        .physical-expandable-summary::-webkit-details-marker {
+            display: none;
+        }
+        .physical-expandable-summary:hover {
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+        .expandable-heading-text {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 400;
+            font-size: 1.1rem;
+            color: #111827;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .expandable-heading-text .icon {
+            position: relative;
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+        .expandable-heading-text .icon::before,
+        .expandable-heading-text .icon::after {
+            content: '';
+            position: absolute;
+            background-color: var(--text-dark);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .expandable-heading-text .icon::before {
+            width: 14px;
+            height: 1.5px;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+        }
+        .expandable-heading-text .icon::after {
+            width: 1.5px;
+            height: 14px;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .physical-expandable[open] .icon {
+            transform: rotate(180deg);
+        }
+        .physical-expandable[open] .icon::after {
+            opacity: 0;
+        }
+        .physical-expandable-content {
+            padding: 16px 0 12px 0;
+            text-align: left;
+        }
+        .physical-tech-intro {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            color: #374151;
+            line-height: 1.6;
+            margin: 0 0 16px 0;
+        }
+        .physical-tech-list {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.02rem;
+            color: #1F2937;
+            line-height: 1.7;
+            padding-left: 24px;
+            margin: 0 0 16px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .physical-tech-list li {
+            padding-left: 6px;
+        }
+        .physical-labels-body {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            color: #4B5563;
+            line-height: 1.6;
+            margin: 0 0 20px 0;
+        }
+        .label-sample-category {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: #9CA3AF;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        /* --- The Impact Section --- */
+        .scantrust-impact-section {
+            margin-top: 64px;
+            padding-top: 36px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .impact-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: #000000;
+            margin-bottom: 24px;
+            text-align: left;
+        }
+        .impact-lead-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.68;
+            color: #111827;
+            max-width: 900px;
+            text-align: left;
+            margin-bottom: 48px;
+        }
+
+        .impact-metrics-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto 52px auto;
+        }
+        @media (max-width: 768px) {
+            .impact-metrics-container {
+                flex-direction: column;
+            }
+        }
+        .impact-metric-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+        }
+        .impact-metric-icon {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            display: block;
+            margin-bottom: 16px;
+            filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.08));
+            transition: transform 0.25s ease;
+        }
+        .impact-metric-icon:hover {
+            transform: scale(1.05);
+        }
+        .impact-metric-label {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 800;
+            font-size: 1.45rem;
+            letter-spacing: -0.3px;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .impact-quotes-list {
+            max-width: 820px;
+            margin: 0 auto 56px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .impact-quote-item {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.12rem;
+            line-height: 1.65;
+            color: #111827;
+            background: #FFFFFF;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #000000;
+            padding: 16px 24px;
+            border-radius: 0 16px 16px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            text-align: left;
+        }
+
+        .brands-subsection {
+            margin-top: 48px;
+            margin-bottom: 56px;
+            text-align: left;
+        }
+        .brands-subsection-title {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #000000;
+            letter-spacing: -0.2px;
+            line-height: 1.25;
+            margin-bottom: 24px;
+            text-align: left;
+        }
         
-        /* Remove shadows on project cards here */
-        .scantrust-core-tech-section .project-card, .scantrust-digital-products-section .project-card { box-shadow: none !important; border: 1px solid #e2e8f0; }
-        .scantrust-platform-card .project-info p { font-size: 0.94rem; color: #4B5563; line-height: 1.62; }
-        
-        .physical-thin-divider { height: 1px; background-color: rgba(0, 0, 0, 0.1); margin: 32px 0 24px 0; border: none; }
-        
-        .physical-expandable-summary { display: flex; align-items: center; padding: 12px 4px; border-bottom: 1px solid rgba(0, 0, 0, 0.1); cursor: pointer; list-style: none; }
-        .physical-expandable-summary::-webkit-details-marker { display: none; }
-        /* Removed gray hover background for physical foldable headers */
-        .physical-expandable-summary:hover, .physical-expandable-summary:active { background-color: transparent !important; }
-        .expandable-heading-text { font-size: 1.1rem; color: #111827; display: flex; justify-content: space-between; width: 100%; align-items: center; }
+        .brands-slideshow-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 0 auto;
+            max-width: 900px;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+        }
+        @media (min-width: 768px) {
+            .brands-slideshow-card {
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        .brands-logo-viewport {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding-bottom: 24px;
+        }
+        .brand-logo-slide {
+            max-width: 90%;
+            max-height: 140px;
+            object-fit: contain;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+            margin: 0 auto;
+        }
+        .brand-logo-slide.active {
+            display: block;
+            opacity: 1;
+        }
+        .brands-dots-container {
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            z-index: 10;
+        }
+        .brand-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .brand-dot.active {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
 
-        .impact-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 2.5rem; letter-spacing: -0.5px; line-height: 1.2; color: #000000; margin-bottom: 24px; text-align: center; }
-        .impact-metrics-container { display: flex; justify-content: center; gap: 40px; margin: 0 auto 52px auto; }
-        .impact-metric-item { display: flex; flex-direction: column; align-items: center; width: 100%; }
-        .impact-metric-icon { width: 130px; height: 130px; object-fit: contain; margin-bottom: 16px; filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.08)); transition: none !important; }
-        .impact-metric-icon:hover { transform: none !important; }
+        .exec-summary-subsection {
+            margin-top: 48px;
+            margin-bottom: 0px;
+            text-align: left;
+            background: #000000;
+            color: #FFFFFF;
+            padding: 56px 40px;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+        }
+        .exec-summary-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+        .exec-summary-title {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #FFFFFF;
+            letter-spacing: -0.2px;
+            line-height: 1.25;
+            margin-bottom: 28px;
+            text-align: left;
+        }
+        .exec-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+        .exec-pillar-card {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        .exec-pillar-heading {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: #FFFFFF;
+            letter-spacing: -0.2px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .exec-pillar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .exec-pillar-list li {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.02rem;
+            line-height: 1.4;
+            color: #D1D5DB;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .exec-pillar-list li::before {
+            content: '•';
+            color: #FFFFFF;
+            font-weight: 900;
+            font-size: 1.2rem;
+            line-height: 1.3;
+        }
 
-        .impact-quotes-block { max-width: 820px; margin: 0 auto 56px auto; font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.8; color: #111827; background: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.1); border-left: 4px solid #000000; padding: 16px 24px; border-radius: 0 16px 16px 0; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02); text-align: left; }
-
-        .brands-slideshow-card { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; position: relative; }
-        .brands-logo-viewport { width: 100%; display: flex; align-items: center; justify-content: center; height: 350px; } /* Increased height */
-        .brand-logo-slide { max-width: 90%; max-height: 280px; object-fit: contain; display: none; opacity: 0; transition: opacity 0.4s ease-in-out; margin: 0 auto; }
-        .brand-logo-slide.active { display: block; opacity: 1; }
-
-        .exec-summary-subsection { background: #000000; color: #FFFFFF; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%); padding: 40px 20px; }
-        .exec-summary-inner { max-width: 1000px; margin: 0 auto; }
-        .exec-summary-title { font-weight: 700; font-size: 1.25rem; margin-bottom: 28px; }
-        .exec-summary-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-        .exec-pillar-card { padding: 0; }
-        .exec-pillar-heading { font-weight: 800; font-size: 1.25rem; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
-        .exec-pillar-list { display: flex; flex-direction: column; gap: 8px; }
-        .exec-pillar-list li { font-family: 'Inter', sans-serif; font-weight: 300; font-size: 0.9rem; line-height: 1.35; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #D1D5DB; display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
-        .exec-pillar-list li::before { content: '•'; color: #FFFFFF; font-weight: 900; font-size: 1.2rem; line-height: 1.3; }
+        .scantrust-contact-section {
+            padding-top: 48px;
+            padding-bottom: 24px;
+            background-color: transparent;
+        }
 
         @media (max-width: 768px) {
-            .impact-metrics-container { flex-direction: column; }
-            .brands-logo-viewport { height: 220px; }
-            .brand-logo-slide { max-height: 180px; }
-            .exec-summary-grid { grid-template-columns: 1fr; gap: 18px !important; }
-            .challenge-tab-btn { font-size: 0.88rem; padding: 8px 12px; }
-            .scantrust-platform-card .carousel-wrapper { margin-top: -8px; margin-left: -20px; margin-right: -20px; }
-            .scantrust-platform-card .carousel-container { padding: 16px 20px 14px 20px; }
+            .challenge-photo-wrapper {
+                padding: 36px 20px;
+                margin-top: 48px;
+            }
+            .challenge-title {
+                font-size: 1.95rem;
+            }
+            .challenge-pov-sheet-top, .challenge-pov-sheet-bottom {
+                padding: 0;
+            }
+            .challenge-white-wrapper {
+                padding: 24px 0;
+            }
+            .challenge-pov-phrase {
+                font-size: 1.02rem;
+                margin-bottom: 6px;
+            }
+            .challenge-pov-desc {
+                font-size: 0.98rem;
+                line-height: 1.6;
+                margin-bottom: 16px;
+            }
+            .challenge-tabs-unified {
+                border-radius: 16px;
+            }
+            .challenge-tabs-header {
+                padding: 10px 12px;
+            }
+            .challenge-tabs-nav {
+                width: 100%;
+                display: flex;
+                gap: 4px;
+            }
+            .challenge-tab-btn {
+                flex: 1;
+                text-align: center;
+                padding: 8px 12px;
+                font-size: 0.88rem;
+            }
+            .challenge-tab-panel {
+                padding: 20px 18px;
+            }
+            .challenge-tab-panel li {
+                font-size: 0.98rem;
+                line-height: 1.6;
+            }
+            .scantrust-platform-card {
+                margin-top: 48px;
+                padding: 32px 20px 36px 20px;
+                border-radius: 24px;
+            }
+            .platform-card-title {
+                font-size: 1.95rem;
+                margin-bottom: 18px;
+            }
+            .platform-intro-p {
+                font-size: 1.02rem;
+                line-height: 1.6;
+            }
+            .pillar-viewport {
+                width: 230px;
+                height: 230px;
+            }
+            .pillar-nav-group {
+                gap: 8px;
+                margin-top: 16px;
+            }
+            .pillar-active-title {
+                font-size: 1.08rem;
+                min-width: 170px;
+            }
+            .scantrust-subsection {
+                margin-top: 48px;
+                padding-top: 24px;
+            }
+            .scantrust-core-tech-section {
+                margin-top: 40px;
+            }
+            .scantrust-subsection-title,
+            .core-tech-section-title {
+                font-size: 1.35rem;
+                margin-bottom: 14px;
+            }
+            .scantrust-intro-text,
+            .core-tech-intro-text {
+                font-size: 1.02rem;
+                line-height: 1.6;
+                margin-bottom: 16px;
+            }
+            .scantrust-intro-lead,
+            .core-tech-intro-lead {
+                font-size: 1.02rem;
+                margin-bottom: 20px;
+            }
+            .scantrust-platform-card .carousel-wrapper {
+                margin-top: -8px;
+                margin-left: -20px;
+                margin-right: -20px;
+            }
+            .scantrust-platform-card .carousel-container {
+                padding: 16px 20px 14px 20px;
+                gap: 18px;
+                scroll-padding-left: 20px;
+                scroll-padding-right: 20px;
+            }
+            .scantrust-platform-card .project-card { 
+                flex: 0 0 290px;
+                width: 290px;
+                min-width: min(290px, 82vw);
+                max-width: 82vw;
+            }
+            .scantrust-platform-card .project-info {
+                padding: 18px 20px 24px 20px;
+            }
+            .scantrust-platform-card .project-info h3 {
+                font-size: 1.15rem;
+                margin-bottom: 8px;
+            }
+            .scantrust-platform-card .project-info p {
+                font-size: 0.88rem;
+                line-height: 1.55;
+            }
+            .scantrust-platform-card .carousel-controls {
+                margin-top: -2px;
+                margin-right: 0;
+                padding: 0 20px 8px 20px;
+                gap: 12px;
+            }
+            .expandable-heading-text {
+                font-size: 1.18rem;
+            }
+            .physical-expandable-content {
+                padding: 12px 0 8px 0;
+            }
+            .impact-title {
+                font-size: 1.95rem;
+                margin-bottom: 18px;
+            }
+            .impact-lead-text {
+                font-size: 1.02rem;
+                line-height: 1.6;
+                margin-bottom: 32px;
+            }
+            .impact-metric-icon {
+                width: 100px;
+                height: 100px;
+            }
+            .impact-metric-label {
+                font-size: 1.25rem;
+            }
+            .impact-quote-item {
+                font-size: 0.98rem;
+                padding: 14px 18px;
+            }
+            .brands-subsection-title,
+            .exec-summary-title {
+                font-size: 1.35rem;
+            }
+            
+            .brands-logo-viewport {
+                height: 110px;
+            }
+            .brand-logo-slide {
+                max-width: 220px;
+                max-height: 90px;
+            }
+            .exec-summary-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .exec-pillar-card {
+                padding: 24px 20px;
+            }
         }
     </style>
 </head>
 <body class="bg-beige">
 
-    <!-- Header Navigation -->
+    <!-- Header Navigation (Sticky & Translucent) -->
     <header class="site-header">
         <div class="container header-flex">
-            <a href="/index.html" class="logo">JENSEN ✨</a>
-            <a href="/index.html" class="link-underline back-to-home">
+            <a href="/" class="logo">JENSEN ✨</a>
+            <a href="/" class="link-underline back-to-home">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
                 Back to Home
             </a>
@@ -152,7 +1109,7 @@
     <main class="container pt-medium pb-large">
         <div class="scantrust-hero-banner">
             <div class="breadcrumb">
-                <a href="/index.html">Home</a> > Scantrust: Product QR Codes & SaaS
+                <a href="/">Home</a> > Scantrust: Product QR Codes & SaaS
             </div>
             
             <img src="/assets/scantrust/st-solution-hero-banner.png" alt="Scantrust: Product QR Codes & SaaS Solutions" class="scantrust-hero-img" width="2500" height="1875" loading="eager">
@@ -162,8 +1119,7 @@
                 <h2 class="scantrust-story-subtitle">What if we can instantly verify any product in the world? This is my story with Scantrust.</h2>
                 
                 <div class="study-accordions-group">
-                    <!-- ALL ACCORDIONS CLOSED BY DEFAULT -->
-                    <details class="study-accordion accordion-flush">
+                    <details class="study-accordion accordion-flush" open>
                         <summary class="study-accordion-summary">
                             <span class="summary-left">
                                 <span class="summary-title">👨‍🎨 Founding Designer</span>
@@ -216,10 +1172,10 @@
                         </summary>
                         <div class="study-accordion-body">
                             <p class="story-text">
-                                When a Fortune 500 client adopted us as a registered supplier, it validated our sleepless nights. It was deeply fulfilling to witness my designs and efforts evolve from prototypes and demos into <strong>impactful real-world products</strong>.
+                                When a Fortune 500 client adopted us as a registered supplier, it validated our sleepless nights. It was deeply fulfilling to witness my designs and efforts evolve from prototypes and demos into impactful real-world products.
                             </p>
                             <p class="story-text">
-                                Today, Scantrust connects billions of products and empowers millions to shop and consume safely. For me, it’s proof that small teams—through persistence and collaboration—can build solutions that bring <strong>positive changes</strong> to people's lives.
+                                Today, Scantrust connects billions of products and empowers millions to shop and consume safely. For me, it’s proof that small teams—through persistence and collaboration—can build solutions that bring positive changes to people's lives.
                             </p>
                         </div>
                     </details>
@@ -232,25 +1188,22 @@
                     <div class="challenge-header">
                         <h2 class="challenge-title">The Challenge:</h2>
                     </div>
-                    <div class="challenge-pov-sheet-top" style="text-align: left;">
-                        <p class="challenge-pov-phrase" style="font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-weight: 600; font-size: 1.1rem; color: #FFFFFF; margin: 0 0 8px 0;">Big Picture POV:</p>
-                        <p style="font-size: 1.05rem; line-height: 1.7; color: #E2E6EC; margin: 0;">There was no playbook for designing a brand-new platform. Everything had to be built from scratch. I had to lean heavily on my ability to learn fast and adapt on the fly.</p>
+                    <div class="challenge-pov-sheet-top">
+                        <p class="challenge-pov-phrase">Big Picture POV:</p>
+                        <p class="challenge-pov-desc" style="margin-bottom: 0;">There was no playbook for designing a brand-new platform. Everything had to be built from scratch. I had to lean heavily on my ability to learn fast and adapt on the fly.</p>
                     </div>
                 </div>
             </div>
 
             <div class="challenge-white-wrapper">
-                <div style="text-align: left; margin-bottom: 12px;">
-                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-weight: 600; font-size: 1.1rem; color: #000000; margin: 0 0 8px 0;">On the Ground POV:</p>
-                    <p style="font-size: 1.05rem; line-height: 1.7; color: #374151; margin: 0;">The challenges evolved as the company grew.</p>
+                <div class="challenge-pov-sheet-bottom">
+                    <p class="challenge-pov-phrase-dark">On the Ground POV:</p>
+                    <p class="challenge-pov-desc-dark" style="margin-bottom: 0;">The challenges evolved as the company grew.</p>
                 </div>
 
                 <div class="challenge-tabs-unified">
                     <div class="challenge-tabs-header">
                         <div class="challenge-tabs-nav" role="tablist" aria-label="Challenge stage tabs">
-                            <!-- Animated Pill -->
-                            <div class="challenge-tab-highlight" id="challengeTabHighlight"></div>
-                            
                             <button type="button" class="challenge-tab-btn active" role="tab" id="tab-btn-early" aria-selected="true" aria-controls="panel-early" onclick="switchChallengeTab('early')">Early Stage</button>
                             <button type="button" class="challenge-tab-btn" role="tab" id="tab-btn-scaling" aria-selected="false" aria-controls="panel-scaling" onclick="switchChallengeTab('scaling')">Scaling Stage</button>
                         </div>
@@ -282,13 +1235,13 @@
             <section class="scantrust-platform-card" id="platformSection">
                 <h2 class="platform-card-title">The Platform:</h2>
 
-                <div class="platform-card-intro" style="max-width: 820px; margin: 0 auto; text-align: left;">
+                <div class="platform-card-intro">
                     <p class="platform-intro-p">The Scantrust platform is designed to provide a complete QR code solution for global brands.</p>
-                    <p class="platform-intro-p">To understand my work at Scantrust, one must first understand the platform’s 3 fundamental pillars that I’ve contributed to: <span class="highlight-underline">Core Technology</span>, <span class="highlight-underline">Digital Products</span>, and <span class="highlight-underline">Physical Products</span>.</p>
+                    <p class="platform-intro-p">To understand my work at Scantrust, one must first understand the platform’s 3 fundamental pillars that I’ve contributed to: Core Technology, Digital Products, and Physical Products.</p>
                 </div>
 
-                <div class="platform-pillar-swiper" style="display: flex; flex-direction: column; align-items: center; user-select: none;" id="platformPillarSwiper">
-                    <div style="position: relative; display: inline-flex; align-items: center; justify-content: center;">
+                <div class="platform-pillar-swiper" id="platformPillarSwiper">
+                    <div class="pillar-viewport-wrapper">
                         <div class="pillar-viewport" id="pillarViewport" tabindex="0" role="region" aria-label="Scantrust Platform Pillars Carousel">
                             <div class="pillar-track" id="pillarTrack">
                                 <div class="pillar-slide" data-index="0" aria-label="Core Technology">
@@ -326,51 +1279,53 @@
             <section class="scantrust-core-tech-section" id="coreTechnologySection">
                 <h2 class="core-tech-section-title">1. Core Technology</h2>
                 
-                <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.68; color: #111827; margin-bottom: 20px; max-width: 900px; text-align: left;">
+                <p class="core-tech-intro-text">
                     While I’m not directly part of the Core Tech team, I worked closely with them in the early years to translate this complex, patented anti-counterfeit technology into something tangible and understandable for real-world users who are brand owners, business managers, and consumers.
                 </p>
-                <p style="font-family: 'Inter', sans-serif; font-size: 1.12rem; font-weight: 400; line-height: 1.6; color: #111827; margin-bottom: 28px; text-align: left;">
+                <p class="core-tech-intro-lead">
                     My involvement in Core Tech includes:
                 </p>
 
                 <div class="carousel-wrapper">
                     <div class="carousel-container" id="core-tech-carousel">
                         <div class="project-card">
-                            <img src="/assets/scantrust/core-SDK.jpg" alt="Authentication UI &amp; SDK illustration" width="800" height="500" loading="lazy">
+                            <img src="/assets/scantrust/placeholder-auth-sdk.svg" alt="Authentication UI &amp; SDK illustration" width="800" height="500" loading="lazy">
                             <div class="project-info">
                                 <h3>🧩 Authentication UI &amp; SDK</h3>
                                 <p>
-                                    Designing how end users scan and verify the Scantrust QR code within seconds. Countless prototype iterations and updates of the authentication UI in the Scantrust SDK for Android, iOS, and PWA applications.
+                                    <strong>Designing how end users scan and verify the Scantrust QR code within seconds.</strong>
+                                    Countless prototype iterations and updates of the authentication UI in the Scantrust SDK for Android, iOS, and PWA applications.
                                 </p>
                             </div>
                         </div>
 
                         <div class="project-card">
-                            <img src="/assets/scantrust/core-printer-app.jpg" alt="The Printer App illustration" width="800" height="500" loading="lazy">
+                            <img src="/assets/scantrust/placeholder-printer-app.svg" alt="The Printer App illustration" width="800" height="500" loading="lazy">
                             <div class="project-info">
                                 <h3>📚 The Printer App</h3>
                                 <p>
-                                    Designed for printing operators at the print manufacturer. It manages the calibration of new printers, print orders from brand owners, and quality control of secure QR codes during production.
+                                    <strong>Designed for printing operators at the print manufacturer.</strong>
+                                    It manages the calibration of new printers, print orders from brand owners, and quality control of secure QR codes during production.
                                 </p>
                             </div>
                         </div>
 
                         <div class="project-card">
-                            <img src="/assets/scantrust/core-implementation.jpg" alt="Implementation Expertise illustration" width="800" height="500" loading="lazy">
+                            <img src="/assets/scantrust/placeholder-implementation.svg" alt="Implementation Expertise illustration" width="800" height="500" loading="lazy">
                             <div class="project-info">
                                 <h3>📘 Implementation Expertise</h3>
                                 <p>
-                                    Provide brand owners with expert guidance informed by a deep understanding of the Scantrust secure QR code specs when it comes to printing and incorporating them into client product labels or packaging design.
+                                    <strong>Provide brand owners with expert guidance informed by a deep understanding of the Scantrust secure QR code specs when it comes to printing and incorporating them into client product labels or packaging design.</strong>
                                 </p>
                             </div>
                         </div>
 
                         <div class="project-card">
-                            <img src="/assets/scantrust/core-non-technical.jpg" alt="Non-technical Comms illustration" width="800" height="500" loading="lazy">
+                            <img src="/assets/scantrust/placeholder-nontech-comms.svg" alt="Non-technical Comms illustration" width="800" height="500" loading="lazy">
                             <div class="project-info">
                                 <h3>🖼️ Non-technical Comms</h3>
                                 <p>
-                                    Designing key graphics and component animations to demonstrate and explain the complex Core Technology for both internal teams and external stakeholders across apps, websites, and marketing materials.
+                                    <strong>Designing key graphics and component animations to demonstrate and explain the complex Core Technology for both internal teams and external stakeholders across apps, websites, and marketing materials.</strong>
                                 </p>
                             </div>
                         </div>
@@ -400,7 +1355,7 @@
             <section class="scantrust-subsection scantrust-digital-products-section" id="digitalProductsSection">
                 <h2 class="scantrust-subsection-title">2. Digital Products</h2>
                 
-                <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.68; color: #111827; margin-bottom: 20px; max-width: 900px; text-align: left;">
+                <p class="scantrust-intro-text">
                     I led the end-to-end UI and UX design for the entire Scantrust web and mobile systems, including the Customer Login Portal (B2B), white-label software, windows application for industrial use, and the core digital products/offering listed below:
                 </p>
 
@@ -477,28 +1432,25 @@
             <section class="scantrust-subsection scantrust-physical-products-section" id="physicalProductsSection">
                 <h2 class="scantrust-subsection-title">3. Physical Products</h2>
                 
-                <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.68; color: #111827; margin-bottom: 20px; max-width: 900px; text-align: left;">
+                <p class="scantrust-intro-text">
                     Scantrust’s physical products are the printed Secure QR codes, which are essential catalysts connecting tangible goods to Scantrust's digital platform, enabling a range of solutions from authentication and traceability to compliance and customer engagement.
                 </p>
-                <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.68; color: #111827; margin-top: 14px; margin-bottom: 32px; max-width: 900px; text-align: left;">
+                <p class="scantrust-intro-text" style="margin-top: 14px; margin-bottom: 32px;">
                     I designed a wide range of Security Labels, i.e. Anti-Counterfeit Labels, which feature technologies such as the ScanTrust Secure QR codes to prevent fakes and ensure product integrity.
                 </p>
 
                 <hr class="physical-thin-divider">
 
-                <details class="physical-expandable" id="antiCounterfeitExpandable" style="margin-bottom: 8px;">
-                    <summary class="physical-expandable-summary">
-                        <span class="icon" style="position: relative; width: 24px; height: 24px; transition: transform 0.3s ease;">
-                            <span style="position: absolute; width: 14px; height: 1.5px; background: #000; top: 50%; left: 5px; transform: translateY(-50%);"></span>
-                            <span class="vert-line" style="position: absolute; width: 1.5px; height: 14px; background: #000; top: 5px; left: 50%; transform: translateX(-50%); transition: opacity 0.3s ease;"></span>
-                        </span>
+                <details class="physical-expandable" id="antiCounterfeitExpandable">
+                    <summary class="physical-expandable-summary" style="display: flex; align-items: center; cursor: pointer; list-style: none; padding: 16px 0;">
+                        <span class="icon" style="font-weight: 900; font-size: 1.4rem; font-family: monospace; margin-right: 12px; width: 24px; text-align: center;">+</span>
                         <span class="expandable-heading-text">Anti-counterfeit Technologies</span>
                     </summary>
-                    <div style="padding: 16px 0 20px 36px; text-align: left;">
-                        <p style="font-family: 'Inter', sans-serif; font-size: 1.05rem; color: #374151; line-height: 1.6; margin: 0 0 16px 0;">
+                    <div class="physical-expandable-content" style="padding: 0 0 20px 36px;">
+                        <p class="physical-tech-intro">
                             I’ve experience designing and working with these Anti-counterfeit Technologies:
                         </p>
-                        <ol style="font-family: 'Inter', sans-serif; font-size: 1.02rem; color: #1F2937; line-height: 1.7; padding-left: 24px; margin: 0 0 16px 0; display: flex; flex-direction: column; gap: 12px;">
+                        <ol class="physical-tech-list">
                             <li>Holograms</li>
                             <li>Tamper-evident features (“void”, self-destructing)</li>
                             <li>Special inks and printing (heat, UV, infrared)</li>
@@ -511,137 +1463,111 @@
 
                 <hr class="physical-thin-divider">
 
-                <details class="physical-expandable" id="securityLabelsExpandable" style="margin-bottom: 8px;">
-                    <summary class="physical-expandable-summary">
-                        <span class="icon" style="position: relative; width: 24px; height: 24px; transition: transform 0.3s ease;">
-                            <span style="position: absolute; width: 14px; height: 1.5px; background: #000; top: 50%; left: 5px; transform: translateY(-50%);"></span>
-                            <span class="vert-line" style="position: absolute; width: 1.5px; height: 14px; background: #000; top: 5px; left: 50%; transform: translateX(-50%); transition: opacity 0.3s ease;"></span>
-                        </span>
+                <details class="physical-expandable" id="securityLabelsExpandable">
+                    <summary class="physical-expandable-summary" style="display: flex; align-items: center; cursor: pointer; list-style: none; padding: 16px 0;">
+                        <span class="icon" style="font-weight: 900; font-size: 1.4rem; font-family: monospace; margin-right: 12px; width: 24px; text-align: center;">+</span>
                         <span class="expandable-heading-text">State-of-the-art Security Labels</span>
                     </summary>
-                    <div style="padding: 16px 0 20px 0; text-align: left;">
-                        
-                        <!-- CAROUSEL MODULE FOR LABELS -->
-                        <div class="carousel-wrapper">
-                            <div class="carousel-container" id="labels-carousel">
-                                <div class="label-card project-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; background: #FFF; box-shadow: none;">
-                                   <img src="/assets/scantrust/label-designs-1.jpg" alt="WWF Gifts" style="width: 100%; height: auto; display: block;" loading="lazy">
-                                   <div style="padding: 16px;">
-                                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">WWF Gifts</h4>
-                                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Traceable Security Label For Authenticity</p>
-                                   </div>
-                                </div>
-                                <div class="label-card project-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; background: #FFF; box-shadow: none;">
-                                   <img src="/assets/scantrust/label-designs-2.jpg" alt="Wine Label" style="width: 100%; height: auto; display: block;" loading="lazy">
-                                   <div style="padding: 16px;">
-                                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">Wine Label</h4>
-                                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Multiple Secure Features Built-In</p>
-                                   </div>
-                                </div>
-                                <div class="label-card project-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; background: #FFF; box-shadow: none;">
-                                   <img src="/assets/scantrust/label-designs-3.jpg" alt="Coffee Beans" style="width: 100%; height: auto; display: block;" loading="lazy">
-                                   <div style="padding: 16px;">
-                                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">Coffee Beans</h4>
-                                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Fair Trade And Sustainability</p>
-                                   </div>
-                                </div>
-                                <div class="label-card project-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; background: #FFF; box-shadow: none;">
-                                   <img src="/assets/scantrust/label-designs-4.jpg" alt="Vorsteiner Luxury Wheels" style="width: 100%; height: auto; display: block;" loading="lazy">
-                                   <div style="padding: 16px;">
-                                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">Vorsteiner Luxury Wheels</h4>
-                                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Authentication For Personalized Wheels</p>
-                                   </div>
-                                </div>
-                                <div class="label-card project-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; background: #FFF; box-shadow: none;">
-                                   <img src="/assets/scantrust/label-designs-5.jpg" alt="Zippo One Label™" style="width: 100%; height: auto; display: block;" loading="lazy">
-                                   <div style="padding: 16px;">
-                                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">Zippo One Label™</h4>
-                                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Limited Edition Zippo Lighter</p>
-                                   </div>
-                                </div>
-                                <div class="label-card project-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; background: #FFF; box-shadow: none;">
-                                   <img src="/assets/scantrust/label-designs-6.jpg" alt="Zippo One Label™" style="width: 100%; height: auto; display: block;" loading="lazy">
-                                   <div style="padding: 16px;">
-                                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">Zippo One Label™</h4>
-                                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Design Variant Under UV Light</p>
-                                   </div>
-                                </div>
-                                <div class="label-card project-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; background: #FFF; box-shadow: none;">
-                                   <img src="/assets/scantrust/label-designs-7.jpg" alt="WWF Gifts" style="width: 100%; height: auto; display: block;" loading="lazy">
-                                   <div style="padding: 16px;">
-                                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">WWF Gifts</h4>
-                                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Unique Label Design</p>
-                                   </div>
-                                </div>
-                                <div class="label-card project-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; background: #FFF; box-shadow: none;">
-                                   <img src="/assets/scantrust/label-designs-8.jpg" alt="Middle School Textbooks" style="width: 100%; height: auto; display: block;" loading="lazy">
-                                   <div style="padding: 16px;">
-                                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">Middle School Textbooks</h4>
-                                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Oxford University Press Pakistan</p>
-                                   </div>
-                                </div>
-                                <div class="label-card project-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; background: #FFF; box-shadow: none;">
-                                   <img src="/assets/scantrust/label-designs-9.jpg" alt="Covid-19 Response" style="width: 100%; height: auto; display: block;" loading="lazy">
-                                   <div style="padding: 16px;">
-                                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">Covid-19 Response</h4>
-                                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Rapid Test Kit</p>
-                                   </div>
-                                </div>
-                                <div class="label-card project-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; background: #FFF; box-shadow: none;">
-                                   <img src="/assets/scantrust/label-designs-10.jpg" alt="Genuine Medications" style="width: 100%; height: auto; display: block;" loading="lazy">
-                                   <div style="padding: 16px;">
-                                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">Genuine Medications</h4>
-                                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Pharma-Tech In Nigeria</p>
-                                   </div>
-                                </div>
-                                <div class="label-card project-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; background: #FFF; box-shadow: none;">
-                                   <img src="/assets/scantrust/label-designs-11.jpg" alt="Medical Gloves" style="width: 100%; height: auto; display: block;" loading="lazy">
-                                   <div style="padding: 16px;">
-                                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">Medical Gloves</h4>
-                                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">High-Performance During Pandemic</p>
-                                   </div>
-                                </div>
-                                <div class="label-card project-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; background: #FFF; box-shadow: none;">
-                                   <img src="/assets/scantrust/label-designs-12.jpg" alt="DuPont Water Filters" style="width: 100%; height: auto; display: block;" loading="lazy">
-                                   <div style="padding: 16px;">
-                                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">DuPont Water Filters</h4>
-                                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Residential & Industrial Product Lines</p>
-                                   </div>
-                                </div>
-                                <div class="label-card project-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; background: #FFF; box-shadow: none;">
-                                   <img src="/assets/scantrust/label-designs-13.jpg" alt="TASA Fishmeal" style="width: 100%; height: auto; display: block;" loading="lazy">
-                                   <div style="padding: 16px;">
-                                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">TASA Fishmeal</h4>
-                                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Quality Certificate</p>
-                                   </div>
-                                </div>
-                                <div class="label-card project-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; background: #FFF; box-shadow: none;">
-                                   <img src="/assets/scantrust/label-designs-14.jpg" alt="Inspection Certificate" style="width: 100%; height: auto; display: block;" loading="lazy">
-                                   <div style="padding: 16px;">
-                                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">Inspection Certificate</h4>
-                                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">SGS Singapore & APAC</p>
-                                   </div>
-                                </div>
-                            </div>
-                            
-                            <div class="carousel-controls">
-                                <span class="carousel-hint" id="labels-carousel-hint">Swipe to browse</span>
-                                <div class="carousel-arrows">
-                                    <button id="labels-scroll-left" aria-label="Previous Label">
-                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                            <line x1="19" y1="12" x2="5" y2="12"></line>
-                                            <polyline points="12 19 5 12 12 5"></polyline>
-                                        </svg>
-                                    </button>
-                                    <button id="labels-scroll-right" aria-label="Next Label">
-                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                                            <polyline points="12 5 19 12 12 19"></polyline>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="physical-expandable-content" style="padding: 0 0 20px 36px;">
+                        <div class="labels-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; margin-top: 20px;">
+               <div class="label-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; overflow: hidden; background: #FFF;">
+                   <img src="/assets/scantrust/label-designs-1.jpg" alt="WWF Gifts" style="width: 100%; height: auto; display: block;" loading="lazy">
+                   <div style="padding: 16px;">
+                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">WWF Gifts</h4>
+                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Traceable Security Label For Authenticity</p>
+                   </div>
+               </div>
+               <div class="label-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; overflow: hidden; background: #FFF;">
+                   <img src="/assets/scantrust/label-designs-2.jpg" alt="Wine Label" style="width: 100%; height: auto; display: block;" loading="lazy">
+                   <div style="padding: 16px;">
+                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">Wine Label</h4>
+                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Multiple Secure Features Built-In</p>
+                   </div>
+               </div>
+               <div class="label-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; overflow: hidden; background: #FFF;">
+                   <img src="/assets/scantrust/label-designs-3.jpg" alt="Coffee Beans" style="width: 100%; height: auto; display: block;" loading="lazy">
+                   <div style="padding: 16px;">
+                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">Coffee Beans</h4>
+                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Fair Trade And Sustainability</p>
+                   </div>
+               </div>
+               <div class="label-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; overflow: hidden; background: #FFF;">
+                   <img src="/assets/scantrust/label-designs-4.jpg" alt="Vorsteiner Luxury Wheels" style="width: 100%; height: auto; display: block;" loading="lazy">
+                   <div style="padding: 16px;">
+                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">Vorsteiner Luxury Wheels</h4>
+                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Authentication For Personalized Wheels</p>
+                   </div>
+               </div>
+               <div class="label-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; overflow: hidden; background: #FFF;">
+                   <img src="/assets/scantrust/label-designs-5.jpg" alt="Zippo One Label™" style="width: 100%; height: auto; display: block;" loading="lazy">
+                   <div style="padding: 16px;">
+                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">Zippo One Label™</h4>
+                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Limited Edition Zippo Lighter</p>
+                   </div>
+               </div>
+               <div class="label-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; overflow: hidden; background: #FFF;">
+                   <img src="/assets/scantrust/label-designs-6.jpg" alt="Zippo One Label™" style="width: 100%; height: auto; display: block;" loading="lazy">
+                   <div style="padding: 16px;">
+                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">Zippo One Label™</h4>
+                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Design Variant Under UV Light</p>
+                   </div>
+               </div>
+               <div class="label-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; overflow: hidden; background: #FFF;">
+                   <img src="/assets/scantrust/label-designs-7.jpg" alt="WWF Gifts" style="width: 100%; height: auto; display: block;" loading="lazy">
+                   <div style="padding: 16px;">
+                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">WWF Gifts</h4>
+                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Unique Label Design</p>
+                   </div>
+               </div>
+               <div class="label-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; overflow: hidden; background: #FFF;">
+                   <img src="/assets/scantrust/label-designs-8.jpg" alt="Middle School Textbooks" style="width: 100%; height: auto; display: block;" loading="lazy">
+                   <div style="padding: 16px;">
+                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">Middle School Textbooks</h4>
+                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Oxford University Press Pakistan</p>
+                   </div>
+               </div>
+               <div class="label-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; overflow: hidden; background: #FFF;">
+                   <img src="/assets/scantrust/label-designs-9.jpg" alt="Covid-19 Response" style="width: 100%; height: auto; display: block;" loading="lazy">
+                   <div style="padding: 16px;">
+                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">Covid-19 Response</h4>
+                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Rapid Test Kit</p>
+                   </div>
+               </div>
+               <div class="label-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; overflow: hidden; background: #FFF;">
+                   <img src="/assets/scantrust/label-designs-10.jpg" alt="Genuine Medications" style="width: 100%; height: auto; display: block;" loading="lazy">
+                   <div style="padding: 16px;">
+                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">Genuine Medications</h4>
+                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Pharma-Tech In Nigeria</p>
+                   </div>
+               </div>
+               <div class="label-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; overflow: hidden; background: #FFF;">
+                   <img src="/assets/scantrust/label-designs-11.jpg" alt="Medical Gloves" style="width: 100%; height: auto; display: block;" loading="lazy">
+                   <div style="padding: 16px;">
+                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">Medical Gloves</h4>
+                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">High-Performance During Pandemic</p>
+                   </div>
+               </div>
+               <div class="label-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; overflow: hidden; background: #FFF;">
+                   <img src="/assets/scantrust/label-designs-12.jpg" alt="DuPont Water Filters" style="width: 100%; height: auto; display: block;" loading="lazy">
+                   <div style="padding: 16px;">
+                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">DuPont Water Filters</h4>
+                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Residential & Industrial Product Lines</p>
+                   </div>
+               </div>
+               <div class="label-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; overflow: hidden; background: #FFF;">
+                   <img src="/assets/scantrust/label-designs-13.jpg" alt="TASA Fishmeal" style="width: 100%; height: auto; display: block;" loading="lazy">
+                   <div style="padding: 16px;">
+                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">TASA Fishmeal</h4>
+                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">Quality Certificate</p>
+                   </div>
+               </div>
+               <div class="label-card" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; overflow: hidden; background: #FFF;">
+                   <img src="/assets/scantrust/label-designs-14.jpg" alt="Inspection Certificate" style="width: 100%; height: auto; display: block;" loading="lazy">
+                   <div style="padding: 16px;">
+                       <h4 style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: #111827;">Inspection Certificate</h4>
+                       <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: #4B5563;">SGS Singapore & APAC</p>
+                   </div>
+               </div></div>
                     </div>
                 </details>
 
@@ -651,39 +1577,43 @@
             <!-- The Impact Section -->
             <section class="scantrust-impact-section" id="impactSection">
                 <h2 class="impact-title">The Impact:</h2>
-                <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.68; color: #111827; max-width: 900px; text-align: center; margin: 0 auto 48px auto;">
+                <p class="impact-lead-text">
                     Nowadays, Scantrust connects billions of products. I’m proud to share that millions of people have interacted with the digital and physical designs I made or contributed to.
                 </p>
 
                 <div class="impact-metrics-container">
                     <div class="impact-metric-item">
                         <img src="/assets/scantrust/1bn.png" alt="1 Billion+ Products Protected" class="impact-metric-icon" width="260" height="260" loading="lazy">
-                        <h3 style="font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-weight: 800; font-size: 1.45rem; letter-spacing: -0.3px; color: #000000; line-height: 1.3;">Products Protected</h3>
+                        <h3 class="impact-metric-label">Products Protected</h3>
                     </div>
 
                     <div class="impact-metric-item">
                         <img src="/assets/scantrust/185.png" alt="185+ Countries Reached" class="impact-metric-icon" width="260" height="260" loading="lazy">
-                        <h3 style="font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-weight: 800; font-size: 1.45rem; letter-spacing: -0.3px; color: #000000; line-height: 1.3;">Countries Reached</h3>
+                        <h3 class="impact-metric-label">Countries Reached</h3>
                     </div>
 
                     <div class="impact-metric-item">
                         <img src="/assets/scantrust/80+.png" alt="80+ Projects Launched" class="impact-metric-icon" width="260" height="260" loading="lazy">
-                        <h3 style="font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-weight: 800; font-size: 1.45rem; letter-spacing: -0.3px; color: #000000; line-height: 1.3;">Projects Launched</h3>
+                        <h3 class="impact-metric-label">Projects Launched</h3>
                     </div>
                 </div>
 
-                <!-- Unified Impact Quotes Block -->
-                <div class="impact-quotes-block">
-                    More than 1 billion products connected and protected.<br>
-                    Scantrust codes scanned in over 185 countries.<br>
-                    80+ projects to which I made essential contributions successfully launched.
+                <div class="impact-quotes-list">
+                    <blockquote class="impact-quote-item">
+                        &gt; More than 1 billion products connected and protected.
+                    </blockquote>
+                    <blockquote class="impact-quote-item">
+                        &gt; Scantrust codes scanned in over 185 countries.
+                    </blockquote>
+                    <blockquote class="impact-quote-item">
+                        &gt; 80+ projects to which I made essential contributions successfully launched.
+                    </blockquote>
                 </div>
 
-                <div class="brands-subsection" style="margin-top: 48px; margin-bottom: 56px; text-align: left;">
-                    <h3 style="font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-weight: 700; font-size: 1.25rem; color: #000000; letter-spacing: -0.2px; line-height: 1.25; margin-bottom: 24px; text-align: left;">🏌️Brands I’ve worked with:</h3>
+                <div class="brands-subsection">
+                    <h3 class="brands-subsection-title">🏌️Brands I’ve worked with:</h3>
                     
                     <div class="brands-slideshow-card">
-                        <!-- Dots removed, taller viewport class logic applied -->
                         <div class="brands-logo-viewport" id="brandsLogoViewport" aria-label="Brands client logos slideshow">
                             <img src="/assets/scantrust/client-logo-1.png" alt="Client Logo 1" class="brand-logo-slide active" loading="lazy">
                             <img src="/assets/scantrust/client-logo-2.png" alt="Client Logo 2" class="brand-logo-slide" loading="lazy">
@@ -702,6 +1632,8 @@
                             <img src="/assets/scantrust/client-logo-15.png" alt="Client Logo 15" class="brand-logo-slide" loading="lazy">
                             <img src="/assets/scantrust/client-logo-16.png" alt="Client Logo 16" class="brand-logo-slide" loading="lazy">
                             <img src="/assets/scantrust/client-logo-17.png" alt="Client Logo 17" class="brand-logo-slide" loading="lazy">
+                        </div>
+                        <div class="brands-dots-container" id="brandsDotsContainer" aria-hidden="true">
                         </div>
                     </div>
                 </div>
@@ -766,8 +1698,8 @@
     <footer class="site-footer bg-black">
         <div class="container footer-content">
             <div class="footer-links">
-                <a href="/index.html">Home</a>
-                <a href="/research/index.html">Research</a>
+                <a href="/">Home</a>
+                <a href="/research">Research</a>
                 <a href="https://www.linkedin.com/in/jensenearth/" target="_blank">LinkedIn</a>
             </div>
             <div class="footer-copy">
@@ -783,8 +1715,6 @@
             const track = document.getElementById('challenge-tab-track');
             const earlyPanel = document.getElementById('panel-early');
             const scalingPanel = document.getElementById('panel-scaling');
-            const highlight = document.getElementById('challengeTabHighlight');
-            
             if (!earlyBtn || !scalingBtn || !track || !earlyPanel || !scalingPanel) return;
 
             if (tabName === 'early') {
@@ -795,7 +1725,6 @@
                 earlyPanel.removeAttribute('aria-hidden');
                 scalingPanel.setAttribute('aria-hidden', 'true');
                 track.style.transform = 'translateX(0%)';
-                if (highlight) highlight.style.transform = 'translateX(0)';
             } else {
                 scalingBtn.classList.add('active');
                 scalingBtn.setAttribute('aria-selected', 'true');
@@ -804,7 +1733,6 @@
                 scalingPanel.removeAttribute('aria-hidden');
                 earlyPanel.setAttribute('aria-hidden', 'true');
                 track.style.transform = 'translateX(-50%)';
-                if (highlight) highlight.style.transform = 'translateX(100%)';
             }
         }
 
@@ -879,6 +1807,14 @@
             prevBtn.addEventListener('click', () => updateUI(currentIndex - 1));
             nextBtn.addEventListener('click', () => updateUI(currentIndex + 1));
 
+            viewport.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    updateUI(currentIndex - 1);
+                } else if (e.key === 'ArrowRight') {
+                    updateUI(currentIndex + 1);
+                }
+            });
+
             let isDragging = false;
             let startX = 0;
             let currentX = 0;
@@ -898,6 +1834,7 @@
                 currentX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
                 diffX = currentX - startX;
                 const width = viewport.offsetWidth || 280;
+                
                 let actualIndex = currentIndex + 1;
                 const percent = -actualIndex * 100 + (diffX / width) * 100;
                 track.style.transform = `translateX(${percent}%)`;
@@ -907,18 +1844,24 @@
                 if (!isDragging) return;
                 isDragging = false;
                 viewport.classList.remove('is-dragging');
+                
                 const width = viewport.offsetWidth || 280;
                 const threshold = width * 0.2;
 
-                if (diffX < -threshold) { updateUI(currentIndex + 1); } 
-                else if (diffX > threshold) { updateUI(currentIndex - 1); } 
-                else { updateUI(currentIndex); }
+                if (diffX < -threshold) {
+                    updateUI(currentIndex + 1);
+                } else if (diffX > threshold) {
+                    updateUI(currentIndex - 1);
+                } else {
+                    updateUI(currentIndex);
+                }
                 diffX = 0;
             }
 
             viewport.addEventListener('mousedown', onPointerDown);
             window.addEventListener('mousemove', onPointerMove);
             window.addEventListener('mouseup', onPointerUp);
+            
             viewport.addEventListener('touchstart', onPointerDown, { passive: true });
             viewport.addEventListener('touchmove', onPointerMove, { passive: true });
             viewport.addEventListener('touchend', onPointerUp);
@@ -929,6 +1872,7 @@
             const carousel = document.getElementById(carouselId);
             const scrollLeftBtn = document.getElementById(leftBtnId);
             const scrollRightBtn = document.getElementById(rightBtnId);
+
             if (!carousel || !scrollLeftBtn || !scrollRightBtn) return;
 
             const getScrollAmount = () => {
@@ -953,18 +1897,31 @@
             const updateButtonStates = () => {
                 const maxScroll = getMaxScroll();
                 const scrollLeft = carousel.scrollLeft;
+                
                 const isAtStart = scrollLeft <= 8;
                 let isAtEnd = scrollLeft >= maxScroll - 8;
+                
+                const cards = carousel.querySelectorAll('.project-card');
+                const lastCard = cards[cards.length - 1];
+                if (lastCard) {
+                    const carouselRect = carousel.getBoundingClientRect();
+                    const lastCardRect = lastCard.getBoundingClientRect();
+                    if (lastCardRect.right <= carouselRect.right + 12) {
+                        isAtEnd = true;
+                    }
+                }
                 
                 scrollLeftBtn.disabled = isAtStart;
                 if (isAtStart) {
                     scrollLeftBtn.classList.add('disabled');
                     scrollLeftBtn.style.opacity = '0.15';
                     scrollLeftBtn.style.cursor = 'not-allowed';
+                    scrollLeftBtn.style.pointerEvents = 'none';
                 } else {
                     scrollLeftBtn.classList.remove('disabled');
                     scrollLeftBtn.style.opacity = '1';
                     scrollLeftBtn.style.cursor = 'pointer';
+                    scrollLeftBtn.style.pointerEvents = 'auto';
                 }
                 
                 scrollRightBtn.disabled = isAtEnd;
@@ -972,17 +1929,20 @@
                     scrollRightBtn.classList.add('disabled');
                     scrollRightBtn.style.opacity = '0.15';
                     scrollRightBtn.style.cursor = 'not-allowed';
+                    scrollRightBtn.style.pointerEvents = 'none';
                 } else {
                     scrollRightBtn.classList.remove('disabled');
                     scrollRightBtn.style.opacity = '1';
                     scrollRightBtn.style.cursor = 'pointer';
+                    scrollRightBtn.style.pointerEvents = 'auto';
                 }
             };
 
             scrollLeftBtn.addEventListener("click", (e) => {
                 e.preventDefault();
                 if (scrollLeftBtn.disabled || carousel.scrollLeft <= 5) return;
-                const target = Math.max(0, carousel.scrollLeft - getScrollAmount());
+                const step = getScrollAmount();
+                const target = Math.max(0, carousel.scrollLeft - step);
                 carousel.scrollTo({ left: target, behavior: "smooth" });
             });
 
@@ -990,7 +1950,8 @@
                 e.preventDefault();
                 const maxScroll = getMaxScroll();
                 if (scrollRightBtn.disabled || carousel.scrollLeft >= maxScroll - 5) return;
-                const target = Math.min(maxScroll, carousel.scrollLeft + getScrollAmount());
+                const step = getScrollAmount();
+                const target = Math.min(maxScroll, carousel.scrollLeft + step);
                 carousel.scrollTo({ left: target, behavior: "smooth" });
             });
 
@@ -1006,37 +1967,58 @@
 
         initSubCarousel("core-tech-carousel", "core-scroll-left", "core-scroll-right");
         initSubCarousel("digital-products-carousel", "digital-scroll-left", "digital-scroll-right");
-        initSubCarousel("labels-carousel", "labels-scroll-left", "labels-scroll-right");
+        initSubCarousel("physical-labels-carousel", "physical-scroll-left", "physical-scroll-right");
 
-        // Physical Foldable Icon Logic
-        document.querySelectorAll('.physical-expandable').forEach(exp => {
-            exp.addEventListener('toggle', (e) => {
-                const vertLine = exp.querySelector('.vert-line');
-                if (vertLine) {
-                    vertLine.style.opacity = exp.open ? '0' : '1';
+        const securityLabelsExpandable = document.getElementById("securityLabelsExpandable");
+        if (securityLabelsExpandable) {
+            securityLabelsExpandable.addEventListener("toggle", () => {
+                if (securityLabelsExpandable.open) {
+                    window.dispatchEvent(new Event("resize"));
+                    setTimeout(() => {
+                        window.dispatchEvent(new Event("resize"));
+                    }, 50);
                 }
             });
-        });
+        }
 
         (function initBrandsSlideshow() {
             const viewport = document.getElementById("brandsLogoViewport");
-            if (!viewport) return;
+            const dotsContainer = document.getElementById("brandsDotsContainer");
+            if (!viewport || !dotsContainer) return;
+
             const slides = viewport.querySelectorAll(".brand-logo-slide");
             if (!slides || slides.length === 0) return;
 
+            dotsContainer.innerHTML = "";
+            slides.forEach((_, idx) => {
+                const dot = document.createElement("span");
+                dot.className = "brand-dot" + (idx === 0 ? " active" : "");
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = dotsContainer.querySelectorAll(".brand-dot");
             let currentIndex = 0;
             const totalSlides = slides.length;
             const slideInterval = 1600;
 
             function showNextBrand() {
                 slides[currentIndex].classList.remove("active");
+                if (dots[currentIndex]) dots[currentIndex].classList.remove("active");
+
                 currentIndex = (currentIndex + 1) % totalSlides;
+
                 slides[currentIndex].classList.add("active");
+                if (dots[currentIndex]) dots[currentIndex].classList.add("active");
             }
 
             let slideshowTimer = setInterval(showNextBrand, slideInterval);
-            viewport.parentElement.addEventListener("mouseenter", () => clearInterval(slideshowTimer));
-            viewport.parentElement.addEventListener("mouseleave", () => slideshowTimer = setInterval(showNextBrand, slideInterval));
+
+            viewport.parentElement.addEventListener("mouseenter", () => {
+                clearInterval(slideshowTimer);
+            });
+            viewport.parentElement.addEventListener("mouseleave", () => {
+                slideshowTimer = setInterval(showNextBrand, slideInterval);
+            });
         })();
     </script>
 <script src="/layout.js"></script>
