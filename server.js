@@ -9,17 +9,17 @@ const app = express();
 const PORT = 3000;
 
 // Routes for CV downloads (/cv, /download, and /downloads)
-app.get(['/cv', '/cv/', '/download', '/downloads', '/download/', '/downloads/'], (req, res) => {
+app.get(['/cv', '/cv/', '/cv.html', '/download', '/downloads', '/download/', '/downloads/', '/download.html', '/downloads.html', '/download/index.html', '/downloads/index.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'cv', 'index.html'));
 });
 
 // Route for research page (/research and /research/)
-app.get(['/research', '/research/'], (req, res) => {
+app.get(['/research', '/research/', '/research.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'research', 'index.html'));
 });
 
 // Route for scantrust project page (/scantrust and /scantrust/)
-app.get(['/scantrust', '/scantrust/'], (req, res) => {
+app.get(['/scantrust', '/scantrust/', '/scantrust.html', '/projects/scantrust.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'scantrust', 'index.html'));
 });
 
