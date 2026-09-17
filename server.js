@@ -18,6 +18,11 @@ app.get(['/research', '/research/'], (req, res) => {
   res.sendFile(path.join(__dirname, 'research', 'index.html'));
 });
 
+// Route for scantrust project page (/scantrust and /scantrust/)
+app.get(['/scantrust', '/scantrust/'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'scantrust', 'index.html'));
+});
+
 // Support file requests under /cv/ and /download/
 app.get(['/cv/:file', '/download/:file'], (req, res, next) => {
   const filePath = path.join(__dirname, 'cv', req.params.file);

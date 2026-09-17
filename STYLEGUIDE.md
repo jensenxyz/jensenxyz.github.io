@@ -7,7 +7,26 @@ This document defines the architectural conventions, design system tokens, marku
 ## 1. Architectural Principles
 
 1. **Zero-Dependency Frontend**: The client application is written in clean, modern vanilla HTML5, CSS3, and ES6+ JavaScript. Avoid external UI libraries, CSS frameworks, or heavy client-side bundles.
-2. **Dual-Hosting Compatibility**: The site runs both as a static website (compatible with GitHub Pages) and as an Express Node.js application (`server.js`). All static routing, asset paths, and fallback pages (`cv.html`, `cv/index.html`, `download.html`, `research.html`, etc.) must maintain dual parity.
+2. **Dual-Hosting & Clean URL Architecture**: The site runs both as a static website (compatible with GitHub Pages) and as an Express Node.js application (`server.js`).
+   - **Canonical Master Directories**: All subpages and project deep dives use dedicated directory structures with an `index.html` file (`cv/index.html`, `research/index.html`, `scantrust/index.html`, `funkacoins/index.html`, etc.).
+   - **Clean URLs**: Always link to canonical clean URLs without extensions (e.g., `/cv`, `/research`, `/scantrust`). Both GitHub Pages and Express automatically resolve directory `index.html` files natively.
+   - **Option A (Lightweight Static Redirects)**: To avoid file duplication and prevent content from drifting out of sync, all legacy routes and flat `.html` endpoints (`/cv.html`, `/download.html`, `/downloads.html`, `/download/index.html`, `/downloads/index.html`, `/research.html`, `/projects/scantrust.html`, etc.) are implemented as instantaneous 0-second HTML meta-refresh redirects pointing to their canonical counterpart:
+     ```html
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <meta http-equiv="refresh" content="0; url=/cv">
+         <link rel="canonical" href="/cv">
+         <title>Redirecting to /cv</title>
+         <script>window.location.replace("/cv");</script>
+     </head>
+     <body>
+         <p>Redirecting to <a href="/cv">/cv</a>...</p>
+     </body>
+     </html>
+     ```
+   - **Single Source of Truth**: Always make content and structural edits exclusively to the canonical `<page>/index.html` files. Never create or edit redundant full-page copies.
 3. **Performance First**: Minimal DOM overhead, passive event listeners, next-gen image formats (WebP), and an automated lossless image compression pipeline via Tinify.
 4. **Mobile & iOS Safari Hardening**: Defensive CSS and JS techniques (such as `overflow-x: clip`, iOS-safe body scroll locks, and calibrated touch-gesture thresholds) are strictly enforced.
 
@@ -109,7 +128,7 @@ Used alongside primary buttons for secondary actions.
 - **Visuals**: Transparent background, 2px solid `#000000` border, dark text. Inverts on hover to solid black background.
 - **HTML**:
   ```html
-  <a href="/downloads" class="btn btn-outline">EXPLORE WORK</a>
+  <a href="/cv" class="btn btn-outline">EXPLORE WORK</a>
   ```
 - **CSS**:
   ```css
