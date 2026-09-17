@@ -89,6 +89,15 @@ ul { list-style: none; }
 .highlight { border-bottom: 3px solid var(--accent-orange); }
 .link-underline { font-size: 1.1rem; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; }
 
+/* Custom Accents */
+.highlight-underline {
+    text-decoration: underline;
+    text-decoration-color: var(--accent-orange);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 3px;
+    font-weight: inherit;
+}
+
 /* --- Header (Sticky & Frosted Glass) --- */
 .pt-medium { padding-top: 12px; }
 .pb-medium { padding-bottom: 24px; }
@@ -155,7 +164,7 @@ ul { list-style: none; }
 .accordion-flush .study-accordion-summary {
     background: transparent !important;
     border: none !important;
-    padding: 16px 0 !important;
+    padding: 8px 0 !important; /* Minimized gap */
 }
 .accordion-flush .study-accordion-summary:hover {
     background: transparent !important;
@@ -163,7 +172,7 @@ ul { list-style: none; }
 .accordion-flush .study-accordion-body {
     background: transparent !important;
     border: none !important;
-    padding: 0 0 24px 0 !important;
+    padding: 0 0 16px 0 !important; /* Minimized gap */
 }
 .accordion-flush[open] .study-accordion-summary {
     background-color: transparent !important;
