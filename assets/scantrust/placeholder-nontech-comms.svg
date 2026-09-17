@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF5F5"/>
+      <stop offset="100%" stop-color="#EDE2E2"/>
+    </linearGradient>
+    <linearGradient id="layerGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="layerGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="layerGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <filter id="shadow4" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg4)"/>
+
+  <!-- Explainer Stage Card -->
+  <g transform="translate(90, 50)" filter="url(#shadow4)">
+    <rect width="620" height="400" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    
+    <!-- Top Presentation Banner -->
+    <rect width="620" height="44" rx="16" fill="#18181B"/>
+    <text x="24" y="27" font-family="'Montserrat', sans-serif" font-size="12" font-weight="800" fill="#FFFFFF">VISUAL EXPLAINER &amp; COMMUNICATION DECK</text>
+    <text x="490" y="27" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#A1A1AA">Interactive Storyboard</text>
+
+    <!-- Isometric Explainer Layers illustrating Core Tech to Non-Technical Audiences -->
+    <g transform="translate(70, 75)">
+      <!-- Layer 1 (Bottom): Physical Packaging & Ink Substrate -->
+      <g transform="translate(40, 160)">
+        <polygon points="120,40 280,0 200,-35 40,5" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.5"/>
+        <polygon points="40,5 120,40 120,55 40,20" fill="#CBD5E1"/>
+        <polygon points="120,40 280,0 280,15 120,55" fill="#94A3B8"/>
+        <!-- Content on plate -->
+        <text x="140" y="22" font-family="'Montserrat', sans-serif" font-size="10" font-weight="800" fill="#334155">1. PHYSICAL INK LAYER</text>
+      </g>
+
+      <!-- Connecting Dashed Rays -->
+      <line x1="200" y1="170" x2="200" y2="120" stroke="#6366F1" stroke-width="2" stroke-dasharray="4,4"/>
+      <line x1="280" y1="135" x2="280" y2="85" stroke="#6366F1" stroke-width="2" stroke-dasharray="4,4"/>
+
+      <!-- Layer 2 (Middle): Micro-Structural Security Matrix -->
+      <g transform="translate(40, 95)">
+        <polygon points="120,40 280,0 200,-35 40,5" fill="#EEF2FF" stroke="#6366F1" stroke-width="2"/>
+        <polygon points="40,5 120,40 120,55 40,20" fill="#818CF8"/>
+        <polygon points="120,40 280,0 280,15 120,55" fill="#6366F1"/>
+        <text x="135" y="22" font-family="'Montserrat', sans-serif" font-size="10" font-weight="800" fill="#4338CA">2. PATENTED MICRO-MATRIX</text>
+      </g>
+
+      <!-- Connecting Dashed Rays -->
+      <line x1="200" y1="105" x2="200" y2="55" stroke="#10B981" stroke-width="2" stroke-dasharray="4,4"/>
+      <line x1="280" y1="70" x2="280" y2="20" stroke="#10B981" stroke-width="2" stroke-dasharray="4,4"/>
+
+      <!-- Layer 3 (Top): Instant Mobile Authentication -->
+      <g transform="translate(40, 30)">
+        <polygon points="120,40 280,0 200,-35 40,5" fill="#ECFDF5" stroke="#10B981" stroke-width="2"/>
+        <polygon points="40,5 120,40 120,55 40,20" fill="#34D399"/>
+        <polygon points="120,40 280,0 280,15 120,55" fill="#059669"/>
+        <text x="135" y="22" font-family="'Montserrat', sans-serif" font-size="10" font-weight="800" fill="#065F46">3. CLOUD DECRYPTION &amp; VERIFY</text>
+      </g>
+    </g>
+
+    <!-- Explainer Callouts on Right -->
+    <g transform="translate(385, 75)">
+      <rect width="205" height="74" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="16" y="22" font-family="'Montserrat', sans-serif" font-size="11" font-weight="800" fill="#0F172A">FOR BRAND EXECUTIVES</text>
+      <text x="16" y="38" font-family="'Inter', sans-serif" font-size="9" fill="#475569">Distilling cryptography and optical</text>
+      <text x="16" y="52" font-family="'Inter', sans-serif" font-size="9" fill="#475569">physics into business ROI &amp;</text>
+      <text x="16" y="66" font-family="'Inter', sans-serif" font-size="9" fill="#475569">anti-counterfeit assurance.</text>
+
+      <g transform="translate(0, 86)">
+        <rect width="205" height="74" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+        <text x="16" y="22" font-family="'Montserrat', sans-serif" font-size="11" font-weight="800" fill="#0F172A">FOR CONSUMERS</text>
+        <text x="16" y="38" font-family="'Inter', sans-serif" font-size="9" fill="#475569">Delightful micro-animations,</text>
+        <text x="16" y="52" font-family="'Inter', sans-serif" font-size="9" fill="#475569">intuitive visual cues, &amp; clear</text>
+        <text x="16" y="66" font-family="'Inter', sans-serif" font-size="9" fill="#475569">authenticity affirmations.</text>
+      </g>
+
+      <g transform="translate(0, 172)">
+        <rect width="205" height="60" rx="10" fill="#FDF2F8" stroke="#FBCFE8"/>
+        <text x="16" y="22" font-family="'Montserrat', sans-serif" font-size="11" font-weight="800" fill="#9D174D">CROSS-FUNCTIONAL BRIDGE</text>
+        <text x="16" y="38" font-family="'Inter', sans-serif" font-size="9" fill="#831843">Aligning engineers, marketing,</text>
+        <text x="16" y="52" font-family="'Inter', sans-serif" font-size="9" fill="#831843">&amp; sales with coherent visuals.</text>
+      </g>
+    </g>
+  </g>
+</svg>

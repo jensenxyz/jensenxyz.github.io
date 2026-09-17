@@ -26,32 +26,40 @@
         }
         .scantrust-hero-img {
             width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 3;
+            object-fit: contain;
             border-radius: 20px;
             margin-top: 16px;
             margin-bottom: 40px;
+            display: block;
         }
         .scantrust-story {
             max-width: 800px;
             margin: 0 auto;
         }
         .scantrust-story-title {
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            margin-bottom: 32px;
-            text-align: center;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+            text-align: left;
+            line-height: 1.2;
         }
         .scantrust-story-subtitle {
-            font-size: 1.6rem;
+            font-size: 1.15rem;
+            font-family: 'Inter', sans-serif;
             font-weight: 400;
-            margin-bottom: 24px;
-            line-height: 1.4;
+            color: var(--text-grey);
+            line-height: 1.7;
+            margin-bottom: 28px;
             padding-bottom: 24px;
-            border-bottom: 1px solid rgba(0,0,0,0.15);
+            border-bottom: 1px solid rgba(0,0,0,0.12);
         }
         .story-text {
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 1.05rem;
+            line-height: 1.7;
             color: var(--text-dark);
             margin-bottom: 16px;
         }
@@ -64,10 +72,1006 @@
             margin-bottom: 16px;
         }
         .story-list li {
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 1.05rem;
+            line-height: 1.7;
             color: var(--text-dark);
             margin-bottom: 8px;
+        }
+
+        @media (max-width: 992px) {
+            .scantrust-story-title {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .scantrust-story-title {
+                font-size: 1.95rem;
+                margin-bottom: 14px;
+            }
+            .scantrust-story-subtitle {
+                font-size: 0.98rem;
+                line-height: 1.6;
+                margin-bottom: 20px;
+                padding-bottom: 18px;
+            }
+            .story-text,
+            .story-list li {
+                font-size: 0.98rem;
+                line-height: 1.6;
+            }
+        }
+
+        /* --- The Challenge Section --- */
+        .scantrust-challenge {
+            position: relative;
+            margin-top: 64px;
+            border-radius: var(--border-radius, 30px);
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(8, 12, 18, 0.78) 0%, rgba(15, 20, 28, 0.85) 100%),
+                        url('/assets/scantrust/challenge-mountains.jpg') center center / cover no-repeat;
+            padding: 56px 48px;
+            color: #FFFFFF;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .challenge-header {
+            margin-bottom: 24px;
+            text-align: left;
+        }
+        .challenge-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+        .challenge-pov-sheet {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 18px;
+            padding: 24px 28px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            margin-bottom: 24px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+        }
+        .challenge-pov-phrase {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #FFFFFF;
+            letter-spacing: -0.2px;
+            margin: 0 0 8px 0;
+            text-align: left;
+        }
+        .challenge-pov-desc {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #E2E6EC;
+            margin: 0 0 20px 0;
+            text-align: left;
+        }
+        .challenge-pov-desc:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Challenge Tabs Unified Component */
+        .challenge-tabs-unified {
+            margin-top: 16px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+        .challenge-tabs-header {
+            padding: 12px 18px;
+            background: rgba(0, 0, 0, 0.25);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+        }
+        .challenge-tabs-nav {
+            display: inline-flex;
+            gap: 6px;
+            padding: 4px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 30px;
+        }
+        .challenge-tab-btn {
+            background: transparent;
+            border: none;
+            padding: 8px 22px;
+            border-radius: 24px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #C0C5CF;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+        .challenge-tab-btn:hover {
+            color: #FFFFFF;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .challenge-tab-btn.active {
+            background: #FFFFFF;
+            color: #000000;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+        }
+        .challenge-tabs-viewport {
+            overflow: hidden;
+            width: 100%;
+        }
+        .challenge-tabs-track {
+            display: flex;
+            width: 200%;
+            transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1);
+            will-change: transform;
+        }
+        .challenge-tab-panel {
+            width: 50%;
+            box-sizing: border-box;
+            padding: 28px 32px;
+            flex-shrink: 0;
+        }
+        .challenge-tab-panel ul {
+            list-style: disc;
+            padding-left: 22px;
+            margin: 0;
+        }
+        .challenge-tab-panel li {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #E2E6EC;
+            margin-bottom: 12px;
+        }
+        .challenge-tab-panel li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* The Platform Section: Bounded Card */
+        .scantrust-platform-card {
+            margin-top: 60px;
+            background: #F8F4F3;
+            border: 2px solid #000000;
+            border-radius: 32px;
+            padding: 48px 40px 52px 40px;
+            box-sizing: border-box;
+            color: #000000;
+            position: relative;
+        }
+        .platform-card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.35rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: #000000;
+            margin-bottom: 26px;
+            text-align: center;
+        }
+        .platform-card-intro {
+            max-width: 820px;
+            margin: 0 auto 32px auto;
+            text-align: left;
+        }
+        .platform-intro-p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.12rem;
+            line-height: 1.65;
+            color: #111827;
+            margin-bottom: 16px;
+        }
+        .platform-intro-p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Swiper Container */
+        .platform-pillar-swiper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 36px;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .pillar-viewport-wrapper {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Extending horizontal connector line behind icon */
+        .pillar-viewport-wrapper::before,
+        .pillar-viewport-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 70px;
+            height: 2px;
+            background: #000000;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .pillar-viewport-wrapper::before {
+            right: 100%;
+        }
+        .pillar-viewport-wrapper::after {
+            left: 100%;
+        }
+
+        .pillar-viewport {
+            width: 280px;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+            cursor: grab;
+            touch-action: pan-y;
+            border-radius: 12px;
+        }
+        .pillar-viewport.is-dragging {
+            cursor: grabbing;
+        }
+        .pillar-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            gap: 0;
+            transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform;
+        }
+        .pillar-slide {
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+        .pillar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        /* Nav Group with Arrow on each side of Title */
+        .pillar-nav-group {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .pillar-nav-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px 10px;
+            color: #000000;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: transform 0.18s ease, background-color 0.18s ease, opacity 0.18s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .pillar-nav-btn:hover {
+            background-color: rgba(0, 0, 0, 0.08);
+            transform: scale(1.15);
+        }
+        .pillar-nav-btn:active {
+            transform: scale(0.92);
+        }
+        .pillar-active-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #000000;
+            letter-spacing: -0.2px;
+            text-align: center;
+            min-width: 220px;
+            transition: opacity 0.15s ease, transform 0.15s ease;
+            white-space: nowrap;
+        }
+
+        /* Scantrust Platform Subsections (1. Core Tech, 2. Digital Products, 3. Physical Products) */
+        .scantrust-subsection {
+            margin-top: 64px;
+            padding-top: 36px;
+            border-top: 1px solid #E2E8F0;
+        }
+        .scantrust-core-tech-section {
+            margin-top: 56px;
+            padding-top: 0;
+            border-top: none;
+        }
+        .scantrust-subsection-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: #000000;
+            letter-spacing: -0.3px;
+            line-height: 1.25;
+            margin-bottom: 18px;
+            text-align: left;
+        }
+        .core-tech-section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: #000000;
+            letter-spacing: -0.3px;
+            line-height: 1.25;
+            margin-bottom: 18px;
+            text-align: left;
+        }
+        .scantrust-intro-text,
+        .core-tech-intro-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.68;
+            color: #111827;
+            margin-bottom: 20px;
+            max-width: 900px;
+            text-align: left;
+        }
+        .scantrust-intro-lead,
+        .core-tech-intro-lead {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.12rem;
+            font-weight: 600;
+            line-height: 1.6;
+            color: #111827;
+            margin-bottom: 28px;
+            text-align: left;
+        }
+
+        /* Project Cards styling matching Home Page */
+        .scantrust-platform-card .project-card {
+            box-shadow: none !important;
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 30px !important;
+            overflow: hidden !important;
+            background-color: #FFFFFF !important;
+        }
+        .scantrust-platform-card .project-card img {
+            border-top-left-radius: 29px;
+            border-top-right-radius: 29px;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            background-color: #F8F4F3;
+            width: 100%;
+            display: block;
+        }
+        .scantrust-platform-card .project-info {
+            padding: 22px 28px 30px 28px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            text-align: left;
+        }
+        .scantrust-platform-card .project-info h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.22rem;
+            font-weight: 800;
+            letter-spacing: -0.2px;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+            line-height: 1.35;
+        }
+        .scantrust-platform-card .project-info p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.94rem;
+            color: #4B5563;
+            margin-bottom: 0;
+            line-height: 1.62;
+            flex: 1;
+        }
+        .scantrust-platform-card .project-info p strong {
+            color: #111827;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        /* Color Block Placeholder for Digital & Physical Products */
+        .color-block-placeholder {
+            border-top-left-radius: 29px;
+            border-top-right-radius: 29px;
+            aspect-ratio: 16 / 10;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            box-sizing: border-box;
+            position: relative;
+            text-align: center;
+            user-select: none;
+            -webkit-user-select: none;
+            overflow: hidden;
+            transition: filter 0.25s ease;
+        }
+        .project-card:hover .color-block-placeholder {
+            filter: brightness(1.04);
+        }
+        .color-block-placeholder::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.08;
+            background-image: radial-gradient(#FFFFFF 1.5px, transparent 1.5px);
+            background-size: 16px 16px;
+            pointer-events: none;
+        }
+        .placeholder-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 16px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 0.4px;
+            margin-bottom: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+        }
+        .placeholder-hint {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78rem;
+            opacity: 0.9;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+
+        /* Physical Products: Expandables & Dividers */
+        .physical-thin-divider {
+            border: none;
+            height: 1px;
+            background-color: #E2E8F0;
+            margin: 32px 0 24px 0;
+        }
+        .physical-expandable {
+            margin-bottom: 8px;
+        }
+        .physical-expandable-summary {
+            list-style: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+            padding: 8px 4px;
+            border-radius: 12px;
+            transition: background-color 0.2s ease;
+        }
+        .physical-expandable-summary::-webkit-details-marker {
+            display: none;
+        }
+        .physical-expandable-summary:hover {
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+        .expandable-icon-plus {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #111827;
+            flex-shrink: 0;
+            transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1), background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+        }
+        .physical-expandable-summary:hover .expandable-icon-plus {
+            border-color: #94A3B8;
+            background: #FAF6F4;
+        }
+        .physical-expandable[open] .expandable-icon-plus {
+            transform: rotate(45deg);
+            background: #111827;
+            color: #FFFFFF;
+            border-color: #111827;
+        }
+        .expandable-heading-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.42rem;
+            color: #111827;
+            letter-spacing: -0.25px;
+        }
+        .physical-expandable-content {
+            padding: 16px 0 12px 0;
+            text-align: left;
+        }
+        .physical-tech-intro {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            color: #374151;
+            line-height: 1.6;
+            margin: 0 0 16px 0;
+        }
+        .physical-tech-list {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.02rem;
+            color: #1F2937;
+            line-height: 1.7;
+            padding-left: 24px;
+            margin: 0 0 16px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .physical-tech-list li {
+            padding-left: 6px;
+        }
+        .physical-labels-body {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            color: #4B5563;
+            line-height: 1.6;
+            margin: 0 0 20px 0;
+        }
+        .label-sample-category {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: #9CA3AF;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        /* --- The Impact Section --- */
+        .scantrust-impact-section {
+            margin-top: 64px;
+            padding-top: 36px;
+            border-top: 1px solid #E2E8F0;
+        }
+        .impact-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: #000000;
+            margin-bottom: 24px;
+            text-align: left;
+        }
+        .impact-lead-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.68;
+            color: #111827;
+            max-width: 900px;
+            text-align: left;
+            margin-bottom: 48px;
+        }
+
+        /* Impact Metric Cards (3 Icons in stack/grid matching user uploaded mockup) */
+        .impact-metrics-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            max-width: 600px;
+            margin: 0 auto 52px auto;
+        }
+        .impact-metric-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+        }
+        .impact-metric-icon {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            display: block;
+            margin-bottom: 16px;
+            filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.08));
+            transition: transform 0.25s ease;
+        }
+        .impact-metric-icon:hover {
+            transform: scale(1.05);
+        }
+        .impact-metric-label {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.45rem;
+            letter-spacing: -0.3px;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        /* Impact Bullet Points Blockquote */
+        .impact-quotes-list {
+            max-width: 820px;
+            margin: 0 auto 56px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .impact-quote-item {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.12rem;
+            line-height: 1.65;
+            color: #111827;
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-left: 4px solid #000000;
+            padding: 16px 24px;
+            border-radius: 0 16px 16px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            text-align: left;
+        }
+
+        /* Brands Subsection */
+        .brands-subsection {
+            margin-top: 48px;
+            margin-bottom: 56px;
+            text-align: left;
+        }
+        .brands-subsection-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: #000000;
+            letter-spacing: -0.3px;
+            line-height: 1.25;
+            margin-bottom: 24px;
+            text-align: left;
+        }
+        .brands-slideshow-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 28px;
+            padding: 44px 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 240px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+        }
+        .brands-logo-viewport {
+            width: 100%;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .brand-logo-slide {
+            position: absolute;
+            max-width: 280px;
+            max-height: 110px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            opacity: 0;
+            transform: scale(0.96);
+            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+            pointer-events: none;
+            user-select: none;
+            filter: contrast(1.05);
+        }
+        .brand-logo-slide.active {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
+        }
+        .brands-progress-dots {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            max-width: 400px;
+        }
+        .brand-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #CBD5E1;
+            transition: background-color 0.25s ease, transform 0.25s ease;
+        }
+        .brand-dot.active {
+            background-color: #000000;
+            transform: scale(1.3);
+        }
+
+        /* Executive Summary Subsection */
+        .exec-summary-subsection {
+            margin-top: 48px;
+            margin-bottom: 24px;
+            text-align: left;
+        }
+        .exec-summary-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: #000000;
+            letter-spacing: -0.3px;
+            line-height: 1.25;
+            margin-bottom: 28px;
+            text-align: left;
+        }
+        .exec-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+        .exec-pillar-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 24px;
+            padding: 32px 30px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.02);
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        .exec-pillar-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: #111827;
+            letter-spacing: -0.2px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .exec-pillar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .exec-pillar-list li {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.02rem;
+            line-height: 1.55;
+            color: #374151;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .exec-pillar-list li::before {
+            content: '•';
+            color: #000000;
+            font-weight: 900;
+            font-size: 1.2rem;
+            line-height: 1.3;
+        }
+
+        /* Scantrust Page Contact Section Wrapper */
+        .scantrust-contact-section {
+            padding-top: 80px;
+            padding-bottom: 90px;
+            border-top: 1px solid #E2E8F0;
+        }
+
+        @media (max-width: 768px) {
+            .scantrust-challenge {
+                padding: 36px 20px;
+                margin-top: 48px;
+                border-radius: 20px;
+            }
+            .challenge-title {
+                font-size: 1.95rem;
+            }
+            .challenge-pov-sheet {
+                padding: 18px 20px;
+                border-radius: 14px;
+            }
+            .challenge-pov-phrase {
+                font-size: 1.02rem;
+                margin-bottom: 6px;
+            }
+            .challenge-pov-desc {
+                font-size: 0.98rem;
+                line-height: 1.6;
+                margin-bottom: 16px;
+            }
+            .challenge-tabs-unified {
+                border-radius: 16px;
+            }
+            .challenge-tabs-header {
+                padding: 10px 12px;
+            }
+            .challenge-tabs-nav {
+                width: 100%;
+                display: flex;
+                gap: 4px;
+            }
+            .challenge-tab-btn {
+                flex: 1;
+                text-align: center;
+                padding: 8px 12px;
+                font-size: 0.88rem;
+            }
+            .challenge-tab-panel {
+                padding: 20px 18px;
+            }
+            .challenge-tab-panel li {
+                font-size: 0.98rem;
+                line-height: 1.6;
+            }
+            .scantrust-platform-card {
+                margin-top: 48px;
+                padding: 32px 20px 36px 20px;
+                border-radius: 24px;
+            }
+            .platform-card-title {
+                font-size: 1.95rem;
+                margin-bottom: 18px;
+            }
+            .platform-intro-p {
+                font-size: 1.02rem;
+                line-height: 1.6;
+            }
+            .pillar-viewport {
+                width: 230px;
+                height: 230px;
+            }
+            .pillar-viewport-wrapper::before,
+            .pillar-viewport-wrapper::after {
+                width: 32px;
+            }
+            .pillar-nav-group {
+                gap: 8px;
+                margin-top: 16px;
+            }
+            .pillar-active-title {
+                font-size: 1.08rem;
+                min-width: 170px;
+            }
+            .scantrust-subsection {
+                margin-top: 48px;
+                padding-top: 24px;
+            }
+            .scantrust-core-tech-section {
+                margin-top: 40px;
+            }
+            .scantrust-subsection-title,
+            .core-tech-section-title {
+                font-size: 1.35rem;
+                margin-bottom: 14px;
+            }
+            .scantrust-intro-text,
+            .core-tech-intro-text {
+                font-size: 1.02rem;
+                line-height: 1.6;
+                margin-bottom: 16px;
+            }
+            .scantrust-intro-lead,
+            .core-tech-intro-lead {
+                font-size: 1.02rem;
+                margin-bottom: 20px;
+            }
+            .scantrust-platform-card .carousel-wrapper {
+                margin-top: -8px;
+                margin-left: -20px;
+                margin-right: -20px;
+            }
+            .scantrust-platform-card .carousel-container {
+                padding: 16px 20px 14px 20px;
+                gap: 18px;
+                scroll-padding-left: 20px;
+                scroll-padding-right: 20px;
+            }
+            .scantrust-platform-card .project-card { 
+                flex: 0 0 290px;
+                width: 290px;
+                min-width: min(290px, 82vw);
+                max-width: 82vw;
+            }
+            .scantrust-platform-card .project-info {
+                padding: 18px 20px 24px 20px;
+            }
+            .scantrust-platform-card .project-info h3 {
+                font-size: 1.15rem;
+                margin-bottom: 8px;
+            }
+            .scantrust-platform-card .project-info p {
+                font-size: 0.88rem;
+                line-height: 1.55;
+            }
+            .scantrust-platform-card .carousel-controls {
+                margin-top: -2px;
+                margin-right: 0;
+                padding: 0 20px 8px 20px;
+                gap: 12px;
+            }
+            .expandable-heading-text {
+                font-size: 1.18rem;
+            }
+            .expandable-icon-plus {
+                width: 28px;
+                height: 28px;
+            }
+            .physical-expandable-content {
+                padding: 12px 0 8px 0;
+            }
+            .impact-title {
+                font-size: 1.95rem;
+                margin-bottom: 18px;
+            }
+            .impact-lead-text {
+                font-size: 1.02rem;
+                line-height: 1.6;
+                margin-bottom: 32px;
+            }
+            .impact-metric-icon {
+                width: 100px;
+                height: 100px;
+            }
+            .impact-metric-label {
+                font-size: 1.25rem;
+            }
+            .impact-quote-item {
+                font-size: 0.98rem;
+                padding: 14px 18px;
+            }
+            .brands-subsection-title,
+            .exec-summary-title {
+                font-size: 1.35rem;
+            }
+            .brands-slideshow-card {
+                padding: 32px 20px;
+                min-height: 200px;
+            }
+            .brands-logo-viewport {
+                height: 110px;
+            }
+            .brand-logo-slide {
+                max-width: 220px;
+                max-height: 90px;
+            }
+            .exec-summary-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .exec-pillar-card {
+                padding: 24px 20px;
+            }
         }
     </style>
 </head>
@@ -91,7 +1095,7 @@
                 <a href="/">Home</a> > Scantrust: Product QR Codes & SaaS
             </div>
             
-            <img src="/assets/scantrust/project-scantrust.jpg" alt="Scantrust Dashboard" class="scantrust-hero-img">
+            <img src="/assets/scantrust/st-solution-hero-banner.png" alt="Scantrust: Product QR Codes & SaaS Solutions" class="scantrust-hero-img" width="2500" height="1875" loading="eager">
             
             <div class="scantrust-story">
                 <h1 class="scantrust-story-title">The Story:</h1>
@@ -160,6 +1164,699 @@
                     </details>
                 </div>
             </div>
+
+            <!-- The Challenge Section -->
+            <section class="scantrust-challenge">
+                <div class="challenge-header">
+                    <h2 class="challenge-title">The Challenge:</h2>
+                </div>
+
+                <div class="challenge-pov-sheet">
+                    <p class="challenge-pov-phrase">Big Picture POV:</p>
+                    <p class="challenge-pov-desc">There was no playbook for designing a brand-new platform. Everything had to be built from scratch. I had to lean heavily on my ability to learn fast and adapt on the fly.</p>
+                    <p class="challenge-pov-phrase">On the Ground POV:</p>
+                    <p class="challenge-pov-desc">The challenges evolved as the company grew.</p>
+                </div>
+
+                <!-- Tabs Component for Challenge Details (Unified Sheet with Horizontal Slide) -->
+                <div class="challenge-tabs-unified">
+                    <div class="challenge-tabs-header">
+                        <div class="challenge-tabs-nav" role="tablist" aria-label="Challenge stage tabs">
+                            <button type="button" class="challenge-tab-btn active" role="tab" id="tab-btn-early" aria-selected="true" aria-controls="panel-early" onclick="switchChallengeTab('early')">Early Stage</button>
+                            <button type="button" class="challenge-tab-btn" role="tab" id="tab-btn-scaling" aria-selected="false" aria-controls="panel-scaling" onclick="switchChallengeTab('scaling')">Scaling Stage</button>
+                        </div>
+                    </div>
+
+                    <div class="challenge-tabs-viewport">
+                        <div class="challenge-tabs-track" id="challenge-tab-track">
+                            <div class="challenge-tab-panel" id="panel-early" role="tabpanel" aria-labelledby="tab-btn-early">
+                                <ul>
+                                    <li>Designing complex systems for B2B2C and B2P (Professionals with domain-specific knowledge).</li>
+                                    <li>Moving fast—trusting intuition, testing features, scrapping what didn’t work, and iterating quickly.</li>
+                                    <li>Demos, demos, demos! Lots of demos :)</li>
+                                </ul>
+                            </div>
+
+                            <div class="challenge-tab-panel" id="panel-scaling" role="tabpanel" aria-labelledby="tab-btn-scaling" aria-hidden="true">
+                                <ul>
+                                    <li>Balancing customization for paying clients with the need to keep the product scalable (customization vs scalability).</li>
+                                    <li>Shifting to a more data-driven approach: deeper user research, more testing.</li>
+                                    <li>Barrier of change gets higher as the product matured and more customers came on board.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Platform Section: Bounded Card -->
+            <section class="scantrust-platform-card" id="platformSection">
+                <h2 class="platform-card-title">The Platform:</h2>
+
+                <div class="platform-card-intro">
+                    <p class="platform-intro-p">The Scantrust platform is designed to provide a complete QR code solution for global brands.</p>
+                    <p class="platform-intro-p">To understand my work at Scantrust, one must first understand the platform’s 3 fundamental pillars that I’ve contributed to: Core Technology, Digital Products, and Physical Products.</p>
+                </div>
+
+                <div class="platform-pillar-swiper" id="platformPillarSwiper">
+                    <div class="pillar-viewport-wrapper">
+                        <div class="pillar-viewport" id="pillarViewport" tabindex="0" role="region" aria-label="Scantrust Platform Pillars Carousel">
+                            <div class="pillar-track" id="pillarTrack">
+                                <div class="pillar-slide" data-index="0" aria-label="Core Technology">
+                                    <img src="/assets/scantrust/1-core.png" alt="Core Technology" class="pillar-img" width="810" height="810" draggable="false">
+                                </div>
+                                <div class="pillar-slide" data-index="1" aria-label="Digital Products">
+                                    <img src="/assets/scantrust/2-digital.png" alt="Digital Products" class="pillar-img" width="810" height="810" draggable="false">
+                                </div>
+                                <div class="pillar-slide" data-index="2" aria-label="Physical Products">
+                                    <img src="/assets/scantrust/3-physical.png" alt="Physical Products" class="pillar-img" width="810" height="810" draggable="false">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pillar-nav-group">
+                        <button type="button" class="pillar-nav-btn" id="pillarPrevBtn" aria-label="Previous pillar">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="19" y1="12" x2="5" y2="12"></line>
+                                <polyline points="12 19 5 12 12 5"></polyline>
+                            </svg>
+                        </button>
+                        <span class="pillar-active-title" id="pillarActiveTitle">Core Technology</span>
+                        <button type="button" class="pillar-nav-btn" id="pillarNextBtn" aria-label="Next pillar">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 1. Core Technology Subsection -->
+            <section class="scantrust-core-tech-section" id="coreTechnologySection">
+                <h2 class="core-tech-section-title">1. Core Technology</h2>
+                
+                <p class="core-tech-intro-text">
+                    While I’m not directly part of the Core Tech team, I worked closely with them in the early years to translate this complex, patented anti-counterfeit technology into something tangible and understandable for real-world users who are brand owners, business managers, and consumers.
+                </p>
+                <p class="core-tech-intro-lead">
+                    My involvement in Core Tech includes:
+                </p>
+
+                <div class="carousel-wrapper">
+                    <div class="carousel-container" id="core-tech-carousel">
+                        <!-- Card 1: Authentication UI & SDK -->
+                        <div class="project-card">
+                            <img src="/assets/scantrust/placeholder-auth-sdk.svg" alt="Authentication UI &amp; SDK illustration" width="800" height="500" loading="lazy">
+                            <div class="project-info">
+                                <h3>🧩 Authentication UI &amp; SDK</h3>
+                                <p>
+                                    <strong>Designing how end users scan and verify the Scantrust QR code within seconds.</strong>
+                                    Countless prototype iterations and updates of the authentication UI in the Scantrust SDK for Android, iOS, and PWA applications.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: The Printer App -->
+                        <div class="project-card">
+                            <img src="/assets/scantrust/placeholder-printer-app.svg" alt="The Printer App illustration" width="800" height="500" loading="lazy">
+                            <div class="project-info">
+                                <h3>📚 The Printer App</h3>
+                                <p>
+                                    <strong>Designed for printing operators at the print manufacturer.</strong>
+                                    It manages the calibration of new printers, print orders from brand owners, and quality control of secure QR codes during production.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Implementation Expertise -->
+                        <div class="project-card">
+                            <img src="/assets/scantrust/placeholder-implementation.svg" alt="Implementation Expertise illustration" width="800" height="500" loading="lazy">
+                            <div class="project-info">
+                                <h3>📘 Implementation Expertise</h3>
+                                <p>
+                                    <strong>Provide brand owners with expert guidance informed by a deep understanding of the Scantrust secure QR code specs when it comes to printing and incorporating them into client product labels or packaging design.</strong>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Non-technical Comms -->
+                        <div class="project-card">
+                            <img src="/assets/scantrust/placeholder-nontech-comms.svg" alt="Non-technical Comms illustration" width="800" height="500" loading="lazy">
+                            <div class="project-info">
+                                <h3>🖼️ Non-technical Comms</h3>
+                                <p>
+                                    <strong>Designing key graphics and component animations to demonstrate and explain the complex Core Technology for both internal teams and external stakeholders across apps, websites, and marketing materials.</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carousel Controls -->
+                    <div class="carousel-controls">
+                        <span class="carousel-hint" id="core-carousel-hint">Swipe to browse</span>
+                        <div class="carousel-arrows">
+                            <button id="core-scroll-left" aria-label="Previous Core Tech Card">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                                    <polyline points="12 19 5 12 12 5"></polyline>
+                                </svg>
+                            </button>
+                            <button id="core-scroll-right" aria-label="Next Core Tech Card">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Digital Products Subsection -->
+            <section class="scantrust-subsection scantrust-digital-products-section" id="digitalProductsSection">
+                <h2 class="scantrust-subsection-title">2. Digital Products</h2>
+                
+                <p class="scantrust-intro-text">
+                    Digital Products form the interactive software layer connecting serialized physical items to cloud services and data platforms. Over the years, I led and collaborated on core digital initiatives spanning dynamic no-code campaign web builders, high-throughput enterprise serialization engines, consumer-facing mobile verification experiences, and real-time brand protection analytics portals.
+                </p>
+                <p class="scantrust-intro-lead">
+                    Key digital product initiatives include:
+                </p>
+
+                <div class="carousel-wrapper">
+                    <div class="carousel-container" id="digital-products-carousel">
+                        <!-- Project 1: Campaign & Landing Page Builder -->
+                        <div class="project-card">
+                            <img src="/assets/scantrust/no-code-lp-builder.png" alt="No-Code Campaign &amp; Landing Page Builder" width="800" height="500" loading="lazy">
+                            <div class="project-info">
+                                <h3>🛠️ No-Code Campaign &amp; Landing Page Builder</h3>
+                                <p>
+                                    <strong>Dynamic web portal empowering brand managers to deploy localized mobile consumer experiences.</strong>
+                                    Designed a modular drag-and-drop landing page studio enabling global enterprise brands (including Unilever and Rémy Cointreau) to publish customized mobile landing pages, authentication dialogues, and instant reward campaigns triggered directly by QR scans without engineering bottlenecks.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Project 2: Enterprise QR Generator & Serialization -->
+                        <div class="project-card">
+                            <img src="/assets/scantrust/qr-manager.png" alt="Enterprise QR Code Generator &amp; Serialization" width="800" height="500" loading="lazy">
+                            <div class="project-info">
+                                <h3>⚡ Enterprise QR Generator &amp; Serialization</h3>
+                                <p>
+                                    <strong>High-throughput cryptographic serialization tool for industrial print runs.</strong>
+                                    Architected the complete batch creation and management experience for millions of unique secure QR codes per run, incorporating automated validation, cryptographic key governance, variable data export formats, and print-ready production files for certified print packaging partners.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Project 3: Consumer Verification & Engagement Web App -->
+                        <div class="project-card">
+                            <img src="/assets/scantrust/remy-martin-auth.png" alt="Consumer Verification &amp; Engagement Web App" width="800" height="500" loading="lazy">
+                            <div class="project-info">
+                                <h3>📱 Consumer Verification &amp; Engagement Web App</h3>
+                                <p>
+                                    <strong>Instant, app-less mobile browser authentication for everyday consumers.</strong>
+                                    Engineered the responsive end-consumer scan result web application. In under three seconds from scanning, users receive clear authenticity verification, bottle provenance histories, farm-to-table traceability, and integrated digital loyalty program activations.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Project 4: Brand Protection & Track-and-Trace Portal -->
+                        <div class="project-card">
+                            <img src="/assets/scantrust/traceability-dashboard.png" alt="Brand Protection &amp; Track-and-Trace Portal" width="800" height="500" loading="lazy">
+                            <div class="project-info">
+                                <h3>📊 Brand Protection &amp; Track-and-Trace Portal</h3>
+                                <p>
+                                    <strong>Real-time geospatial supply chain analytics and counterfeit diversion intelligence.</strong>
+                                    Designed comprehensive desktop management consoles providing brand protection teams with live scan heatmaps, grey market diversion tracking, suspicious re-scan alerts, and SKU-level inventory journey visibility across international distribution channels.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carousel Controls -->
+                    <div class="carousel-controls">
+                        <span class="carousel-hint" id="digital-carousel-hint">Swipe to browse</span>
+                        <div class="carousel-arrows">
+                            <button id="digital-scroll-left" aria-label="Previous Digital Products Card">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                                    <polyline points="12 19 5 12 12 5"></polyline>
+                                </svg>
+                            </button>
+                            <button id="digital-scroll-right" aria-label="Next Digital Products Card">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Physical Products Subsection -->
+            <section class="scantrust-subsection scantrust-physical-products-section" id="physicalProductsSection">
+                <h2 class="scantrust-subsection-title">3. Physical Products</h2>
+                
+                <p class="scantrust-intro-text">
+                    Scantrust’s physical products are the printed Secure QR codes, which are essential catalysts connecting tangible goods to Scantrust's digital platform, enabling a range of solutions from authentication and traceability to compliance and customer engagement.
+                </p>
+                <p class="scantrust-intro-text" style="margin-top: 14px;">
+                    I designed a wide range of Security Labels, i.e. Anti-Counterfeit Labels, which feature technologies such as the ScanTrust Secure QR codes to prevent fakes and ensure product integrity.
+                </p>
+
+                <hr class="physical-thin-divider">
+
+                <details class="physical-expandable" id="antiCounterfeitExpandable">
+                    <summary class="physical-expandable-summary">
+                        <span class="expandable-icon-plus" aria-hidden="true">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </span>
+                        <span class="expandable-heading-text">Anti-counterfeit Technologies:</span>
+                    </summary>
+                    <div class="physical-expandable-content">
+                        <p class="physical-tech-intro">
+                            I’ve experience designing and working with these Anti-counterfeit Technologies:
+                        </p>
+                        <ol class="physical-tech-list">
+                            <li>Holograms</li>
+                            <li>Tamper-evident features (“void”, self-destructing)</li>
+                            <li>Special inks and printing (heat, UV, infrared)</li>
+                            <li>Serialized barcodes or QR codes (tracking, tracing, individual product authentication)</li>
+                            <li>RFID/NFC tags/chips</li>
+                            <li>Micro-text or nano-text</li>
+                        </ol>
+                    </div>
+                </details>
+
+                <hr class="physical-thin-divider">
+
+                <details class="physical-expandable" id="securityLabelsExpandable">
+                    <summary class="physical-expandable-summary">
+                        <span class="expandable-icon-plus" aria-hidden="true">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </span>
+                        <span class="expandable-heading-text">State-of-the-art Security Labels:</span>
+                    </summary>
+                    <div class="physical-expandable-content">
+                        <p class="physical-labels-body">
+                            Explore the security label designs I made below for various brands and use cases.
+                        </p>
+
+                        <div class="carousel-wrapper">
+                            <div class="carousel-container" id="physical-labels-carousel">
+                            <!-- Sample 1 -->
+                            <div class="project-card">
+                                <!-- REPLACE WITH: <img src="/assets/scantrust/label-sample-01.jpg" alt="Fine Wine Neck Seal" width="800" height="500" loading="lazy"> -->
+                                <div class="color-block-placeholder" style="background: linear-gradient(135deg, #4A0E17, #721C24); color: #F8D7DA;">
+                                    <span class="placeholder-badge">Sample 01 · Wine</span>
+                                    <span class="placeholder-hint">Label Design Placeholder</span>
+                                </div>
+                                <div class="project-info">
+                                    <span class="label-sample-category">Wine &amp; Spirits</span>
+                                    <h3>🍷 Fine Wine Neck Seal</h3>
+                                    <p>
+                                        <strong>Tamper-evident tear strip with micro-text &amp; secure QR code.</strong>
+                                        Engineered for Bordeaux Grand Cru bottles to bridge capsule cork seals, tearing permanently upon uncorking.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Sample 2 -->
+                            <div class="project-card">
+                                <!-- REPLACE WITH: <img src="/assets/scantrust/label-sample-02.jpg" alt="Single Malt Scotch Capsule" width="800" height="500" loading="lazy"> -->
+                                <div class="color-block-placeholder" style="background: linear-gradient(135deg, #1C1917, #44403C); color: #F5F5F4;">
+                                    <span class="placeholder-badge">Sample 02 · Spirits</span>
+                                    <span class="placeholder-hint">Label Design Placeholder</span>
+                                </div>
+                                <div class="project-info">
+                                    <span class="label-sample-category">Distillery &amp; Spirits</span>
+                                    <h3>🥃 Single Malt Scotch Capsule</h3>
+                                    <p>
+                                        <strong>Metallized foil shrink capsule with top-cap secure QR.</strong>
+                                        Designed with laser micro-perforations that separate cleanly when the bottle sleeve is twisted open.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Sample 3 -->
+                            <div class="project-card">
+                                <!-- REPLACE WITH: <img src="/assets/scantrust/label-sample-03.jpg" alt="Luxury Cognac Bottle Seal" width="800" height="500" loading="lazy"> -->
+                                <div class="color-block-placeholder" style="background: linear-gradient(135deg, #78350F, #B45309); color: #FEF3C7;">
+                                    <span class="placeholder-badge">Sample 03 · Cognac</span>
+                                    <span class="placeholder-hint">Label Design Placeholder</span>
+                                </div>
+                                <div class="project-info">
+                                    <span class="label-sample-category">Prestige Spirits</span>
+                                    <h3>🍾 Luxury Cognac Bottle Seal</h3>
+                                    <p>
+                                        <strong>Ultra-destructible paper seal connecting cork stopper to neck.</strong>
+                                        Foil-stamped with guilloche security borders and serialized authentication code for aged spirits.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Sample 4 -->
+                            <div class="project-card">
+                                <!-- REPLACE WITH: <img src="/assets/scantrust/label-sample-04.jpg" alt="Agrochemical Jerrycan Safety Seal" width="800" height="500" loading="lazy"> -->
+                                <div class="color-block-placeholder" style="background: linear-gradient(135deg, #1E3A8A, #1D4ED8); color: #DBEAFE;">
+                                    <span class="placeholder-badge">Sample 04 · Agrochem</span>
+                                    <span class="placeholder-hint">Label Design Placeholder</span>
+                                </div>
+                                <div class="project-info">
+                                    <span class="label-sample-category">Crop Science</span>
+                                    <h3>🧪 Agrochemical Safety Seal</h3>
+                                    <p>
+                                        <strong>Solvent-resistant BOPP label with dual scratch-off verification.</strong>
+                                        Engineered to withstand UV sunlight, moisture, and harsh agricultural chemicals in field distribution.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Sample 5 -->
+                            <div class="project-card">
+                                <!-- REPLACE WITH: <img src="/assets/scantrust/label-sample-05.jpg" alt="Automotive Spare Parts Seal" width="800" height="500" loading="lazy"> -->
+                                <div class="color-block-placeholder" style="background: linear-gradient(135deg, #374151, #1F2937); color: #F3F4F6;">
+                                    <span class="placeholder-badge">Sample 05 · Auto</span>
+                                    <span class="placeholder-hint">Label Design Placeholder</span>
+                                </div>
+                                <div class="project-info">
+                                    <span class="label-sample-category">Automotive OEM</span>
+                                    <h3>⚙️ Automotive Spare Parts Seal</h3>
+                                    <p>
+                                        <strong>Holographic tamper-evident void label for replacement parts.</strong>
+                                        Protects brake pads, filters, and electronics from counterfeit imitation across global aftermarket supply chains.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Sample 6 -->
+                            <div class="project-card">
+                                <!-- REPLACE WITH: <img src="/assets/scantrust/label-sample-06.jpg" alt="Certified Seed Bag Security Tag" width="800" height="500" loading="lazy"> -->
+                                <div class="color-block-placeholder" style="background: linear-gradient(135deg, #14532D, #15803D); color: #DCFCE7;">
+                                    <span class="placeholder-badge">Sample 06 · Agri</span>
+                                    <span class="placeholder-hint">Label Design Placeholder</span>
+                                </div>
+                                <div class="project-info">
+                                    <span class="label-sample-category">Agriculture</span>
+                                    <h3>🌱 Certified Seed Bag Security Tag</h3>
+                                    <p>
+                                        <strong>Sewn-in high-density woven tag with serialized traceability QR.</strong>
+                                        Integrated directly into 25kg seed bag seams to verify genuine hybrid germination seeds for local farmers.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Sample 7 -->
+                            <div class="project-card">
+                                <!-- REPLACE WITH: <img src="/assets/scantrust/label-sample-07.jpg" alt="Extra Virgin Olive Oil Pourer Seal" width="800" height="500" loading="lazy"> -->
+                                <div class="color-block-placeholder" style="background: linear-gradient(135deg, #3F6212, #65A30D); color: #ECFCCB;">
+                                    <span class="placeholder-badge">Sample 07 · Olive Oil</span>
+                                    <span class="placeholder-hint">Label Design Placeholder</span>
+                                </div>
+                                <div class="project-info">
+                                    <span class="label-sample-category">Food &amp; Beverage</span>
+                                    <h3>🫒 Olive Oil Pour Spout Seal</h3>
+                                    <p>
+                                        <strong>Frangible paper label securing anti-refill pourer closures.</strong>
+                                        Guarantees origin certification and cold-pressed provenance while protecting against restaurant refilling fraud.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Sample 8 -->
+                            <div class="project-card">
+                                <!-- REPLACE WITH: <img src="/assets/scantrust/label-sample-08.jpg" alt="Cosmetics &amp; Skincare Jar Edge Seal" width="800" height="500" loading="lazy"> -->
+                                <div class="color-block-placeholder" style="background: linear-gradient(135deg, #831843, #BE185D); color: #FCE7F3;">
+                                    <span class="placeholder-badge">Sample 08 · Beauty</span>
+                                    <span class="placeholder-hint">Label Design Placeholder</span>
+                                </div>
+                                <div class="project-info">
+                                    <span class="label-sample-category">Cosmetics &amp; Skincare</span>
+                                    <h3>💄 Cosmetics &amp; Skincare Seal</h3>
+                                    <p>
+                                        <strong>Clear transparent tamper seal with holographic micro-pattern.</strong>
+                                        Unobtrusive luxury edge label preserving minimalist cosmetic packaging while providing instant consumer authentication.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Sample 9 -->
+                            <div class="project-card">
+                                <!-- REPLACE WITH: <img src="/assets/scantrust/label-sample-09.jpg" alt="Pharmaceutical Blister Carton Sticker" width="800" height="500" loading="lazy"> -->
+                                <div class="color-block-placeholder" style="background: linear-gradient(135deg, #0369A1, #0284C7); color: #E0F2FE;">
+                                    <span class="placeholder-badge">Sample 09 · Pharma</span>
+                                    <span class="placeholder-hint">Label Design Placeholder</span>
+                                </div>
+                                <div class="project-info">
+                                    <span class="label-sample-category">Pharmaceuticals</span>
+                                    <h3>💊 Pharma Blister Pack Sticker</h3>
+                                    <p>
+                                        <strong>Cleanroom-certified destructible vinyl security closure.</strong>
+                                        Complies with medical serialization mandates, securing prescription packaging against box tampering and diversion.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Sample 10 -->
+                            <div class="project-card">
+                                <!-- REPLACE WITH: <img src="/assets/scantrust/label-sample-10.jpg" alt="Industrial Lubricant Pail Seal" width="800" height="500" loading="lazy"> -->
+                                <div class="color-block-placeholder" style="background: linear-gradient(135deg, #854D0E, #CA8A04); color: #FEF08A;">
+                                    <span class="placeholder-badge">Sample 10 · Industrial</span>
+                                    <span class="placeholder-hint">Label Design Placeholder</span>
+                                </div>
+                                <div class="project-info">
+                                    <span class="label-sample-category">Industrial Supplies</span>
+                                    <h3>🛢️ Industrial Lubricant Seal</h3>
+                                    <p>
+                                        <strong>Heavy-duty chemical-resistant synthetic label for bulk pails.</strong>
+                                        Withstands oil, grease, and extreme warehouse temperature cycles across commercial vehicle maintenance hubs.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Sample 11 -->
+                            <div class="project-card">
+                                <!-- REPLACE WITH: <img src="/assets/scantrust/label-sample-11.jpg" alt="Artisanal Honey Jar Tamper Strap" width="800" height="500" loading="lazy"> -->
+                                <div class="color-block-placeholder" style="background: linear-gradient(135deg, #92400E, #D97706); color: #FEF3C7;">
+                                    <span class="placeholder-badge">Sample 11 · Organic</span>
+                                    <span class="placeholder-hint">Label Design Placeholder</span>
+                                </div>
+                                <div class="project-info">
+                                    <span class="label-sample-category">Specialty Food</span>
+                                    <h3>🍯 Artisanal Honey Jar Strap</h3>
+                                    <p>
+                                        <strong>Textured kraft paper strap sealing twist-off jar lids.</strong>
+                                        Combines rustic, natural unbleached paper fibers with high-security serialized digital verification for raw honey.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Sample 12 -->
+                            <div class="project-card">
+                                <!-- REPLACE WITH: <img src="/assets/scantrust/label-sample-12.jpg" alt="High-Fashion Apparel Hangtag" width="800" height="500" loading="lazy"> -->
+                                <div class="color-block-placeholder" style="background: linear-gradient(135deg, #111827, #374151); color: #F9FAFB;">
+                                    <span class="placeholder-badge">Sample 12 · Fashion</span>
+                                    <span class="placeholder-hint">Label Design Placeholder</span>
+                                </div>
+                                <div class="project-info">
+                                    <span class="label-sample-category">Luxury Apparel</span>
+                                    <h3>🏷️ Luxury Fashion Hangtag</h3>
+                                    <p>
+                                        <strong>Foil-stamped 600gsm cardstock hangtag with security code.</strong>
+                                        Secured with non-reusable locking cords, preventing unauthorized retail wardrobe returns and marketplace counterfeits.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Sample 13 -->
+                            <div class="project-card">
+                                <!-- REPLACE WITH: <img src="/assets/scantrust/label-sample-13.jpg" alt="Specialty Coffee Bag Valve Seal" width="800" height="500" loading="lazy"> -->
+                                <div class="color-block-placeholder" style="background: linear-gradient(135deg, #573010, #78350F); color: #FDE68A;">
+                                    <span class="placeholder-badge">Sample 13 · Coffee</span>
+                                    <span class="placeholder-hint">Label Design Placeholder</span>
+                                </div>
+                                <div class="project-info">
+                                    <span class="label-sample-category">Artisan Coffee</span>
+                                    <h3>☕ Specialty Coffee Valve Seal</h3>
+                                    <p>
+                                        <strong>Degassing valve compatible matte laminate security label.</strong>
+                                        Provides single-origin traceability, roasting date authenticity, and farm micro-lot narratives upon scan.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Sample 14 -->
+                            <div class="project-card">
+                                <!-- REPLACE WITH: <img src="/assets/scantrust/label-sample-14.jpg" alt="Electronics Warranty Enclosure Seal" width="800" height="500" loading="lazy"> -->
+                                <div class="color-block-placeholder" style="background: linear-gradient(135deg, #312E81, #4338CA); color: #EEF2FF;">
+                                    <span class="placeholder-badge">Sample 14 · Hardware</span>
+                                    <span class="placeholder-hint">Label Design Placeholder</span>
+                                </div>
+                                <div class="project-info">
+                                    <span class="label-sample-category">Consumer Electronics</span>
+                                    <h3>💻 Electronics Warranty Sticker</h3>
+                                    <p>
+                                        <strong>Residue-free void security label over device chassis screws.</strong>
+                                        Verifies authorized repair integrity and warranty status while leaving no sticky residue on high-end device housings.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carousel Controls -->
+                        <div class="carousel-controls">
+                            <span class="carousel-hint" id="physical-carousel-hint">Swipe to browse</span>
+                            <div class="carousel-arrows">
+                                <button id="physical-scroll-left" aria-label="Previous Label Sample Card">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                                        <polyline points="12 19 5 12 12 5"></polyline>
+                                    </svg>
+                                </button>
+                                <button id="physical-scroll-right" aria-label="Next Label Sample Card">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <!-- The Impact Section -->
+        <section class="scantrust-impact-section" id="impactSection">
+            <h2 class="impact-title">The Impact:</h2>
+            <p class="impact-lead-text">
+                Nowadays, Scantrust connects billions of products. I’m proud to share that millions of people have interacted with the digital and physical designs I made or contributed to.
+            </p>
+
+            <!-- 3 Stat Badges / Icons -->
+            <div class="impact-metrics-container">
+                <!-- 1 Billion+ -->
+                <div class="impact-metric-item">
+                    <img src="/assets/scantrust/1bn.png" alt="1 Billion+ Products Protected" class="impact-metric-icon" width="260" height="260" loading="lazy">
+                    <h3 class="impact-metric-label">Products Protected</h3>
+                </div>
+
+                <!-- 185+ -->
+                <div class="impact-metric-item">
+                    <img src="/assets/scantrust/185.png" alt="185+ Countries Reached" class="impact-metric-icon" width="260" height="260" loading="lazy">
+                    <h3 class="impact-metric-label">Countries Reached</h3>
+                </div>
+
+                <!-- 80+ -->
+                <div class="impact-metric-item">
+                    <img src="/assets/scantrust/80+.png" alt="80+ Projects Launched" class="impact-metric-icon" width="260" height="260" loading="lazy">
+                    <h3 class="impact-metric-label">Projects Launched</h3>
+                </div>
+            </div>
+
+            <!-- Body text / quote items -->
+            <div class="impact-quotes-list">
+                <blockquote class="impact-quote-item">
+                    &gt; More than 1 billion products connected and protected.
+                </blockquote>
+                <blockquote class="impact-quote-item">
+                    &gt; Scantrust codes scanned in over 185 countries.
+                </blockquote>
+                <blockquote class="impact-quote-item">
+                    &gt; 80+ projects to which I made essential contributions successfully launched.
+                </blockquote>
+            </div>
+
+            <!-- Subsection: Brands I've worked with -->
+            <div class="brands-subsection">
+                <h3 class="brands-subsection-title">🏌️Brands I’ve worked with:</h3>
+                
+                <div class="brands-slideshow-card">
+                    <div class="brands-logo-viewport" id="brandsLogoViewport" aria-label="Brands client logos slideshow">
+                        <img src="/assets/scantrust/client-logo-1.png" alt="Client Logo 1" class="brand-logo-slide active" loading="lazy">
+                        <img src="/assets/scantrust/client-logo-2.png" alt="Client Logo 2" class="brand-logo-slide" loading="lazy">
+                        <img src="/assets/scantrust/client-logo-3.png" alt="Client Logo 3" class="brand-logo-slide" loading="lazy">
+                        <img src="/assets/scantrust/client-logo-4.png" alt="Client Logo 4" class="brand-logo-slide" loading="lazy">
+                        <img src="/assets/scantrust/client-logo-5.png" alt="Client Logo 5" class="brand-logo-slide" loading="lazy">
+                        <img src="/assets/scantrust/client-logo-6.png" alt="Client Logo 6" class="brand-logo-slide" loading="lazy">
+                        <img src="/assets/scantrust/client-logo-7.png" alt="Client Logo 7" class="brand-logo-slide" loading="lazy">
+                        <img src="/assets/scantrust/client-logo-8.png" alt="Client Logo 8" class="brand-logo-slide" loading="lazy">
+                        <img src="/assets/scantrust/client-logo-9.png" alt="Client Logo 9" class="brand-logo-slide" loading="lazy">
+                        <img src="/assets/scantrust/client-logo-10.png" alt="Client Logo 10" class="brand-logo-slide" loading="lazy">
+                        <img src="/assets/scantrust/client-logo-11.png" alt="Client Logo 11" class="brand-logo-slide" loading="lazy">
+                        <img src="/assets/scantrust/client-logo-12.png" alt="Client Logo 12" class="brand-logo-slide" loading="lazy">
+                        <img src="/assets/scantrust/client-logo-13.png" alt="Client Logo 13" class="brand-logo-slide" loading="lazy">
+                        <img src="/assets/scantrust/client-logo-14.png" alt="Client Logo 14" class="brand-logo-slide" loading="lazy">
+                        <img src="/assets/scantrust/client-logo-15.png" alt="Client Logo 15" class="brand-logo-slide" loading="lazy">
+                        <img src="/assets/scantrust/client-logo-16.png" alt="Client Logo 16" class="brand-logo-slide" loading="lazy">
+                        <img src="/assets/scantrust/client-logo-17.png" alt="Client Logo 17" class="brand-logo-slide" loading="lazy">
+                    </div>
+                    <div class="brands-progress-dots" id="brandsProgressDots" aria-hidden="true">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subsection: Executive Summary -->
+            <div class="exec-summary-subsection">
+                <h3 class="exec-summary-title">Executive Summary:</h3>
+                
+                <div class="exec-summary-grid">
+                    <!-- Column 1: Development -->
+                    <div class="exec-pillar-card">
+                        <h4 class="exec-pillar-heading">🛠️ Development</h4>
+                        <ul class="exec-pillar-list">
+                            <li>10 Years of Global Startup Experience</li>
+                            <li>Pivotal Role in a Core Team Position</li>
+                            <li>Familiarity with B2B/B2C/B2P Models</li>
+                            <li>Technical &amp; Non-technical Bridging</li>
+                            <li>Team Efficiency Advocate</li>
+                            <li>Global Project Driver</li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2: Design -->
+                    <div class="exec-pillar-card">
+                        <h4 class="exec-pillar-heading">📐 Design</h4>
+                        <ul class="exec-pillar-list">
+                            <li>Head of Product Design</li>
+                            <li>Complex Systems Design</li>
+                            <li>Vision Conceptualization &amp; Workflows</li>
+                            <li>Human-Centric Design</li>
+                            <li>Multi-Language UX/UI Design</li>
+                            <li>Designing for Scale</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Me Section (Reused from Homepage) -->
+        <section id="contact" class="contact-section scantrust-contact-section bg-white text-center">
+            <div class="container">
+                <h2 class="section-title text-left">Contact Me:</h2>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <img src="/assets/linkedin_logo_outline.webp" alt="LinkedIn Logo" class="icon-outline">
+                        <a href="https://www.linkedin.com/in/jensenearth/" target="_blank" class="btn btn-black">LINKEDIN</a>
+                    </div>
+                    <div class="contact-item">
+                        <img src="/assets/email_outline.webp" alt="Email Icon" class="icon-outline">
+                        <a href="mailto:slick.87.wackos@icloud.com" class="btn btn-black">EMAIL</a>
+                    </div>
+                </div>
+            </div>
+        </section>
         </div>
     </main>
 
@@ -177,6 +1874,33 @@
         </div>
     </footer>
     <script>
+        function switchChallengeTab(tabName) {
+            const earlyBtn = document.getElementById('tab-btn-early');
+            const scalingBtn = document.getElementById('tab-btn-scaling');
+            const track = document.getElementById('challenge-tab-track');
+            const earlyPanel = document.getElementById('panel-early');
+            const scalingPanel = document.getElementById('panel-scaling');
+            if (!earlyBtn || !scalingBtn || !track || !earlyPanel || !scalingPanel) return;
+
+            if (tabName === 'early') {
+                earlyBtn.classList.add('active');
+                earlyBtn.setAttribute('aria-selected', 'true');
+                scalingBtn.classList.remove('active');
+                scalingBtn.setAttribute('aria-selected', 'false');
+                earlyPanel.removeAttribute('aria-hidden');
+                scalingPanel.setAttribute('aria-hidden', 'true');
+                track.style.transform = 'translateX(0%)';
+            } else {
+                scalingBtn.classList.add('active');
+                scalingBtn.setAttribute('aria-selected', 'true');
+                earlyBtn.classList.remove('active');
+                earlyBtn.setAttribute('aria-selected', 'false');
+                scalingPanel.removeAttribute('aria-hidden');
+                earlyPanel.setAttribute('aria-hidden', 'true');
+                track.style.transform = 'translateX(-50%)';
+            }
+        }
+
         // Fallback for details[name] exclusivity on older browsers
         document.querySelectorAll('details[name="scantrust-accordion"]').forEach((detail) => {
             detail.addEventListener("toggle", (e) => {
@@ -189,6 +1913,301 @@
                 }
             });
         });
+
+        // Manual Swiper for Scantrust Platform Pillars
+        (function initPillarSwiper() {
+            const viewport = document.getElementById('pillarViewport');
+            const track = document.getElementById('pillarTrack');
+            const titleEl = document.getElementById('pillarActiveTitle');
+            const prevBtn = document.getElementById('pillarPrevBtn');
+            const nextBtn = document.getElementById('pillarNextBtn');
+            if (!viewport || !track || !titleEl || !prevBtn || !nextBtn) return;
+
+            const pillars = [
+                { title: "Core Technology", index: 0 },
+                { title: "Digital Products", index: 1 },
+                { title: "Physical Products", index: 2 }
+            ];
+            const total = pillars.length;
+            let currentIndex = 0;
+
+            function updateUI(newIndex, animate = true) {
+                if (newIndex < 0) newIndex = total - 1;
+                if (newIndex >= total) newIndex = 0;
+                currentIndex = newIndex;
+
+                if (animate) {
+                    track.style.transition = 'transform 0.35s cubic-bezier(0.25, 1, 0.5, 1)';
+                } else {
+                    track.style.transition = 'none';
+                }
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+                titleEl.style.opacity = '0';
+                titleEl.style.transform = 'translateY(2px)';
+                setTimeout(() => {
+                    titleEl.textContent = pillars[currentIndex].title;
+                    titleEl.style.opacity = '1';
+                    titleEl.style.transform = 'translateY(0)';
+                }, 120);
+            }
+
+            const sectionIds = [
+                'coreTechnologySection',
+                'digitalProductsSection',
+                'physicalProductsSection'
+            ];
+
+            // Make active title clickable to scroll to section
+            titleEl.style.cursor = 'pointer';
+            titleEl.title = 'Click to jump to this section';
+            titleEl.addEventListener('click', () => {
+                const targetEl = document.getElementById(sectionIds[currentIndex]);
+                if (targetEl) {
+                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+
+            // Make slides clickable to scroll to section
+            const slides = track.querySelectorAll('.pillar-slide');
+            slides.forEach((slide, idx) => {
+                slide.style.cursor = 'pointer';
+                slide.addEventListener('click', () => {
+                    if (currentIndex !== idx) {
+                        updateUI(idx);
+                    } else {
+                        const targetEl = document.getElementById(sectionIds[idx]);
+                        if (targetEl) {
+                            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+
+            prevBtn.addEventListener('click', () => updateUI(currentIndex - 1));
+            nextBtn.addEventListener('click', () => updateUI(currentIndex + 1));
+
+            // Keyboard navigation
+            viewport.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    updateUI(currentIndex - 1);
+                } else if (e.key === 'ArrowRight') {
+                    updateUI(currentIndex + 1);
+                } else if (e.key === 'Enter') {
+                    const targetEl = document.getElementById(sectionIds[currentIndex]);
+                    if (targetEl) {
+                        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+
+            // Touch & Mouse Drag swiping
+            let isDragging = false;
+            let startX = 0;
+            let currentX = 0;
+            let diffX = 0;
+
+            function onPointerDown(e) {
+                isDragging = true;
+                startX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+                diffX = 0;
+                track.style.transition = 'none';
+                viewport.classList.add('is-dragging');
+            }
+
+            function onPointerMove(e) {
+                if (!isDragging) return;
+                currentX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+                diffX = currentX - startX;
+                const width = viewport.offsetWidth || 280;
+                const percent = -currentIndex * 100 + (diffX / width) * 100;
+                track.style.transform = `translateX(${percent}%)`;
+            }
+
+            function onPointerUp() {
+                if (!isDragging) return;
+                isDragging = false;
+                viewport.classList.remove('is-dragging');
+                const threshold = 35;
+                if (diffX < -threshold) {
+                    updateUI(currentIndex + 1);
+                } else if (diffX > threshold) {
+                    updateUI(currentIndex - 1);
+                } else {
+                    updateUI(currentIndex);
+                }
+                diffX = 0;
+            }
+
+            viewport.addEventListener('mousedown', onPointerDown);
+            window.addEventListener('mousemove', onPointerMove);
+            window.addEventListener('mouseup', onPointerUp);
+
+            viewport.addEventListener('touchstart', onPointerDown, { passive: true });
+            viewport.addEventListener('touchmove', onPointerMove, { passive: true });
+            viewport.addEventListener('touchend', onPointerUp);
+            viewport.addEventListener('touchcancel', onPointerUp);
+        })();
+
+        // --- 4. Subsections Carousel Controller Helper ---
+        function initSubCarousel(carouselId, leftBtnId, rightBtnId) {
+            const carousel = document.getElementById(carouselId);
+            const scrollLeftBtn = document.getElementById(leftBtnId);
+            const scrollRightBtn = document.getElementById(rightBtnId);
+
+            if (!carousel || !scrollLeftBtn || !scrollRightBtn) return;
+
+            const getScrollAmount = () => {
+                const firstCard = carousel.querySelector('.project-card');
+                if (!firstCard) return 320;
+                const carouselStyle = window.getComputedStyle(carousel);
+                const gap = parseFloat(carouselStyle.gap) || 20;
+                return firstCard.offsetWidth + gap;
+            };
+
+            const getMaxScroll = () => {
+                const cards = carousel.querySelectorAll('.project-card');
+                if (!cards.length) return 0;
+                const lastCard = cards[cards.length - 1];
+                const carouselStyle = window.getComputedStyle(carousel);
+                const paddingRight = parseFloat(carouselStyle.paddingRight) || 0;
+                const lastCardMax = (lastCard.offsetLeft + lastCard.offsetWidth + paddingRight) - carousel.clientWidth;
+                const standardMax = carousel.scrollWidth - carousel.clientWidth;
+                return Math.max(0, Math.min(lastCardMax, standardMax));
+            };
+
+            const updateButtonStates = () => {
+                const maxScroll = getMaxScroll();
+                const scrollLeft = carousel.scrollLeft;
+                
+                const isAtStart = scrollLeft <= 8;
+                let isAtEnd = scrollLeft >= maxScroll - 8;
+                
+                const cards = carousel.querySelectorAll('.project-card');
+                const lastCard = cards[cards.length - 1];
+                if (lastCard) {
+                    const carouselRect = carousel.getBoundingClientRect();
+                    const lastCardRect = lastCard.getBoundingClientRect();
+                    if (lastCardRect.right <= carouselRect.right + 12) {
+                        isAtEnd = true;
+                    }
+                }
+                
+                // Left Button State
+                scrollLeftBtn.disabled = isAtStart;
+                if (isAtStart) {
+                    scrollLeftBtn.classList.add('disabled');
+                    scrollLeftBtn.style.opacity = '0.15';
+                    scrollLeftBtn.style.cursor = 'not-allowed';
+                    scrollLeftBtn.style.pointerEvents = 'none';
+                } else {
+                    scrollLeftBtn.classList.remove('disabled');
+                    scrollLeftBtn.style.opacity = '1';
+                    scrollLeftBtn.style.cursor = 'pointer';
+                    scrollLeftBtn.style.pointerEvents = 'auto';
+                }
+                
+                // Right Button State
+                scrollRightBtn.disabled = isAtEnd;
+                if (isAtEnd) {
+                    scrollRightBtn.classList.add('disabled');
+                    scrollRightBtn.style.opacity = '0.15';
+                    scrollRightBtn.style.cursor = 'not-allowed';
+                    scrollRightBtn.style.pointerEvents = 'none';
+                } else {
+                    scrollRightBtn.classList.remove('disabled');
+                    scrollRightBtn.style.opacity = '1';
+                    scrollRightBtn.style.cursor = 'pointer';
+                    scrollRightBtn.style.pointerEvents = 'auto';
+                }
+            };
+
+            scrollLeftBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                if (scrollLeftBtn.disabled || carousel.scrollLeft <= 5) return;
+                const step = getScrollAmount();
+                const target = Math.max(0, carousel.scrollLeft - step);
+                carousel.scrollTo({ left: target, behavior: "smooth" });
+            });
+
+            scrollRightBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                const maxScroll = getMaxScroll();
+                if (scrollRightBtn.disabled || carousel.scrollLeft >= maxScroll - 5) return;
+                const step = getScrollAmount();
+                const target = Math.min(maxScroll, carousel.scrollLeft + step);
+                carousel.scrollTo({ left: target, behavior: "smooth" });
+            });
+
+            let isScrolling;
+            carousel.addEventListener("scroll", () => {
+                window.cancelAnimationFrame(isScrolling);
+                isScrolling = window.requestAnimationFrame(updateButtonStates);
+            }, { passive: true });
+
+            window.addEventListener("resize", updateButtonStates);
+            setTimeout(updateButtonStates, 100);
+        }
+
+        // Initialize carousels across all three subsections
+        initSubCarousel("core-tech-carousel", "core-scroll-left", "core-scroll-right");
+        initSubCarousel("digital-products-carousel", "digital-scroll-left", "digital-scroll-right");
+        initSubCarousel("physical-labels-carousel", "physical-scroll-left", "physical-scroll-right");
+
+        // Handle expandable toggle for physical labels carousel
+        const securityLabelsExpandable = document.getElementById("securityLabelsExpandable");
+        if (securityLabelsExpandable) {
+            securityLabelsExpandable.addEventListener("toggle", () => {
+                if (securityLabelsExpandable.open) {
+                    window.dispatchEvent(new Event("resize"));
+                    setTimeout(() => {
+                        window.dispatchEvent(new Event("resize"));
+                    }, 50);
+                }
+            });
+        }
+
+        // Brands Logo Slideshow (Rapid fade in/fade out in loop)
+        (function initBrandsSlideshow() {
+            const viewport = document.getElementById("brandsLogoViewport");
+            const dotsContainer = document.getElementById("brandsProgressDots");
+            if (!viewport || !dotsContainer) return;
+
+            const slides = viewport.querySelectorAll(".brand-logo-slide");
+            if (!slides || slides.length === 0) return;
+
+            // Generate progress dots
+            dotsContainer.innerHTML = "";
+            slides.forEach((_, idx) => {
+                const dot = document.createElement("span");
+                dot.className = "brand-dot" + (idx === 0 ? " active" : "");
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = dotsContainer.querySelectorAll(".brand-dot");
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+            const slideInterval = 1600; // 1.6s rapid loop
+
+            function showNextBrand() {
+                slides[currentIndex].classList.remove("active");
+                if (dots[currentIndex]) dots[currentIndex].classList.remove("active");
+
+                currentIndex = (currentIndex + 1) % totalSlides;
+
+                slides[currentIndex].classList.add("active");
+                if (dots[currentIndex]) dots[currentIndex].classList.add("active");
+            }
+
+            let slideshowTimer = setInterval(showNextBrand, slideInterval);
+
+            viewport.parentElement.addEventListener("mouseenter", () => {
+                clearInterval(slideshowTimer);
+            });
+            viewport.parentElement.addEventListener("mouseleave", () => {
+                slideshowTimer = setInterval(showNextBrand, slideInterval);
+            });
+        })();
     </script>
 <script src="/layout.js"></script>
 </body>

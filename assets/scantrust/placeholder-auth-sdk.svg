@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F9F6F5"/>
+      <stop offset="100%" stop-color="#ECE5E3"/>
+    </linearGradient>
+    <linearGradient id="violetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#18181B"/>
+      <stop offset="100%" stop-color="#09090B"/>
+    </linearGradient>
+    <filter id="shadow1" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="500" fill="url(#bg1)"/>
+
+  <!-- Subtle Blueprint Grid -->
+  <g opacity="0.18" stroke="#000000" stroke-width="1" stroke-dasharray="4,4">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="160" y1="0" x2="160" y2="500"/>
+    <line x1="320" y1="0" x2="320" y2="500"/>
+    <line x1="480" y1="0" x2="480" y2="500"/>
+    <line x1="640" y1="0" x2="640" y2="500"/>
+  </g>
+
+  <!-- Central Mobile Phone Frame -->
+  <g transform="translate(265, 45)" filter="url(#shadow1)">
+    <!-- Device Body -->
+    <rect x="0" y="0" width="270" height="410" rx="36" fill="#111111" stroke="#27272A" stroke-width="4"/>
+    <!-- Screen -->
+    <rect x="10" y="10" width="250" height="390" rx="28" fill="url(#screenGrad)"/>
+    
+    <!-- Camera Notch -->
+    <rect x="95" y="16" width="80" height="18" rx="9" fill="#000000"/>
+    <circle cx="155" cy="25" r="3.5" fill="#22C55E" opacity="0.8"/>
+
+    <!-- UI Viewfinder Target -->
+    <rect x="35" y="85" width="180" height="180" rx="16" fill="#18181B" stroke="#3F3F46" stroke-width="1.5" stroke-dasharray="6,4"/>
+    
+    <!-- Viewfinder Corners -->
+    <path d="M 45 110 L 45 95 L 60 95" fill="none" stroke="#6366F1" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 205 110 L 205 95 L 190 95" fill="none" stroke="#6366F1" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 45 240 L 45 255 L 60 255" fill="none" stroke="#6366F1" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 205 240 L 205 255 L 190 255" fill="none" stroke="#6366F1" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Secure QR Graphic inside viewfinder -->
+    <g transform="translate(65, 115)">
+      <!-- Finder Patterns -->
+      <rect x="0" y="0" width="34" height="34" rx="4" fill="none" stroke="#FFFFFF" stroke-width="4"/>
+      <rect x="8" y="8" width="18" height="18" rx="2" fill="#FFFFFF"/>
+      <rect x="86" y="0" width="34" height="34" rx="4" fill="none" stroke="#FFFFFF" stroke-width="4"/>
+      <rect x="94" y="8" width="18" height="18" rx="2" fill="#FFFFFF"/>
+      <rect x="0" y="86" width="34" height="34" rx="4" fill="none" stroke="#FFFFFF" stroke-width="4"/>
+      <rect x="8" y="94" width="18" height="18" rx="2" fill="#FFFFFF"/>
+      <!-- Patented Secure Micro-Matrix Center -->
+      <circle cx="60" cy="60" r="24" fill="#4F46E5" opacity="0.35"/>
+      <rect x="44" y="44" width="32" height="32" rx="4" fill="none" stroke="#818CF8" stroke-width="2"/>
+      <g fill="#A5B4FC">
+        <rect x="48" y="48" width="5" height="5"/>
+        <rect x="58" y="48" width="5" height="5"/>
+        <rect x="68" y="48" width="5" height="5"/>
+        <rect x="53" y="58" width="5" height="5"/>
+        <rect x="63" y="58" width="5" height="5"/>
+        <rect x="48" y="68" width="5" height="5"/>
+        <rect x="68" y="68" width="5" height="5"/>
+      </g>
+    </g>
+
+    <!-- Scanning Laser Ray -->
+    <line x1="36" y1="175" x2="214" y2="175" stroke="#6366F1" stroke-width="2.5" opacity="0.9"/>
+    <line x1="36" y1="175" x2="214" y2="175" stroke="#FFFFFF" stroke-width="1" opacity="0.7"/>
+
+    <!-- Verification Pill Badge -->
+    <g transform="translate(25, 290)">
+      <rect x="0" y="0" width="200" height="46" rx="23" fill="#14532D" stroke="#22C55E" stroke-width="1.5"/>
+      <circle cx="28" cy="23" r="14" fill="#22C55E"/>
+      <path d="M 23 23 L 27 27 L 34 19" fill="none" stroke="#052E16" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="52" y="24" fill="#F0FDF4" font-family="'Inter', sans-serif" font-size="12" font-weight="700">AUTHENTIC PRODUCT</text>
+      <text x="52" y="37" fill="#86EFAC" font-family="'Inter', sans-serif" font-size="9" font-weight="500">Verified in 0.6s • Scantrust SDK</text>
+    </g>
+
+    <!-- Bottom Indicator -->
+    <rect x="90" y="385" width="70" height="4" rx="2" fill="#52525B"/>
+  </g>
+
+  <!-- Left Supporting Floating Card -->
+  <g transform="translate(60, 140)" filter="url(#shadow1)">
+    <rect width="165" height="110" rx="16" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.5"/>
+    <rect x="18" y="18" width="32" height="32" rx="8" fill="#EEF2FF"/>
+    <text x="26" y="40" font-size="18">🧩</text>
+    <text x="60" y="32" font-family="'Montserrat', sans-serif" font-size="13" font-weight="800" fill="#18181B">SDK Core</text>
+    <text x="60" y="46" font-family="'Inter', sans-serif" font-size="10" font-weight="500" fill="#71717A">iOS &amp; Android</text>
+    <rect x="18" y="66" width="129" height="6" rx="3" fill="#F4F4F5"/>
+    <rect x="18" y="78" width="90" height="6" rx="3" fill="#6366F1"/>
+    <text x="18" y="100" font-family="'Inter', sans-serif" font-size="9" font-weight="600" fill="#4F46E5">99.8% Scan Accuracy</text>
+  </g>
+
+  <!-- Right Supporting Floating Card -->
+  <g transform="translate(575, 230)" filter="url(#shadow1)">
+    <rect width="165" height="110" rx="16" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.5"/>
+    <circle cx="34" cy="34" r="16" fill="#ECFDF5"/>
+    <path d="M 27 34 L 32 39 L 41 29" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="60" y="32" font-family="'Montserrat', sans-serif" font-size="13" font-weight="800" fill="#18181B">PWA Ready</text>
+    <text x="60" y="46" font-family="'Inter', sans-serif" font-size="10" font-weight="500" fill="#71717A">No App Required</text>
+    <rect x="18" y="66" width="129" height="6" rx="3" fill="#F4F4F5"/>
+    <rect x="18" y="78" width="110" height="6" rx="3" fill="#10B981"/>
+    <text x="18" y="100" font-family="'Inter', sans-serif" font-size="9" font-weight="600" fill="#059669">Instant Browser Flow</text>
+  </g>
+</svg>

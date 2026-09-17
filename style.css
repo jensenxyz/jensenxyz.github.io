@@ -87,7 +87,7 @@ ul { list-style: none; }
 
 /* --- Header (Sticky & Frosted Glass) --- */
 /* --- Global Layout Utilities --- */
-.pt-medium { padding-top: 24px; }
+.pt-medium { padding-top: 12px; }
 .pb-medium { padding-bottom: 24px; }
 
 .site-header { 
