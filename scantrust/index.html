@@ -1374,9 +1374,13 @@
             }
         }
 
-        /* Mobile View: Explicitly Disable All Hover Effects */
-        @media (max-width: 768px), (hover: none), (pointer: coarse) {
-            .project-card:hover,
+        /* Mobile & Tablet View: Explicitly Disable All Hover Effects */
+        @media (max-width: 1024px), (hover: none), (pointer: coarse) {
+            .project-card,
+            .project-card:hover {
+                transform: none !important;
+                box-shadow: none !important;
+            }
             .label-card:hover,
             .labels-carousel-container .label-card:hover {
                 transform: none !important;

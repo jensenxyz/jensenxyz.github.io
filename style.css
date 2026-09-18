@@ -243,7 +243,7 @@ ul { list-style: none; }
     -ms-overflow-style: none; 
     scrollbar-width: none; 
 }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) and (min-width: 1025px) {
     .carousel-container:has(.project-card:hover) {
         scroll-snap-type: none;
     }
@@ -261,18 +261,34 @@ ul { list-style: none; }
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow: none;
+    transition: transform 0.3s ease; 
     will-change: transform;
     transform: translateZ(0);
 }
 .project-card:last-child {
     scroll-snap-align: end;
 }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) and (min-width: 1025px) {
     .project-card:hover {
         transform: translateY(-5px); 
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12); 
+        box-shadow: none; 
+    }
+}
+
+/* Explicitly disable hover effect for cards on mobile and tablet view */
+@media (max-width: 1024px), (hover: none), (pointer: coarse) {
+    .project-card,
+    .project-card:hover,
+    #project-carousel .project-card,
+    #project-carousel .project-card:hover {
+        box-shadow: none !important;
+        transform: none !important;
+    }
+    .study-card:hover,
+    .research-card:hover {
+        transform: none !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
     }
 }
 .project-card img {
@@ -772,7 +788,11 @@ ul { list-style: none; }
     }
 
     /* Disable all hover effects for mobile view */
-    .project-card:hover,
+    .project-card,
+    .project-card:hover {
+        box-shadow: none !important;
+        transform: none !important;
+    }
     .study-card:hover,
     .research-card:hover {
         transform: none !important;
