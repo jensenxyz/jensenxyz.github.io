@@ -689,6 +689,20 @@ ul { list-style: none; }
     .hero-title { font-size: 2.6rem; }
     .hero-image { justify-content: center; justify-self: center; }
     .blob-img { max-width: 320px; }
+    .hero-bio-action { 
+        max-width: 100%; 
+        width: 100%; 
+    }
+    .hero-bio { 
+        max-width: 100%; 
+        width: 100%; 
+        margin-bottom: 25px; 
+    }
+    .hero-bio p { 
+        max-width: 100%; 
+        font-size: 1.15rem; 
+        line-height: 1.65; 
+    }
     
     .passion-grid, .tech-grid, .tech-details, .research-grid, .expertise-grid { 
         grid-template-columns: 1fr; 

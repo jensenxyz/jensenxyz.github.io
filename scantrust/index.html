@@ -67,7 +67,7 @@
             margin-bottom: 28px;
         }
         .story-text {
-            font-size: 1.05rem;
+            font-size: 1.0rem;
             font-weight: 300;
             line-height: 1.7;
             color: var(--text-grey);
@@ -83,7 +83,7 @@
             margin-bottom: 16px;
         }
         .story-list li {
-            font-size: 1.05rem;
+            font-size: 1.0rem;
             font-weight: 300;
             line-height: 1.7;
             color: var(--text-grey);
@@ -113,7 +113,7 @@
             }
             .story-text,
             .story-list li {
-                font-size: 0.98rem;
+                font-size: 0.95rem;
                 line-height: 1.6;
             }
         }
@@ -247,6 +247,10 @@
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            user-select: none;
+            -webkit-user-select: none;
         }
         .challenge-tabs-nav {
             position: relative;
@@ -255,6 +259,10 @@
             padding: 4px;
             background: #FAF6F4;
             border-radius: 30px;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            user-select: none;
+            -webkit-user-select: none;
         }
         .challenge-tab-indicator {
             position: absolute;
@@ -274,6 +282,7 @@
             z-index: 2;
             background: transparent;
             border: none;
+            outline: none;
             padding: 8px 24px;
             border-radius: 24px;
             font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
@@ -287,6 +296,20 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+        .challenge-tab-btn:focus,
+        .challenge-tab-btn:focus-visible,
+        .challenge-tab-btn:active {
+            outline: none !important;
+            box-shadow: none !important;
+            transform: none !important;
+            -webkit-tap-highlight-color: transparent !important;
+            background: transparent !important;
         }
         @media (hover: hover) and (pointer: fine) {
             .challenge-tab-btn:hover {
@@ -503,7 +526,7 @@
         .scantrust-intro-text,
         .core-tech-intro-text {
             font-family: 'Inter', sans-serif;
-            font-size: 1.15rem;
+            font-size: 1.0rem;
             font-weight: 300;
             line-height: 1.68;
             color: #111827;
@@ -514,7 +537,7 @@
         .scantrust-intro-lead,
         .core-tech-intro-lead {
             font-family: 'Inter', sans-serif;
-            font-size: 1.12rem;
+            font-size: 1.0rem;
             font-weight: 300;
             line-height: 1.6;
             color: #111827;
@@ -968,10 +991,8 @@
             justify-content: center;
             position: relative;
             margin: 0 auto;
-            max-width: 900px;
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            margin-right: calc(-50vw + 50%);
+            max-width: 1160px;
+            width: 100%;
         }
         @media (min-width: 768px) {
             .brands-slideshow-card {
@@ -980,56 +1001,41 @@
                 margin-right: auto;
             }
         }
-                @keyframes slideInFromRight {
-            from {
-                transform: translate(30%, -50%);
-                opacity: 0;
-            }
-            to {
-                transform: translate(-50%, -50%);
-                opacity: 1;
-            }
-        }
-        @keyframes slideOutToLeft {
-            from {
-                transform: translate(-50%, -50%);
-                opacity: 1;
-            }
-            to {
-                transform: translate(-130%, -50%);
-                opacity: 0;
-            }
-        }
         .brands-logo-viewport {
             width: 100%;
-            height: 360px;
+            height: auto !important;
+            min-height: 0 !important;
             position: relative;
-            overflow: hidden;
-            margin-bottom: 24px;
+            overflow: visible !important;
+            display: flex !important;
+            flex-wrap: wrap !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 20px 32px !important;
+            padding: 24px 8px 36px 8px !important;
+            margin-bottom: 24px !important;
         }
         .brand-logo-slide {
-            height: 260px;
+            position: static !important;
+            top: auto !important;
+            left: auto !important;
+            transform: none !important;
+            opacity: 0.9 !important;
+            pointer-events: auto !important;
+            animation: none !important;
+            height: 72px;
+            max-width: 140px;
             width: auto;
-            max-width: 85vw;
             object-fit: contain;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            cursor: default;
         }
-        .brand-logo-slide.active {
-            opacity: 1;
-            pointer-events: auto;
-            animation: slideInFromRight 0.8s forwards cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .brand-logo-slide.prev {
-            opacity: 0;
-            animation: slideOutToLeft 0.8s forwards cubic-bezier(0.4, 0, 0.2, 1);
+        .brand-logo-slide:hover {
+            opacity: 1 !important;
+            transform: scale(1.08) !important;
         }
 
-        /* Desktop & Tablet Horizontal: all client logos laid out in 1 or 2 rows */
+        /* Desktop & Computers */
         @media (min-width: 900px), (min-width: 768px) and (orientation: landscape) {
             .brands-slideshow-card {
                 max-width: 1160px;
@@ -1037,35 +1043,11 @@
                 margin: 0 auto;
             }
             .brands-logo-viewport {
-                height: auto;
-                min-height: 0;
-                overflow: visible;
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-                justify-content: center;
-                gap: 16px 28px;
-                padding: 24px 8px 36px 8px;
-                margin-bottom: 24px;
+                gap: 24px 40px !important;
             }
             .brand-logo-slide {
-                position: static;
-                top: auto;
-                left: auto;
-                transform: none !important;
-                opacity: 0.88 !important;
-                pointer-events: auto !important;
-                animation: none !important;
-                height: 58px;
-                max-width: 110px;
-                width: auto;
-                object-fit: contain;
-                transition: opacity 0.2s ease, transform 0.2s ease;
-                cursor: default;
-            }
-            .brand-logo-slide:hover {
-                opacity: 1 !important;
-                transform: scale(1.08) !important;
+                height: 86px;
+                max-width: 165px;
             }
         }
 
@@ -1274,13 +1256,13 @@
             }
             .scantrust-intro-text,
             .core-tech-intro-text {
-                font-size: 1.02rem;
+                font-size: 0.95rem;
                 line-height: 1.6;
                 margin-bottom: 16px;
             }
             .scantrust-intro-lead,
             .core-tech-intro-lead {
-                font-size: 1.02rem;
+                font-size: 0.95rem;
                 margin-bottom: 20px;
             }
             .scantrust-platform-card .carousel-wrapper {
@@ -1372,12 +1354,13 @@
             }
             
             .brands-logo-viewport {
-                height: 200px;
+                gap: 16px 20px !important;
+                padding: 16px 4px 24px 4px !important;
             }
             .brand-logo-slide {
-                height: 150px;
-                width: auto;
-                max-width: none;
+                height: 58px !important;
+                max-width: 115px !important;
+                width: auto !important;
             }
             .exec-summary-grid {
                 grid-template-columns: 1fr;
@@ -1630,8 +1613,8 @@
                 </div>
 
                 <div class="challenge-tabs-unified">
-                    <div class="challenge-tabs-header">
-                        <div class="challenge-tabs-nav" role="tablist" aria-label="Challenge stage tabs">
+                    <div class="challenge-tabs-header" id="challengeTabsHeader">
+                        <div class="challenge-tabs-nav" id="challengeTabsNav" role="tablist" aria-label="Challenge stage tabs">
                             <div class="challenge-tab-indicator" id="challengeTabIndicator"></div>
                             <button type="button" class="challenge-tab-btn active" role="tab" id="tab-btn-early" aria-selected="true" aria-controls="panel-early" onclick="switchChallengeTab('early')">Early Stage</button>
                             <button type="button" class="challenge-tab-btn" role="tab" id="tab-btn-scaling" aria-selected="false" aria-controls="panel-scaling" onclick="switchChallengeTab('scaling')">Scaling Stage</button>
@@ -2054,8 +2037,8 @@
             
             <div class="brands-slideshow-card-wrapper">
                 <div class="brands-slideshow-card">
-                        <div class="brands-logo-viewport" id="brandsLogoViewport" aria-label="Brands client logos slideshow">
-                            <img src="/assets/scantrust/client-logo-1.png" alt="Client Logo 1" class="brand-logo-slide active" loading="lazy">
+                        <div class="brands-logo-viewport" id="brandsLogoViewport" aria-label="Brands client logos">
+                            <img src="/assets/scantrust/client-logo-1.png" alt="Client Logo 1" class="brand-logo-slide" loading="lazy">
                             <img src="/assets/scantrust/client-logo-2.png" alt="Client Logo 2" class="brand-logo-slide" loading="lazy">
                             <img src="/assets/scantrust/client-logo-3.png" alt="Client Logo 3" class="brand-logo-slide" loading="lazy">
                             <img src="/assets/scantrust/client-logo-4.png" alt="Client Logo 4" class="brand-logo-slide" loading="lazy">
@@ -2441,70 +2424,6 @@
                 }
             });
         }
-
-        (function initBrandsSlideshow() {
-            const viewport = document.getElementById("brandsLogoViewport");
-            if (!viewport) return;
-
-            const slides = viewport.querySelectorAll(".brand-logo-slide");
-            if (!slides || slides.length === 0) return;
-
-            let currentIndex = 0;
-            const totalSlides = slides.length;
-            const slideInterval = 1200; // faster rotation per user request
-
-            const mediaQuery = window.matchMedia("(min-width: 900px), (min-width: 768px) and (orientation: landscape)");
-
-            function isMobileSlideshow() {
-                return !mediaQuery.matches;
-            }
-
-            function showNextBrand() {
-                if (!isMobileSlideshow()) return;
-
-                // Remove prev class from all first
-                slides.forEach(s => s.classList.remove("prev"));
-                
-                // Current slide becomes prev
-                slides[currentIndex].classList.remove("active");
-                slides[currentIndex].classList.add("prev");
-
-                // Next slide becomes active
-                currentIndex = (currentIndex + 1) % totalSlides;
-                slides[currentIndex].classList.add("active");
-            }
-
-            let slideshowTimer = setInterval(showNextBrand, slideInterval);
-
-            function handleMediaChange() {
-                if (isMobileSlideshow()) {
-                    slides.forEach((s, idx) => {
-                        if (idx === currentIndex) {
-                            s.classList.add("active");
-                            s.classList.remove("prev");
-                        } else {
-                            s.classList.remove("active", "prev");
-                        }
-                    });
-                }
-            }
-
-            if (mediaQuery.addEventListener) {
-                mediaQuery.addEventListener("change", handleMediaChange);
-            } else if (mediaQuery.addListener) {
-                mediaQuery.addListener(handleMediaChange);
-            }
-
-            viewport.parentElement.addEventListener("mouseenter", () => {
-                if (isMobileSlideshow()) clearInterval(slideshowTimer);
-            });
-            viewport.parentElement.addEventListener("mouseleave", () => {
-                if (isMobileSlideshow()) {
-                    clearInterval(slideshowTimer);
-                    slideshowTimer = setInterval(showNextBrand, slideInterval);
-                }
-            });
-        })();
     </script>
 <script src="/layout.js"></script>
 </body>
