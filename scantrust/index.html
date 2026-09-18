@@ -124,13 +124,14 @@
             margin-top: 64px;
             background: linear-gradient(135deg, rgba(8, 12, 18, 0.42) 0%, rgba(15, 20, 28, 0.50) 100%),
                         url('/assets/scantrust/challenge-mountains.jpg') center center / cover no-repeat;
-            padding: 56px 48px;
+            padding: 56px 20px;
             color: #FFFFFF;
             margin-left: calc(-50vw + 50%);
             margin-right: calc(-50vw + 50%);
         }
         .challenge-photo-inner {
             max-width: 1160px;
+            width: 100%;
             margin: 0 auto;
         }
         .challenge-white-wrapper {
@@ -153,6 +154,10 @@
         }
         .challenge-pov-sheet-top {
             text-align: left;
+            max-width: 780px;
+            width: 100%;
+            margin-left: 0;
+            margin-right: auto;
         }
         .challenge-pov-sheet-bottom {
             text-align: left;
@@ -164,7 +169,7 @@
             font-size: 1.1rem;
             color: #FFFFFF;
             letter-spacing: -0.2px;
-            margin: 0 0 8px 0;
+            margin: 0 0 8px 48px;
             text-align: left;
         }
         .challenge-pov-phrase-dark {
@@ -180,7 +185,7 @@
             font-size: 1.05rem;
             line-height: 1.7;
             color: #E2E6EC;
-            margin: 0 0 20px 0;
+            margin: 0 0 20px 48px;
             text-align: left;
         }
         .challenge-pov-desc-dark {
@@ -476,7 +481,7 @@
         .core-tech-intro-lead {
             font-family: 'Inter', sans-serif;
             font-size: 1.12rem;
-            font-weight: 400;
+            font-weight: 300;
             line-height: 1.6;
             color: #111827;
             margin-bottom: 28px;
@@ -617,6 +622,11 @@
             .physical-expandable-summary:hover {
                 background-color: rgba(0, 0, 0, 0.03);
                 border-radius: 8px;
+            }
+            #antiCounterfeitExpandable > .physical-expandable-summary:hover,
+            #securityLabelsExpandable > .physical-expandable-summary:hover {
+                background-color: transparent !important;
+                border-radius: 0 !important;
             }
         }
         .expandable-heading-text {
@@ -1157,11 +1167,13 @@
             .challenge-pov-phrase {
                 font-size: 1.02rem;
                 margin-bottom: 6px;
+                margin-left: 0;
             }
             .challenge-pov-desc {
                 font-size: 0.98rem;
                 line-height: 1.6;
                 margin-bottom: 16px;
+                margin-left: 0;
             }
             .challenge-tabs-unified {
                 border-radius: 16px;
