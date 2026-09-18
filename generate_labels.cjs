@@ -1,20 +1,20 @@
 const fs = require('fs');
 
 const labels = [
-    { num: 1, title: 'WWF Gifts', subtitle: 'Traceable Security Label For Authenticity' },
-    { num: 2, title: 'Wine Label', subtitle: 'Multiple Secure Features Built-In' },
-    { num: 3, title: 'Coffee Beans', subtitle: 'Fair Trade And Sustainability' },
-    { num: 4, title: 'Vorsteiner Luxury Wheels', subtitle: 'Authentication For Personalized Wheels' },
-    { num: 5, title: 'Zippo One Label™', subtitle: 'Limited Edition Zippo Lighter' },
-    { num: 6, title: 'Zippo One Label™', subtitle: 'Design Variant Under UV Light' },
-    { num: 7, title: 'WWF Gifts', subtitle: 'Unique Label Design' },
-    { num: 8, title: 'Middle School Textbooks', subtitle: 'Oxford University Press Pakistan' },
-    { num: 9, title: 'Covid-19 Response', subtitle: 'Rapid Test Kit' },
-    { num: 10, title: 'Genuine Medications', subtitle: 'Pharma-Tech In Nigeria' },
-    { num: 11, title: 'Medical Gloves', subtitle: 'High-Performance During Pandemic' },
-    { num: 12, title: 'DuPont Water Filters', subtitle: 'Residential & Industrial Product Lines' },
-    { num: 13, title: 'TASA Fishmeal', subtitle: 'Quality Certificate' },
-    { num: 14, title: 'Inspection Certificate', subtitle: 'SGS Singapore & APAC' }
+    { num: 1, title: 'WWF Gifts', subtitle: 'Traceable Security Label for Authenticity' },
+    { num: 2, title: 'WWF Gifts', subtitle: 'Unique Label Design' },
+    { num: 3, title: 'Middle School Textbooks', subtitle: 'Oxford University Press Pakistan' },
+    { num: 4, title: 'Covid-19 Response', subtitle: 'Rapid Test Kit' },
+    { num: 5, title: 'Genuine Medications', subtitle: 'Pharma-Tech in Nigeria' },
+    { num: 6, title: 'Medical Gloves', subtitle: 'High-Performance During Pandemic' },
+    { num: 7, title: 'DuPont Water Filters', subtitle: 'Residential & Industrial Product Lines' },
+    { num: 8, title: 'TASA Fishmeal', subtitle: 'Quality Certificate' },
+    { num: 9, title: 'Inspection Certificate', subtitle: 'SGS Singapore & APAC' },
+    { num: 10, title: 'Wine Label', subtitle: 'Multiple Secure Features Built-In' },
+    { num: 11, title: 'Coffee Beans', subtitle: 'Fair Trade and Sustainability' },
+    { num: 12, title: 'Vorsteiner Luxury Wheels', subtitle: 'Authentication for Personalized Wheels' },
+    { num: 13, title: 'Zippo One Label™', subtitle: 'Limited Edition Zippo Lighter' },
+    { num: 14, title: 'Zippo One Label™', subtitle: 'Design Variant Under UV Light' }
 ];
 
 let labelsHtml = `<div class="labels-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; margin-top: 20px;">`;
