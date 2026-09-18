@@ -1054,7 +1054,7 @@
         .exec-summary-subsection {
             margin-top: 0px;
             margin-bottom: 0px;
-            text-align: left;
+            text-align: center;
             background: #000000;
             color: #FFFFFF;
             padding: 80px 40px;
@@ -1065,28 +1065,6 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        .exec-summary-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            align-items: start;
-        }
-        @media (min-width: 900px) {
-            .exec-summary-grid {
-                grid-template-columns: minmax(260px, auto) 1fr 1fr;
-                gap: 48px;
-                align-items: start;
-            }
-            .exec-pillar-heading {
-                margin-top: 6px;
-            }
-        }
-        .exec-title-card {
-            display: flex;
-            align-items: flex-start;
-            margin: 0;
-            padding: 0;
-        }
         .exec-summary-title {
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
@@ -1094,9 +1072,27 @@
             color: #FFFFFF;
             letter-spacing: -0.5px;
             line-height: 1.15;
-            margin: 0;
+            margin: 0 auto 48px auto;
             padding: 0;
-            text-align: left;
+            text-align: center;
+        }
+        .exec-summary-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: start;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        @media (min-width: 900px) {
+            .exec-summary-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 64px;
+                align-items: start;
+            }
+            .exec-pillar-heading {
+                margin-top: 0px;
+            }
         }
         .exec-pillar-card {
             display: flex;
@@ -1333,7 +1329,8 @@
                 font-size: 1.95rem;
                 letter-spacing: -0.5px;
                 line-height: 1.2;
-                margin-bottom: 12px;
+                margin-bottom: 32px;
+                text-align: center;
             }
             .exec-pillar-heading {
                 font-size: 1.25rem;
@@ -2061,10 +2058,8 @@
 
                 <section class="exec-summary-subsection" id="execSummary">
                     <div class="exec-summary-inner">
+                        <h2 class="exec-summary-title">Executive Summary:</h2>
                         <div class="exec-summary-grid">
-                            <div class="exec-title-card">
-                                <h2 class="exec-summary-title">Executive Summary:</h2>
-                            </div>
                             <div class="exec-pillar-card">
                                 <h4 class="exec-pillar-heading">🛠️ Development</h4>
                                 <ul class="exec-pillar-list">
@@ -2090,8 +2085,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
             <!-- Contact Me Section -->
             <section id="contact" class="contact-section scantrust-contact-section bg-white text-center">
