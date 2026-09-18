@@ -68,6 +68,7 @@
         }
         .story-text {
             font-size: 1.05rem;
+            font-weight: 300;
             line-height: 1.7;
             color: var(--text-grey);
             margin-bottom: 16px;
@@ -83,8 +84,9 @@
         }
         .story-list li {
             font-size: 1.05rem;
+            font-weight: 300;
             line-height: 1.7;
-            color: var(--text-dark);
+            color: var(--text-grey);
             margin-bottom: 8px;
         }
 
@@ -463,6 +465,7 @@
         .core-tech-intro-text {
             font-family: 'Inter', sans-serif;
             font-size: 1.15rem;
+            font-weight: 300;
             line-height: 1.68;
             color: #111827;
             margin-bottom: 20px;
@@ -955,15 +958,15 @@
         }
         .brands-logo-viewport {
             width: 100%;
-            height: 400px;
+            height: 360px;
             position: relative;
             overflow: hidden;
             margin-bottom: 24px;
         }
         .brand-logo-slide {
-            height: 300px;
+            height: 260px;
             width: auto;
-            max-width: none;
+            max-width: 85vw;
             object-fit: contain;
             position: absolute;
             top: 50%;
@@ -980,6 +983,46 @@
         .brand-logo-slide.prev {
             opacity: 0;
             animation: slideOutToLeft 0.8s forwards cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Desktop & Tablet Horizontal: all client logos laid out in 1 or 2 rows */
+        @media (min-width: 900px), (min-width: 768px) and (orientation: landscape) {
+            .brands-slideshow-card {
+                max-width: 1160px;
+                width: 100%;
+                margin: 0 auto;
+            }
+            .brands-logo-viewport {
+                height: auto;
+                min-height: 0;
+                overflow: visible;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                gap: 16px 28px;
+                padding: 24px 8px 36px 8px;
+                margin-bottom: 24px;
+            }
+            .brand-logo-slide {
+                position: static;
+                top: auto;
+                left: auto;
+                transform: none !important;
+                opacity: 0.88 !important;
+                pointer-events: auto !important;
+                animation: none !important;
+                height: 58px;
+                max-width: 110px;
+                width: auto;
+                object-fit: contain;
+                transition: opacity 0.2s ease, transform 0.2s ease;
+                cursor: default;
+            }
+            .brand-logo-slide:hover {
+                opacity: 1 !important;
+                transform: scale(1.08) !important;
+            }
         }
 
         .exec-summary-subsection {
@@ -2347,9 +2390,17 @@
 
             let currentIndex = 0;
             const totalSlides = slides.length;
-            const slideInterval = 2500; // slightly longer for the animation to be enjoyed
+            const slideInterval = 1200; // faster rotation per user request
+
+            const mediaQuery = window.matchMedia("(min-width: 900px), (min-width: 768px) and (orientation: landscape)");
+
+            function isMobileSlideshow() {
+                return !mediaQuery.matches;
+            }
 
             function showNextBrand() {
+                if (!isMobileSlideshow()) return;
+
                 // Remove prev class from all first
                 slides.forEach(s => s.classList.remove("prev"));
                 
@@ -2364,11 +2415,33 @@
 
             let slideshowTimer = setInterval(showNextBrand, slideInterval);
 
+            function handleMediaChange() {
+                if (isMobileSlideshow()) {
+                    slides.forEach((s, idx) => {
+                        if (idx === currentIndex) {
+                            s.classList.add("active");
+                            s.classList.remove("prev");
+                        } else {
+                            s.classList.remove("active", "prev");
+                        }
+                    });
+                }
+            }
+
+            if (mediaQuery.addEventListener) {
+                mediaQuery.addEventListener("change", handleMediaChange);
+            } else if (mediaQuery.addListener) {
+                mediaQuery.addListener(handleMediaChange);
+            }
+
             viewport.parentElement.addEventListener("mouseenter", () => {
-                clearInterval(slideshowTimer);
+                if (isMobileSlideshow()) clearInterval(slideshowTimer);
             });
             viewport.parentElement.addEventListener("mouseleave", () => {
-                slideshowTimer = setInterval(showNextBrand, slideInterval);
+                if (isMobileSlideshow()) {
+                    clearInterval(slideshowTimer);
+                    slideshowTimer = setInterval(showNextBrand, slideInterval);
+                }
             });
         })();
     </script>
