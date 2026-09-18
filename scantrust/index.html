@@ -122,15 +122,49 @@
         .challenge-photo-wrapper {
             position: relative;
             margin-top: 64px;
-            background: linear-gradient(135deg, rgba(8, 12, 18, 0.42) 0%, rgba(15, 20, 28, 0.50) 100%),
-                        url('/assets/scantrust/challenge-mountains.jpg') center center / cover no-repeat;
+            background: transparent;
             padding: 56px 20px;
             color: #FFFFFF;
             margin-left: calc(-50vw + 50%);
             margin-right: calc(-50vw + 50%);
+            overflow: hidden;
         }
+        /* Dedicated Mountain Picture Background Layer */
+        .challenge-mountain-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .challenge-mountain-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+            /* Freedom of editing: customize brightness, contrast, position, or scale independently */
+            filter: brightness(0.85) contrast(1.05);
+            transform: translateZ(0);
+        }
+        .challenge-mountain-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Dedicated overlay: adjust opacity or color gradient freely */
+            background: linear-gradient(135deg, rgba(8, 12, 18, 0.42) 0%, rgba(15, 20, 28, 0.50) 100%);
+        }
+        /* Text Container - explicitly has no background */
         .challenge-photo-inner {
-            max-width: 1160px;
+            position: relative;
+            z-index: 1;
+            background: transparent;
+            max-width: 800px;
             width: 100%;
             margin: 0 auto;
         }
@@ -154,7 +188,7 @@
         }
         .challenge-pov-sheet-top {
             text-align: left;
-            max-width: 780px;
+            max-width: 800px;
             width: 100%;
             margin-left: 0;
             margin-right: auto;
@@ -169,7 +203,7 @@
             font-size: 1.1rem;
             color: #FFFFFF;
             letter-spacing: -0.2px;
-            margin: 0 0 8px 48px;
+            margin: 0 0 8px 0;
             text-align: left;
         }
         .challenge-pov-phrase-dark {
@@ -185,7 +219,7 @@
             font-size: 1.05rem;
             line-height: 1.7;
             color: #E2E6EC;
-            margin: 0 0 20px 48px;
+            margin: 0 0 20px 0;
             text-align: left;
         }
         .challenge-pov-desc-dark {
@@ -1566,22 +1600,33 @@
             </div>
 
             <!-- The Challenge Section -->
-            <div class="challenge-photo-wrapper">
-                <div class="challenge-photo-inner">
-                    <div class="challenge-header">
-                        <h2 class="challenge-title">The Challenge:</h2>
+            <div class="challenge-photo-wrapper" id="challengePhotoWrapper">
+                <!-- Mountain Picture Background Layer (Independent element for full editing freedom) -->
+                <div class="challenge-mountain-bg" id="challengeMountainBg">
+                    <img src="/assets/scantrust/challenge-mountains.jpg" 
+                         alt="Mountain Landscape Background" 
+                         class="challenge-mountain-img" 
+                         id="challengeMountainImg"
+                         loading="lazy">
+                    <div class="challenge-mountain-overlay" id="challengeMountainOverlay"></div>
+                </div>
+
+                <!-- Text Container (Clean & completely transparent - no background) -->
+                <div class="challenge-photo-inner" id="challengePhotoInner">
+                    <div class="challenge-header" id="challengeHeader">
+                        <h2 class="challenge-title" id="challengeTitle">The Challenge:</h2>
                     </div>
-                    <div class="challenge-pov-sheet-top">
-                        <p class="challenge-pov-phrase">Big Picture POV:</p>
-                        <p class="challenge-pov-desc" style="margin-bottom: 0;">There was no playbook for designing a brand-new platform. Everything had to be built from scratch. I had to lean heavily on my ability to learn fast and adapt on the fly.</p>
+                    <div class="challenge-pov-sheet-top" id="challengePovSheetTop">
+                        <p class="challenge-pov-phrase" id="challengePovPhraseTop">Big Picture POV:</p>
+                        <p class="challenge-pov-desc" id="challengePovDescTop" style="margin-bottom: 0;">There was no playbook for designing a brand-new platform. Everything had to be built from scratch. I had to lean heavily on my ability to learn fast and adapt on the fly.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="challenge-white-wrapper">
-                <div class="challenge-pov-sheet-bottom">
-                    <p class="challenge-pov-phrase-dark">On the Ground POV:</p>
-                    <p class="challenge-pov-desc-dark" style="margin-bottom: 0;">The challenges evolved as the company grew.</p>
+            <div class="challenge-white-wrapper" id="challengeWhiteWrapper">
+                <div class="challenge-pov-sheet-bottom" id="challengePovSheetBottom">
+                    <p class="challenge-pov-phrase-dark" id="challengePovPhraseBottom">On the Ground POV:</p>
+                    <p class="challenge-pov-desc-dark" id="challengePovDescBottom" style="margin-bottom: 0;">The challenges evolved as the company grew.</p>
                 </div>
 
                 <div class="challenge-tabs-unified">
