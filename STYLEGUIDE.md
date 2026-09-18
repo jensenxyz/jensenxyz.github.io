@@ -452,7 +452,7 @@ All subpages throughout the site must reuse the exact same black footer as the h
             <a href="https://www.linkedin.com/in/jensenearth/" target="_blank">LinkedIn</a>
         </div>
         <div class="footer-copy">
-            &copy; JENSEN S.Z. ✨
+            Made with ♥️ & AI on Earth © JENSEN S.Z. ✨
         </div>
     </div>
 </footer>
