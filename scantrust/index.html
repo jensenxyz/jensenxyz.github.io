@@ -1085,15 +1085,16 @@
             margin: 0 auto;
         }
         @media (min-width: 900px) {
-            .exec-summary-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 64px;
-                align-items: start;
-            }
-            .exec-pillar-heading {
-                margin-top: 0px;
-            }
-        }
+    .exec-summary-grid {
+        grid-template-columns: max-content max-content; /* Shrinks columns to fit the text exactly */
+        justify-content: center; /* Centers the columns within the 900px container */
+        gap: 80px; /* Slightly increased gap for better breathing room, adjust as needed */
+        align-items: start;
+    }
+    .exec-pillar-heading {
+        margin-top: 0px;
+    }
+}
         .exec-pillar-card {
             display: flex;
             flex-direction: column;
