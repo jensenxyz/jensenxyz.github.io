@@ -1085,30 +1085,52 @@
         }
         .exec-summary-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            align-items: start;
-            max-width: 900px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            align-items: stretch;
+            max-width: 980px;
             margin: 0 auto;
-            padding-left: 32px;
-            padding-right: 32px;
+            padding-left: 20px;
+            padding-right: 20px;
         }
-        @media (min-width: 900px) {
+        @media (min-width: 992px) {
             .exec-summary-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 64px;
-                align-items: start;
-            }
-            .exec-pillar-heading {
-                margin-top: 0px;
+                gap: 36px;
+                padding-left: 24px;
+                padding-right: 24px;
             }
         }
         .exec-pillar-card {
+            position: relative;
             display: flex;
             flex-direction: column;
             text-align: left;
             margin: 0;
-            padding: 0;
+            padding: 32px 28px;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.04);
+            background-image: 
+                radial-gradient(ellipse at 15% 0%, rgba(255, 255, 255, 0.08) 0%, transparent 65%),
+                linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.015) 100%),
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 1  0 1 0 0 1  0 0 1 0 1  0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 
+                0 20px 40px -10px rgba(0, 0, 0, 0.65),
+                inset 0 1px 1px 0 rgba(255, 255, 255, 0.18),
+                inset 0 -1px 1px 0 rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            overflow: hidden;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .exec-pillar-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.24);
+            box-shadow: 
+                0 24px 48px -10px rgba(0, 0, 0, 0.8),
+                inset 0 1px 1px 0 rgba(255, 255, 255, 0.28);
         }
         .exec-pillar-heading {
             font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
@@ -1116,12 +1138,13 @@
             font-size: 1.25rem;
             color: #FFFFFF;
             letter-spacing: -0.2px;
-            line-height: 1.2;
-            margin: 0 0 16px 0;
-            padding: 0;
+            line-height: 1.25;
+            margin: 0 0 18px 0;
+            padding: 0 0 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.09);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
         .exec-pillar-list {
             list-style: none;
@@ -1129,29 +1152,64 @@
             margin: 0;
             display: flex;
             flex-direction: column;
-            gap: 3px;
+            gap: 10px;
+            flex-grow: 1;
         }
         .exec-pillar-list li {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 0.92rem;
             font-weight: 300;
-            line-height: 1.35;
+            line-height: 1.45;
             color: #E5E7EB;
             display: flex;
             align-items: flex-start;
-            gap: 8px;
-            white-space: nowrap;
-            padding: 1px 0;
+            gap: 10px;
+            padding: 2px 0;
             margin: 0;
+            white-space: normal;
+            word-break: normal;
         }
         .exec-pillar-list li::before {
             content: '•';
-            color: #FFFFFF;
-            font-size: 0.75rem;
-            line-height: 1;
-            margin-top: 4px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            line-height: 1.45;
+            margin-top: 0px;
             flex-shrink: 0;
-            opacity: 0.9;
+        }
+
+        /* Mobile View: Vertical stacking for Executive Summary cards */
+        @media (max-width: 640px) {
+            .exec-summary-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+            #execCardDev,
+            #execCardDesign {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                float: none;
+                margin: 0;
+            }
+            .exec-pillar-card {
+                padding: 24px 20px;
+                border-radius: 18px;
+            }
+            .exec-pillar-heading {
+                font-size: 1.15rem;
+                margin-bottom: 14px;
+                padding-bottom: 12px;
+            }
+            .exec-pillar-list {
+                gap: 9px;
+            }
+            .exec-pillar-list li {
+                font-size: 0.88rem;
+                line-height: 1.42;
+            }
         }
 
         .scantrust-contact-section {
@@ -1354,9 +1412,23 @@
             .exec-summary-subsection {
                 padding: 48px 20px;
             }
+            .exec-summary-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            .exec-pillar-card {
+                padding: 24px 20px;
+                border-radius: 18px;
+            }
+            .exec-pillar-heading {
+                font-size: 1.18rem;
+                margin-bottom: 14px;
+                padding-bottom: 12px;
+            }
             .exec-pillar-list li {
-                font-size: clamp(0.76rem, 3.6vw, 0.88rem);
-                white-space: nowrap;
+                font-size: 0.86rem;
+                line-height: 1.42;
+                white-space: normal;
             }
             
             .brands-logo-viewport {
@@ -1367,13 +1439,6 @@
                 height: 58px !important;
                 max-width: 115px !important;
                 width: auto !important;
-            }
-            .exec-summary-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-            .exec-pillar-card {
-                padding: 0;
             }
             .labels-carousel-wrapper {
                 margin-left: -18px;
@@ -2065,10 +2130,10 @@
                 <section class="exec-summary-subsection" id="execSummary">
                     <div class="exec-summary-inner">
                         <h2 class="exec-summary-title">Executive Summary:</h2>
-                        <div class="exec-summary-grid">
-                            <div class="exec-pillar-card">
-                                <h4 class="exec-pillar-heading">🛠️ Development</h4>
-                                <ul class="exec-pillar-list">
+                        <div class="exec-summary-grid" id="execSummaryGrid">
+                            <div class="exec-pillar-card" id="execCardDev">
+                                <h4 class="exec-pillar-heading" id="execHeadingDev">🛠️ Development</h4>
+                                <ul class="exec-pillar-list" id="execListDev">
                                      <li>Global Startup Experience</li>
                                      <li>Core Team &amp; Cross-functional Collaboration</li>
                                      <li>B2B / B2C / B2P Product Experience</li>
@@ -2078,9 +2143,9 @@
                                  </ul>
                             </div>
 
-                            <div class="exec-pillar-card">
-                                <h4 class="exec-pillar-heading">📐 Design</h4>
-                                <ul class="exec-pillar-list">
+                            <div class="exec-pillar-card" id="execCardDesign">
+                                <h4 class="exec-pillar-heading" id="execHeadingDesign">📐 Design</h4>
+                                <ul class="exec-pillar-list" id="execListDesign">
                                      <li>Ask the Right Questions</li>
                                      <li>Hands-on Product Design</li>
                                      <li>Human-Centric Design</li>
