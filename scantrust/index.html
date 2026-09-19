@@ -1178,40 +1178,6 @@
             flex-shrink: 0;
         }
 
-        /* Mobile View: Vertical stacking for Executive Summary cards */
-        @media (max-width: 640px) {
-            .exec-summary-grid {
-                grid-template-columns: 1fr;
-                gap: 18px;
-                padding-left: 12px;
-                padding-right: 12px;
-            }
-            #execCardDev,
-            #execCardDesign {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                float: none;
-                margin: 0;
-            }
-            .exec-pillar-card {
-                padding: 24px 20px;
-                border-radius: 18px;
-            }
-            .exec-pillar-heading {
-                font-size: 1.15rem;
-                margin-bottom: 14px;
-                padding-bottom: 12px;
-            }
-            .exec-pillar-list {
-                gap: 9px;
-            }
-            .exec-pillar-list li {
-                font-size: 0.88rem;
-                line-height: 1.42;
-            }
-        }
-
         .scantrust-contact-section {
             padding-top: 60px;
             padding-bottom: 24px;
@@ -1459,6 +1425,40 @@
             }
             .labels-carousel-wrapper .carousel-controls {
                 padding: 0 18px 8px 18px;
+            }
+        }
+
+        /* Mobile View: Vertical stacking for Executive Summary cards (<= 640px) */
+        @media (max-width: 640px) {
+            .exec-summary-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+            #execCardDev,
+            #execCardDesign {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                float: none;
+                margin: 0;
+            }
+            .exec-pillar-card {
+                padding: 24px 20px;
+                border-radius: 18px;
+            }
+            .exec-pillar-heading {
+                font-size: 1.15rem;
+                margin-bottom: 14px;
+                padding-bottom: 12px;
+            }
+            .exec-pillar-list {
+                gap: 9px;
+            }
+            .exec-pillar-list li {
+                font-size: 0.88rem;
+                line-height: 1.42;
             }
         }
 
