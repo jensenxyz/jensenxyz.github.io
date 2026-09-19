@@ -74,6 +74,11 @@
             margin-bottom: 16px;
             padding: 8px;
         }
+        .story-text .text-accent,
+        .text-accent {
+            color: #000000;
+            font-weight: 600;
+        }
         .story-text:last-child {
             margin-bottom: 0;
         }
@@ -969,7 +974,7 @@
         }
 
         .brands-subsection {
-            margin-top: 100px;
+            margin-top: 56px;
             margin-bottom: 0px;
             text-align: center;
         }
@@ -980,7 +985,7 @@
             letter-spacing: -0.5px;
             line-height: 1.2;
             color: #000000;
-            margin-bottom: 32;
+            margin-bottom: 0;
             text-align: center;
         }
         
@@ -1012,8 +1017,8 @@
             align-items: center !important;
             justify-content: center !important;
             gap: 20px 32px !important;
-            padding: 24px 8px 48px 8px !important;
-            margin-bottom: 64px !important;
+            padding: 24px 8px 36px 8px !important;
+            margin-bottom: 24px !important;
         }
         .brand-logo-slide {
             position: static !important;
@@ -1043,7 +1048,7 @@
                 margin: 0 auto;
             }
             .brands-logo-viewport {
-                gap: 40px 64px !important;
+                gap: 24px 40px !important;
             }
             .brand-logo-slide {
                 height: 86px;
@@ -1085,16 +1090,15 @@
             margin: 0 auto;
         }
         @media (min-width: 900px) {
-    .exec-summary-grid {
-        grid-template-columns: max-content max-content; /* Shrinks columns to fit the text exactly */
-        justify-content: center; /* Centers the columns within the 900px container */
-        gap: 200px; /* Slightly increased gap for better breathing room, adjust as needed */
-        align-items: start;
-    }
-    .exec-pillar-heading {
-        margin-top: 0px;
-    }
-}
+            .exec-summary-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 64px;
+                align-items: start;
+            }
+            .exec-pillar-heading {
+                margin-top: 0px;
+            }
+        }
         .exec-pillar-card {
             display: flex;
             flex-direction: column;
@@ -1526,10 +1530,10 @@
                         </summary>
                         <div class="study-accordion-body">
                             <p class="story-text">
-                                Everyone deserves to know if the product they buy is genuine — this simple, powerful idea sparked the birth of Scantrust. The core problem Scantrust set out to solve was the <strong>global issue of counterfeit products</strong>.
+                                Everyone deserves to know if the product they buy is genuine — this simple, powerful idea sparked the birth of Scantrust. The core problem Scantrust set out to solve was the <strong class="text-accent">global issue of counterfeit products</strong>.
                             </p>
                             <p class="story-text">
-                                In 2014, I met the founders in a Shanghai co-working space and something clicked. I joined as the <strong>founding designer</strong>, turning their idea into tangible interfaces and workflows. Since then I’ve participated in every aspect of Scantrust’s product development and company growth.
+                                In 2014, I met the founders in a Shanghai co-working space and something clicked. I joined as the <strong class="text-accent">founding designer</strong>, turning their idea into tangible interfaces and workflows. Since then I’ve participated in every aspect of Scantrust’s product development and company growth.
                             </p>
                         </div>
                     </details>
@@ -1543,17 +1547,16 @@
                         </summary>
                         <div class="study-accordion-body">
                             <p class="story-text">
-                                Right from the get-go, I became the glue between teams—sales, engineers, marketers—bridging the technical and non-technical through my carefully prepared design specs and Q&A meetings. I quickly became a key connector across almost everyone in the company.
+                                Right from the get-go, I became the glue between teams—sales, engineers, marketers—bridging the technical and non-technical through my carefully prepared design specs and Q&A meetings. I quickly became a <strong class="text-accent">key connector</strong> across almost everyone in the company.
                             </p>
                             <p class="story-text">
-                                My role in building this global startup was beyond design — it meant navigating timezone chaos, translating business needs into design, and stepping up as an unofficial product manager to keep every mission moving forward.
+                                My role in building this global startup was beyond design — it meant navigating timezone chaos, translating business needs into design, and stepping up as an unofficial product manager to keep every mission <strong class="text-accent">moving forward</strong>.
                             </p>
                             <p class="story-text">
-                                Within the company, I ran the company-wide global meeting every other week from 2015 to 2019.<br>
-                                Within the product team, my leadership developed significantly as I:
-                            
-                        
-                                <li>Always took initiative to draft documents that aimed to organize, guide, and improve the overall efficiency of cross-functional collaboration across iOS, Android, Web, QA, and Core Tech teams.</li>
+                                Within the company, I ran the company-wide global meeting every other week from 2015 to 2019. Within the product team, my leadership developed significantly as I:
+                            </p>
+                            <ul class="story-list">
+                                <li>Always took initiative to draft documents that aimed to organize, guide, and improve the overall efficiency of <strong class="text-accent">cross-functional</strong> collaboration across iOS, Android, Web, QA, and Core Tech teams.</li>
                                 <li>Mentored 3+ junior product designers and 7+ interns over the years.</li>
                             </ul>
                         </div>
@@ -1568,10 +1571,10 @@
                         </summary>
                         <div class="study-accordion-body">
                             <p class="story-text">
-                                When a Fortune 500 client adopted us as a registered supplier, it validated our sleepless nights. It was deeply fulfilling to witness my designs and efforts evolve from prototypes and demos into impactful real-world products.
+                                When a Fortune 500 client adopted us as a registered supplier, it validated our sleepless nights. It was deeply fulfilling to witness my designs and efforts evolve from prototypes and demos into <strong class="text-accent">impactful real-world products</strong>.
                             </p>
                             <p class="story-text">
-                                Today, Scantrust connects billions of products and empowers millions to shop and consume safely. For me, it’s proof that small teams—through persistence and collaboration—can build solutions that bring positive changes to people's lives.
+                                Today, Scantrust connects billions of products and empowers millions to shop and consume safely. For me, it’s proof that small teams—through persistence and collaboration—can build solutions that bring <strong class="text-accent">positive changes</strong> to people's lives.
                             </p>
                         </div>
                     </details>
@@ -1790,7 +1793,7 @@
                         </div>
 
                         <div class="project-card">
-                            <img src="/assets/scantrust/remy-martin-auth.png" alt="Branded Mobile Apps" width="800" height="500" loading="lazy">
+                            <img src="/assets/scantrust/dupont-water-app.png" alt="Branded Mobile Apps" width="800" height="500" loading="lazy">
                             <div class="project-info">
                                 <h3>Branded Mobile Apps</h3>
                                 <ul style="font-weight: 400; padding-left: 20px; list-style-type: disc; margin: 0; color: #4B5563; font-size: 0.94rem; line-height: 1.62;">
@@ -2062,7 +2065,7 @@
                             <div class="exec-pillar-card">
                                 <h4 class="exec-pillar-heading">🛠️ Development</h4>
                                 <ul class="exec-pillar-list">
-                                    <li>Global Startup Experience</li>
+                                    <li>10 Years of Global Startup Experience</li>
                                     <li>Pivotal Role in a Core Team Position</li>
                                     <li>Familiarity with B2B/B2C/B2P Models</li>
                                     <li>Technical &amp; Non-technical Bridging</li>
