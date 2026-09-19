@@ -607,7 +607,7 @@ ul { list-style: none; }
     display: flex; 
     justify-content: center; 
     align-items: flex-end;
-    gap: 60px; 
+    gap: 100px; 
     margin-top: 40px; 
 }
 .contact-item { 
