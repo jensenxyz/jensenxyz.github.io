@@ -16,9 +16,9 @@ const newScript = `(function initPillarSwiper() {
             if (!viewport || !track || !titleEl || !prevBtn || !nextBtn) return;
 
             const pillars = [
-                { title: "Core Technology", index: 0 },
-                { title: "Digital Products", index: 1 },
-                { title: "Physical Products", index: 2 }
+                { title: "1. Core Technology", index: 0 },
+                { title: "2. Digital Products", index: 1 },
+                { title: "3. Physical Products", index: 2 }
             ];
             const total = pillars.length;
             let currentIndex = 0;
