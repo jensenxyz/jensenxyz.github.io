@@ -395,45 +395,57 @@
         }
 
         .platform-pillar-swiper {
+            --center-size: 230px;
+            --stage-height: 250px;
+            --side-offset: 195px;
+            --pillar-radius: calc(var(--center-size) * 0.2);
+            position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 2px;
+            margin-top: 8px;
             user-select: none;
             -webkit-user-select: none;
+            width: 100%;
         }
         .pillar-viewport-wrapper {
             position: relative;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
+            width: 100%;
+            max-width: 680px;
+            margin: 0 auto;
         }
         
         .pillar-viewport {
-            width: 240px;
-            height: 240px;
-            overflow: hidden;
+            width: 100%;
+            height: var(--stage-height);
+            overflow: visible;
             position: relative;
             cursor: grab;
             touch-action: pan-y;
-            border-radius: 20px;
-            background: #F8F4F3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .pillar-viewport.is-dragging {
             cursor: grabbing;
         }
-        .pillar-track {
-            display: flex;
+        .pillar-track-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            margin: 0;
-            padding: 0;
-            gap: 0;
-            transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-            will-change: transform;
+            pointer-events: none;
+            overflow: visible;
+            z-index: 1;
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
         }
-        .pillar-slide {
-            flex: 0 0 100%;
+        .pillar-track {
+            position: relative;
             width: 100%;
             height: 100%;
             margin: 0;
@@ -441,9 +453,52 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+        .pillar-slide {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: var(--center-size);
+            height: var(--center-size);
+            margin-left: calc(-0.5 * var(--center-size));
+            margin-top: calc(-0.5 * var(--center-size));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-origin: center center;
+            will-change: transform;
             box-sizing: border-box;
+            user-select: none;
+            -webkit-user-drag: none;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .pillar-card-wrap {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--pillar-radius, 46px);
+            overflow: hidden;
+            box-sizing: border-box;
+            background-color: #FFFFFF;
+            /* Inner black border */
+            box-shadow: inset 0 0 0 2px #000000;
+            filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.09));
+        }
+        .pillar-white-bg {
+            position: absolute;
+            inset: 0;
+            background-color: #FFFFFF;
+            border-radius: var(--pillar-radius, 46px);
+            pointer-events: none;
+            z-index: 1;
         }
         .pillar-img {
+            position: relative;
+            z-index: 2;
             width: 100%;
             height: 100%;
             object-fit: contain;
@@ -451,6 +506,11 @@
             pointer-events: none;
             user-select: none;
             -webkit-user-drag: none;
+            border-radius: var(--pillar-radius, 46px);
+            box-shadow: inset 0 0 0 2px #000000;
+            box-sizing: border-box;
+            will-change: opacity;
+            transition: opacity 0.05s linear;
         }
 
         .pillar-nav-group {
@@ -1259,9 +1319,13 @@
                 line-height: 1.5;
                 margin-bottom: 6px;
             }
+            .platform-pillar-swiper {
+                --center-size: 180px;
+                --stage-height: 200px;
+                --side-offset: 140px;
+            }
             .pillar-viewport {
-                width: 200px;
-                height: 200px;
+                height: var(--stage-height);
             }
             .pillar-nav-group {
                 gap: 8px;
@@ -1459,6 +1523,23 @@
             .exec-pillar-list li {
                 font-size: 0.88rem;
                 line-height: 1.42;
+            }
+            .platform-pillar-swiper {
+                --center-size: 160px;
+                --stage-height: 180px;
+                --side-offset: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .platform-pillar-swiper {
+                --center-size: 140px;
+                --stage-height: 160px;
+                --side-offset: 100px;
+            }
+            .pillar-active-title {
+                font-size: 1.05rem;
+                min-width: 160px;
             }
         }
 
@@ -1720,32 +1801,44 @@
                     <p class="platform-intro-p">To understand my work at Scantrust, one must first understand the platform’s 3 fundamental pillars that I’ve contributed to: Core Technology, Digital Products, and Physical Products.</p>
                 </div>
 
-                <div class="platform-pillar-swiper" id="platformPillarSwiper">
+                <!-- Platform Pillars Swiper: Direction 4 with White Square Overlay -->
+                <div class="platform-pillar-swiper" id="pillarSwiper">
                     <div class="pillar-viewport-wrapper">
-                        <div class="pillar-viewport" id="pillarViewport" tabindex="0" role="region" aria-label="Scantrust Platform Pillars Carousel">
+                        <div class="pillar-viewport" id="pillarViewport" tabindex="0" role="region" aria-label="Platform Pillars Carousel">
+                            <svg class="pillar-track-svg" viewBox="0 0 700 250" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                                <line x1="0" y1="125" x2="700" y2="125" stroke="#000000" stroke-width="3" stroke-dasharray="14 10" class="pillar-dynamic-belt" />
+                            </svg>
                             <div class="pillar-track" id="pillarTrack">
-                                <div class="pillar-slide" data-index="0" aria-label="Core Technology">
-                                    <img src="/assets/scantrust/1-core.png" alt="Core Technology" class="pillar-img" width="810" height="810" draggable="false">
+                                <div class="pillar-slide" id="pillarSlideCore" data-pillar="core" data-index="0" aria-label="Core Technology">
+                                    <div class="pillar-card-wrap">
+                                        <div class="pillar-white-bg" aria-hidden="true"></div>
+                                        <img src="/assets/scantrust/1-core-noline.png" alt="Core Technology" class="pillar-img" width="640" height="640" draggable="false">
+                                    </div>
                                 </div>
-                                <div class="pillar-slide" data-index="1" aria-label="Digital Products">
-                                    <img src="/assets/scantrust/2-digital.png" alt="Digital Products" class="pillar-img" width="810" height="810" draggable="false">
+                                <div class="pillar-slide" id="pillarSlideDigital" data-pillar="digital" data-index="1" aria-label="Digital Products">
+                                    <div class="pillar-card-wrap">
+                                        <div class="pillar-white-bg" aria-hidden="true"></div>
+                                        <img src="/assets/scantrust/2-digital-noline.png" alt="Digital Products" class="pillar-img" width="640" height="640" draggable="false">
+                                    </div>
                                 </div>
-                                <div class="pillar-slide" data-index="2" aria-label="Physical Products">
-                                    <img src="/assets/scantrust/3-physical.png" alt="Physical Products" class="pillar-img" width="810" height="810" draggable="false">
+                                <div class="pillar-slide" id="pillarSlidePhysical" data-pillar="physical" data-index="2" aria-label="Physical Products">
+                                    <div class="pillar-card-wrap">
+                                        <div class="pillar-white-bg" aria-hidden="true"></div>
+                                        <img src="/assets/scantrust/3-physical-noline.png" alt="Physical Products" class="pillar-img" width="640" height="640" draggable="false">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="pillar-nav-group">
-                        <button type="button" class="pillar-nav-btn" id="pillarPrevBtn" aria-label="Previous pillar">
+                        <button type="button" class="pillar-nav-btn pillar-prev-btn" id="pillarPrevBtn" aria-label="Previous pillar">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="19" y1="12" x2="5" y2="12"></line>
                                 <polyline points="12 19 5 12 12 5"></polyline>
                             </svg>
                         </button>
-                        <span class="pillar-active-title" id="pillarActiveTitle">1. Core Technology</span>
-                        <button type="button" class="pillar-nav-btn" id="pillarNextBtn" aria-label="Next pillar">
+                        <span class="pillar-active-title" id="pillarTitle">1. Core Technology</span>
+                        <button type="button" class="pillar-nav-btn pillar-next-btn" id="pillarNextBtn" aria-label="Next pillar">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -2245,136 +2338,262 @@
             if (activeBtn) updateTabIndicator(activeBtn);
         }, 50);
 
-        (function initPillarSwiper() {
-            const viewport = document.getElementById('pillarViewport');
-            const track = document.getElementById('pillarTrack');
-            const titleEl = document.getElementById('pillarActiveTitle');
-            const prevBtn = document.getElementById('pillarPrevBtn');
-            const nextBtn = document.getElementById('pillarNextBtn');
-            if (!viewport || !track || !titleEl || !prevBtn || !nextBtn) return;
+        (function initAllPillarSwipers() {
+            const swipers = document.querySelectorAll('.platform-pillar-swiper');
+            if (!swipers.length) return;
 
-            const pillars = [
-                { title: "1. Core Technology", index: 0 },
-                { title: "2. Digital Products", index: 1 },
-                { title: "3. Physical Products", index: 2 }
-            ];
-            const total = pillars.length;
-            let currentIndex = 0;
+            swipers.forEach((swiper) => {
+                const viewport = swiper.querySelector('.pillar-viewport');
+                const track = swiper.querySelector('.pillar-track');
+                const titleEl = swiper.querySelector('.pillar-active-title');
+                const prevBtn = swiper.querySelector('.pillar-prev-btn');
+                const nextBtn = swiper.querySelector('.pillar-next-btn');
+                const dynamicBelt = swiper.querySelector('.pillar-dynamic-belt');
 
-            const slides = Array.from(track.querySelectorAll('.pillar-slide'));
-            if (slides.length !== total) return;
-            
-            const firstClone = slides[0].cloneNode(true);
-            const lastClone = slides[total - 1].cloneNode(true);
-            
-            firstClone.setAttribute('aria-hidden', 'true');
-            lastClone.setAttribute('aria-hidden', 'true');
-            
-            track.appendChild(firstClone);
-            track.insertBefore(lastClone, slides[0]);
-            
-            track.style.transition = 'none';
-            track.style.transform = `translateX(-100%)`;
+                if (!viewport || !track || !titleEl || !prevBtn || !nextBtn) return;
 
-            let isTransitioning = false;
+                const slideCore = track.querySelector('[data-pillar="core"]');
+                const slideDigital = track.querySelector('[data-pillar="digital"]');
+                const slidePhysical = track.querySelector('[data-pillar="physical"]');
+                if (!slideCore || !slideDigital || !slidePhysical) return;
 
-            function updateUI(newIndex) {
-                if (isTransitioning) return;
-                isTransitioning = true;
-                
-                let actualIndex = newIndex + 1;
-                
-                track.style.transition = 'transform 0.35s cubic-bezier(0.25, 1, 0.5, 1)';
-                track.style.transform = `translateX(-${actualIndex * 100}%)`;
+                // Geometry constants:
+                // 3 pillars spaced 120° (2π / 3) apart on an infinite circular track.
+                // Center is 0 rad (Core Technology, 100% scale)
+                // Left is -120° (-2π / 3 rad) (Digital Products, 60% scale)
+                // Right is +120° (+2π / 3 rad) (Physical Products, 60% scale)
+                const TWO_PI = 2 * Math.PI;
+                const TWO_PI_OVER_3 = (2 * Math.PI) / 3;
+                const SIN_120 = Math.sin(TWO_PI_OVER_3); // ~0.866025
 
-                let displayIndex = newIndex;
-                if (newIndex === -1) displayIndex = total - 1;
-                if (newIndex === total) displayIndex = 0;
-                
-                currentIndex = displayIndex;
+                const pillarData = [
+                    { el: slideCore, img: slideCore.querySelector('.pillar-img'), baseAngle: 0, index: 0, title: "1. Core Technology", name: "core" },
+                    { el: slideDigital, img: slideDigital.querySelector('.pillar-img'), baseAngle: -TWO_PI_OVER_3, index: 1, title: "2. Digital Products", name: "digital" },
+                    { el: slidePhysical, img: slidePhysical.querySelector('.pillar-img'), baseAngle: TWO_PI_OVER_3, index: 2, title: "3. Physical Products", name: "physical" }
+                ];
 
-                titleEl.style.opacity = '0';
-                titleEl.style.transform = 'translateY(2px)';
-                setTimeout(() => {
-                    titleEl.textContent = pillars[currentIndex].title;
-                    titleEl.style.opacity = '1';
-                    titleEl.style.transform = 'translateY(0)';
-                }, 120);
+                let currentRot = 0;   // Continuous rotation coordinate
+                let targetStep = 0;   // Discrete target step index
+                let animId = null;
 
-                setTimeout(() => {
-                    isTransitioning = false;
-                    if (newIndex === -1) {
-                        track.style.transition = 'none';
-                        track.style.transform = `translateX(-${total * 100}%)`;
-                    } else if (newIndex === total) {
-                        track.style.transition = 'none';
-                        track.style.transform = `translateX(-100%)`;
+                function getSideOffset() {
+                    const computed = window.getComputedStyle(swiper);
+                    const val = parseFloat(computed.getPropertyValue('--side-offset'));
+                    if (!isNaN(val) && val > 0) return val;
+                    const w = window.innerWidth;
+                    if (w <= 480) return 100;
+                    if (w <= 768) return 140;
+                    return 195;
+                }
+
+                // Updates positions, scale along horizontal axis, icon opacity, and z-index for all 3 pillars
+                function updatePositions(r) {
+                    const sideOffset = getSideOffset();
+                    let highestCos = -2;
+                    let activeTitle = "";
+
+                    pillarData.forEach(p => {
+                        const theta = p.baseAngle - r * TWO_PI_OVER_3;
+                        const normTheta = ((theta + Math.PI) % TWO_PI + TWO_PI) % TWO_PI - Math.PI;
+                        const sinVal = Math.sin(normTheta);
+                        const cosVal = Math.cos(normTheta);
+
+                        if (cosVal > highestCos) {
+                            highestCos = cosVal;
+                            activeTitle = p.title;
+                        }
+
+                        const x = (sinVal / SIN_120) * sideOffset;
+
+                        let scale;
+                        if (cosVal >= -0.5) {
+                            const t = (cosVal + 0.5) / 1.5;
+                            scale = 0.60 + t * 0.40;
+                        } else {
+                            const t = (cosVal + 1.0) / 0.5;
+                            scale = 0.48 + t * 0.12;
+                        }
+
+                        // Normalized depth from back (cosVal = -1) to center front (cosVal = 1)
+                        // At the back of the belt: 50% (0.50) opacity
+                        // At the center front: 100% (1.00) opacity
+                        const depthRatio = (cosVal + 1.0) / 2.0; // 0.0 at back, 0.25 at side nodes (-0.5), 1.0 at front
+                        const iconOpacity = 0.50 + depthRatio * 0.50;
+
+                        let zIndex;
+                        let cursor = 'default';
+
+                        if (cosVal > 0.45) {
+                            zIndex = 10;
+                            cursor = 'grab';
+                        } else if (cosVal >= -0.5) {
+                            zIndex = 5;
+                            cursor = 'pointer';
+                        } else {
+                            zIndex = 1;
+                            cursor = 'default';
+                        }
+
+                        p.el.style.transform = `translate3d(${x.toFixed(2)}px, 0, 0) scale(${scale.toFixed(4)})`;
+                        p.el.style.zIndex = zIndex;
+                        p.el.style.opacity = '1';
+                        p.el.style.cursor = cursor;
+                        if (p.img) {
+                            p.img.style.opacity = iconOpacity.toFixed(3);
+                        }
+                        p.currentX = x;
+                        p.cosVal = cosVal;
+                    });
+
+                    if (activeTitle && titleEl.textContent !== activeTitle) {
+                        titleEl.textContent = activeTitle;
                     }
-                }, 350);
-            }
 
-            prevBtn.addEventListener('click', () => updateUI(currentIndex - 1));
-            nextBtn.addEventListener('click', () => updateUI(currentIndex + 1));
-
-            viewport.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowLeft') {
-                    updateUI(currentIndex - 1);
-                } else if (e.key === 'ArrowRight') {
-                    updateUI(currentIndex + 1);
+                    if (dynamicBelt) {
+                        // Dynamically roll the dashed pattern in real-time as rotation advances
+                        dynamicBelt.style.strokeDashoffset = `${(-r * 60).toFixed(2)}px`;
+                    }
                 }
+
+                function easeOutCubic(t) {
+                    return 1 - Math.pow(1 - t, 3);
+                }
+
+                function animateTo(target, duration = 380) {
+                    if (animId) cancelAnimationFrame(animId);
+                    const startRot = currentRot;
+                    const delta = target - startRot;
+                    if (Math.abs(delta) < 0.0005) {
+                        currentRot = target;
+                        targetStep = target;
+                        updatePositions(currentRot);
+                        return;
+                    }
+
+                    const startTime = performance.now();
+
+                    function step(now) {
+                        const elapsed = now - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const eased = easeOutCubic(progress);
+                        currentRot = startRot + delta * eased;
+                        updatePositions(currentRot);
+
+                        if (progress < 1) {
+                            animId = requestAnimationFrame(step);
+                        } else {
+                            currentRot = target;
+                            targetStep = target;
+                            updatePositions(currentRot);
+                            animId = null;
+                        }
+                    }
+                    animId = requestAnimationFrame(step);
+                }
+
+                function rotateBy(deltaSteps) {
+                    targetStep += deltaSteps;
+                    animateTo(targetStep, 380);
+                }
+
+                nextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    rotateBy(1);
+                });
+                prevBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    rotateBy(-1);
+                });
+
+                viewport.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        rotateBy(1);
+                    } else if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        rotateBy(-1);
+                    }
+                });
+
+                let isDragging = false;
+                let startX = 0;
+                let currentXPos = 0;
+                let dragStartRot = 0;
+                let totalMoveDistance = 0;
+
+                function onPointerDown(e) {
+                    if (animId) cancelAnimationFrame(animId);
+                    isDragging = true;
+                    viewport.classList.add('is-dragging');
+                    startX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+                    currentXPos = startX;
+                    dragStartRot = currentRot;
+                    totalMoveDistance = 0;
+                }
+
+                function onPointerMove(e) {
+                    if (!isDragging) return;
+                    currentXPos = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+                    const diffX = currentXPos - startX;
+                    totalMoveDistance = Math.abs(diffX);
+
+                    const sideOffset = getSideOffset();
+                    const rotDelta = -diffX / (sideOffset * 1.25);
+                    currentRot = dragStartRot + rotDelta;
+                    updatePositions(currentRot);
+                }
+
+                function onPointerUp() {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    viewport.classList.remove('is-dragging');
+
+                    const diffX = currentXPos - startX;
+                    const sideOffset = getSideOffset();
+                    const threshold = sideOffset * 0.22;
+
+                    if (diffX < -threshold) {
+                        targetStep = Math.ceil(dragStartRot);
+                        if (targetStep === dragStartRot) targetStep += 1;
+                    } else if (diffX > threshold) {
+                        targetStep = Math.floor(dragStartRot);
+                        if (targetStep === dragStartRot) targetStep -= 1;
+                    } else {
+                        targetStep = Math.round(currentRot);
+                    }
+
+                    animateTo(targetStep, 340);
+                }
+
+                viewport.addEventListener('mousedown', onPointerDown);
+                window.addEventListener('mousemove', onPointerMove);
+                window.addEventListener('mouseup', onPointerUp);
+
+                viewport.addEventListener('touchstart', onPointerDown, { passive: true });
+                viewport.addEventListener('touchmove', onPointerMove, { passive: true });
+                viewport.addEventListener('touchend', onPointerUp);
+                viewport.addEventListener('touchcancel', onPointerUp);
+
+                pillarData.forEach(p => {
+                    p.el.addEventListener('click', (e) => {
+                        if (totalMoveDistance > 8) return;
+                        if (p.cosVal < 0.45 && p.cosVal >= -0.55) {
+                            e.stopPropagation();
+                            if (p.currentX > 0) {
+                                rotateBy(1);
+                            } else if (p.currentX < 0) {
+                                rotateBy(-1);
+                            }
+                        }
+                    });
+                });
+
+                window.addEventListener('resize', () => {
+                    updatePositions(currentRot);
+                });
+
+                updatePositions(0);
             });
-
-            let isDragging = false;
-            let startX = 0;
-            let currentX = 0;
-            let diffX = 0;
-
-            function onPointerDown(e) {
-                if (isTransitioning) return;
-                isDragging = true;
-                startX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
-                diffX = 0;
-                track.style.transition = 'none';
-                viewport.classList.add('is-dragging');
-            }
-
-            function onPointerMove(e) {
-                if (!isDragging || isTransitioning) return;
-                currentX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
-                diffX = currentX - startX;
-                const width = viewport.offsetWidth || 280;
-                
-                let actualIndex = currentIndex + 1;
-                const percent = -actualIndex * 100 + (diffX / width) * 100;
-                track.style.transform = `translateX(${percent}%)`;
-            }
-
-            function onPointerUp() {
-                if (!isDragging) return;
-                isDragging = false;
-                viewport.classList.remove('is-dragging');
-                
-                const width = viewport.offsetWidth || 280;
-                const threshold = width * 0.2;
-
-                if (diffX < -threshold) {
-                    updateUI(currentIndex + 1);
-                } else if (diffX > threshold) {
-                    updateUI(currentIndex - 1);
-                } else {
-                    updateUI(currentIndex);
-                }
-                diffX = 0;
-            }
-
-            viewport.addEventListener('mousedown', onPointerDown);
-            window.addEventListener('mousemove', onPointerMove);
-            window.addEventListener('mouseup', onPointerUp);
-            
-            viewport.addEventListener('touchstart', onPointerDown, { passive: true });
-            viewport.addEventListener('touchmove', onPointerMove, { passive: true });
-            viewport.addEventListener('touchend', onPointerUp);
-            viewport.addEventListener('touchcancel', onPointerUp);
         })();
 
         function initSubCarousel(carouselId, leftBtnId, rightBtnId) {
