@@ -275,4 +275,9 @@ document.addEventListener("DOMContentLoaded", () => {
             parentItem.classList.toggle("active");
         });
     });
+
+    // --- 4. Rainbow Rain Easter Egg Initialization ---
+    if (typeof window.initRainbowRain === 'function') {
+        window.initRainbowRain();
+    }
 });

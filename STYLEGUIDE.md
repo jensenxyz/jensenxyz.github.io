@@ -452,7 +452,7 @@ All subpages throughout the site must reuse the exact same black footer as the h
             <a href="https://www.linkedin.com/in/jensenearth/" target="_blank">LinkedIn</a>
         </div>
         <div class="footer-copy">
-            Made with ♥️ & AI on Earth © JENSEN S.Z. 🌈✨
+            Made with ♥️ & AI on Earth © JENSEN S.Z. <span class="footer-rainbow" role="button" tabindex="0" title="Make it rain rainbows! 🌈" aria-label="Make it rain rainbows">🌈</span>✨
         </div>
     </div>
 </footer>

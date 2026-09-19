@@ -7,7 +7,7 @@
     "dev": "node server.js",
     "build": "node -e \"console.log('Static site build ready')\"",
     "start": "node server.js",
-    "lint": "node --check server.js script.js"
+    "lint": "node --check server.js script.js layout.js"
   },
   "dependencies": {
     "express": "^4.21.2",

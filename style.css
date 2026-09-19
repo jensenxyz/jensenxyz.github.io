@@ -671,6 +671,87 @@ ul { list-style: none; }
     letter-spacing: 0.2px;
 }
 
+/* --- Footer Rainbow Trigger & Emoji Rain --- */
+.footer-rainbow {
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    padding: 0 4px;
+    vertical-align: baseline;
+}
+/* Generous touch target for mobile/tablet without expanding text line-height */
+.footer-rainbow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    pointer-events: auto;
+}
+.footer-rainbow:hover {
+    transform: scale(1.35) rotate(-8deg);
+}
+.footer-rainbow:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.6);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+.footer-rainbow:active,
+.footer-rainbow.rainbow-popping {
+    animation: rainbow-pop 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes rainbow-pop {
+    0% { transform: scale(1); }
+    35% { transform: scale(1.55) rotate(18deg); }
+    70% { transform: scale(0.9) rotate(-10deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+/* Emoji Rain Overlay */
+#emoji-rain-container {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 999999;
+    overflow: hidden;
+    contain: layout size;
+}
+.emoji-raindrop {
+    position: absolute;
+    top: -60px;
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: none;
+    line-height: 1;
+    will-change: transform;
+    animation: emoji-rain-fall linear forwards;
+}
+@keyframes emoji-rain-fall {
+    0% {
+        transform: translate3d(0, -60px, 0) rotate(var(--rot-start, 0deg));
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    88% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(var(--drift-x, 0px), calc(100vh + 80px), 0) rotate(var(--rot-end, 0deg));
+        opacity: 0.85;
+    }
+}
+
 /* --- Responsive --- */
 @media (max-width: 992px) {
     .pt-large { padding-top: 50px; }
