@@ -23,6 +23,11 @@ app.get(['/scantrust', '/scantrust/', '/scantrust.html', '/projects/scantrust.ht
   res.sendFile(path.join(__dirname, 'scantrust', 'index.html'));
 });
 
+// Route for funkacoins project page (/funkacoins and /funkacoins/)
+app.get(['/funkacoins', '/funkacoins/', '/funkacoins.html', '/projects/funkacoins.html', '/projects/funkacoins', '/projects/funkacoins/'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'funkacoins', 'index.html'));
+});
+
 // Support file requests under /cv/ and /download/
 app.get(['/cv/:file', '/download/:file'], (req, res, next) => {
   const filePath = path.join(__dirname, 'cv', req.params.file);
