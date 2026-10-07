@@ -35,53 +35,43 @@
         }
         .metro-carousel-section {
             margin: 24px auto 48px auto;
+            background: transparent !important;
+        }
+        #metroCarouselSection .carousel-wrapper {
+            background: transparent !important;
+            margin: -12px -28px 0 -28px;
         }
         #metro-screenshots-carousel {
+            background: transparent !important;
             gap: 24px;
-            padding: 16px 4px 20px 4px;
+            padding: 28px 28px 46px 28px;
+            scroll-padding-left: 28px;
+            scroll-padding-right: 28px;
+        }
+        #metroCarouselSection .carousel-controls {
+            background: transparent !important;
+            margin-top: -12px;
+            margin-right: 0;
+            padding: 0 28px 6px 28px;
         }
         #metro-screenshots-carousel .project-card {
-            background-color: #F8F4F3 !important;
-            border: 2px solid #000000 !important;
-            border-radius: 30px !important;
-            flex: 0 0 560px !important;
-            width: 560px !important;
-            min-width: 560px !important;
+            background-color: transparent !important;
+            border: 1px solid rgba(0, 0, 0, 0.1) !important;
+            border-radius: 28px !important;
+            flex: 0 0 340px !important;
+            width: 340px !important;
+            min-width: 340px !important;
             overflow: hidden;
             box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06) !important;
         }
-        .metro-screenshot-placeholder {
+        #metro-screenshots-carousel .project-card img {
             width: 100%;
-            aspect-ratio: 16 / 10;
-            background: #F8F4F3;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 32px 24px;
-            text-align: center;
-            color: #000000;
-        }
-        .metro-screenshot-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 6px 16px;
-            border-radius: 20px;
-            background: #000000;
-            color: #FFFFFF;
-            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-        .metro-screenshot-label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: #000000;
+            height: auto !important;
+            aspect-ratio: auto !important;
+            object-fit: contain !important;
+            display: block;
+            border-radius: 27px;
+            background-color: transparent;
         }
 
         .metro-contact-section {
@@ -102,19 +92,28 @@
         }
 
         @media (max-width: 768px) {
+            #metroCarouselSection .carousel-wrapper {
+                margin: -12px -20px 0 -20px;
+            }
             #metro-screenshots-carousel {
-                padding: 16px 20px 16px 20px;
+                padding: 24px 20px 42px 20px;
+                scroll-padding-left: 20px;
+                scroll-padding-right: 20px;
                 gap: 18px;
             }
+            #metroCarouselSection .carousel-controls {
+                margin-top: -10px;
+                padding: 0 20px 8px 20px;
+            }
             #metro-screenshots-carousel .project-card {
-                flex: 0 0 84vw !important;
-                width: 84vw !important;
-                min-width: 84vw !important;
-                max-width: 84vw !important;
+                flex: 0 0 min(300px, 80vw) !important;
+                width: min(300px, 80vw) !important;
+                min-width: min(300px, 80vw) !important;
+                max-width: 80vw !important;
                 border-radius: 24px !important;
             }
-            .metro-screenshot-label {
-                font-size: 1.05rem;
+            #metro-screenshots-carousel .project-card img {
+                border-radius: 23px;
             }
             .metro-contact-section .section-title {
                 font-size: 1.95rem;
@@ -148,24 +147,15 @@
                 <div class="carousel-wrapper">
                     <div class="carousel-container" id="metro-screenshots-carousel">
                         <div class="project-card">
-                            <div class="metro-screenshot-placeholder">
-                                <span class="metro-screenshot-badge">01 / 03</span>
-                                <div class="metro-screenshot-label">Screenshot 1</div>
-                            </div>
+                            <img src="/assets/metro/metro_1.jpg" alt="Metro Design Screenshot 1" width="1254" height="2250" loading="eager">
                         </div>
 
                         <div class="project-card">
-                            <div class="metro-screenshot-placeholder">
-                                <span class="metro-screenshot-badge">02 / 03</span>
-                                <div class="metro-screenshot-label">Screenshot 2</div>
-                            </div>
+                            <img src="/assets/metro/metro_2.jpg" alt="Metro Design Screenshot 2" width="1254" height="2250" loading="lazy">
                         </div>
 
                         <div class="project-card">
-                            <div class="metro-screenshot-placeholder">
-                                <span class="metro-screenshot-badge">03 / 03</span>
-                                <div class="metro-screenshot-label">Screenshot 3</div>
-                            </div>
+                            <img src="/assets/metro/metro_3.jpg" alt="Metro Design Screenshot 3" width="1254" height="2250" loading="lazy">
                         </div>
                     </div>
 
