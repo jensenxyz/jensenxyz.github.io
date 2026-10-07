@@ -7,7 +7,7 @@
     <meta name="description" content="Born in the post-pandemic era, VibesApp is a real-time social app that connects people who like to go out spontaneously and local SMBs.">
     <meta property="og:title" content="VibesApp: Real-time AI MarTech | JENSEN">
     <meta property="og:description" content="Born in the post-pandemic era, VibesApp is a real-time social app that connects people who like to go out spontaneously and local SMBs.">
-    <meta property="og:image" content="/assets/project-vibesapp.jpg">
+    <meta property="og:image" content="/assets/vibesapp/vibesapp_user_journey.jpg">
     <meta property="og:type" content="website">
 
     <!-- Favicon & App Icons -->
@@ -29,24 +29,46 @@
         body {
             background-color: #FFFFFF !important;
         }
-        .vibesapp-hero-banner {
+        .vibesapp-page-wrapper {
             max-width: 800px;
             margin: 0 auto;
         }
+
+        /* --- Full-Width Hero Area --- */
+        .vibesapp-hero-fullbleed {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            background: transparent;
+            padding: 0 0 36px 0;
+            box-sizing: border-box;
+        }
+        .vibesapp-hero-inner {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .vibesapp-hero-inner .breadcrumb {
+            max-width: 800px;
+            margin: 0 auto 16px auto;
+        }
         .vibesapp-hero-img {
             width: 100%;
-            max-width: 800px;
             height: auto;
+            max-width: 100%;
+            aspect-ratio: 2250 / 1500;
             object-fit: cover;
             border-radius: var(--border-radius, 30px);
-            margin: 16px auto 28px auto;
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            margin: 0 auto;
             display: block;
         }
 
         /* --- The Concept Section --- */
         .vibesapp-concept {
             max-width: 800px;
-            margin: 0 auto 60px auto;
+            margin: 20px auto 60px auto;
         }
         .vibesapp-concept-title {
             font-size: 3.2rem;
@@ -142,7 +164,7 @@
             background: #F8F4F3;
             border: 2px solid #000000;
             border-radius: 32px;
-            padding: 58px 40px 42px 40px;
+            padding: 58px 36px 48px 36px;
             box-sizing: border-box;
             color: #000000;
             position: relative;
@@ -159,7 +181,7 @@
         }
         .ai-card-intro {
             max-width: 720px;
-            margin: 0 auto 32px auto;
+            margin: 0 auto 40px auto;
             text-align: left;
         }
         .ai-intro-p {
@@ -171,59 +193,92 @@
             margin-bottom: 0;
         }
 
-        /* App Screenshots Carousel inside Powered by AI */
-        #vibes-screenshots-carousel .project-card {
-            background-color: #FFFFFF !important;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06) !important;
-            border: 1px solid rgba(0, 0, 0, 0.1) !important;
-            border-radius: 26px !important;
-            flex: 0 0 240px !important;
-            width: 240px !important;
-            min-width: 240px !important;
-            overflow: hidden;
+        /* Group Containers */
+        .vibes-screenshot-group {
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
-        .screenshot-placeholder-frame {
-            width: 100%;
-            aspect-ratio: 9 / 16;
-            background: linear-gradient(160deg, #111827 0%, #1F2937 100%);
+        .vibes-screenshot-group:first-of-type {
+            margin-top: 24px;
+            padding-top: 0;
+            border-top: none;
+        }
+        .vibes-group-title {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #000000;
+            letter-spacing: -0.2px;
+            line-height: 1.3;
+            margin: 0 0 16px 0;
+            text-align: left;
+        }
+
+        /* Carousel Styles for Screenshot Groups */
+        .vibes-screenshot-group .carousel-wrapper {
+            background: transparent !important;
+            margin: -8px -20px 0 -20px;
+        }
+        .vibes-screenshot-group .carousel-container {
+            background: transparent !important;
+            gap: 22px;
+            padding: 16px 20px 32px 20px;
+            scroll-padding-left: 20px;
+            scroll-padding-right: 20px;
+        }
+        .vibes-screenshot-group .carousel-controls {
+            background: transparent !important;
+            margin-top: -12px;
+            margin-right: 0;
+            padding: 0 20px 6px 20px;
+        }
+        .vibes-card {
+            background-color: #FFFFFF !important;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07) !important;
+            border: 1px solid rgba(0, 0, 0, 0.1) !important;
+            border-radius: 28px !important;
+            flex: 0 0 260px !important;
+            width: 260px !important;
+            min-width: 260px !important;
+            padding: 12px 12px 18px 12px;
+            box-sizing: border-box;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 20px;
-            color: #FFFFFF;
-            text-align: center;
-            position: relative;
         }
-        .screenshot-placeholder-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 6px 14px;
+        .vibes-card-img-frame {
+            width: 100%;
+            height: auto;
             border-radius: 20px;
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.22);
-            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            color: #F39C12;
+            overflow: hidden;
+            background-color: transparent;
         }
-        .screenshot-placeholder-title {
-            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
-            font-size: 1.0rem;
-            font-weight: 700;
-            color: #FFFFFF;
-            margin-bottom: 6px;
+        .vibes-screenshot-group .project-card img,
+        .vibes-card img,
+        .vibes-card-img {
+            width: 100% !important;
+            height: auto !important;
+            aspect-ratio: auto !important;
+            object-fit: contain !important;
+            display: block !important;
+            border-radius: 20px !important;
+            background-color: transparent !important;
         }
-        .screenshot-placeholder-sub {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 300;
-            color: #9CA3AF;
-            line-height: 1.4;
+        .vibes-card-info {
+            padding: 14px 6px 0 6px;
+            text-align: center;
+            width: 100%;
+        }
+        .vibes-card-info h4 {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-size: 1.02rem;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+            color: #000000;
+            margin: 0;
+            line-height: 1.35;
         }
 
         /* --- Me As Co-founder Section --- */
@@ -333,10 +388,14 @@
         }
 
         @media (max-width: 768px) {
+            .vibesapp-hero-fullbleed {
+                padding-bottom: 24px;
+            }
+            .vibesapp-hero-inner {
+                padding: 0 16px;
+            }
             .vibesapp-hero-img {
-                max-width: 100%;
-                border-radius: 24px;
-                margin: 12px auto 20px auto;
+                border-radius: 20px;
             }
             .vibesapp-concept-title {
                 font-size: 1.95rem;
@@ -370,7 +429,7 @@
             }
             .vibesapp-ai-card {
                 margin-top: 44px;
-                padding: 42px 20px 30px 20px;
+                padding: 38px 18px 32px 18px;
                 border-radius: 24px;
             }
             .ai-card-title {
@@ -381,10 +440,26 @@
                 font-size: 0.95rem;
                 line-height: 1.6;
             }
-            #vibes-screenshots-carousel .project-card {
-                flex: 0 0 215px !important;
-                width: 215px !important;
-                min-width: 215px !important;
+            .vibes-group-title {
+                font-size: 1.12rem;
+                margin-bottom: 12px;
+            }
+            .vibes-card {
+                flex: 0 0 min(240px, 72vw) !important;
+                width: min(240px, 72vw) !important;
+                min-width: min(240px, 72vw) !important;
+                border-radius: 24px !important;
+                padding: 10px 10px 14px 10px;
+            }
+            .vibes-card-img-frame,
+            .vibes-card-img,
+            .vibes-screenshot-group .project-card img {
+                border-radius: 16px !important;
+                height: auto !important;
+                aspect-ratio: auto !important;
+            }
+            .vibes-card-info h4 {
+                font-size: 0.94rem;
             }
             .cofounder-subsection {
                 margin-top: 48px;
@@ -432,12 +507,18 @@
 
     <!-- Main Content Section -->
     <main class="container pt-medium pb-large">
-        <div class="vibesapp-hero-banner">
-            <div class="breadcrumb">
-                <a href="/">Home</a> &gt; VibesApp: Real-time AI MarTech
-            </div>
+        <div class="vibesapp-page-wrapper">
+            
+            <!-- Full-Width Hero Banner Area -->
+            <div class="vibesapp-hero-fullbleed">
+                <div class="vibesapp-hero-inner">
+                    <div class="breadcrumb">
+                        <a href="/">Home</a> &gt; VibesApp: Real-time AI MarTech
+                    </div>
 
-            <img src="/assets/project-vibesapp.jpg" alt="VibesApp: Real-time AI MarTech" class="vibesapp-hero-img" width="1200" height="900" loading="eager">
+                    <img src="/assets/vibesapp/vibesapp_user_journey.jpg" alt="VibesApp: Real-time AI MarTech - User Journey Banner" class="vibesapp-hero-img" width="2250" height="1500" loading="eager">
+                </div>
+            </div>
 
             <!-- The Concept Section -->
             <section class="vibesapp-concept" id="conceptSection">
@@ -466,7 +547,7 @@
                 </div>
             </section>
 
-            <!-- Powered by AI Section + Carousel of App Screenshots -->
+            <!-- Powered by AI Section + 3 Grouped Carousels of App Screenshots -->
             <section class="vibesapp-ai-card" id="poweredByAiSection">
                 <h2 class="ai-card-title">Powered by AI:</h2>
                 <div class="ai-card-intro">
@@ -475,56 +556,164 @@
                     </p>
                 </div>
 
-                <div class="carousel-wrapper">
-                    <div class="carousel-container" id="vibes-screenshots-carousel">
-                        <div class="project-card">
-                            <div class="screenshot-placeholder-frame">
-                                <span class="screenshot-placeholder-badge">Screen 01</span>
-                                <div class="screenshot-placeholder-title">Real-Time Vibes Feed</div>
-                                <div class="screenshot-placeholder-sub">App Screenshot Placeholder</div>
+                <!-- Group 1: Free User - Discover & Post Vibes -->
+                <div class="vibes-screenshot-group" id="freeUserGroup">
+                    <h3 class="vibes-group-title">Free User - Discover &amp; Post Vibes</h3>
+                    
+                    <div class="carousel-wrapper">
+                        <div class="carousel-container" id="vibes-free-carousel">
+                            <div class="project-card vibes-card">
+                                <div class="vibes-card-img-frame">
+                                    <img src="/assets/vibesapp/Discover.jpg" alt="Discover" class="vibes-card-img" width="1242" height="2688" loading="lazy">
+                                </div>
+                                <div class="vibes-card-info">
+                                    <h4>Discover</h4>
+                                </div>
+                            </div>
+
+                            <div class="project-card vibes-card">
+                                <div class="vibes-card-img-frame">
+                                    <img src="/assets/vibesapp/Tune_your_preference.jpg" alt="Tune your preference" class="vibes-card-img" width="1242" height="2688" loading="lazy">
+                                </div>
+                                <div class="vibes-card-info">
+                                    <h4>Tune your preference</h4>
+                                </div>
+                            </div>
+
+                            <div class="project-card vibes-card">
+                                <div class="vibes-card-img-frame">
+                                    <img src="/assets/vibesapp/Post_Vibes.jpg" alt="Post Vibes" class="vibes-card-img" width="1242" height="2688" loading="lazy">
+                                </div>
+                                <div class="vibes-card-info">
+                                    <h4>Post Vibes</h4>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="project-card">
-                            <div class="screenshot-placeholder-frame">
-                                <span class="screenshot-placeholder-badge">Screen 02</span>
-                                <div class="screenshot-placeholder-title">Location &amp; Time Check</div>
-                                <div class="screenshot-placeholder-sub">App Screenshot Placeholder</div>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="screenshot-placeholder-frame">
-                                <span class="screenshot-placeholder-badge">Screen 03</span>
-                                <div class="screenshot-placeholder-title">AI Ambience Highlights</div>
-                                <div class="screenshot-placeholder-sub">App Screenshot Placeholder</div>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="screenshot-placeholder-frame">
-                                <span class="screenshot-placeholder-badge">Screen 04</span>
-                                <div class="screenshot-placeholder-title">SMB Direct Marketing</div>
-                                <div class="screenshot-placeholder-sub">App Screenshot Placeholder</div>
+                        <div class="carousel-controls">
+                            <span class="carousel-hint">Swipe to browse</span>
+                            <div class="carousel-arrows">
+                                <button id="vibes-free-left" aria-label="Previous Screenshot">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                                        <polyline points="12 19 5 12 12 5"></polyline>
+                                    </svg>
+                                </button>
+                                <button id="vibes-free-right" aria-label="Next Screenshot">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="carousel-controls">
-                        <span class="carousel-hint" id="vibes-carousel-hint">Swipe to browse</span>
-                        <div class="carousel-arrows">
-                            <button id="vibes-scroll-left" aria-label="Previous App Screenshot">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="19" y1="12" x2="5" y2="12"></line>
-                                    <polyline points="12 19 5 12 12 5"></polyline>
-                                </svg>
-                            </button>
-                            <button id="vibes-scroll-right" aria-label="Next App Screenshot">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </button>
+                <!-- Group 2: Paid User - Post Vibes with Advanced Features -->
+                <div class="vibes-screenshot-group" id="paidUserGroup">
+                    <h3 class="vibes-group-title">Paid User - Post Vibes with Advanced Features</h3>
+                    
+                    <div class="carousel-wrapper">
+                        <div class="carousel-container" id="vibes-paid-carousel">
+                            <div class="project-card vibes-card">
+                                <div class="vibes-card-img-frame">
+                                    <img src="/assets/vibesapp/Become_Premium.jpg" alt="Become Premium" class="vibes-card-img" width="1242" height="2688" loading="lazy">
+                                </div>
+                                <div class="vibes-card-info">
+                                    <h4>Become Premium</h4>
+                                </div>
+                            </div>
+
+                            <div class="project-card vibes-card">
+                                <div class="vibes-card-img-frame">
+                                    <img src="/assets/vibesapp/Promote_Mode.jpg" alt="Promote Mode" class="vibes-card-img" width="1242" height="2688" loading="lazy">
+                                </div>
+                                <div class="vibes-card-info">
+                                    <h4>Promote Mode</h4>
+                                </div>
+                            </div>
+
+                            <div class="project-card vibes-card">
+                                <div class="vibes-card-img-frame">
+                                    <img src="/assets/vibesapp/Advanced_filters.jpg" alt="Advanced filters" class="vibes-card-img" width="1242" height="2688" loading="lazy">
+                                </div>
+                                <div class="vibes-card-info">
+                                    <h4>Advanced filters</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-controls">
+                            <span class="carousel-hint">Swipe to browse</span>
+                            <div class="carousel-arrows">
+                                <button id="vibes-paid-left" aria-label="Previous Screenshot">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                                        <polyline points="12 19 5 12 12 5"></polyline>
+                                    </svg>
+                                </button>
+                                <button id="vibes-paid-right" aria-label="Next Screenshot">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 3: Paid User - Me Page & Analytics -->
+                <div class="vibes-screenshot-group" id="analyticsGroup">
+                    <h3 class="vibes-group-title">Paid User - Me Page &amp; Analytics</h3>
+                    
+                    <div class="carousel-wrapper">
+                        <div class="carousel-container" id="vibes-analytics-carousel">
+                            <div class="project-card vibes-card">
+                                <div class="vibes-card-img-frame">
+                                    <img src="/assets/vibesapp/Pro_Dashboard.jpg" alt="Pro Dashboard" class="vibes-card-img" width="1242" height="2688" loading="lazy">
+                                </div>
+                                <div class="vibes-card-info">
+                                    <h4>Pro Dashboard</h4>
+                                </div>
+                            </div>
+
+                            <div class="project-card vibes-card">
+                                <div class="vibes-card-img-frame">
+                                    <img src="/assets/vibesapp/Post_Analytics.jpg" alt="Post Analytics" class="vibes-card-img" width="1242" height="2688" loading="lazy">
+                                </div>
+                                <div class="vibes-card-info">
+                                    <h4>Post Analytics</h4>
+                                </div>
+                            </div>
+
+                            <div class="project-card vibes-card">
+                                <div class="vibes-card-img-frame">
+                                    <img src="/assets/vibesapp/Campaign.jpg" alt="Campaign" class="vibes-card-img" width="1242" height="2688" loading="lazy">
+                                </div>
+                                <div class="vibes-card-info">
+                                    <h4>Campaign</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-controls">
+                            <span class="carousel-hint">Swipe to browse</span>
+                            <div class="carousel-arrows">
+                                <button id="vibes-analytics-left" aria-label="Previous Screenshot">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                                        <polyline points="12 19 5 12 12 5"></polyline>
+                                    </svg>
+                                </button>
+                                <button id="vibes-analytics-right" aria-label="Next Screenshot">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -600,7 +789,7 @@
                 const firstCard = carousel.querySelector('.project-card');
                 if (!firstCard) return 260;
                 const carouselStyle = window.getComputedStyle(carousel);
-                const gap = parseFloat(carouselStyle.gap) || 20;
+                const gap = parseFloat(carouselStyle.gap) || 22;
                 return firstCard.offsetWidth + gap;
             };
 
@@ -686,7 +875,10 @@
             setTimeout(updateButtonStates, 100);
         }
 
-        initSubCarousel("vibes-screenshots-carousel", "vibes-scroll-left", "vibes-scroll-right");
+        // Initialize the 3 screenshot carousels
+        initSubCarousel("vibes-free-carousel", "vibes-free-left", "vibes-free-right");
+        initSubCarousel("vibes-paid-carousel", "vibes-paid-left", "vibes-paid-right");
+        initSubCarousel("vibes-analytics-carousel", "vibes-analytics-left", "vibes-analytics-right");
     </script>
     <script src="/layout.js"></script>
     <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "41fc70af798e4e2aa996b03e42a0018c"}'></script><!-- End Cloudflare Web Analytics -->
