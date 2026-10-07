@@ -67,20 +67,42 @@
             display: block;
         }
 
-        /* Loud, High-Impact Main Intro Copy */
+        /* Title, Subtitle, and Body Copy */
         .happyhour-intro-section {
             max-width: 800px;
-            margin: 56px auto 52px auto;
+            margin: 52px auto 48px auto;
         }
-        .happyhour-intro-text {
-            font-size: 1.55rem;
-            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.4px;
+        .happyhour-story-title {
+            font-size: 3.2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            text-align: center;
+            line-height: 1.2;
             color: #000000;
-            line-height: 1.48;
-            margin: 0;
+        }
+        .happyhour-story-subtitle {
+            font-size: 1.35rem;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+            color: #000000;
+            line-height: 1.5;
+            margin-bottom: 28px;
+            text-align: center;
+        }
+        .happyhour-body-text {
+            font-size: 1.08rem;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 400;
+            color: var(--text-grey);
+            line-height: 1.72;
+            margin: 0 0 18px 0;
             text-align: left;
+        }
+        .happyhour-body-text:last-child {
+            margin-bottom: 0;
         }
 
         /* Limited-Size App Screens Image (No Rounded Corners) */
@@ -189,6 +211,12 @@
             text-align: center;
         }
 
+        @media (max-width: 992px) {
+            .happyhour-story-title {
+                font-size: 2.3rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .happyhour-hero-fullbleed {
                 padding: 16px 20px 18px 20px;
@@ -199,11 +227,21 @@
                 margin: 0 auto;
             }
             .happyhour-intro-section {
-                margin: 40px auto 36px auto;
+                margin: 36px auto 32px auto;
             }
-            .happyhour-intro-text {
-                font-size: 1.25rem;
-                line-height: 1.5;
+            .happyhour-story-title {
+                font-size: 1.95rem;
+                margin-bottom: 10px;
+            }
+            .happyhour-story-subtitle {
+                font-size: 1.12rem;
+                line-height: 1.45;
+                margin-bottom: 20px;
+            }
+            .happyhour-body-text {
+                font-size: 0.98rem;
+                line-height: 1.65;
+                margin-bottom: 14px;
             }
             .happyhour-screens-img {
                 max-width: min(360px, 86%);
@@ -271,8 +309,13 @@
 
             <!-- Introductory Story Copy -->
             <section class="happyhour-intro-section" id="introSection">
-                <p class="happyhour-intro-text">
-                    To help people find happy hours and up-to-date events in megacities such as Shanghai/Beijing/Shenzhen’s coolest bars and restaurants, Olifun mobile app and chatbot utilized mobile technologies (Location-Based Services, Social Media, and mobile-Commerce) to enable spontaneity and bring people together.
+                <h1 class="happyhour-story-title">Olifun</h1>
+                <h2 class="happyhour-story-subtitle">Find that happy hour nearby right now!</h2>
+                <p class="happyhour-body-text">
+                    Olifun helps people discover happy hours and up-to-date events at the coolest bars and restaurants in megacities such as Shanghai, Beijing, and Shenzhen.
+                </p>
+                <p class="happyhour-body-text">
+                    Its mobile app and chatbot leverage location-based services, social media, and mobile commerce to encourage spontaneity and bring people together.
                 </p>
             </section>
 
