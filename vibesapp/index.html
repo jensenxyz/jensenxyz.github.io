@@ -34,60 +34,55 @@
             margin: 0 auto;
         }
 
-        /* --- Full-Width Hero Area --- */
-        .vibesapp-hero-fullbleed {
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            margin-right: calc(-50vw + 50%);
-            background: transparent;
-            padding: 0 0 36px 0;
-            box-sizing: border-box;
-        }
-        .vibesapp-hero-inner {
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .vibesapp-hero-inner .breadcrumb {
+        /* --- Concept Section & User Journey Banner --- */
+        .vibesapp-concept-section {
+            margin: 40px auto 0 auto;
             max-width: 800px;
-            margin: 0 auto 16px auto;
         }
-        .vibesapp-hero-img {
+        .vibesapp-concept-box {
+            max-width: 800px;
             width: 100%;
-            height: auto;
-            max-width: 100%;
-            aspect-ratio: 2250 / 1500;
-            object-fit: cover;
-            border-radius: var(--border-radius, 30px);
-            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            margin: 0 auto;
-            display: block;
-        }
-
-        /* --- The Concept Section --- */
-        .vibesapp-concept {
-            max-width: 800px;
-            margin: 20px auto 60px auto;
+            margin: 0 auto 32px auto;
+            padding: 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            text-align: center;
         }
         .vibesapp-concept-title {
-            font-size: 3.2rem;
+            font-size: 2.8rem;
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
             letter-spacing: -0.5px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             text-align: center;
             line-height: 1.2;
-            color: #000000;
+            color: var(--text-dark, #000000);
+            text-shadow: none;
         }
         .vibesapp-concept-text {
             font-size: 1.15rem;
             font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
             font-weight: 400;
-            color: var(--text-grey);
+            color: var(--text-grey, #555555);
             line-height: 1.7;
-            margin-bottom: 0;
-            text-align: left;
+            margin: 0 auto;
+            max-width: 760px;
+            text-align: center;
+            text-shadow: none;
+        }
+        .vibesapp-journey-banner {
+            width: 100%;
+            margin: 0 auto;
+            background: transparent;
+        }
+        .vibesapp-journey-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 0 !important;
+            border: none;
+            box-shadow: none;
         }
 
         /* --- The Niche Section --- */
@@ -153,6 +148,9 @@
             line-height: 1.7;
             color: #E5E7EB;
             margin-bottom: 10px;
+        }
+        .niche-list li::marker {
+            color: var(--accent-orange, #F39C12);
         }
         .niche-list li:last-child {
             margin-bottom: 0;
@@ -388,14 +386,8 @@
         }
 
         @media (max-width: 768px) {
-            .vibesapp-hero-fullbleed {
-                padding-bottom: 24px;
-            }
-            .vibesapp-hero-inner {
-                padding: 0 16px;
-            }
-            .vibesapp-hero-img {
-                border-radius: 20px;
+            .vibesapp-concept-box {
+                margin-bottom: 24px;
             }
             .vibesapp-concept-title {
                 font-size: 1.95rem;
@@ -509,23 +501,21 @@
     <main class="container pt-medium pb-large">
         <div class="vibesapp-page-wrapper">
             
-            <!-- Full-Width Hero Banner Area -->
-            <div class="vibesapp-hero-fullbleed">
-                <div class="vibesapp-hero-inner">
-                    <div class="breadcrumb">
-                        <a href="/">Home</a> &gt; VibesApp: Real-time AI MarTech
-                    </div>
-
-                    <img src="/assets/vibesapp/vibesapp_user_journey.jpg" alt="VibesApp: Real-time AI MarTech - User Journey Banner" class="vibesapp-hero-img" width="2250" height="1500" loading="eager">
-                </div>
+            <div class="breadcrumb">
+                <a href="/">Home</a> &gt; VibesApp: Real-time AI MarTech
             </div>
 
-            <!-- The Concept Section -->
-            <section class="vibesapp-concept" id="conceptSection">
-                <h1 class="vibesapp-concept-title">The Concept:</h1>
-                <p class="vibesapp-concept-text">
-                    Born in the post-pandemic era, VibesApp is a real-time social app that connects people who like to go out spontaneously and local SMBs (venues, events, communities of sports or lifestyle).
-                </p>
+            <!-- Concept Section & Plain User Journey Image -->
+            <section class="vibesapp-concept-section" id="conceptSection">
+                <div class="vibesapp-concept-box">
+                    <h1 class="vibesapp-concept-title">The Concept:</h1>
+                    <p class="vibesapp-concept-text">
+                        Born in the post-pandemic era, VibesApp is a real-time social app that connects people who like to go out spontaneously and local SMBs (venues, events, communities of sports or lifestyle).
+                    </p>
+                </div>
+                <div class="vibesapp-journey-banner">
+                    <img src="/assets/vibesapp/vibesapp_user_journey.jpg" alt="VibesApp User Journey" class="vibesapp-journey-img" loading="lazy">
+                </div>
             </section>
 
             <!-- The Niche Section -->
