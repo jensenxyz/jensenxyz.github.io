@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Hour App: Olifun | JENSEN</title>
+    <meta name="description" content="Olifun mobile app and chatbot utilized Location-Based Services, Social Media, and mobile-Commerce to help people find happy hours and up-to-date events in megacities.">
+    <meta property="og:title" content="Happy Hour App: Olifun | JENSEN">
+    <meta property="og:description" content="Olifun mobile app and chatbot utilized Location-Based Services, Social Media, and mobile-Commerce to help people find happy hours and up-to-date events in megacities.">
+    <meta property="og:image" content="/assets/project-happyhour.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="JENSEN">
+    <link rel="manifest" href="/assets/site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        body {
+            background-color: #FFFFFF !important;
+        }
+        .happyhour-hero-banner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .happyhour-hero-img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            object-fit: cover;
+            border-radius: var(--border-radius, 30px);
+            margin: 16px auto 32px auto;
+            display: block;
+        }
+        .happyhour-intro-section {
+            max-width: 800px;
+            margin: 0 auto 36px auto;
+        }
+        .happyhour-intro-text {
+            font-size: 1.15rem;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 400;
+            color: var(--text-dark);
+            line-height: 1.72;
+            margin: 0;
+            text-align: left;
+        }
+
+        /* Promotional Image / Secondary Banner Placeholder */
+        .happyhour-promo-banner {
+            width: 100%;
+            max-width: 800px;
+            aspect-ratio: 16 / 9;
+            margin: 0 auto 56px auto;
+            border-radius: var(--border-radius, 30px);
+            background: #F8F4F3;
+            border: 2px solid #000000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 24px;
+            text-align: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+        .happyhour-promo-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 16px;
+            border-radius: 20px;
+            background: #000000;
+            color: #FFFFFF;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .happyhour-promo-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #000000;
+            margin-bottom: 6px;
+        }
+        .happyhour-promo-sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--text-grey);
+        }
+
+        /* Co-founder Management Section */
+        .happyhour-cofounder-section {
+            margin-top: 16px;
+            margin-bottom: 0;
+            background: #070707;
+            color: #FFFFFF;
+            padding: 80px 20px;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+        }
+        .happyhour-cofounder-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .happyhour-cofounder-card {
+            background-color: rgba(255, 255, 255, 0.04);
+            background-image:
+                radial-gradient(ellipse at 15% 0%, rgba(255, 255, 255, 0.08) 0%, transparent 65%),
+                linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.015) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 24px;
+            padding: 36px 36px;
+            box-shadow:
+                0 20px 40px -10px rgba(0, 0, 0, 0.65),
+                inset 0 1px 1px 0 rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            text-align: left;
+        }
+        .happyhour-cofounder-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.75rem;
+            color: #FFFFFF;
+            letter-spacing: -0.4px;
+            line-height: 1.25;
+            margin: 0 0 22px 0;
+            padding: 0 0 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .happyhour-cofounder-list {
+            list-style: disc;
+            padding-left: 22px;
+            margin: 0 0 28px 0;
+        }
+        .happyhour-cofounder-list li {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-size: 1.02rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: #E5E7EB;
+            margin-bottom: 10px;
+        }
+        .happyhour-cofounder-list li:last-child {
+            margin-bottom: 0;
+        }
+        .happyhour-accelerator-note {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 400;
+            font-style: italic;
+            line-height: 1.55;
+            color: #F39C12;
+            margin: 0;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .happyhour-contact-section {
+            padding-top: 60px;
+            padding-bottom: 24px;
+            background-color: transparent;
+        }
+        .happyhour-contact-section .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: #000000;
+            white-space: nowrap;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .happyhour-hero-img {
+                max-width: 100%;
+                border-radius: 24px;
+                margin: 12px auto 24px auto;
+            }
+            .happyhour-intro-text {
+                font-size: 0.98rem;
+                line-height: 1.65;
+            }
+            .happyhour-promo-banner {
+                border-radius: 24px;
+                padding: 24px 18px;
+                margin-bottom: 44px;
+            }
+            .happyhour-promo-title {
+                font-size: 1.15rem;
+            }
+            .happyhour-cofounder-section {
+                padding: 56px 20px;
+            }
+            .happyhour-cofounder-card {
+                padding: 26px 22px;
+                border-radius: 18px;
+            }
+            .happyhour-cofounder-heading {
+                font-size: 1.4rem;
+                margin-bottom: 18px;
+                padding-bottom: 14px;
+            }
+            .happyhour-cofounder-list li {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+            .happyhour-accelerator-note {
+                font-size: 0.84rem;
+            }
+            .happyhour-contact-section .section-title {
+                font-size: 1.95rem;
+                margin-bottom: 24px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-beige">
+
+    <!-- Header Navigation (Sticky & Translucent) -->
+    <header class="site-header">
+        <div class="container header-flex">
+            <a href="/" class="logo">JENSEN ✨</a>
+            <a href="/" class="link-underline back-to-home">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Back to Home
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container pt-medium pb-large">
+        <div class="happyhour-hero-banner">
+            <div class="breadcrumb">
+                <a href="/">Home</a> &gt; Happy Hour App: Olifun
+            </div>
+
+            <!-- Hero Banner -->
+            <img src="/assets/project-happyhour.jpg" alt="Happy Hour App: Olifun" class="happyhour-hero-img" width="1200" height="900" loading="eager">
+
+            <!-- Introductory Story Copy -->
+            <section class="happyhour-intro-section" id="introSection">
+                <p class="happyhour-intro-text">
+                    To help people find happy hours and up-to-date events in megacities such as Shanghai/Beijing/Shenzhen’s coolest bars and restaurants, Olifun mobile app and chatbot utilized mobile technologies (Location-Based Services, Social Media, and mobile-Commerce) to enable spontaneity and bring people together.
+                </p>
+            </section>
+
+            <!-- App Promotional Image or Secondary Banner Placeholder -->
+            <div class="happyhour-promo-banner" id="promoBannerPlaceholder">
+                <span class="happyhour-promo-badge">Olifun App &amp; Chatbot</span>
+                <div class="happyhour-promo-title">App Promotional Image / Banner Placeholder</div>
+                <div class="happyhour-promo-sub">Location-Based Services · Social Media · Mobile-Commerce</div>
+            </div>
+
+            <!-- Co-founder Responsibilities & Accelerator Note -->
+            <section class="happyhour-cofounder-section" id="cofounderSection">
+                <div class="happyhour-cofounder-inner">
+                    <div class="happyhour-cofounder-card">
+                        <h2 class="happyhour-cofounder-heading">As a co-founder, I managed:</h2>
+                        <ul class="happyhour-cofounder-list">
+                            <li>Product design (UI/UX). Creation from scratch.</li>
+                            <li>Storyboard to user feedback and iteration.</li>
+                            <li>User behavior analysis (in-person).</li>
+                            <li>All-aspect operations including company entity setup, trademark registration, HR, and SOP.</li>
+                            <li>Branding and marketing strategy.</li>
+                        </ul>
+                        <p class="happyhour-accelerator-note">
+                            *Olifun also joined one of Asia’s biggest startup accelerators—Orbit Startups—in Batch #6.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Me Section -->
+            <section id="contact" class="contact-section happyhour-contact-section bg-white text-center">
+                <div class="container">
+                    <h2 class="section-title text-center">Contact Me:</h2>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <div class="icon-wrapper">
+                                <img src="/assets/icon-linkedin.png" alt="LinkedIn Logo" class="icon-outline">
+                            </div>
+                            <a href="https://www.linkedin.com/in/jensenearth/" target="_blank" class="btn btn-black">LINKEDIN</a>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-wrapper">
+                                <img src="/assets/icon-email.png" alt="Email Icon" class="icon-outline">
+                            </div>
+                            <a href="mailto:slick.87.wackos@icloud.com" class="btn btn-black">EMAIL</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer bg-black">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/research">Research</a>
+                <a href="https://www.linkedin.com/in/jensenearth/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-copy">
+                Made with ♥️ &amp; AI on Earth © JENSEN S.Z. <span class="footer-rainbow" role="button" tabindex="0" title="Make it rain rainbows! 🌈" aria-label="Make it rain rainbows">🌈</span>✨
+            </div>
+        </div>
+    </footer>
+
+    <script src="/layout.js"></script>
+    <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "41fc70af798e4e2aa996b03e42a0018c"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

@@ -28,6 +28,21 @@ app.get(['/funkacoins', '/funkacoins/', '/funkacoins.html', '/projects/funkacoin
   res.sendFile(path.join(__dirname, 'funkacoins', 'index.html'));
 });
 
+// Route for vibesapp project page (/vibesapp and /vibesapp/)
+app.get(['/vibesapp', '/vibesapp/', '/vibesapp.html', '/projects/vibesapp.html', '/projects/vibesapp', '/projects/vibesapp/'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'vibesapp', 'index.html'));
+});
+
+// Route for happyhour project page (/happyhour and /happyhour/)
+app.get(['/happyhour', '/happyhour/', '/happyhour.html', '/projects/happyhour.html', '/projects/happyhour', '/projects/happyhour/'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'happyhour', 'index.html'));
+});
+
+// Route for metro project page (/metro and /metro/)
+app.get(['/metro', '/metro/', '/metro.html', '/projects/metro.html', '/projects/metro', '/projects/metro/', '/projects/metrodesign'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'metro', 'index.html'));
+});
+
 // Support file requests under /cv/ and /download/
 app.get(['/cv/:file', '/download/:file'], (req, res, next) => {
   const filePath = path.join(__dirname, 'cv', req.params.file);

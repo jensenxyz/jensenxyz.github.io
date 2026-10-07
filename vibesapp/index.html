@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibesApp: Real-time AI MarTech | JENSEN</title>
+    <meta name="description" content="Born in the post-pandemic era, VibesApp is a real-time social app that connects people who like to go out spontaneously and local SMBs.">
+    <meta property="og:title" content="VibesApp: Real-time AI MarTech | JENSEN">
+    <meta property="og:description" content="Born in the post-pandemic era, VibesApp is a real-time social app that connects people who like to go out spontaneously and local SMBs.">
+    <meta property="og:image" content="/assets/project-vibesapp.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="JENSEN">
+    <link rel="manifest" href="/assets/site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        body {
+            background-color: #FFFFFF !important;
+        }
+        .vibesapp-hero-banner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .vibesapp-hero-img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            object-fit: cover;
+            border-radius: var(--border-radius, 30px);
+            margin: 16px auto 28px auto;
+            display: block;
+        }
+
+        /* --- The Concept Section --- */
+        .vibesapp-concept {
+            max-width: 800px;
+            margin: 0 auto 60px auto;
+        }
+        .vibesapp-concept-title {
+            font-size: 3.2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 1.2;
+            color: #000000;
+        }
+        .vibesapp-concept-text {
+            font-size: 1.15rem;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 400;
+            color: var(--text-grey);
+            line-height: 1.7;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        /* --- The Niche Section --- */
+        .niche-section-wrapper {
+            position: relative;
+            margin-top: 64px;
+            background: #070707;
+            padding: 88px 20px;
+            color: #FFFFFF;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            overflow: hidden;
+        }
+        .niche-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .niche-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: #FFFFFF;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .niche-lead-p {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.75;
+            color: #E2E6EC;
+            margin: 0 0 24px 0;
+            text-align: left;
+        }
+        .niche-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 24px;
+            padding: 28px 32px;
+        }
+        .niche-card-intro {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 600;
+            font-size: 1.08rem;
+            color: #FFFFFF;
+            margin: 0 0 14px 0;
+            line-height: 1.5;
+        }
+        .niche-list {
+            list-style: disc;
+            padding-left: 22px;
+            margin: 0;
+        }
+        .niche-list li {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-size: 1.02rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: #E5E7EB;
+            margin-bottom: 10px;
+        }
+        .niche-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --- Powered by AI Section & Screenshots Carousel --- */
+        .vibesapp-ai-card {
+            margin-top: 64px;
+            background: #F8F4F3;
+            border: 2px solid #000000;
+            border-radius: 32px;
+            padding: 58px 40px 42px 40px;
+            box-sizing: border-box;
+            color: #000000;
+            position: relative;
+        }
+        .ai-card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.35rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: #000000;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .ai-card-intro {
+            max-width: 720px;
+            margin: 0 auto 32px auto;
+            text-align: left;
+        }
+        .ai-intro-p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.02rem;
+            font-weight: 300;
+            line-height: 1.68;
+            color: #111827;
+            margin-bottom: 0;
+        }
+
+        /* App Screenshots Carousel inside Powered by AI */
+        #vibes-screenshots-carousel .project-card {
+            background-color: #FFFFFF !important;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06) !important;
+            border: 1px solid rgba(0, 0, 0, 0.1) !important;
+            border-radius: 26px !important;
+            flex: 0 0 240px !important;
+            width: 240px !important;
+            min-width: 240px !important;
+            overflow: hidden;
+        }
+        .screenshot-placeholder-frame {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            background: linear-gradient(160deg, #111827 0%, #1F2937 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #FFFFFF;
+            text-align: center;
+            position: relative;
+        }
+        .screenshot-placeholder-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: #F39C12;
+        }
+        .screenshot-placeholder-title {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-size: 1.0rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .screenshot-placeholder-sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 300;
+            color: #9CA3AF;
+            line-height: 1.4;
+        }
+
+        /* --- Me As Co-founder Section --- */
+        .cofounder-subsection {
+            margin-top: 64px;
+            margin-bottom: 0px;
+            text-align: center;
+            background: #000000;
+            color: #FFFFFF;
+            padding: 80px 40px;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+        }
+        .cofounder-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .cofounder-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: #FFFFFF;
+            letter-spacing: -0.5px;
+            line-height: 1.15;
+            margin: 0 auto 24px auto;
+            padding: 0;
+            text-align: center;
+        }
+        .cofounder-lead {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.72;
+            color: #E2E6EC;
+            text-align: left;
+            margin: 0 auto 32px auto;
+        }
+        .cofounder-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin: 0 auto;
+            padding: 32px 32px;
+            border-radius: 22px;
+            background-color: rgba(255, 255, 255, 0.04);
+            background-image: 
+                radial-gradient(ellipse at 15% 0%, rgba(255, 255, 255, 0.08) 0%, transparent 65%),
+                linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.015) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: 
+                0 20px 40px -10px rgba(0, 0, 0, 0.65),
+                inset 0 1px 1px 0 rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-sizing: border-box;
+        }
+        .cofounder-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px 28px;
+        }
+        .cofounder-list li {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.98rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #F3F4F6;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 2px 0;
+            margin: 0;
+        }
+        .cofounder-list li::before {
+            content: '•';
+            color: #F39C12;
+            font-size: 1rem;
+            line-height: 1.45;
+            flex-shrink: 0;
+        }
+
+        .vibesapp-contact-section {
+            padding-top: 60px;
+            padding-bottom: 24px;
+            background-color: transparent;
+        }
+        .vibesapp-contact-section .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: #000000;
+            white-space: nowrap;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        @media (max-width: 992px) {
+            .vibesapp-concept-title {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .vibesapp-hero-img {
+                max-width: 100%;
+                border-radius: 24px;
+                margin: 12px auto 20px auto;
+            }
+            .vibesapp-concept-title {
+                font-size: 1.95rem;
+                margin-bottom: 14px;
+            }
+            .vibesapp-concept-text {
+                font-size: 0.98rem;
+                line-height: 1.6;
+            }
+            .niche-section-wrapper {
+                padding: 64px 20px;
+                margin-top: 48px;
+            }
+            .niche-title {
+                font-size: 1.95rem;
+            }
+            .niche-lead-p {
+                font-size: 0.96rem;
+                line-height: 1.65;
+            }
+            .niche-card {
+                padding: 22px 20px;
+                border-radius: 18px;
+            }
+            .niche-card-intro {
+                font-size: 1.0rem;
+            }
+            .niche-list li {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+            .vibesapp-ai-card {
+                margin-top: 44px;
+                padding: 42px 20px 30px 20px;
+                border-radius: 24px;
+            }
+            .ai-card-title {
+                font-size: 1.95rem;
+                margin-bottom: 18px;
+            }
+            .ai-intro-p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+            #vibes-screenshots-carousel .project-card {
+                flex: 0 0 215px !important;
+                width: 215px !important;
+                min-width: 215px !important;
+            }
+            .cofounder-subsection {
+                margin-top: 48px;
+                padding: 52px 20px;
+            }
+            .cofounder-title {
+                font-size: 1.95rem;
+                margin-bottom: 18px;
+            }
+            .cofounder-lead {
+                font-size: 0.96rem;
+                line-height: 1.62;
+                margin-bottom: 24px;
+            }
+            .cofounder-card {
+                padding: 24px 20px;
+                border-radius: 18px;
+            }
+            .cofounder-list {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            .cofounder-list li {
+                font-size: 0.92rem;
+            }
+            .vibesapp-contact-section .section-title {
+                font-size: 1.95rem;
+                margin-bottom: 24px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-beige">
+
+    <!-- Header Navigation (Sticky & Translucent) -->
+    <header class="site-header">
+        <div class="container header-flex">
+            <a href="/" class="logo">JENSEN ✨</a>
+            <a href="/" class="link-underline back-to-home">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Back to Home
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container pt-medium pb-large">
+        <div class="vibesapp-hero-banner">
+            <div class="breadcrumb">
+                <a href="/">Home</a> &gt; VibesApp: Real-time AI MarTech
+            </div>
+
+            <img src="/assets/project-vibesapp.jpg" alt="VibesApp: Real-time AI MarTech" class="vibesapp-hero-img" width="1200" height="900" loading="eager">
+
+            <!-- The Concept Section -->
+            <section class="vibesapp-concept" id="conceptSection">
+                <h1 class="vibesapp-concept-title">The Concept:</h1>
+                <p class="vibesapp-concept-text">
+                    Born in the post-pandemic era, VibesApp is a real-time social app that connects people who like to go out spontaneously and local SMBs (venues, events, communities of sports or lifestyle).
+                </p>
+            </section>
+
+            <!-- The Niche Section -->
+            <section class="niche-section-wrapper" id="nicheSection">
+                <div class="niche-inner">
+                    <h2 class="niche-title">The Niche:</h2>
+                    <p class="niche-lead-p">
+                        Our niche is between live streaming (costly to set up) and venue review (often outdated and fake).
+                    </p>
+                    <div class="niche-card">
+                        <p class="niche-card-intro">
+                            With VibesApp —
+                        </p>
+                        <ul class="niche-list">
+                            <li>Consumer users can check the real-time vibes of their favorite local venues before committing going;</li>
+                            <li>Business owners &amp; managers can have a cost-effective and mobile-friendly direct marketing platform to promote their ambience.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Powered by AI Section + Carousel of App Screenshots -->
+            <section class="vibesapp-ai-card" id="poweredByAiSection">
+                <h2 class="ai-card-title">Powered by AI:</h2>
+                <div class="ai-card-intro">
+                    <p class="ai-intro-p">
+                        VibesApp’s unique features are powered by AI and precise location-time restrictions. Mobile-friendly and easy to use, it is a great alternative marketing tool for SMBs who find Instagram, TikTok, Dianping, Xiaohongshu ads expensive or ineffective.
+                    </p>
+                </div>
+
+                <div class="carousel-wrapper">
+                    <div class="carousel-container" id="vibes-screenshots-carousel">
+                        <div class="project-card">
+                            <div class="screenshot-placeholder-frame">
+                                <span class="screenshot-placeholder-badge">Screen 01</span>
+                                <div class="screenshot-placeholder-title">Real-Time Vibes Feed</div>
+                                <div class="screenshot-placeholder-sub">App Screenshot Placeholder</div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="screenshot-placeholder-frame">
+                                <span class="screenshot-placeholder-badge">Screen 02</span>
+                                <div class="screenshot-placeholder-title">Location &amp; Time Check</div>
+                                <div class="screenshot-placeholder-sub">App Screenshot Placeholder</div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="screenshot-placeholder-frame">
+                                <span class="screenshot-placeholder-badge">Screen 03</span>
+                                <div class="screenshot-placeholder-title">AI Ambience Highlights</div>
+                                <div class="screenshot-placeholder-sub">App Screenshot Placeholder</div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="screenshot-placeholder-frame">
+                                <span class="screenshot-placeholder-badge">Screen 04</span>
+                                <div class="screenshot-placeholder-title">SMB Direct Marketing</div>
+                                <div class="screenshot-placeholder-sub">App Screenshot Placeholder</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-controls">
+                        <span class="carousel-hint" id="vibes-carousel-hint">Swipe to browse</span>
+                        <div class="carousel-arrows">
+                            <button id="vibes-scroll-left" aria-label="Previous App Screenshot">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                                    <polyline points="12 19 5 12 12 5"></polyline>
+                                </svg>
+                            </button>
+                            <button id="vibes-scroll-right" aria-label="Next App Screenshot">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Me As Co-founder Section -->
+            <section class="cofounder-subsection" id="cofounderSection">
+                <div class="cofounder-inner">
+                    <h2 class="cofounder-title">Me As Co-founder:</h2>
+                    <p class="cofounder-lead">
+                        Teamed up with my other international co-founders from Vivo and Hoffmann, I led the product, design, and tech. My work included but not limited to:
+                    </p>
+                    <div class="cofounder-card">
+                        <ul class="cofounder-list">
+                            <li>Product UX</li>
+                            <li>Analytics</li>
+                            <li>Gamification</li>
+                            <li>Monetization</li>
+                            <li>Growth</li>
+                            <li>Copywriting for fundraising materials</li>
+                            <li>and more.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Me Section -->
+            <section id="contact" class="contact-section vibesapp-contact-section bg-white text-center">
+                <div class="container">
+                    <h2 class="section-title text-center">Contact Me:</h2>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <div class="icon-wrapper">
+                                <img src="/assets/icon-linkedin.png" alt="LinkedIn Logo" class="icon-outline">
+                            </div>
+                            <a href="https://www.linkedin.com/in/jensenearth/" target="_blank" class="btn btn-black">LINKEDIN</a>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-wrapper">
+                                <img src="/assets/icon-email.png" alt="Email Icon" class="icon-outline">
+                            </div>
+                            <a href="mailto:slick.87.wackos@icloud.com" class="btn btn-black">EMAIL</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer bg-black">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/research">Research</a>
+                <a href="https://www.linkedin.com/in/jensenearth/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-copy">
+                Made with ♥️ &amp; AI on Earth © JENSEN S.Z. <span class="footer-rainbow" role="button" tabindex="0" title="Make it rain rainbows! 🌈" aria-label="Make it rain rainbows">🌈</span>✨
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function initSubCarousel(carouselId, leftBtnId, rightBtnId) {
+            const carousel = document.getElementById(carouselId);
+            const scrollLeftBtn = document.getElementById(leftBtnId);
+            const scrollRightBtn = document.getElementById(rightBtnId);
+
+            if (!carousel || !scrollLeftBtn || !scrollRightBtn) return;
+
+            const getScrollAmount = () => {
+                const firstCard = carousel.querySelector('.project-card');
+                if (!firstCard) return 260;
+                const carouselStyle = window.getComputedStyle(carousel);
+                const gap = parseFloat(carouselStyle.gap) || 20;
+                return firstCard.offsetWidth + gap;
+            };
+
+            const getMaxScroll = () => {
+                const cards = carousel.querySelectorAll('.project-card');
+                if (!cards.length) return 0;
+                const lastCard = cards[cards.length - 1];
+                const carouselStyle = window.getComputedStyle(carousel);
+                const paddingRight = parseFloat(carouselStyle.paddingRight) || 0;
+                const lastCardMax = (lastCard.offsetLeft + lastCard.offsetWidth + paddingRight) - carousel.clientWidth;
+                const standardMax = carousel.scrollWidth - carousel.clientWidth;
+                return Math.max(0, Math.min(lastCardMax, standardMax));
+            };
+
+            const updateButtonStates = () => {
+                const maxScroll = getMaxScroll();
+                const scrollLeft = carousel.scrollLeft;
+
+                const isAtStart = scrollLeft <= 8;
+                let isAtEnd = scrollLeft >= maxScroll - 8;
+
+                const cards = carousel.querySelectorAll('.project-card');
+                const lastCard = cards[cards.length - 1];
+                if (lastCard) {
+                    const carouselRect = carousel.getBoundingClientRect();
+                    const lastCardRect = lastCard.getBoundingClientRect();
+                    if (lastCardRect.right <= carouselRect.right + 12) {
+                        isAtEnd = true;
+                    }
+                }
+
+                scrollLeftBtn.disabled = isAtStart;
+                if (isAtStart) {
+                    scrollLeftBtn.classList.add('disabled');
+                    scrollLeftBtn.style.opacity = '0.15';
+                    scrollLeftBtn.style.cursor = 'not-allowed';
+                    scrollLeftBtn.style.pointerEvents = 'none';
+                } else {
+                    scrollLeftBtn.classList.remove('disabled');
+                    scrollLeftBtn.style.opacity = '1';
+                    scrollLeftBtn.style.cursor = 'pointer';
+                    scrollLeftBtn.style.pointerEvents = 'auto';
+                }
+
+                scrollRightBtn.disabled = isAtEnd;
+                if (isAtEnd) {
+                    scrollRightBtn.classList.add('disabled');
+                    scrollRightBtn.style.opacity = '0.15';
+                    scrollRightBtn.style.cursor = 'not-allowed';
+                    scrollRightBtn.style.pointerEvents = 'none';
+                } else {
+                    scrollRightBtn.classList.remove('disabled');
+                    scrollRightBtn.style.opacity = '1';
+                    scrollRightBtn.style.cursor = 'pointer';
+                    scrollRightBtn.style.pointerEvents = 'auto';
+                }
+            };
+
+            scrollLeftBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                if (scrollLeftBtn.disabled || carousel.scrollLeft <= 5) return;
+                const step = getScrollAmount();
+                const target = Math.max(0, carousel.scrollLeft - step);
+                carousel.scrollTo({ left: target, behavior: "smooth" });
+            });
+
+            scrollRightBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                const maxScroll = getMaxScroll();
+                if (scrollRightBtn.disabled || carousel.scrollLeft >= maxScroll - 5) return;
+                const step = getScrollAmount();
+                const target = Math.min(maxScroll, carousel.scrollLeft + step);
+                carousel.scrollTo({ left: target, behavior: "smooth" });
+            });
+
+            let isScrolling;
+            carousel.addEventListener("scroll", () => {
+                window.cancelAnimationFrame(isScrolling);
+                isScrolling = window.requestAnimationFrame(updateButtonStates);
+            }, { passive: true });
+
+            window.addEventListener("resize", updateButtonStates);
+            setTimeout(updateButtonStates, 100);
+        }
+
+        initSubCarousel("vibes-screenshots-carousel", "vibes-scroll-left", "vibes-scroll-right");
+    </script>
+    <script src="/layout.js"></script>
+    <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "41fc70af798e4e2aa996b03e42a0018c"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
