@@ -29,43 +29,46 @@
         body {
             background-color: #FFFFFF !important;
         }
-        .funkacoins-hero-banner {
+        .funkacoins-page-content {
             max-width: 800px;
             margin: 0 auto;
-            position: relative;
         }
-        .hero-breadcrumb {
-            position: absolute;
-            top: 14px;
-            left: 0;
-            z-index: 10;
-            background: transparent;
-            backdrop-filter: none;
-            -webkit-backdrop-filter: none;
-            padding: 0;
-            border-radius: 0;
-            margin-bottom: 0;
-            box-shadow: none;
-        }
-        .funkacoins-hero-img {
-            width: 100vw;
-            max-width: 100vw;
+
+        /* Full-width Hero Area matching /happyhour page */
+        .funkacoins-hero-fullbleed {
+            background-color: #F8F4F3;
             margin-left: calc(-50vw + 50%);
             margin-right: calc(-50vw + 50%);
-            height: 320px;
-            max-height: 340px;
-            object-fit: cover;
-            object-position: center;
-            border-radius: 0;
-            border: none;
-            box-shadow: none;
             margin-top: -12px;
-            margin-bottom: 36px;
+            padding: 20px 20px 64px 20px;
+        }
+        .funkacoins-hero-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .funkacoins-hero-fullbleed .breadcrumb {
+            color: rgba(0, 0, 0, 0.75);
+            margin-bottom: 12px;
+        }
+        .funkacoins-hero-fullbleed .breadcrumb a {
+            color: #000000;
+            font-weight: 500;
+        }
+        .funkacoins-hero-fullbleed .breadcrumb a:hover {
+            opacity: 0.7;
+        }
+        .funkacoins-hero-img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0;
+            margin: 0 auto;
             display: block;
         }
         .funkacoins-story {
             max-width: 800px;
-            margin: 0 auto 60px auto;
+            margin: 48px auto 0 auto;
         }
         .funkacoins-story .study-accordions-group {
             border-top: 1px solid rgba(0, 0, 0, 0.15);
@@ -105,7 +108,7 @@
         /* --- The Challenge Section --- */
         .challenge-section-wrapper {
             position: relative;
-            margin-top: 64px;
+            margin-top: 0;
             background: #070707;
             padding: 88px 20px;
             color: #FFFFFF;
@@ -591,21 +594,16 @@
         }
 
         @media (max-width: 768px) {
-            .hero-breadcrumb {
-                top: 8px;
-                left: 0;
-                font-size: 0.82rem;
-                padding: 0;
+            .funkacoins-hero-fullbleed {
+                padding: 16px 20px 48px 20px;
             }
             .funkacoins-hero-img {
-                width: 100vw;
-                max-width: 100vw;
-                margin-left: calc(-50vw + 50%);
-                margin-right: calc(-50vw + 50%);
-                height: 200px;
-                max-height: 220px;
+                max-width: 100%;
                 border-radius: 0;
-                margin: -12px 0 20px 0;
+                margin: 0 auto;
+            }
+            .funkacoins-story {
+                margin: 36px auto 0 auto;
             }
             .funkacoins-story-title {
                 font-size: 1.95rem;
@@ -617,7 +615,7 @@
             }
             .challenge-section-wrapper {
                 padding: 64px 20px;
-                margin-top: 48px;
+                margin-top: 0;
             }
             .challenge-title {
                 font-size: 1.95rem;
@@ -775,59 +773,65 @@
 
     <!-- Main Content Section -->
     <main class="container pt-medium pb-large">
-        <div class="funkacoins-hero-banner">
-            <div class="breadcrumb hero-breadcrumb">
-                <a href="/">Home</a> &gt; FunkaCoins: Loyalty &amp; O2O
-            </div>
+        <div class="funkacoins-page-content">
+            <!-- Full-Width Hero Area with Background Covering Hero & Idea Section -->
+            <div class="funkacoins-hero-fullbleed">
+                <div class="funkacoins-hero-inner">
+                    <div class="breadcrumb">
+                        <a href="/">Home</a> &gt; FunkaCoins: Loyalty &amp; O2O
+                    </div>
 
-            <img src="/assets/funkacoins/funka-heart-banner.png" alt="FunkaCoins: Loyalty &amp; O2O" class="funkacoins-hero-img" width="1600" height="900" loading="eager">
+                    <!-- Hero Banner -->
+                    <img src="/assets/funkacoins/funka-heart-banner.png" alt="FunkaCoins: Loyalty &amp; O2O" class="funkacoins-hero-img" width="1600" height="900" loading="eager">
 
-            <!-- The Idea Section -->
-            <div class="funkacoins-story" id="ideaSection">
-                <h1 class="funkacoins-story-title">The Idea:</h1>
+                    <!-- The Idea Section -->
+                    <div class="funkacoins-story" id="ideaSection">
+                        <h1 class="funkacoins-story-title">The Idea:</h1>
 
-                <div class="study-accordions-group">
-                    <details class="study-accordion accordion-flush">
-                        <summary class="study-accordion-summary">
-                            <span class="summary-left">
-                                <span class="summary-title">International Social Hub</span>
-                            </span>
-                            <svg class="summary-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </summary>
-                        <div class="study-accordion-body">
-                            <p class="story-text">
-                                Funka Group owns and manages several Italian restaurants, bars, and a night club in Shanghai. One of the venues, Funkadeli, is the social hub for international communities in China to enjoy Italian drinks and food for more than a decade. Both the locals and the tourists love Funka Group’s venues for the unique vibes at each location around the city.
-                            </p>
+                        <div class="study-accordions-group">
+                            <details class="study-accordion accordion-flush">
+                                <summary class="study-accordion-summary">
+                                    <span class="summary-left">
+                                        <span class="summary-title">International Social Hub</span>
+                                    </span>
+                                    <svg class="summary-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </summary>
+                                <div class="study-accordion-body">
+                                    <p class="story-text">
+                                        Funka Group owns and manages several Italian restaurants, bars, and a night club in Shanghai. One of the venues, Funkadeli, is the social hub for international communities in China to enjoy Italian drinks and food for more than a decade. Both the locals and the tourists love Funka Group’s venues for the unique vibes at each location around the city.
+                                    </p>
+                                </div>
+                            </details>
+
+                            <details class="study-accordion accordion-flush">
+                                <summary class="study-accordion-summary">
+                                    <span class="summary-left">
+                                        <span class="summary-title">"Something Digital"</span>
+                                    </span>
+                                    <svg class="summary-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </summary>
+                                <div class="study-accordion-body">
+                                    <p class="story-text">
+                                        The Funka Group management team wants to enhance the brand’s connection with their large &amp; loyal customer community. Their idea is to have something digital that seamlessly unifies and integrates the online and offline experiences at their venues.
+                                    </p>
+                                </div>
+                            </details>
+
+                            <details class="study-accordion accordion-flush">
+                                <summary class="study-accordion-summary">
+                                    <span class="summary-left">
+                                        <span class="summary-title">FunkaCoins!</span>
+                                    </span>
+                                    <svg class="summary-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </summary>
+                                <div class="study-accordion-body">
+                                    <p class="story-text">
+                                        Together, we come up with a digital currency called FunkaCoins which can be earned &amp; spent at any of Funka’s locations (bars, restaurants, and even night club) as well as online.
+                                    </p>
+                                </div>
+                            </details>
                         </div>
-                    </details>
-
-                    <details class="study-accordion accordion-flush">
-                        <summary class="study-accordion-summary">
-                            <span class="summary-left">
-                                <span class="summary-title">"Something Digital"</span>
-                            </span>
-                            <svg class="summary-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </summary>
-                        <div class="study-accordion-body">
-                            <p class="story-text">
-                                The Funka Group management team wants to enhance the brand’s connection with their large &amp; loyal customer community. Their idea is to have something digital that seamlessly unifies and integrates the online and offline experiences at their venues.
-                            </p>
-                        </div>
-                    </details>
-
-                    <details class="study-accordion accordion-flush">
-                        <summary class="study-accordion-summary">
-                            <span class="summary-left">
-                                <span class="summary-title">FunkaCoins!</span>
-                            </span>
-                            <svg class="summary-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </summary>
-                        <div class="study-accordion-body">
-                            <p class="story-text">
-                                Together, we come up with a digital currency called FunkaCoins which can be earned &amp; spent at any of Funka’s locations (bars, restaurants, and even night club) as well as online.
-                            </p>
-                        </div>
-                    </details>
+                    </div>
                 </div>
             </div>
 
