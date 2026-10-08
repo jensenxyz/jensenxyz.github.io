@@ -296,14 +296,20 @@
             margin-right: calc(-50vw + 50%);
             margin-top: 64px;
             margin-bottom: 0;
+            background-color: #F9F9F2;
             display: block;
             overflow: hidden;
+            text-align: center;
         }
         .funkacoins-breaker-img {
             width: 100%;
-            height: auto;
+            max-width: 800px;
+            height: 280px;
+            max-height: 280px;
             display: block;
+            margin: 0 auto;
             object-fit: cover;
+            object-position: center bottom;
             border-radius: 0;
             border: none;
             box-shadow: none;
@@ -591,6 +597,11 @@
             .funkacoins-story-title {
                 font-size: 2.3rem;
             }
+            .funkacoins-breaker-img {
+                max-width: 760px;
+                height: 250px;
+                max-height: 250px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -669,6 +680,11 @@
             .funkacoins-breaker-banner {
                 margin-top: 44px;
             }
+            .funkacoins-breaker-img {
+                max-width: 680px;
+                height: 230px;
+                max-height: 230px;
+            }
             .results-title {
                 font-size: 1.95rem;
                 margin-bottom: 18px;
@@ -738,6 +754,12 @@
         }
 
         @media (max-width: 640px) {
+            .funkacoins-breaker-img {
+                max-width: 100%;
+                height: auto;
+                max-height: none;
+                object-fit: contain;
+            }
             .exec-summary-grid {
                 grid-template-columns: 1fr;
                 gap: 18px;
