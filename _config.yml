@@ -1,0 +1,36 @@
+# GitHub Pages (Jekyll) settings.
+# The site itself is plain HTML/CSS/JS. This file only keeps developer/helper
+# files in the repository out of the published website.
+exclude:
+  # Local dev server & tooling
+  - server.js
+  - package.json
+  - package-lock.json
+  - node_modules
+  - .env.example
+  - metadata.json
+  - compressed-images.json
+  - scripts
+  # One-off helper scripts
+  - fix_brands.cjs
+  - fix_brands_js.cjs
+  - fix_brands_media.cjs
+  - fix_digital_products.cjs
+  - fix_fonts.cjs
+  - fix_impact_contact.cjs
+  - fix_mess.mjs
+  - fix_swiper.cjs
+  - generate_labels.cjs
+  - update_physical.cjs
+  # OCR data used by the label scripts (not by the site)
+  - eng.traineddata
+  - chi_sim.traineddata
+  # Notes & docs
+  - CLAUDE.md
+  - STYLEGUIDE.md
+  - label_names.md
+  - assets/scantrust/label-titles-and-subtitles.md
+  # Jekyll defaults (kept because setting `exclude` replaces them)
+  - Gemfile
+  - Gemfile.lock
+  - vendor
