@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found | JENSEN</title>
+    <title>Lost? | JENSEN</title>
     <meta name="robots" content="noindex">
 
     <!-- Favicon & App Icons -->
@@ -17,123 +17,83 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
 
     <!-- Stylesheet (absolute path: this page is served at any missing URL) -->
     <link rel="stylesheet" href="/style.css">
 
     <style>
-        .notfound-hub {
-            min-height: calc(100vh - 150px);
+        .lost {
+            min-height: 100vh;
+            min-height: 100dvh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            padding: 40px 20px;
+            justify-content: center;
+            gap: 32px;
+            padding: 48px 20px;
             text-align: center;
         }
 
-        .notfound-card {
-            background-color: var(--bg-white);
-            padding: 44px 30px 40px;
-            border-radius: 28px;
-            border: 1px solid #e6e0d9;
-            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.05);
-            max-width: 450px;
+        .lost-photo {
             width: 100%;
+            max-width: 440px;
+            height: auto;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            display: block;
         }
 
-        .notfound-code {
+        .lost-copy {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .lost-copy p {
+            margin: 0;
+        }
+
+        .lost-copy .lost-hey {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
-            font-size: 4.5rem;
-            line-height: 1;
-            letter-spacing: -0.02em;
-            color: var(--text-dark);
+            font-size: 2.6rem;
+            line-height: 1.1;
             margin-bottom: 14px;
         }
 
-        .notfound-card h1 {
-            font-size: 1.6rem;
-            margin-bottom: 12px;
-            color: var(--text-dark);
+        .lost-copy .lost-home {
+            margin-top: 14px;
+            font-weight: 600;
         }
 
-        .notfound-card p {
-            color: var(--text-grey);
-            font-size: 0.95rem;
-            margin-bottom: 30px;
+        .lost-copy .lost-home a {
+            color: inherit;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 2px;
         }
 
-        .action-list {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .btn-wide {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            min-height: 56px;
-            font-size: 1rem;
-            border-radius: 14px;
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text-dark);
-            border: 2px solid #cfc7c0;
-        }
-
-        .btn-outline:hover {
-            border-color: var(--text-dark);
-            background-color: #f7f4ef;
+        @media (max-width: 768px) {
+            .lost-copy { font-size: 1.1rem; }
+            .lost-copy .lost-hey { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body class="bg-beige">
 
-    <!-- Header Navigation (Sticky & Translucent) -->
-    <header class="site-header">
-        <div class="container header-flex">
-            <a href="/" class="logo">JENSEN ✨</a>
-            <a href="/" class="link-underline back-to-home">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-                Back to Home
-            </a>
-        </div>
-    </header>
+    <main class="lost">
+        <img class="lost-photo" src="/assets/404-lost-in-the-snow.webp" width="1000" height="751" alt="Jensen in a ski helmet and orange goggles on a snowy mountain slope">
 
-    <main class="notfound-hub">
-        <div class="notfound-card">
-            <div class="notfound-code">404</div>
-            <h1>This page wandered off 🌿</h1>
-            <p>The link may be old or mistyped. Here are a few places to pick the trail back up.</p>
-
-            <div class="action-list">
-                <a href="/" class="btn btn-black btn-wide">Back to Home</a>
-                <a href="/research" class="btn btn-outline btn-wide">Research</a>
-                <a href="/cv" class="btn btn-outline btn-wide">CV</a>
-            </div>
+        <div class="lost-copy">
+            <p class="lost-hey">Hey!</p>
+            <p>It seems you’re lost in my website.</p>
+            <p>Don’t worry.</p>
+            <p class="lost-home"><a href="/">Home is here.</a></p>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer bg-black">
-        <div class="container footer-content">
-            <div class="footer-links">
-                <a href="/">Home</a>
-                <a href="/research">Research</a>
-                <a href="https://www.linkedin.com/in/jensenearth/" target="_blank">LinkedIn</a>
-            </div>
-            <div class="footer-copy">
-                Made with ♥️ & AI on Earth © JENSEN S.Z. <span class="footer-rainbow" role="button" tabindex="0" title="Make it rain rainbows! 🌈" aria-label="Make it rain rainbows">🌈</span>✨
-            </div>
-        </div>
-    </footer>
-<script src="/layout.js"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "41fc70af798e4e2aa996b03e42a0018c"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
