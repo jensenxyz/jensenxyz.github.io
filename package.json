@@ -16,6 +16,6 @@
   },
   "devDependencies": {
     "glob": "^13.0.6",
-    "tinify": "^1.8.3"
+    "tinify": "^1.9.0"
   }
 }
