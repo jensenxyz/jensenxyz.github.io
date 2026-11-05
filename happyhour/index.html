@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Hour App: Olifun | JENSEN</title>
-    <meta name="description" content="Olifun mobile app and chatbot utilized Location-Based Services, Social Media, and mobile-Commerce to help people find happy hours and up-to-date events in megacities.">
+    <meta name="description" content="Olifun, a happy hour app for megacities that I co-founded, and my experience taking it through Orbit Startups, one of Asia’s biggest startup accelerators.">
     <meta property="og:title" content="Happy Hour App: Olifun | JENSEN">
-    <meta property="og:description" content="Olifun mobile app and chatbot utilized Location-Based Services, Social Media, and mobile-Commerce to help people find happy hours and up-to-date events in megacities.">
+    <meta property="og:description" content="Olifun, a happy hour app for megacities that I co-founded, and my experience taking it through Orbit Startups, one of Asia’s biggest startup accelerators.">
     <meta property="og:image" content="/assets/happyhour/happy hour banner.jpg">
     <meta property="og:type" content="website">
 
@@ -169,7 +169,7 @@
         .happyhour-cofounder-list {
             list-style: disc;
             padding-left: 22px;
-            margin: 0 0 28px 0;
+            margin: 0;
         }
         .happyhour-cofounder-list li {
             font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
@@ -182,16 +182,108 @@
         .happyhour-cofounder-list li:last-child {
             margin-bottom: 0;
         }
-        .happyhour-accelerator-note {
+        /* Accelerator badge under the intro subtitle */
+        .happyhour-badge-row {
+            display: flex;
+            justify-content: center;
+            margin: -10px 0 28px 0;
+        }
+        .happyhour-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 400;
-            font-style: italic;
-            line-height: 1.55;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #000000;
+            background: #F8F4F3;
+            border: 1px solid #e6e0d9;
+            border-radius: 999px;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: border-color var(--transition, 0.3s ease);
+        }
+        .happyhour-badge:hover {
+            border-color: #000000;
+        }
+        .happyhour-badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #F39C12;
+            flex-shrink: 0;
+        }
+
+        /* Accelerator Experience (inside the dark section) */
+        .happyhour-accel {
+            margin-bottom: 56px;
+            scroll-margin-top: 90px;
+        }
+        .happyhour-accel-eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
             color: #F39C12;
+            margin: 0 0 12px 0;
+        }
+        .happyhour-accel-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.3rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: #FFFFFF;
+            margin: 0 0 18px 0;
+        }
+        .happyhour-accel-lead {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-size: 1.08rem;
+            font-weight: 300;
+            line-height: 1.72;
+            color: #E5E7EB;
+            margin: 0 0 32px 0;
+            max-width: 680px;
+        }
+        .happyhour-accel-lead strong {
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+        .happyhour-accel-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+        .happyhour-accel-item {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 24px 24px 22px;
+        }
+        .happyhour-accel-item h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin: 0 0 8px 0;
+            line-height: 1.35;
+        }
+        .happyhour-accel-item p {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-size: 0.95rem;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #D1D5DB;
             margin: 0;
-            padding-top: 16px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .happyhour-accel-num {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.85rem;
+            color: #F39C12;
+            margin-bottom: 10px;
         }
 
         .happyhour-contact-section {
@@ -269,8 +361,28 @@
                 font-size: 0.95rem;
                 line-height: 1.6;
             }
-            .happyhour-accelerator-note {
-                font-size: 0.84rem;
+            .happyhour-badge {
+                font-size: 0.8rem;
+                padding: 7px 14px;
+            }
+            .happyhour-accel {
+                margin-bottom: 40px;
+            }
+            .happyhour-accel-title {
+                font-size: 1.75rem;
+            }
+            .happyhour-accel-lead {
+                font-size: 0.98rem;
+                line-height: 1.65;
+                margin-bottom: 24px;
+            }
+            .happyhour-accel-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .happyhour-accel-item {
+                padding: 20px 20px 18px;
+                border-radius: 18px;
             }
             .happyhour-contact-section .section-title {
                 font-size: 1.95rem;
@@ -311,6 +423,9 @@
             <section class="happyhour-intro-section" id="introSection">
                 <h1 class="happyhour-story-title">Olifun</h1>
                 <h2 class="happyhour-story-subtitle">Find that happy hour nearby right now!</h2>
+                <div class="happyhour-badge-row">
+                    <a href="#accelerator" class="happyhour-badge"><span class="happyhour-badge-dot" aria-hidden="true"></span>Co-founder · Orbit Startups accelerator, Batch #6</a>
+                </div>
                 <p class="happyhour-body-text">
                     Olifun helps people discover happy hours and up-to-date events at the coolest bars and restaurants in megacities such as Shanghai, Beijing, and Shenzhen.
                 </p>
@@ -323,9 +438,39 @@
             <img src="/assets/happyhour/happyhour_screens.jpg" alt="Olifun App Screens" class="happyhour-screens-img" width="786" height="1024" loading="lazy">
             <img src="/assets/happyhour/happyhour_3phones_logo_btm.jpg" alt="Olifun App Promotional Showcase" class="happyhour-showcase-img" width="1710" height="1484" loading="lazy">
 
-            <!-- Co-founder Responsibilities & Accelerator Note -->
+            <!-- Accelerator Experience & Co-founder Responsibilities -->
             <section class="happyhour-cofounder-section" id="cofounderSection">
                 <div class="happyhour-cofounder-inner">
+                    <div class="happyhour-accel" id="accelerator">
+                        <p class="happyhour-accel-eyebrow">Startup Accelerator · 2014</p>
+                        <h2 class="happyhour-accel-title">Accelerated by Orbit Startups</h2>
+                        <p class="happyhour-accel-lead">
+                            Olifun was selected for <strong>Batch #6 of Orbit Startups</strong>, one of Asia’s biggest startup accelerators. Going through the program as a co-founder taught me how to turn an idea into a real business, quickly and with evidence.
+                        </p>
+                        <div class="happyhour-accel-grid">
+                            <div class="happyhour-accel-item">
+                                <span class="happyhour-accel-num">01</span>
+                                <h3>Lean validation</h3>
+                                <p>Testing assumptions with real users early, then iterating in short build–measure–learn cycles.</p>
+                            </div>
+                            <div class="happyhour-accel-item">
+                                <span class="happyhour-accel-num">02</span>
+                                <h3>Business model &amp; go-to-market</h3>
+                                <p>Shaping the value proposition, revenue model, and launch plan for both sides of the market: venues and their guests.</p>
+                            </div>
+                            <div class="happyhour-accel-item">
+                                <span class="happyhour-accel-num">03</span>
+                                <h3>Pitching &amp; storytelling</h3>
+                                <p>Sharpening the pitch with mentors and presenting Olifun to investors and partners.</p>
+                            </div>
+                            <div class="happyhour-accel-item">
+                                <span class="happyhour-accel-num">04</span>
+                                <h3>Mentors &amp; ecosystem</h3>
+                                <p>Learning from experienced founders and building a network across Asia’s startup ecosystem.</p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="happyhour-cofounder-card">
                         <h2 class="happyhour-cofounder-heading">As a co-founder, I managed:</h2>
                         <ul class="happyhour-cofounder-list">
@@ -335,9 +480,6 @@
                             <li>All-aspect operations including company entity setup, trademark registration, HR, and SOP.</li>
                             <li>Branding and marketing strategy.</li>
                         </ul>
-                        <p class="happyhour-accelerator-note">
-                            *Olifun also joined one of Asia’s biggest startup accelerators—Orbit Startups—in Batch #6 (2014).
-                        </p>
                     </div>
                 </div>
             </section>
