@@ -55,6 +55,7 @@
     --band-text-soft-3: #F3F4F6;
     --band-text-muted: #D1D5DB;
     --band-text-cc: #CCCCCC;
+    --pillar-line: #000000;       /* Scantrust platform pillars: frames + dashed belt */
     --text-50: rgba(0, 0, 0, 0.5);
     --tabs-nav-bg: #FAF6F4;
     --tab-indicator: #FFFFFF;
@@ -1925,6 +1926,7 @@ ul { list-style: none; }
     --band-text-soft-3: #cfd0d3;
     --band-text-muted: #b3b6ba;
     --band-text-cc: #b0b0b0;
+    --pillar-line: #9a9a9a;
     --text-50: rgba(255, 255, 255, 0.55);
     --tabs-nav-bg: #242424;
     --tab-indicator: #3a3a3a;
