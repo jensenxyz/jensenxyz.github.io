@@ -49,6 +49,10 @@
     --text-slate: #4B5563;
     --text-75: rgba(0, 0, 0, 0.75);
     --band-grey: #EAEAEA;
+    --text-gray-700: #374151;
+    --text-50: rgba(0, 0, 0, 0.5);
+    --tabs-nav-bg: #FAF6F4;
+    --tab-indicator: #FFFFFF;
     --border-radius: 30px;
     --btn-radius: 30px;
     --transition: 0.3s ease;
@@ -1910,6 +1914,10 @@ ul { list-style: none; }
     --text-slate: #a3a3a3;
     --text-75: rgba(255, 255, 255, 0.72);
     --band-grey: #1f1f1f;
+    --text-gray-700: #c9c9c9;
+    --text-50: rgba(255, 255, 255, 0.55);
+    --tabs-nav-bg: #242424;
+    --tab-indicator: #3a3a3a;
 
     --header-bg: rgba(17, 17, 17, 0.62);
     --line-faint: rgba(255, 255, 255, 0.07);
