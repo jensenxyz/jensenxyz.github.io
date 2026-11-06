@@ -1844,3 +1844,112 @@ ul { list-style: none; }
         text-align: center;
     }
 }
+
+/* ==========================================================================
+   Theme toggle (header)
+   ========================================================================== */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin: -3px 0;          /* keeps the header exactly as tall as before */
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid var(--line-medium);
+    background: transparent;
+    color: var(--text-dark);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color var(--transition), border-color var(--transition);
+}
+.theme-toggle:hover {
+    background-color: var(--line-faint);
+    border-color: var(--text-dark);
+}
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--accent-orange);
+    outline-offset: 2px;
+}
+.theme-toggle svg { width: 18px; height: 18px; display: block; }
+.theme-toggle .icon-sun { display: none; }
+[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+/* ==========================================================================
+   Dark theme
+   Only active on pages that load /theme.js (it sets data-theme on <html>).
+   Surfaces that are dark in both themes (footer, black bands, image viewer)
+   keep their own colours.
+   ========================================================================== */
+[data-theme="dark"] {
+    color-scheme: dark;
+    background-color: #111111;
+
+    --bg-light: #111111;          /* page background (was beige) */
+    --bg-white: #1a1a1a;          /* raised surface (was white) */
+    --bg-dark: #050505;           /* black bands & footer */
+    --text-dark: #f2f2f2;         /* primary text */
+    --text-light: #ffffff;        /* text on black bands */
+    --text-grey: #a6a6a6;         /* secondary text */
+    --on-inverse: #0b0b0b;        /* text on inverted (light) buttons */
+    --on-inverse-muted: #555555;
+
+    --header-bg: rgba(17, 17, 17, 0.62);
+    --line-faint: rgba(255, 255, 255, 0.07);
+    --line-soft: rgba(255, 255, 255, 0.1);
+    --line-medium: rgba(255, 255, 255, 0.16);
+    --img-placeholder: #262626;
+    --img-bg: #222222;
+    --card-border: #2c2c2c;
+    --card-border-2: #2e2e2e;
+    --card-border-cool: #2c2c2c;
+    --media-bg: #202020;
+    --media-bg-2: #222222;
+    --media-border: #333333;
+    --divider: #262626;
+    --divider-2: #2a2a2a;
+    --divider-3: #262626;
+    --divider-4: #2e2e2e;
+    --toolbar-border: #2c2c2c;
+    --text-body: #d4d4d4;
+    --text-soft: #c7c7c7;
+    --text-tag: #d0d0d0;
+    --text-faint: #8c8c8c;
+    --tag-bg: #262626;
+    --pill-border: #3a3a3a;
+    --pill-hover-bg: #232323;
+    --underline-muted: #6e655c;
+    --chip-bg: #2a2a2a;
+    --chip-bg-hover: #343434;
+    --summary-bg: #1c1c1c;
+    --summary-border: #2c2c2c;
+    --summary-bg-hover: #242424;
+    --summary-border-hover: #3a3a3a;
+    --summary-bg-open: #222222;
+    --summary-body-bg: #171717;
+}
+
+/* Black icons (LinkedIn, email) would vanish on dark surfaces */
+[data-theme="dark"] .icon-outline { filter: invert(1); }
+
+/* Soften bright photos/screenshots so they don't glare on dark pages */
+[data-theme="dark"] .project-card img,
+[data-theme="dark"] .research-card img,
+[data-theme="dark"] .study-img,
+[data-theme="dark"] .canva-presentation-card img,
+[data-theme="dark"] .mockups-grid img {
+    filter: brightness(0.9);
+}
+
+/* Cards sitting on dark surfaces get a hairline so their edges stay visible */
+[data-theme="dark"] .project-card { border-color: var(--card-border); }
+
+/* Bold card outlines read harsher as white-on-black: tone them down */
+[data-theme="dark"] .expertise-card { border-color: #5a5a5a; }
