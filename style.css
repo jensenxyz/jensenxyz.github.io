@@ -50,6 +50,11 @@
     --text-75: rgba(0, 0, 0, 0.75);
     --band-grey: #EAEAEA;
     --text-gray-700: #374151;
+    --band-text-soft: #E5E7EB;    /* light text on always-dark bands */
+    --band-text-soft-2: #E2E6EC;
+    --band-text-soft-3: #F3F4F6;
+    --band-text-muted: #D1D5DB;
+    --band-text-cc: #CCCCCC;
     --text-50: rgba(0, 0, 0, 0.5);
     --tabs-nav-bg: #FAF6F4;
     --tab-indicator: #FFFFFF;
@@ -422,7 +427,7 @@ ul { list-style: none; }
     height: 24px;
 }
 .bg-black .carousel-controls button {
-    color: #ffffff;
+    color: var(--text-light);
 }
 .bg-black .carousel-hint {
     color: #aaaaaa;
@@ -506,7 +511,7 @@ ul { list-style: none; }
 .circle-img { width: 100%; border-radius: 50%; }
 .tech-details { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
 .tech-column h4 { font-size: 1.2rem; margin-bottom: 20px; }
-.tech-column ul li { font-size: 0.95rem; margin-bottom: 8px; color: #CCCCCC; }
+.tech-column ul li { font-size: 0.95rem; margin-bottom: 8px; color: var(--band-text-cc); }
 .italic { font-style: italic; }
 .footnotes { margin-top: 20px; font-size: 0.75rem; color: var(--text-faint); font-style: italic; }
 
@@ -1904,17 +1909,22 @@ ul { list-style: none; }
     --bg-light: #111111;          /* page background (was beige) */
     --bg-white: #1a1a1a;          /* raised surface (was white) */
     --bg-dark: #050505;           /* black bands & footer */
-    --text-dark: #f2f2f2;         /* primary text */
-    --text-light: #ffffff;        /* text on black bands */
-    --text-grey: #a6a6a6;         /* secondary text */
+    --text-dark: #dedede;         /* primary text (soft, not pure white) */
+    --text-light: #e0e0e0;        /* text on black bands */
+    --text-grey: #9d9d9d;         /* secondary text */
     --on-inverse: #0b0b0b;        /* text on inverted (light) buttons */
     --on-inverse-muted: #555555;
     --outline-strong: #5a5a5a;
-    --text-ink: #e5e5e5;
-    --text-slate: #a3a3a3;
-    --text-75: rgba(255, 255, 255, 0.72);
+    --text-ink: #d2d2d2;
+    --text-slate: #9a9a9a;
+    --text-75: rgba(255, 255, 255, 0.66);
     --band-grey: #1f1f1f;
-    --text-gray-700: #c9c9c9;
+    --text-gray-700: #bababa;
+    --band-text-soft: #c8c9cc;
+    --band-text-soft-2: #c6c9ce;
+    --band-text-soft-3: #cfd0d3;
+    --band-text-muted: #b3b6ba;
+    --band-text-cc: #b0b0b0;
     --text-50: rgba(255, 255, 255, 0.55);
     --tabs-nav-bg: #242424;
     --tab-indicator: #3a3a3a;
@@ -1936,9 +1946,9 @@ ul { list-style: none; }
     --divider-3: #262626;
     --divider-4: #2e2e2e;
     --toolbar-border: #2c2c2c;
-    --text-body: #d4d4d4;
-    --text-soft: #c7c7c7;
-    --text-tag: #d0d0d0;
+    --text-body: #c4c4c4;
+    --text-soft: #b9b9b9;
+    --text-tag: #c2c2c2;
     --text-faint: #8c8c8c;
     --tag-bg: #262626;
     --pill-border: #3a3a3a;
@@ -1954,17 +1964,15 @@ ul { list-style: none; }
     --summary-body-bg: #171717;
 }
 
-/* Black icons (LinkedIn, email) would vanish on dark surfaces */
-[data-theme="dark"] .icon-outline { filter: invert(1); }
 
-/* Soften bright photos/screenshots so they don't glare on dark pages */
-[data-theme="dark"] .project-card img,
-[data-theme="dark"] .research-card img,
-[data-theme="dark"] .study-img,
-[data-theme="dark"] .canva-presentation-card img,
-[data-theme="dark"] .mockups-grid img {
-    filter: brightness(0.9);
+/* Shade every photo, screenshot and video slightly so bright/white images
+   don't glare on dark pages. brightness(0.82) = an ~18% dark veil. */
+[data-theme="dark"] img,
+[data-theme="dark"] video {
+    filter: brightness(0.82);
 }
+/* Black line icons: invert to light, then shade like the text */
+[data-theme="dark"] .icon-outline { filter: invert(1) brightness(0.88); }
 
 /* Cards sitting on dark surfaces get a hairline so their edges stay visible */
 [data-theme="dark"] .project-card { border-color: var(--card-border); }

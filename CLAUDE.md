@@ -22,6 +22,7 @@ Portfolio of Jensen (Sentao ZENG), served by GitHub Pages at https://jensenxyz.g
 - A page gets dark mode by loading `<script src="/theme.js"></script>` right after the viewport meta (before the stylesheet). It defaults to the visitor's device setting; the header `.theme-toggle` button overrides and remembers it. Pages without the script always render light.
 - Never hardcode colours for light surfaces: use the CSS variables in `style.css` `:root` (each has a dark value in the `[data-theme="dark"]` block). Surfaces that are dark in both themes (footer, `.bg-black` bands, image viewer) may keep fixed colours.
 - Every page loads `theme.js`. New pages must too, and must use the colour variables (including in inline `style=""` attributes).
+- Dark mode deliberately uses soft text (about `#dedede`, never pure white) and shades every `<img>`/`<video>` with `filter: brightness(0.82)`. If an image needs its own filter in dark mode, write a `[data-theme="dark"] .its-class` rule.
 - Check every visual change in both themes (Playwright `colorScheme: 'dark'`).
 
 ## Publishing hygiene

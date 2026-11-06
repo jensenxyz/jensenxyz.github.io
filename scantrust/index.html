@@ -130,7 +130,7 @@
             margin-top: 64px;
             background: transparent;
             padding: 200px 20px;
-            color: #FFFFFF;
+            color: var(--text-light);
             margin-left: calc(-50vw + 50%);
             margin-right: calc(-50vw + 50%);
             overflow: hidden;
@@ -188,7 +188,7 @@
             font-size: 2.5rem;
             letter-spacing: -0.5px;
             line-height: 1.2;
-            color: #FFFFFF;
+            color: var(--text-light);
             margin-bottom: 8px;
             text-align: center;
         }
@@ -207,7 +207,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
             font-weight: 600;
             font-size: 1.1rem;
-            color: #FFFFFF;
+            color: var(--text-light);
             letter-spacing: -0.2px;
             margin: 0 0 8px 0;
             text-align: left;
@@ -224,7 +224,7 @@
         .challenge-pov-desc {
             font-size: 1.05rem;
             line-height: 1.7;
-            color: #E2E6EC;
+            color: var(--band-text-soft-2);
             margin: 0 0 20px 0;
             text-align: left;
         }
@@ -1122,7 +1122,7 @@
             margin-bottom: 0px;
             text-align: center;
             background: #000000;
-            color: #FFFFFF;
+            color: var(--text-light);
             padding: 80px 40px;
             margin-left: calc(-50vw + 50%);
             margin-right: calc(-50vw + 50%);
@@ -1135,7 +1135,7 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
             font-size: 2.5rem;
-            color: #FFFFFF;
+            color: var(--text-light);
             letter-spacing: -0.5px;
             line-height: 1.15;
             margin: 0 auto 48px auto;
@@ -1195,7 +1195,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
             font-weight: 700;
             font-size: 1.25rem;
-            color: #FFFFFF;
+            color: var(--text-light);
             letter-spacing: -0.2px;
             line-height: 1.25;
             margin: 0 0 18px 0;
@@ -1219,7 +1219,7 @@
             font-size: 0.92rem;
             font-weight: 300;
             line-height: 1.45;
-            color: #E5E7EB;
+            color: var(--band-text-soft);
             display: flex;
             align-items: flex-start;
             gap: 10px;
@@ -1645,6 +1645,8 @@
         /* --- Dark theme tweaks --- */
         /* Client logos are opaque light images: present them as tidy tiles */
         [data-theme="dark"] .brand-logo-slide { border-radius: 10px; }
+        /* Keep the mountain photo's own contrast while shading it like other images */
+        [data-theme="dark"] .challenge-mountain-img { filter: brightness(0.72) contrast(1.05); }
         /* Label cards keep a visible edge on dark surfaces */
         [data-theme="dark"] .labels-carousel-container .label-card { border-color: var(--card-border); }
 </style>
