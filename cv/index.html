@@ -35,7 +35,7 @@
             background-color: var(--bg-white);
             padding: 40px 30px;
             border-radius: 28px;
-            border: 1px solid #e6e0d9;
+            border: 1px solid var(--card-border);
             box-shadow: 0 16px 36px rgba(0, 0, 0, 0.05);
             max-width: 450px;
             width: 100%;
@@ -73,18 +73,18 @@
         .btn-outline {
             background-color: transparent;
             color: var(--text-dark);
-            border: 2px solid #cfc7c0;
+            border: 2px solid var(--pill-border);
         }
 
         .btn-outline:hover {
             border-color: var(--text-dark);
-            background-color: #f7f4ef;
+            background-color: var(--pill-hover-bg);
         }
 
         .file-meta {
             display: block;
             font-size: 0.75rem;
-            color: #888;
+            color: var(--text-faint);
             margin-top: 4px;
             font-weight: 500;
         }
@@ -112,7 +112,7 @@
                 <a href="/cv/jensencv_impact_online-compressed.pdf" class="btn btn-black btn-download" target="_blank" rel="noopener noreferrer">
                     <div>
                         View Impact CV (Compressed)
-                        <span class="file-meta" style="color: #bbb;">Online Version • ~1.8MB</span>
+                        <span class="file-meta" style="color: var(--on-inverse-muted);">Online Version • ~1.8MB</span>
                     </div>
                 </a>
                 
