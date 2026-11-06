@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/theme.js"></script>
     <title>Happy Hour App: Olifun | JENSEN</title>
     <meta name="description" content="Olifun, a happy hour app for megacities that I co-founded, and my experience taking it through Orbit Startups, one of Asia’s biggest startup accelerators.">
     <meta property="og:title" content="Happy Hour App: Olifun | JENSEN">
@@ -27,7 +28,7 @@
     <link rel="stylesheet" href="/style.css">
     <style>
         body {
-            background-color: #FFFFFF !important;
+            background-color: var(--bg-white) !important;
         }
         .happyhour-page-content {
             max-width: 800px;
@@ -80,14 +81,14 @@
             margin-bottom: 12px;
             text-align: center;
             line-height: 1.2;
-            color: #000000;
+            color: var(--text-dark);
         }
         .happyhour-story-subtitle {
             font-size: 1.35rem;
             font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
             font-weight: 600;
             letter-spacing: -0.2px;
-            color: #000000;
+            color: var(--text-dark);
             line-height: 1.5;
             margin-bottom: 28px;
             text-align: center;
@@ -195,16 +196,16 @@
             font-family: 'Inter', sans-serif;
             font-size: 0.88rem;
             font-weight: 600;
-            color: #000000;
-            background: #F8F4F3;
-            border: 1px solid #e6e0d9;
+            color: var(--text-dark);
+            background: var(--bg-light);
+            border: 1px solid var(--card-border);
             border-radius: 999px;
             padding: 8px 16px;
             text-decoration: none;
             transition: border-color var(--transition, 0.3s ease);
         }
         .happyhour-badge:hover {
-            border-color: #000000;
+            border-color: var(--text-dark);
         }
         .happyhour-badge-dot {
             width: 8px;
@@ -297,7 +298,7 @@
             font-size: 2.5rem;
             letter-spacing: -0.5px;
             line-height: 1.2;
-            color: #000000;
+            color: var(--text-dark);
             white-space: nowrap;
             margin-bottom: 32px;
             text-align: center;
@@ -397,10 +398,16 @@
     <header class="site-header">
         <div class="container header-flex">
             <a href="/" class="logo">JENSEN ✨</a>
-            <a href="/" class="link-underline back-to-home">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-                Back to Home
-            </a>
+            <div class="header-actions">
+                <a href="/" class="link-underline back-to-home">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Back to Home
+                </a>
+                <button type="button" class="theme-toggle" aria-label="Dark mode" aria-pressed="false">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                </button>
+            </div>
         </div>
     </header>
 

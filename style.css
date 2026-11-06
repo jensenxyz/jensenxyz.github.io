@@ -44,6 +44,8 @@
     --summary-body-bg: #faf9f7;
     --card-border-cool: #e2e8f0;
     --on-inverse-muted: #bbbbbb;
+    --outline-strong: #000000;   /* bold card outlines */
+    --text-ink: #111827;
     --border-radius: 30px;
     --btn-radius: 30px;
     --transition: 0.3s ease;
@@ -423,7 +425,7 @@ ul { list-style: none; }
 .expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .expertise-card {
     background-color: var(--bg-white);
-    border: 2px solid var(--text-dark);
+    border: 2px solid var(--outline-strong);
     border-radius: 30px;
     padding: 40px 30px;
     height: 560px;
@@ -1900,6 +1902,8 @@ ul { list-style: none; }
     --text-grey: #a6a6a6;         /* secondary text */
     --on-inverse: #0b0b0b;        /* text on inverted (light) buttons */
     --on-inverse-muted: #555555;
+    --outline-strong: #5a5a5a;
+    --text-ink: #e5e5e5;
 
     --header-bg: rgba(17, 17, 17, 0.62);
     --line-faint: rgba(255, 255, 255, 0.07);
@@ -1950,6 +1954,3 @@ ul { list-style: none; }
 
 /* Cards sitting on dark surfaces get a hairline so their edges stay visible */
 [data-theme="dark"] .project-card { border-color: var(--card-border); }
-
-/* Bold card outlines read harsher as white-on-black: tone them down */
-[data-theme="dark"] .expertise-card { border-color: #5a5a5a; }
