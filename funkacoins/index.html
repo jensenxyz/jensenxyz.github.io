@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/theme.js"></script>
     <title>FunkaCoins: Loyalty &amp; O2O | JENSEN</title>
     <meta name="description" content="Put Funka In Your Pocket — A comprehensive WeChat-based and POS-integrated system designed to enhance customer loyalty, streamline business operations, and expand sales channels.">
     <meta property="og:title" content="FunkaCoins: Loyalty &amp; O2O | JENSEN">
@@ -27,7 +28,7 @@
     <link rel="stylesheet" href="/style.css">
     <style>
         body {
-            background-color: #FFFFFF !important;
+            background-color: var(--bg-white) !important;
         }
         .funkacoins-page-content {
             max-width: 800px;
@@ -36,7 +37,7 @@
 
         /* Full-width Hero Area matching /happyhour page */
         .funkacoins-hero-fullbleed {
-            background-color: #F8F4F3;
+            background-color: var(--bg-light);
             margin-left: calc(-50vw + 50%);
             margin-right: calc(-50vw + 50%);
             margin-top: -12px;
@@ -47,11 +48,11 @@
             margin: 0 auto;
         }
         .funkacoins-hero-fullbleed .breadcrumb {
-            color: rgba(0, 0, 0, 0.75);
+            color: var(--text-75);
             margin-bottom: 12px;
         }
         .funkacoins-hero-fullbleed .breadcrumb a {
-            color: #000000;
+            color: var(--text-dark);
             font-weight: 500;
         }
         .funkacoins-hero-fullbleed .breadcrumb a:hover {
@@ -71,11 +72,11 @@
             margin: 48px auto 0 auto;
         }
         .funkacoins-story .study-accordions-group {
-            border-top: 1px solid rgba(0, 0, 0, 0.15);
+            border-top: 1px solid var(--line-medium);
             margin-top: 24px;
         }
         .funkacoins-story .study-accordion.accordion-flush {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important;
+            border-bottom: 1px solid var(--line-medium) !important;
             border-top: none !important;
             padding: 4px 0 !important;
         }
@@ -98,7 +99,7 @@
         }
         .story-text .text-accent,
         .text-accent {
-            color: #000000;
+            color: var(--text-dark);
             font-weight: 600;
         }
         .story-text:last-child {
@@ -177,12 +178,12 @@
         /* --- The Solution Section: Bounded Card & Subsections --- */
         .funkacoins-solution-card {
             margin-top: 64px;
-            background: #F8F4F3;
-            border: 2px solid #000000;
+            background: var(--bg-light);
+            border: 2px solid var(--outline-strong);
             border-radius: 32px;
             padding: 58px 40px 48px 40px;
             box-sizing: border-box;
-            color: #000000;
+            color: var(--text-dark);
             position: relative;
         }
         .solution-card-title {
@@ -191,7 +192,7 @@
             font-size: 2.35rem;
             letter-spacing: -0.5px;
             line-height: 1.2;
-            color: #000000;
+            color: var(--text-dark);
             margin-bottom: 16px;
             text-align: center;
         }
@@ -201,7 +202,7 @@
             font-size: 1.45rem;
             letter-spacing: -0.3px;
             line-height: 1.3;
-            color: #000000;
+            color: var(--text-dark);
             margin-bottom: 16px;
             text-align: center;
         }
@@ -215,14 +216,14 @@
             font-size: 1.02rem;
             font-weight: 400;
             line-height: 1.65;
-            color: #111827;
+            color: var(--text-ink);
             margin-bottom: 0;
         }
 
         .funkacoins-subsection {
             margin-top: 56px;
             padding-top: 36px;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            border-top: 1px solid var(--line-soft);
         }
         .funkacoins-subsection:first-of-type {
             margin-top: 56px;
@@ -233,7 +234,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
             font-weight: 700;
             font-size: 1.25rem;
-            color: #000000;
+            color: var(--text-dark);
             letter-spacing: -0.2px;
             line-height: 1.25;
             margin-bottom: 16px;
@@ -244,7 +245,7 @@
             font-size: 1.0rem;
             font-weight: 300;
             line-height: 1.68;
-            color: #111827;
+            color: var(--text-ink);
             margin-bottom: 16px;
             max-width: 900px;
             text-align: left;
@@ -262,7 +263,7 @@
             font-size: 1.0rem;
             font-weight: 300;
             line-height: 1.68;
-            color: #111827;
+            color: var(--text-ink);
             margin-bottom: 8px;
         }
         .funkacoins-feature-list li:last-child {
@@ -330,7 +331,7 @@
             bottom: 0;
             left: calc(-50vw + 50%);
             right: calc(-50vw + 50%);
-            background-color: #EAEAEA;
+            background-color: var(--band-grey);
             z-index: -1;
         }
         .funkacoins-results-section > * {
@@ -343,7 +344,7 @@
             font-size: 2.5rem;
             letter-spacing: -0.5px;
             line-height: 1.2;
-            color: #000000;
+            color: var(--text-dark);
             margin-bottom: 24px;
             text-align: center;
         }
@@ -352,7 +353,7 @@
             font-size: 1.05rem;
             font-weight: 300;
             line-height: 1.68;
-            color: #111827;
+            color: var(--text-ink);
             max-width: 800px;
             text-align: left;
             margin: 0 auto 48px auto;
@@ -402,7 +403,7 @@
             font-weight: 700;
             font-size: 1.05rem;
             letter-spacing: -0.2px;
-            color: #000000;
+            color: var(--text-dark);
             line-height: 1.35;
             margin: 0;
         }
@@ -419,7 +420,7 @@
             font-size: 0.78rem;
             font-weight: 300;
             line-height: 1.5;
-            color: #4B5563;
+            color: var(--text-slate);
             margin: 0;
         }
 
@@ -435,15 +436,15 @@
             font-size: 2.5rem;
             letter-spacing: -0.5px;
             line-height: 1.2;
-            color: #000000;
+            color: var(--text-dark);
             margin-top: 0;
             margin-bottom: 32px;
             padding: 8px 0;
             text-align: center;
         }
         .mindmap-card {
-            background: #F8F4F3;
-            border: 2px solid #000000;
+            background: var(--bg-light);
+            border: 2px solid var(--outline-strong);
             border-radius: 30px;
             padding: 36px 28px;
             max-width: 800px;
@@ -587,7 +588,7 @@
             font-size: 2.5rem;
             letter-spacing: -0.5px;
             line-height: 1.2;
-            color: #000000;
+            color: var(--text-dark);
             white-space: nowrap;
             margin-bottom: 32px;
             text-align: center;
@@ -786,10 +787,16 @@
     <header class="site-header">
         <div class="container header-flex">
             <a href="/" class="logo">JENSEN ✨</a>
-            <a href="/" class="link-underline back-to-home">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-                Back to Home
-            </a>
+            <div class="header-actions">
+                <a href="/" class="link-underline back-to-home">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Back to Home
+                </a>
+                <button type="button" class="theme-toggle" aria-label="Dark mode" aria-pressed="false">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                </button>
+            </div>
         </div>
     </header>
 

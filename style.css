@@ -46,6 +46,9 @@
     --on-inverse-muted: #bbbbbb;
     --outline-strong: #000000;   /* bold card outlines */
     --text-ink: #111827;
+    --text-slate: #4B5563;
+    --text-75: rgba(0, 0, 0, 0.75);
+    --band-grey: #EAEAEA;
     --border-radius: 30px;
     --btn-radius: 30px;
     --transition: 0.3s ease;
@@ -1904,6 +1907,9 @@ ul { list-style: none; }
     --on-inverse-muted: #555555;
     --outline-strong: #5a5a5a;
     --text-ink: #e5e5e5;
+    --text-slate: #a3a3a3;
+    --text-75: rgba(255, 255, 255, 0.72);
+    --band-grey: #1f1f1f;
 
     --header-bg: rgba(17, 17, 17, 0.62);
     --line-faint: rgba(255, 255, 255, 0.07);
