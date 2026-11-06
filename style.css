@@ -56,6 +56,8 @@
     --band-text-muted: #D1D5DB;
     --band-text-cc: #CCCCCC;
     --pillar-line: #000000;       /* Scantrust platform pillars: frames + dashed belt */
+    --diagram-line: #000000;      /* FunkaCoins mind map lines & node borders */
+    --diagram-hub: #000000;
     --text-50: rgba(0, 0, 0, 0.5);
     --tabs-nav-bg: #FAF6F4;
     --tab-indicator: #FFFFFF;
@@ -1927,6 +1929,8 @@ ul { list-style: none; }
     --band-text-muted: #b3b6ba;
     --band-text-cc: #b0b0b0;
     --pillar-line: #9a9a9a;
+    --diagram-line: #7a7a7a;
+    --diagram-hub: #2a2a2a;
     --text-50: rgba(255, 255, 255, 0.55);
     --tabs-nav-bg: #242424;
     --tab-indicator: #3a3a3a;
