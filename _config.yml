@@ -11,6 +11,7 @@ exclude:
   - metadata.json
   - compressed-images.json
   - scripts
+  - i18n
   # One-off helper scripts
   - fix_brands.cjs
   - fix_brands_js.cjs

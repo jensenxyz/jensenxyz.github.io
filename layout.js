@@ -91,8 +91,16 @@ function initRainbowRain() {
         elem.dataset.rainbowBound = 'true';
         elem.setAttribute('role', 'button');
         elem.setAttribute('tabindex', '0');
-        elem.setAttribute('title', 'Make it rain rainbows! 🌈');
-        elem.setAttribute('aria-label', 'Make it rain rainbows');
+        var RAIN = {
+            en: 'Make it rain rainbows',
+            it: 'Fai piovere arcobaleni',
+            fr: 'Faire pleuvoir des arcs-en-ciel',
+            es: 'Haz que lluevan arcoíris'
+        };
+        var rain = RAIN[(document.documentElement.lang || 'en').slice(0, 2)] || RAIN.en;
+        var bang = document.documentElement.lang === 'fr' ? '\u00a0!' : '!';
+        elem.setAttribute('title', (document.documentElement.lang === 'es' ? '¡' : '') + rain + bang + ' 🌈');
+        elem.setAttribute('aria-label', rain);
 
         const activate = (e) => {
             if (e) {

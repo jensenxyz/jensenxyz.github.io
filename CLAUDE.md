@@ -25,6 +25,15 @@ Portfolio of Jensen (Sentao ZENG), served by GitHub Pages at https://jensenxyz.g
 - Dark mode deliberately uses soft text (about `#dedede`, never pure white) and shades every `<img>`/`<video>` with `filter: brightness(0.82)`. If an image needs its own filter in dark mode, write a `[data-theme="dark"] .its-class` rule.
 - Check every visual change in both themes (Playwright `colorScheme: 'dark'`).
 
+## Languages (English, Italian, French, Spanish)
+
+- English pages are the single source of truth. Italian/French/Spanish pages under `/it/`, `/fr/`, `/es/` are **generated**: never edit them by hand.
+- Translations live in `i18n/it.json`, `i18n/fr.json`, `i18n/es.json` (a `_shared` section for header/footer strings, then one section per page route, keyed by the exact English text; `js:` keys translate strings inside a page's inline scripts). Names that stay English everywhere go in `i18n/keep.json`.
+- After **any** change to an English page or a translation file, run `python3 i18n/build.py`: it regenerates the translated pages, refreshes the hreflang tags and the header language menu in every page, and lists any English text that still lacks a translation. Add the missing translations (all three languages) and run it again before committing. Commit the English page, the JSON files and the generated pages together.
+- A page appears in a language as soon as that language's JSON has a section for it; until then its links point to the English page.
+- `i18n/` is excluded from the published site via `_config.yml`.
+- Translations were written by Claude; Jensen plans a native-speaker review later.
+
 ## Publishing hygiene
 
 - GitHub Pages publishes **every file in the repo** except those listed under `exclude` in `_config.yml`. When adding helper scripts, notes or data that should not be public, add them to that list.

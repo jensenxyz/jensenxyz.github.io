@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/theme.js"></script>
+    <!-- i18n:head -->
+    <link rel="alternate" hreflang="en" href="https://jensenxyz.github.io/">
+    <link rel="alternate" hreflang="it" href="https://jensenxyz.github.io/it/">
+    <link rel="alternate" hreflang="fr" href="https://jensenxyz.github.io/fr/">
+    <link rel="alternate" hreflang="es" href="https://jensenxyz.github.io/es/">
+    <link rel="alternate" hreflang="x-default" href="https://jensenxyz.github.io/">
+    <!-- /i18n:head -->
+    <title>JENSEN : Design · Produit · IA · Planète</title>
+    <meta name="description" content="Portfolio de Jensen (Sentao ZENG) : product designer, cycliste urbain et explorateur de la nature, à la croisée du design, du développement produit, de l’IA et de la recherche sur le climat de la planète.">
+    <meta property="og:title" content="JENSEN : Design · Produit · IA · Planète">
+    <meta property="og:description" content="Portfolio de Jensen (Sentao ZENG) : product designer, cycliste urbain et explorateur de la nature, à la croisée du design, du développement produit, de l’IA et de la recherche sur le climat de la planète.">
+    <meta property="og:image" content="/assets/hero-portrait.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/site.webmanifest">
+    <meta name="apple-mobile-web-app-title" content="JENSEN">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- Inline Styles for requested updates -->
+    <style>
+        /* Mobile font size adjustment for section titles */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.9rem !important;
+            }
+        }
+
+        /* Harmonious 30px border radius for project cards matching the rest of the site */
+        .project-card {
+            box-shadow: none !important;
+            border: 1px solid var(--card-border-cool) !important;
+            border-radius: 30px !important;
+            overflow: hidden !important;
+        }
+
+        .project-card img {
+            border-top-left-radius: 29px;
+            border-top-right-radius: 29px;
+        }
+
+        /* Fix expertise boxes expanding rigidly */
+        .expertise-grid {
+            align-items: start !important; 
+        }
+        
+        .expertise-card {
+            height: fit-content !important;
+            padding-bottom: 2rem !important;
+        }
+
+        /* Tablet portrait & responsive optimization for hero bio and paragraphs to eliminate right-side void */
+        @media (max-width: 1024px) {
+            .hero-bio-action {
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            .hero-bio {
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            .hero-bio p {
+                max-width: 100% !important;
+                font-size: 1.15rem !important;
+                line-height: 1.65 !important;
+            }
+        }
+
+    </style>
+</head>
+<body class="bg-beige">
+
+    <!-- Header Navigation (Sticky & Translucent) -->
+    <header class="site-header">
+        <div class="container header-flex">
+            <a href="/fr/" class="logo">JENSEN ✨</a>
+            <div class="header-actions">
+                <!-- i18n:menu -->
+                <details class="lang-menu">
+                    <summary class="lang-menu-btn" aria-label="Langue: Français" title="Langue">FR</summary>
+                    <ul class="lang-menu-list">
+                        <li><a href="/" hreflang="en" lang="en" data-lang="en">English</a></li>
+                        <li><a href="/it/" hreflang="it" lang="it" data-lang="it">Italiano</a></li>
+                        <li><a href="/fr/" hreflang="fr" lang="fr" data-lang="fr" aria-current="page">Français</a></li>
+                        <li><a href="/es/" hreflang="es" lang="es" data-lang="es">Español</a></li>
+                    </ul>
+                </details>
+                <!-- /i18n:menu -->
+                <button type="button" class="theme-toggle" aria-label="Mode sombre" aria-pressed="false">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Beige) -->
+    <section class="hero container pt-large pb-large bg-beige">
+        <h1 class="hero-title">Product designer, cycliste urbain et explorateur de la nature.</h1>
+        
+        <div class="hero-image">
+            <img src="/assets/hero-portrait.jpg" alt="Photo de profil de Jensen" class="blob-img" onerror="this.src='https://via.placeholder.com/500x500/A2B9C6/333333?text=Profile+Pic'">
+        </div>
+        
+        <div class="hero-bio-action">
+            <div class="hero-bio">
+                <p>🌊 Bonjour, je suis Jensen (Sentao ZENG). Déterminé, curieux et les pieds sur terre, je m’épanouis en terrain inexploré.</p>
+                <p>🌍 Mon travail s’articule autour des technologies innovantes, de la collaboration transverse, du design thinking et, plus récemment, de la recherche sur le changement climatique.</p>
+                <p>📍 Shanghai / Milan. Je travaille à l’international.</p>
+            </div>
+            <a href="#contact" class="btn btn-black">ME CONTACTER</a>
+        </div>
+    </section>
+
+    <!-- Passion Section (Black) -->
+    <section class="passion-section pt-large pb-large bg-black">
+        <div class="container">
+            <h2 class="section-title">Créer d’excellents produits est ma passion.</h2>
+            <div class="passion-grid">
+                <p>Un excellent produit fonctionne efficacement, fait gagner du temps, séduit les clients par un design élégant et centré sur l’humain, et génère des profits durables qui ont un <span class="highlight">impact positif</span> sur la société.</p>
+                <p>Mon expérience couvre les startups tech, les expériences numériques, le design industriel, le SaaS, l’innovation dans la supply chain et le lifestyle, avec un accent sur la durabilité et l’avenir du travail.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects & Ventures Section (White) -->
+    <section class="projects-section pt-large pb-large bg-white">
+        <div class="container">
+            <h2 class="section-title">Projets et entreprises :</h2>
+            
+            <div class="carousel-wrapper">
+                <div class="carousel-container" id="project-carousel">
+                    <!-- Project 1: FontStar -->
+                    <div class="project-card">
+                        <img src="/assets/project-fontstar.jpg" alt="FontStar pour Safari">
+                        <div class="project-info">
+                            <h3>FontStar pour Safari</h3>
+                            <p>Une extension Safari conçue et développée pour les utilisateurs de Safari. Elle sélectionne des polices belles et lisibles pour naviguer sur le web. Fonctionne parfaitement sur iPhone, iPad et Mac.</p>
+                            <a href="https://fontstar.github.io" class="btn btn-small btn-black" target="_blank">EN SAVOIR PLUS</a>
+                        </div>
+                    </div>
+                    <!-- Project 2: Scantrust -->
+                    <div class="project-card">
+                        <img src="/assets/scantrust/project-scantrust.jpg" alt="Scantrust">
+                        <div class="project-info">
+                            <h3>Scantrust</h3>
+                            <p>La solution QR code tout-en-un qui permet aux marques internationales de se connecter à leurs clients, de respecter les lois sur l’étiquetage numérique et de détecter les contrefaçons.</p>
+                            <a href="/scantrust" class="btn btn-small btn-black">EN SAVOIR PLUS</a>
+                        </div>
+                    </div>
+                    <!-- Project 3: Sciences & Data -->
+                    <div class="project-card">
+                        <img src="/assets/project-sciences-data.jpg" alt="Sciences et données">
+                        <div class="project-info">
+                            <h3>Sciences et données</h3>
+                            <p>Mes projets de recherche portent sur l’économétrie du climat, la biodiversité, les technologies de télédétection et le reporting de durabilité.</p>
+                            <a href="/research" class="btn btn-small btn-black">EN SAVOIR PLUS</a>
+                        </div>
+                    </div>
+                    <!-- Project 4: FunkaCoins -->
+                    <div class="project-card">
+                        <img src="/assets/project-funkacoins.jpg" alt="FunkaCoins">
+                        <div class="project-info">
+                            <h3>FunkaCoins</h3>
+                            <p>Une application complète intégrée à WeChat, aux caisses en magasin et à la boutique en ligne pour renforcer la fidélité client et développer les canaux de vente.</p>
+                            <a href="/funkacoins" class="btn btn-small btn-black">EN SAVOIR PLUS</a>
+                        </div>
+                    </div>
+                    <!-- Project 5: VibesApp -->
+                    <div class="project-card">
+                        <img src="/assets/project-vibesapp.jpg" alt="VibesApp">
+                        <div class="project-info">
+                            <h3>VibesApp</h3>
+                            <p>VibesApp vous montre en temps réel l’ambiance des lieux près de chez vous avant de sortir. Propulsée par l’IA, c’est un moyen malin pour les commerces d’attirer des visiteurs spontanés.</p>
+                            <a href="/vibesapp" class="btn btn-small btn-black">EN SAVOIR PLUS</a>
+                        </div>
+                    </div>
+                    <!-- Project 6: Happy Hour App -->
+                    <div class="project-card">
+                        <img src="/assets/project-happyhour.jpg" alt="Appli Happy Hour">
+                        <div class="project-info">
+                            <h3>Appli Happy Hour</h3>
+                            <p>Cofondateur d’Olifun, une appli pour trouver les happy hours dans les mégapoles, que j’ai menée jusqu’à Orbit Startups, l’un des plus grands accélérateurs d’Asie.</p>
+                            <a href="/happyhour" class="btn btn-small btn-black">EN SAVOIR PLUS</a>
+                        </div>
+                    </div>
+                    <!-- Project 7: Metro Design -->
+                    <div class="project-card">
+                        <img src="/assets/project-metro.jpg" alt="Conception de métro">
+                        <div class="project-info">
+                            <h3>Conception de métro</h3>
+                            <p>Un mémoire d’urbanisme sur la conception de la ligne 9 du métro de Pékin. Étude de faisabilité, calculs d’ingénierie et dessin CAO.</p>
+                            <a href="/metro" class="btn btn-small btn-black">EN SAVOIR PLUS</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Controls -->
+                <div class="carousel-controls">
+                    <span class="carousel-hint" id="carousel-hint">Faites défiler pour parcourir</span>
+                    <div class="carousel-arrows">
+                        <button id="scroll-left" aria-label="Projet précédent">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="19" y1="12" x2="5" y2="12"></line>
+                                <polyline points="12 19 5 12 12 5"></polyline>
+                            </svg>
+                        </button>
+                        <button id="scroll-right" aria-label="Projet suivant">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Highlights Section (Beige) -->
+    <section class="expertise-section pt-large pb-large bg-beige">
+        <div class="container">
+            <h2 class="section-title">Domaines d’expertise :</h2>
+            <div class="expertise-grid">
+                
+                <!-- Column 1 -->
+                <div class="expertise-card">
+                    <div class="card-header">
+                        <h4>1.<br>Développement produit<br>et leadership design</h4>
+                    </div>
+                    <div class="accordion">
+                        <div class="accordion-item active">
+                            <div class="accordion-title">Cycle de vie produit <span class="icon"></span></div>
+                            <div class="accordion-content">Implication concrète dans tout le cycle de vie des produits numériques, du concept à l’itération, en s’appuyant sur les données.</div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-title">Traduire la complexité <span class="icon"></span></div>
+                            <div class="accordion-content">Capacité avérée à maîtriser des technologies complexes (blockchain, IA) et à les transformer en expériences numériques conviviales.</div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-title">Leadership démontré <span class="icon"></span></div>
+                            <div class="accordion-content">Constituer et diriger des équipes, piloter la stratégie produit et faire efficacement le lien entre les équipes techniques et les objectifs business et marketing.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="expertise-card">
+                    <div class="card-header">
+                        <h4>2.<br>Entrepreneuriat<br>et sens du marché</h4>
+                    </div>
+                    <div class="accordion">
+                        <div class="accordion-item active">
+                            <div class="accordion-title">Solide expérience des startups <span class="icon"></span></div>
+                            <div class="accordion-content">Expérience concrète de la cofondation et de la direction de plusieurs startups, avec une polyvalence qui dépasse le design et une grande capacité d’adaptation dans des environnements rapides.</div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-title">Solides bases techniques <span class="icon"></span></div>
+                            <div class="accordion-content">Maîtrise d’un large éventail de logiciels de design, de collaboration et d’analyse de données.</div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-title">Sens des dynamiques de marché <span class="icon"></span></div>
+                            <div class="accordion-content">Veille proactive sur les évolutions émergentes du marché. Connaissance des stratégies de passage à l’échelle. Familiarité avec l’univers du capital-risque.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="expertise-card">
+                    <div class="card-header">
+                        <h4>3.<br>Collaborations internationales<br>et impact global</h4>
+                    </div>
+                    <div class="accordion">
+                        <div class="accordion-item active">
+                            <div class="accordion-title">Produits à impact <span class="icon"></span></div>
+                            <div class="accordion-content">Mettre une expertise pluridisciplinaire au service de produits et de solutions à l’impact environnemental et social positif.</div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-title">Analyse quantitative <span class="icon"></span></div>
+                            <div class="accordion-content">Solides compétences analytiques dans le traitement de grands jeux de données liés aux sciences de l’environnement, au changement climatique et aux questions socio-économiques.</div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-title">Collaboration internationale <span class="icon"></span></div>
+                            <div class="accordion-content">Une expérience reconnue du travail dans des environnements internationaux complexes, avec des équipes diverses et multiculturelles réparties sur plusieurs fuseaux horaires, y compris en design UX multilingue.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section (Black) -->
+    <section class="tech-stack-section pt-large pb-large bg-black">
+        <div class="container">
+            <h2 class="section-title">Mes outils :</h2>
+            <div class="tech-grid">
+                <div class="tech-image">
+                    <img src="/assets/pro_pic_0571_lift.webp" alt="Portrait de Jensen" class="circle-img" onerror="this.src='https://via.placeholder.com/350x350/333333/FFFFFF?text=B%26W+Portrait'">
+                </div>
+                <div class="tech-details">
+                    <div class="tech-column">
+                        <h4>Creative+</h4>
+                        <ul>
+                            <li>Figma / Sketch / Adobe CC / Affinity</li>
+                            <li>Linearity Curve & Move / Origami Studio</li>
+                            <li>Keynote / Office 365 / Airtable / Notion</li>
+                            <li>UX Design Web / Mobile / Space VR</li>
+                            <li>Design graphique / impression</li>
+                            <li>Prototypage / spécifications</li>
+                            <li>Personas et parcours utilisateur / Miro</li>
+                            <li>Angular / Vue / React</li>
+                            <li>Outils LLM et d’IA agentique</li>
+                            <li class="italic">et plus encore</li>
+                        </ul>
+                    </div>
+                    <div class="tech-column">
+                        <h4>Analyse et recherche</h4>
+                        <ul>
+                            <li>Mixpanel / Amplitude / GA / Linear</li>
+                            <li>Stata / RStudio</li>
+                            <li>Looker Studio</li>
+                            <li>Lyssna / Dovetail / Pendo</li>
+                            <li>SciFinder</li>
+                            <li>QGIS</li>
+                            <li>Earth Explorer (ESA/USGS)</li>
+                            <li>Modèles climatiques</li>
+                            <li>Logiciels d’ACV</li>
+                            <li class="italic">et plus encore</li>
+                        </ul>
+                    </div>
+                    <div class="tech-column">
+                        <h4>Langues</h4>
+                        <ul>
+                            <li>🇬🇧 Anglais : niveau C2 *</li>
+                            <li>🇨🇳 Chinois mandarin : langue maternelle</li>
+                            <li>🇭🇰 Cantonais : langue maternelle</li>
+                            <li>🇮🇹 Italien : A2 **</li>
+                            <li>🇫🇷 Français : A2 **</li>
+                        </ul>
+                        <div class="footnotes">
+                            <p>* Plus de 12 ans dans des environnements de travail entièrement anglophones et de nombreuses années à l’étranger.</p>
+                            <p>** Je vis en Europe. Apprentissage en cours.</p>
+                        </div>
+                    </div>
+                    <div class="tech-column">
+                        <h4>Autres qualités</h4>
+                        <ul>
+                            <li>⚡ J’apprends vite</li>
+                            <li>🎯 Communication transverse</li>
+                            <li>💡 Intuitif mais guidé par les données</li>
+                            <li>💎 Product ownership</li>
+                            <li>⚙️ Grand souci du détail</li>
+                        </ul>
+                        <div class="footnotes mt-spacer">
+                            <p>Aussi : lauréat de l’Odyssey Hackathon, Pays-Bas 2019</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Climate Research Section (White) -->
+    <section class="research-section pt-large pb-large bg-white">
+        <div class="container">
+            <h2 class="section-title">Mes recherches sur le climat :</h2>
+            <div class="research-grid">
+                <!-- Presentation 1: Thesis Defense -->
+                <div class="research-card">
+                    <div class="research-img-wrapper">
+                        <img src="/assets/MSc.+Thesis+Presentation+Public+1.webp" alt="Le vin toscan face au changement climatique – Présentation de soutenance de mémoire" loading="lazy" onerror="this.src='https://via.placeholder.com/600x350/F4F4F4/333333?text=Thesis+Defense+Slide'">
+                    </div>
+                    <div class="research-action">
+                        <a href="https://canva.link/awteqqwrh8po8x9" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-black">VOIR LA PRÉSENTATION</a>
+                    </div>
+                </div>
+
+                <!-- Presentation 2: Thesis Trivia -->
+                <div class="research-card">
+                    <div class="research-img-wrapper">
+                        <img src="/assets/Thesis+Trivia+by+JSZ+2026+1.webp" alt="Quiz du mémoire « The Smart Buys »" loading="lazy" onerror="this.src='https://via.placeholder.com/600x350/F4F4F4/333333?text=Smart+Buys+Trivia+Slide'">
+                    </div>
+                    <div class="research-action">
+                        <a href="https://canva.link/xumlgbb5kk6hw78" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-black">JOUER AU QUIZ DU MÉMOIRE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-spacer">
+                <a href="/research" class="link-underline" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.95rem;">
+                    Voir ma page de recherche
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5-Min Intro Video Section (Beige) -->
+    <section class="video-section pt-large pb-large bg-beige">
+        <div class="container">
+            <h2 class="section-title">Vidéo de présentation (5 min) :</h2>
+            <div class="video-wrapper">
+                 <a href="https://www.youtube.com/watch?v=9h9QcYYQO08" target="_blank" rel="noopener noreferrer" class="video-link">
+                     <img src="/assets/intro_vid_cover.png" alt="Miniature de la vidéo de présentation (5 min)" />
+                     <div class="play-icon">
+                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                             <path d="M8 5v14l11-7z"/>
+                         </svg>
+                     </div>
+                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Currently Working On Section (Black) -->
+    <section class="working-on-section pt-large pb-large bg-black">
+        <div class="container text-center">
+            <h2 class="section-title text-center mb-spacer">En ce moment, je travaille sur :</h2>
+            
+            <!-- All 4 Screenshots in 1 Row -->
+            <div class="mockups-grid mb-spacer">
+                <img src="/assets/howfar_mockup_1.webp" alt="Maquette How Far Did I Go 1" onclick="openOverlay(this.getAttribute('src'))">
+                <img src="/assets/howfar_mockup_2.webp" alt="Maquette How Far Did I Go 2" onclick="openOverlay(this.getAttribute('src'))">
+                <img src="/assets/howfar_mockup_3.webp" alt="Maquette How Far Did I Go 3" onclick="openOverlay(this.getAttribute('src'))">
+                <img src="/assets/howfar_mockup_4.webp" alt="Maquette How Far Did I Go 4" onclick="openOverlay(this.getAttribute('src'))">
+            </div>
+
+            <p class="text-large mt-spacer">How Far Did I Go sera bientôt disponible pour tous ✨</p>
+            <p class="text-large">Restez à l’écoute !</p>
+            <p class="text-large mb-spacer">Découvrez la démo ci-dessous :</p>
+            
+            <div class="vertical-video-wrapper mx-auto">
+                <video id="howfar-demo-video" controls playsinline muted loop autoplay preload="metadata">
+                    <source src="/assets/howfar_demo.mp4" type="video/mp4">
+                    Votre navigateur ne prend pas en charge la lecture vidéo.
+                </video>
+            </div>
+        </div>
+    </section>
+
+        <!-- Contact Me Section (White) -->
+    <section id="contact" class="contact-section pt-large pb-large bg-white text-center">
+        <div class="container">
+            <h2 class="section-title text-center">Me contacter :</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="icon-wrapper">
+                        <img src="/assets/icon-l.png" alt="l" class="icon-outline">
+                    </div>
+                    <a href="https://www.linkedin.com/in/jensenearth/" target="_blank" class="btn btn-black">LINKEDIN</a>
+                </div>
+                <div class="contact-item">
+                    <div class="icon-wrapper">
+                        <img src="/assets/icon-email.png" alt="Icône e-mail" class="icon-outline">
+                    </div>
+                    <a href="mailto:slick.87.wackos@icloud.com" class="btn btn-black">E-MAIL</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer (Black) -->
+    <footer class="site-footer bg-black">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="/fr/">Accueil</a>
+                <a href="/research">Recherche</a>
+                <a href="https://www.linkedin.com/in/jensenearth/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-copy">
+                Fait avec ♥️ et l’IA sur Terre © JENSEN S.Z. <span class="footer-rainbow" role="button" tabindex="0" title="Faire pleuvoir des arcs-en-ciel ! 🌈" aria-label="Faire pleuvoir des arcs-en-ciel">🌈</span>✨Faire pleuvoir des arcs-en-ciel ! 🌈" aria-label="Faire pleuvoir des arcs-en-ciel">🌈</span>✨
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay Container for clicking Mockups -->
+    <div id="image-overlay" class="overlay">
+        <button type="button" class="close-btn" aria-label="Fermer la visionneuse" onclick="closeOverlay()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <button type="button" class="nav-btn prev-btn" aria-label="Image précédente" onclick="navigateOverlay(-1)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+        </button>
+        <img id="overlay-img" src="" alt="Maquette agrandie" onclick="event.stopPropagation()">
+        <button type="button" class="nav-btn next-btn" aria-label="Image suivante" onclick="navigateOverlay(1)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18l6-6-6-6"/>
+            </svg>
+        </button>
+    </div>
+
+    <script src="/layout.js"></script>
+    <script src="/script.js"></script>
+    <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "41fc70af798e4e2aa996b03e42a0018c"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
