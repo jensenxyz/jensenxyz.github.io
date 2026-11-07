@@ -32,6 +32,8 @@ Portfolio of Jensen (Sentao ZENG), served by GitHub Pages at https://jensenxyz.g
 - After **any** change to an English page or a translation file, run `python3 i18n/build.py`: it regenerates the translated pages, refreshes the hreflang tags and the header language menu in every page, and lists any English text that still lacks a translation. Add the missing translations (all three languages) and run it again before committing. Commit the English page, the JSON files and the generated pages together.
 - A page appears in a language as soon as that language's JSON has a section for it; until then its links point to the English page.
 - `i18n/` is excluded from the published site via `_config.yml`.
+- `404.html` is the only page not generated: GitHub Pages allows one 404 file, so a small script in it switches its text to Italian/French/Spanish based on the missing URL (`/fr/...`) or the visitor's last language choice. Edit its strings there.
+- `i18n/merge.py` is a helper for adding a batch of translations: it rejects keys that don't match the English page and translations whose markup or numbers differ from the original.
 - Translations were written by Claude; Jensen plans a native-speaker review later.
 
 ## Publishing hygiene

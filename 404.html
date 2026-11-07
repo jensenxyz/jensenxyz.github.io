@@ -95,6 +95,28 @@
         </div>
     </main>
 
+<script>
+/* One 404 page for every language: pick the language from the missing URL
+   (/it/..., /fr/..., /es/...) or the visitor's last menu choice. */
+(function () {
+    var T = {
+        it: { title: 'Ti sei perso? | JENSEN', hey: 'Ehi!', l1: 'Sembra che ti sia perso nel mio sito.', l2: 'Niente paura.', home: 'La home è qui.', alt: 'Jensen con casco da sci e maschera arancione su un pendio innevato' },
+        fr: { title: 'Perdu\u00a0? | JENSEN', hey: 'Hé\u00a0!', l1: 'On dirait que vous vous êtes perdu sur mon site.', l2: 'Pas de panique.', home: 'L’accueil, c’est par ici.', alt: 'Jensen avec un casque de ski et un masque orange sur une piste enneigée' },
+        es: { title: '¿Perdido? | JENSEN', hey: '¡Hola!', l1: 'Parece que te has perdido en mi web.', l2: 'No te preocupes.', home: 'El inicio está aquí.', alt: 'Jensen con casco de esquí y gafas naranjas en una pista nevada' }
+    };
+    var m = location.pathname.match(/^\/(it|fr|es)(\/|$)/);
+    var lang = m ? m[1] : null;
+    if (!lang) { try { lang = localStorage.getItem('lang'); } catch (e) { lang = null; } }
+    var t = T[lang];
+    if (!t) return;
+    document.documentElement.lang = lang;
+    document.title = t.title;
+    var p = document.querySelectorAll('.lost-copy p');
+    p[0].textContent = t.hey; p[1].textContent = t.l1; p[2].textContent = t.l2;
+    var a = document.querySelector('.lost-home a'); a.textContent = t.home; a.setAttribute('href', '/' + lang + '/');
+    document.querySelector('.lost-photo').setAttribute('alt', t.alt);
+})();
+</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "41fc70af798e4e2aa996b03e42a0018c"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
