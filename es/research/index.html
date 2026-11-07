@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/theme.js"></script>
+    <!-- i18n:head -->
+    <link rel="alternate" hreflang="en" href="https://jensenxyz.github.io/research/">
+    <link rel="alternate" hreflang="it" href="https://jensenxyz.github.io/it/research/">
+    <link rel="alternate" hreflang="fr" href="https://jensenxyz.github.io/fr/research/">
+    <link rel="alternate" hreflang="es" href="https://jensenxyz.github.io/es/research/">
+    <link rel="alternate" hreflang="x-default" href="https://jensenxyz.github.io/research/">
+    <!-- /i18n:head -->
+    <title>Estudios científicos e investigación climática | JENSEN</title>
+    <meta name="description" content="Portfolio de investigación empírica, econometría del clima, modelización espacial (MaxEnt), teledetección satelital y estudios ambientales realizados por Jensen (Sentao ZENG).">
+    <meta property="og:title" content="Estudios científicos e investigación climática | JENSEN">
+    <meta property="og:description" content="Portfolio de investigación empírica, econometría del clima, modelización espacial (MaxEnt), teledetección satelital y estudios ambientales realizados por Jensen (Sentao ZENG).">
+    <meta property="og:image" content="/assets/research/science-japanese-beetles.png">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/site.webmanifest">
+    <meta name="apple-mobile-web-app-title" content="JENSEN">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="bg-beige">
+
+    <!-- Header Navigation (Sticky & Translucent) -->
+    <header class="site-header">
+        <div class="container header-flex">
+            <a href="/es/" class="logo">JENSEN ✨</a>
+            <div class="header-actions">
+                <a href="/es/" class="link-underline back-to-home">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Volver al inicio
+                </a>
+                <!-- i18n:menu -->
+                <details class="lang-menu">
+                    <summary class="lang-menu-btn" aria-label="Idioma: Español" title="Idioma">ES</summary>
+                    <ul class="lang-menu-list">
+                        <li><a href="/research/" hreflang="en" lang="en" data-lang="en">English</a></li>
+                        <li><a href="/it/research/" hreflang="it" lang="it" data-lang="it">Italiano</a></li>
+                        <li><a href="/fr/research/" hreflang="fr" lang="fr" data-lang="fr">Français</a></li>
+                        <li><a href="/es/research/" hreflang="es" lang="es" data-lang="es" aria-current="page">Español</a></li>
+                    </ul>
+                </details>
+                <!-- /i18n:menu -->
+                <button type="button" class="theme-toggle" aria-label="Modo oscuro" aria-pressed="false">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container pt-medium pb-large">
+        <div class="breadcrumb">
+            <a href="/es/">Inicio</a> > Estudios científicos e investigación climática
+        </div>
+        <!-- Hero Header -->
+        <div class="research-hero-banner">
+            <h1 class="research-hero-title">Estudios científicos y presentaciones académicas</h1>
+            <p class="research-hero-desc">
+                Explora una colección de investigación empírica, modelización espacial y econometría del clima: manuscritos académicos completos, revisiones bibliográficas y presentaciones interactivas sobre ecología, hidrología, salud pública y economía agraria.
+            </p>
+        </div>
+
+        <!-- Interactive Topic Filter & Reading Controls -->
+        <div class="research-toolbar">
+            <div class="filter-group">
+                <span class="filter-label">Filtro:</span>
+                <div class="filter-pills" id="research-filters">
+                    <button type="button" class="filter-pill active" data-filter="all">Todos (7)</button>
+                    <button type="button" class="filter-pill" data-filter="ecology">Ecología y conservación (2)</button>
+                    <button type="button" class="filter-pill" data-filter="remote-sensing">Teledetección (1)</button>
+                    <button type="button" class="filter-pill" data-filter="econometrics">Econometría (2)</button>
+                    <button type="button" class="filter-pill" data-filter="biotech">Biotecnología (1)</button>
+                    <button type="button" class="filter-pill" data-filter="climate">Proyecciones climáticas (1)</button>
+                </div>
+            </div>
+            <div class="toolbar-actions">
+                <button type="button" class="btn-toggle-all" id="btn-toggle-details" onclick="toggleAllHighlights()" aria-label="Mostrar u ocultar todos los aspectos destacados">
+                    <span class="toggle-icon-box">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="7 13 12 18 17 13"></polyline>
+                            <polyline points="7 6 12 11 17 6"></polyline>
+                        </svg>
+                    </span>
+                    <span id="toggle-all-text">Desplegar todos los aspectos destacados</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 7 Studies Grid -->
+        <div class="studies-grid">
+
+            <!-- Card 1: Ecological Modeling & Invasive Species Risk -->
+            <article class="study-card" id="study-japanese-beetle" data-category="ecology">
+                <div class="study-media-wrapper">
+                    <img src="/assets/research/science-japanese-beetles.png" alt="Modelización de la idoneidad global del hábitat de una especie invasora: el escarabajo japonés (Popillia japonica)" class="study-img" loading="lazy">
+                    <div class="study-zoom-cue">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                        <span>Pantalla completa</span>
+                    </div>
+                </div>
+                <div class="study-content">
+                    <span class="study-category">1. Modelización ecológica y riesgo de especies invasoras</span>
+                    <h2 class="study-title">Modelización de la idoneidad global del hábitat de una especie invasora: el escarabajo japonés (<em>Popillia japonica</em>)</h2>
+                    <div class="study-tags">
+                        <span class="study-tag">Modelización de la distribución de especies con MaxEnt</span>
+                        <span class="study-tag">Ecología de especies invasoras</span>
+                        <span class="study-tag">Proyecciones climáticas (RCP 4.5)</span>
+                        <span class="study-tag">Procesamiento de datos de iNaturalist</span>
+                    </div>
+                    <div class="study-accordions-group">
+                        <details class="study-accordion">
+                            <summary class="study-accordion-summary">
+                                <span class="summary-left">
+                                    <span class="summary-title">Resumen del estudio</span>
+                                </span>
+                                <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </summary>
+                            <div class="study-accordion-body">
+                                <p class="study-desc">
+                                    Evalué la idoneidad del hábitat global, actual y futura, del escarabajo japonés invasor (<em>Popillia japonica</em>) mediante modelización de la distribución de especies por máxima entropía (MaxEnt). Integrando datos de presencia colaborativos de iNaturalist con variables bioclimáticas clave, el estudio comparó la transferibilidad del modelo del área nativa a la invadida frente a una estrategia de validación con partición aleatoria global. En las condiciones climáticas actuales, se identificó una alta idoneidad en el este de Estados Unidos y el norte de Italia (región de Milán/Lombardía). Bajo la trayectoria de gases de efecto invernadero RCP 4.5, las proyecciones indican una gran expansión del área de distribución hacia el centro de Estados Unidos y Canadá, junto con un cambio drástico en Europa, donde la especie se desplazaría desde Italia hacia el norte de Europa.
+                                </p>
+                            </div>
+                        </details>
+                        <details class="study-accordion">
+                            <summary class="study-accordion-summary">
+                                <span class="summary-left">
+                                    <span class="summary-title">Competencias y aspectos destacados</span>
+                                </span>
+                                <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </summary>
+                            <div class="study-accordion-body">
+                                <ul class="study-highlights">
+                                    <li><strong>Modelización con MaxEnt y validación de la estrategia:</strong> implementé la modelización de la distribución de especies por máxima entropía en MaxEnt, comparando un modelo entrenado con el área nativa (AUC = 0,468) con un modelo global con partición entrenamiento/prueba 80/20 (AUC = 0,71) para demostrar la necesidad de agrupar los datos de presencia en las predicciones sobre especies invasoras.</li>
+                                    <li><strong>Cartografía del riesgo ecofisiológico:</strong> analicé las curvas de respuesta de las variables bioclimáticas frente a los umbrales fisiológicos conocidos de <em>P. japonica</em>, como los límites térmicos de actividad (de 21 °C a 35 °C), las restricciones de humedad relativa (60 %) y las necesidades de humedad para el desarrollo larvario.</li>
+                                    <li><strong>Previsión por escenarios climáticos:</strong> proyecté los cambios en la distribución espacial bajo el escenario de emisiones RCP 4.5 y anticipé que el cambio en la estacionalidad de las temperaturas empujará a la especie fuera de su actual foco italiano y favorecerá su expansión hacia latitudes más altas en Europa y Norteamérica.</li>
+                                    <li><strong>Integración de datos de biodiversidad:</strong> extraje, filtré y procesé registros globales de presencia de iNaturalist para crear los conjuntos de entrenamiento y prueba en las áreas nativa e invadida.</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="study-card-action">
+                        <a href="/research/Invasive_Species_Japanese_Beetles-compressed.pdf" target="_blank" rel="noopener noreferrer" class="btn-pdf">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            Ver PDF
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2: Biodiversity & Species Conservation -->
+            <article class="study-card" id="study-poison-frog" data-category="ecology">
+                <div class="study-media-wrapper">
+                    <img src="/assets/research/science-dyeing-poison-frog.png" alt="Reclasificación del hábitat y evaluación UICN de Dendrobates tinctorius" class="study-img" loading="lazy">
+                    <div class="study-zoom-cue">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                        <span>Pantalla completa</span>
+                    </div>
+                </div>
+                <div class="study-content">
+                    <span class="study-category">2. Biodiversidad y conservación de especies</span>
+                    <h2 class="study-title">Pérdida de hábitat y evaluación para la Lista Roja de la UICN: <em>Dendrobates tinctorius</em></h2>
+                    <div class="study-tags">
+                        <span class="study-tag">Reclasificación espacial de usos del suelo</span>
+                        <span class="study-tag">RStudio</span>
+                        <span class="study-tag">Área de ocupación (AOO)</span>
+                        <span class="study-tag">Evaluación para la Lista Roja de la UICN</span>
+                    </div>
+                    <div class="study-accordions-group">
+                        <details class="study-accordion">
+                            <summary class="study-accordion-summary">
+                                <span class="summary-left">
+                                    <span class="summary-title">Resumen del estudio</span>
+                                </span>
+                                <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </summary>
+                            <div class="study-accordion-body">
+                                <p class="study-desc">
+                                    Evalué el impacto histórico y futuro de los usos del suelo sobre el área de ocupación (AOO) de la rana venenosa tintórea (<em>Dendrobates tinctorius</em>) en la Guayana Francesa. Procesando en RStudio datos espaciales de usos del suelo y matrices de reclasificación personalizadas (<code>&lt;reclass_dentin.txt&gt;</code>), el estudio estimó la superficie de hábitat adecuado en escenarios de uso del suelo pasado (2005), actual (2012) y futuro. Aunque la pérdida de hábitat entre 2005 y 2012 fue mínima, inferior al <strong>0,2 %</strong>, las proyecciones indican una <strong>pérdida del 39,5 % del AOO</strong>, lo que justifica proponer su reclasificación en la Lista Roja de la UICN como <strong>Casi amenazada (NT)</strong> según los criterios de reducción futura de la población.
+                                </p>
+                            </div>
+                        </details>
+                        <details class="study-accordion">
+                            <summary class="study-accordion-summary">
+                                <span class="summary-left">
+                                    <span class="summary-title">Competencias y aspectos destacados</span>
+                                </span>
+                                <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </summary>
+                            <div class="study-accordion-body">
+                                <ul class="study-highlights">
+                                    <li><strong>Reclasificación de datos espaciales en RStudio:</strong> programé archivos de reclasificación personalizados (<code>&lt;reclass_dentin.txt&gt;</code>) en RStudio para separar las categorías de hábitat adecuado (p. ej., bosques, humedales interiores, inselbergs) de los usos del suelo no adecuados (p. ej., zonas urbanas, minería, tierras de cultivo).</li>
+                                    <li><strong>Estimación del AOO y del hábitat adecuado:</strong> cuantifiqué el área de ocupación (AOO) de la especie calculando los cambios de superficie en mapas ráster de usos del suelo de 2005 (pasado), 2012 (actual) y las proyecciones futuras.</li>
+                                    <li><strong>Evaluación cuantitativa para la Lista Roja de la UICN:</strong> evalué el riesgo de extinción de la especie según los criterios de la Lista Roja de la UICN y demostré que una reducción futura prevista del 39,5 % del AOO acerca a la especie al umbral de «Vulnerable» y respalda la recomendación de <strong>Casi amenazada (NT)</strong>.</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="study-card-action">
+                        <a href="/research/Habitat%20Loss%20-%20A%20Dyeing%20Poison%20Frog%20Study.pdf" target="_blank" rel="noopener noreferrer" class="btn-pdf">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            Ver PDF
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3: Satellite Remote Sensing & Hydrology -->
+            <article class="study-card" id="study-lake-surface" data-category="remote-sensing">
+                <div class="study-media-wrapper">
+                    <img src="/assets/research/science-lake-surface.png" alt="Análisis de varias décadas de la superficie del lago Qinghai con Landsat" class="study-img" loading="lazy">
+                    <div class="study-zoom-cue">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                        <span>Pantalla completa</span>
+                    </div>
+                </div>
+                <div class="study-content">
+                    <span class="study-category">3. Teledetección satelital e hidrología</span>
+                    <h2 class="study-title">Dinámica de varias décadas de la superficie del lago Qinghai</h2>
+                    <div class="study-tags">
+                        <span class="study-tag">Teledetección</span>
+                        <span class="study-tag">QGIS</span>
+                        <span class="study-tag">Imágenes satelitales Landsat</span>
+                        <span class="study-tag">Análisis hidrológico NDWI</span>
+                    </div>
+                    <div class="study-accordions-group">
+                        <details class="study-accordion">
+                            <summary class="study-accordion-summary">
+                                <span class="summary-left">
+                                    <span class="summary-title">Resumen del estudio</span>
+                                </span>
+                                <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </summary>
+                            <div class="study-accordion-body">
+                                <p class="study-desc">
+                                    Cuantifiqué una <strong>expansión del 10,49 %</strong> (de 4.099,40 km² a 4.529,52 km²) del lago Qinghai, el mayor lago salino endorreico de China, durante un periodo de 20 años (2002–2022) con datos satelitales de Landsat 7 ETM+ y Landsat 9. El análisis combinó la unión de imágenes multibanda, la mitigación de nubes y hielo y la umbralización del índice NDWI (Normalized Difference Water Index) para evaluar los cambios hidrológicos impulsados por el clima.
+                                </p>
+                            </div>
+                        </details>
+                        <details class="study-accordion">
+                            <summary class="study-accordion-summary">
+                                <span class="summary-left">
+                                    <span class="summary-title">Competencias y aspectos destacados</span>
+                                </span>
+                                <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </summary>
+                            <div class="study-accordion-body">
+                                <ul class="study-highlights">
+                                    <li><strong>Procesamiento satelital multisensor:</strong> uní escenas Landsat contiguas por path/row (LE07_L1TP) para cubrir huecos de cobertura y seleccioné las fechas de adquisición para eliminar las interferencias estacionales de hielo y nubes.</li>
+                                    <li><strong>Extracción de superficies basada en índices:</strong> apliqué umbrales NDWI específicos para cada sensor (0,1 para Landsat 7; 0,0 para Landsat 8/9) para separar las masas de agua del terreno circundante.</li>
+                                    <li><strong>Poligonización SIG y estadística espacial:</strong> ejecuté la poligonización vectorial en QGIS para calcular la evolución de la superficie y relacioné la expansión del lago con el aumento de las precipitaciones y la reducción de la amplitud térmica diaria.</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="study-card-action">
+                        <a href="/research/Lake%20Surface%20Area%20Change%20Using%20Satellite%20Imagery.pdf" target="_blank" rel="noopener noreferrer" class="btn-pdf">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            Ver PDF
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4: Applied Econometrics & Public Health -->
+            <article class="study-card" id="study-pm25-mortality" data-category="econometrics">
+                <div class="study-media-wrapper">
+                    <img src="/assets/research/science-pm25-child-mortality.png" alt="Curvas de regresión econométrica de panel sobre PM2,5 y mortalidad infantil" class="study-img" loading="lazy">
+                    <div class="study-zoom-cue">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                        <span>Pantalla completa</span>
+                    </div>
+                </div>
+                <div class="study-content">
+                    <span class="study-category">4. Econometría aplicada y salud pública</span>
+                    <h2 class="study-title">Modelo econométrico global sobre contaminación atmosférica por PM2,5 y mortalidad infantil</h2>
+                    <div class="study-tags">
+                        <span class="study-tag">STATA</span>
+                        <span class="study-tag">Análisis de datos de panel</span>
+                        <span class="study-tag">Efectos fijos (reghdfe)</span>
+                        <span class="study-tag">Economía ambiental</span>
+                    </div>
+                    <div class="study-accordions-group">
+                        <details class="study-accordion">
+                            <summary class="study-accordion-summary">
+                                <span class="summary-left">
+                                    <span class="summary-title">Resumen del estudio</span>
+                                </span>
+                                <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </summary>
+                            <div class="study-accordion-body">
+                                <p class="study-desc">
+                                    Investigué la relación empírica entre la exposición a PM2,5 ambiental ponderada por población y la mortalidad de menores de cinco años, usando un panel global que abarca 216 países y territorios de 1960 a 2022. Implementé en STATA modelos de efectos fijos de alta dimensión y especificaciones log-log para controlar el desarrollo económico a nivel macro (PIB per cápita) y la heterogeneidad no observada específica de cada país.
+                                </p>
+                            </div>
+                        </details>
+                        <details class="study-accordion">
+                            <summary class="study-accordion-summary">
+                                <span class="summary-left">
+                                    <span class="summary-title">Competencias y aspectos destacados</span>
+                                </span>
+                                <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </summary>
+                            <div class="study-accordion-body">
+                                <ul class="study-highlights">
+                                    <li><strong>Econometría de panel de alta dimensión:</strong> ejecuté regresiones <code>reghdfe</code> lineales y cuadráticas de efectos fijos, controlando por efectos fijos de país y de año.</li>
+                                    <li><strong>No linealidad y prueba de la EKC:</strong> modelé la dinámica de la curva de Kuznets ambiental (EKC) para demostrar que omitir el PIB per cápita sobrestima en más de un 20 % los efectos del PM2,5 sobre la salud.</li>
+                                    <li><strong>Transformación logarítmica de los datos:</strong> corregí la fuerte asimetría a la derecha de los datos globales con transformaciones en logaritmo natural (ln), lo que elevó el poder explicativo within-R² del modelo de 0,89–0,90 a 0,98.</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="study-card-action">
+                        <a href="/research/PM2.5%20and%20Child%20Mortality%20-%20An%20Econometric%20Study.pdf" target="_blank" rel="noopener noreferrer" class="btn-pdf">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            Ver PDF
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 5: Environmental Remediation & Biotechnology -->
+            <article class="study-card" id="study-phytoremediation" data-category="biotech">
+                <div class="study-media-wrapper">
+                    <img src="/assets/research/science-phytoremediation.png" alt="Diagrama de los mecanismos de fitorremediación y de las interacciones con rizobacterias" class="study-img" loading="lazy">
+                    <div class="study-zoom-cue">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                        <span>Pantalla completa</span>
+                    </div>
+                </div>
+                <div class="study-content">
+                    <span class="study-category">5. Remediación ambiental y biotecnología</span>
+                    <h2 class="study-title">Fitorremediación asistida por PGPR de suelos contaminados con cadmio</h2>
+                    <div class="study-tags">
+                        <span class="study-tag">Biotecnología</span>
+                        <span class="study-tag">Química de la rizosfera</span>
+                        <span class="study-tag">SciFinder-n / Minerva</span>
+                        <span class="study-tag">Revisión comparativa</span>
+                    </div>
+                    <div class="study-accordions-group">
+                        <details class="study-accordion">
+                            <summary class="study-accordion-summary">
+                                <span class="summary-left">
+                                    <span class="summary-title">Resumen del estudio</span>
+                                </span>
+                                <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </summary>
+                            <div class="study-accordion-body">
+                                <p class="study-desc">
+                                    Sinteticé la investigación experimental más puntera sobre fitorremediación bioasistida, evaluando cómo las cepas de rizobacterias promotoras del crecimiento vegetal (PGPR), como <em>Bacillus</em> o <em>Burkholderia</em>, aumentan la absorción de metales pesados (Cd) en hiperacumuladoras como el sorgo y el diente de león. La revisión comparativa destaca los cambios en las comunidades microbianas, la activación enzimática y las sinergias con biosurfactantes (saponina de té).
+                                </p>
+                            </div>
+                        </details>
+                        <details class="study-accordion">
+                            <summary class="study-accordion-summary">
+                                <span class="summary-left">
+                                    <span class="summary-title">Competencias y aspectos destacados</span>
+                                </span>
+                                <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </summary>
+                            <div class="study-accordion-body">
+                                <ul class="study-highlights">
+                                    <li><strong>Revisión sistemática de la literatura:</strong> realicé búsquedas bibliográficas específicas en las bases de datos SciFinder-n y Minerva con filtros booleanos, depurando 324 estudios de alto impacto hasta llegar a los artículos experimentales clave.</li>
+                                    <li><strong>Evaluación de métodos analíticos:</strong> analicé las técnicas espectroscópicas (ICP-OES, GFAAS) y moleculares (amplificación por PCR, secuenciación de ADN con Illumina MiSeq) empleadas para medir la translocación del Cd y la diversidad microbiana.</li>
+                                    <li><strong>Síntesis de los mecanismos de la rizosfera:</strong> evalué factores de bioconcentración (BCF), factores de transporte (TF), el aumento de la longitud radicular (de +33 % a +53 %) y la actividad de enzimas antioxidantes (CAT, POD) en condiciones de cocontaminación (Cd + microplásticos PE).</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="study-card-action">
+                        <a href="/research/Phytoremediation%20Case%20Study.pdf" target="_blank" rel="noopener noreferrer" class="btn-pdf">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            Ver PDF
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 6: Climate Modeling & Scenario Analysis -->
+            <article class="study-card" id="study-air-temp" data-category="climate">
+                <div class="study-media-wrapper">
+                    <img src="/assets/research/science-near-surface-air-temp.png" alt="Gráfico de proyecciones regionales de anomalías de temperatura CMIP6" class="study-img" loading="lazy">
+                    <div class="study-zoom-cue">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                        <span>Pantalla completa</span>
+                    </div>
+                </div>
+                <div class="study-content">
+                    <span class="study-category">6. Modelización climática y análisis de escenarios</span>
+                    <h2 class="study-title">Proyecciones regionales de la temperatura del aire cerca de la superficie (datos CMIP6)</h2>
+                    <div class="study-tags">
+                        <span class="study-tag">CMIP6</span>
+                        <span class="study-tag">Proyecciones climáticas</span>
+                        <span class="study-tag">Copernicus CDS</span>
+                        <span class="study-tag">Series temporales en RStudio</span>
+                    </div>
+                    <div class="study-accordions-group">
+                        <details class="study-accordion">
+                            <summary class="study-accordion-summary">
+                                <span class="summary-left">
+                                    <span class="summary-title">Resumen del estudio</span>
+                                </span>
+                                <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </summary>
+                            <div class="study-accordion-body">
+                                <p class="study-desc">
+                                    Modelé las anomalías futuras de la temperatura del aire cerca de la superficie en un dominio de 30°×30° del este de Asia (20°N–50°N, 90°E–120°E) entre 2015 y 2099. Extraje los resultados de modelos climáticos globales (EC-Earth3 y EC-Earth3CC) del Copernicus Climate Data Store (CDS) para evaluar las trayectorias de calentamiento en las Shared Socioeconomic Pathways de bajas emisiones (SSP1-1.9) y altas emisiones (SSP5-8.5).
+                                </p>
+                            </div>
+                        </details>
+                        <details class="study-accordion">
+                            <summary class="study-accordion-summary">
+                                <span class="summary-left">
+                                    <span class="summary-title">Competencias y aspectos destacados</span>
+                                </span>
+                                <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </summary>
+                            <div class="study-accordion-body">
+                                <ul class="study-highlights">
+                                    <li><strong>Extracción de datos climáticos NetCDF:</strong> procesé datos de proyecciones climáticas de alta resolución de Copernicus CDS para los conjuntos multimodelo de CMIP6.</li>
+                                    <li><strong>Regresión y medias móviles:</strong> ajusté líneas de tendencia lineales y calculé medias móviles de 5 y 21 años en RStudio para aislar las señales climáticas a largo plazo de la variabilidad interanual.</li>
+                                    <li><strong>Análisis comparativo de escenarios:</strong> mostré una tendencia de calentamiento moderada con SSP1-1.9 (de ~9 °C a ~10,6 °C) frente a una trayectoria de calentamiento acelerada con anomalías superiores a +15 °C en 2100 con SSP5-8.5.</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="study-card-action">
+                        <a href="/research/Regional%20Near-Surface%20Air%20Temperature%20Regression%20Analysis.pdf" target="_blank" rel="noopener noreferrer" class="btn-pdf">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            Ver PDF
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 7: Master's Thesis: Climate Econometrics & Agribusiness -->
+            <article class="study-card" id="study-wine-thesis" data-category="econometrics">
+                <div class="study-media-wrapper">
+                    <img src="/assets/research/science-wine-climate-thesis.png" alt="Mapa de econometría climática y precios hedónicos de la viticultura toscana" class="study-img" loading="lazy">
+                    <div class="study-zoom-cue">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                        <span>Pantalla completa</span>
+                    </div>
+                </div>
+                <div class="study-content">
+                    <span class="study-category">7. Tesis de máster: econometría del clima y agronegocios</span>
+                    <h2 class="study-title">El vino toscano ante el cambio climático: impacto de los fenómenos meteorológicos extremos en la calidad y el precio</h2>
+                    <div class="study-tags">
+                        <span class="study-tag">Econometría del clima</span>
+                        <span class="study-tag">Precios hedónicos</span>
+                        <span class="study-tag">Reducción de escala geoespacial</span>
+                        <span class="study-tag">Tesis de máster</span>
+                    </div>
+                    <div class="study-accordions-group">
+                        <details class="study-accordion">
+                            <summary class="study-accordion-summary">
+                                <span class="summary-left">
+                                    <span class="summary-title">Resumen del estudio</span>
+                                </span>
+                                <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </summary>
+                            <div class="study-accordion-body">
+                                <p class="study-desc">
+                                    Investigué los efectos económicos y sensoriales de los cambios en las condiciones climáticas de referencia y de los choques térmicos agudos en la viticultura toscana. Construí un panel de 15 añadas (2004–2018; 1.079 observaciones) que combina las puntuaciones de los expertos de Wine Spectator, los precios de salida ajustados por inflación, datos climáticos ECMWF AgERA5 con reducción de escala y el marco de Indicaciones Geográficas de la UE (DOP/IGP).
+                                </p>
+                            </div>
+                        </details>
+                        <details class="study-accordion">
+                            <summary class="study-accordion-summary">
+                                <span class="summary-left">
+                                    <span class="summary-title">Competencias y aspectos destacados</span>
+                                </span>
+                                <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </summary>
+                            <div class="study-accordion-body">
+                                <ul class="study-highlights">
+                                    <li><strong>Reducción de escala espacial ponderada por viñedos:</strong> reduje la escala de las variables meteorológicas diarias en cuadrícula de AgERA5 a los límites municipales (comuni), ponderadas específicamente por los ráster de viñedos de CORINE Land Cover (CLC 2018).</li>
+                                    <li><strong>Índices bioclimáticos y lógica de grados-día:</strong> calculé el índice heliotérmico de Huglin (HI), la temperatura del periodo vegetativo (GST), la precipitación del periodo vegetativo (GSP) e indicadores de olas de calor del percentil 99.</li>
+                                    <li><strong>Precios hedónicos y heterogeneidad espacial:</strong> implementé modelos de panel multidimensionales de efectos fijos y descubrí un óptimo térmico en forma de U invertida (~20 °C de GST), una penalización de la puntuación por las olas de calor de agosto, efectos moderadores marítimos en los terroirs costeros y un efecto amortiguador de la calidad en las denominaciones DOP.</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="study-card-action">
+                        <a href="/research/msc_thesis_by_jensen_public.pdf" target="_blank" rel="noopener noreferrer" class="btn-pdf">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            Ver PDF
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Canva Presentations Section -->
+        <section class="canva-presentations-section" id="canva-presentations">
+            <div class="canva-header-block">
+                <span class="study-category" style="font-size: 0.85rem; letter-spacing: 1.5px;">Presentaciones interactivas</span>
+                <h2 class="section-title" style="margin-top: 8px; margin-bottom: 14px;">Presentaciones en Canva:</h2>
+                <p style="color: var(--text-grey); max-width: 720px; font-size: 1.05rem; line-height: 1.6;">
+                    Explora presentaciones interactivas, materiales de defensa de tesis y revisiones bibliográficas preparados para defensas académicas y presentaciones de investigación.
+                </p>
+            </div>
+            
+            <div class="canva-presentations-grid">
+                <!-- Presentation 1: Thesis Defense -->
+                <div class="canva-presentation-card">
+                    <div class="canva-card-img-wrapper">
+                        <img src="/assets/MSc.+Thesis+Presentation+Public+1.webp" alt="El vino toscano ante el cambio climático – Presentación de la defensa de tesis" loading="lazy" onerror="this.src='https://via.placeholder.com/600x350/F4F4F4/333333?text=Thesis+Defense+Slide'">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">Defensa de tesis</span>
+                        <h3 class="card-title">El vino toscano ante el cambio climático</h3>
+                    </div>
+                    <div class="research-action">
+                        <a href="https://canva.link/awteqqwrh8po8x9" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-black">VER PRESENTACIÓN</a>
+                    </div>
+                </div>
+
+                <!-- Presentation 2: Thesis Trivia -->
+                <div class="canva-presentation-card">
+                    <div class="canva-card-img-wrapper">
+                        <img src="/assets/Thesis+Trivia+by+JSZ+2026+1.webp" alt="Trivia de la tesis «The Smart Buys»" loading="lazy" onerror="this.src='https://via.placeholder.com/600x350/F4F4F4/333333?text=Smart+Buys+Trivia+Slide'">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">Cuestionario interactivo</span>
+                        <h3 class="card-title">Trivia de la tesis «The Smart Buys»</h3>
+                    </div>
+                    <div class="research-action">
+                        <a href="https://canva.link/xumlgbb5kk6hw78" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-black">JUGAR A LA TRIVIA</a>
+                    </div>
+                </div>
+
+                <!-- Presentation 3: Chemistry Paper Review -->
+                <div class="canva-presentation-card">
+                    <div class="canva-card-img-wrapper">
+                        <img src="/assets/chemistry-paper-review.png" alt="Revisión de artículos de química sobre fitorremediación con PGPR" loading="lazy" onerror="this.src='https://via.placeholder.com/600x350/F4F4F4/333333?text=Chemistry+Paper+Review'">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">Revisión bibliográfica</span>
+                        <h3 class="card-title">Revisión de artículos sobre fitorremediación con PGPR</h3>
+                    </div>
+                    <div class="research-action">
+                        <a href="https://canva.link/gi52fppxo6a4kkx" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-black">VER PRESENTACIÓN</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Full-Screen Interactive Research Image Viewer -->
+    <div id="image-overlay" class="overlay" role="dialog" aria-modal="true" aria-label="Visor de figuras de investigación">
+        <!-- Floating Controls Toolbar -->
+        <div class="overlay-toolbar" onclick="event.stopPropagation()">
+            <button type="button" class="overlay-btn" id="btn-zoom-out" onclick="zoomImage(-0.25)" title="Alejar (-)" aria-label="Alejar">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+            </button>
+            <span class="overlay-zoom-level" id="overlay-zoom-val">100%</span>
+            <button type="button" class="overlay-btn" id="btn-zoom-in" onclick="zoomImage(0.25)" title="Acercar (+)" aria-label="Acercar">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+            </button>
+            <div class="overlay-divider"></div>
+            <button type="button" class="overlay-btn overlay-btn-close" onclick="closeOverlay()" title="Cerrar (Esc)" aria-label="Cerrar el visor">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Stage Area -->
+        <div class="overlay-stage" id="overlay-stage">
+            <img id="overlay-img" src="" alt="Visualización de investigación ampliada" draggable="false">
+        </div>
+
+        <!-- Mobile Orientation & Pan Hint -->
+        <div class="overlay-hint" id="overlay-hint">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            <span id="overlay-hint-text">Girada 90° para ver los detalles en pantalla completa • Pellizca o arrastra para desplazarte</span>
+        </div>
+    </div>
+
+    <script>
+        // Scroll Lock Utility (iOS Safari Safe)
+        let savedScrollY = 0;
+        let isScrollLocked = false;
+
+        function lockBodyScroll() {
+            if (isScrollLocked) return;
+            savedScrollY = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+            document.documentElement.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${savedScrollY}px`;
+            document.body.style.left = '0';
+            document.body.style.right = '0';
+            document.body.style.width = '100%';
+            isScrollLocked = true;
+        }
+
+        function unlockBodyScroll() {
+            if (!isScrollLocked) return;
+            document.documentElement.style.overflow = '';
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.left = '';
+            document.body.style.right = '';
+            document.body.style.width = '';
+            window.scrollTo(0, savedScrollY);
+            isScrollLocked = false;
+        }
+
+        // Full-screen Image Viewer State
+        let currentZoom = 1;
+        let currentRotation = 0;
+        let panX = 0;
+        let panY = 0;
+        let isDragging = false;
+        let startX = 0;
+        let startY = 0;
+        let initialDistance = 0;
+        let initialZoom = 1;
+        let hintTimeout = null;
+
+        function isMobilePortrait() {
+            return (window.innerWidth <= 768 && window.innerHeight > window.innerWidth);
+        }
+
+        function applyTransform(instant) {
+            const img = document.getElementById('overlay-img');
+            const zoomVal = document.getElementById('overlay-zoom-val');
+            if (!img) return;
+
+            if (instant) {
+                img.classList.add('no-transition');
+            } else {
+                img.classList.remove('no-transition');
+            }
+
+            const isRotated = (currentRotation % 180 !== 0);
+            if (isRotated && window.innerWidth < window.innerHeight) {
+                img.style.maxWidth = '84vh';
+                img.style.maxHeight = '88vw';
+            } else {
+                img.style.maxWidth = '90vw';
+                img.style.maxHeight = '84vh';
+            }
+
+            img.style.transform = `translate(${panX}px, ${panY}px) rotate(${currentRotation}deg) scale(${currentZoom})`;
+            if (zoomVal) {
+                zoomVal.textContent = `${Math.round(currentZoom * 100)}%`;
+            }
+        }
+
+        function openOverlay(src, alt) {
+            const overlay = document.getElementById('image-overlay');
+            const img = document.getElementById('overlay-img');
+            const hint = document.getElementById('overlay-hint');
+            const hintText = document.getElementById('overlay-hint-text');
+
+            img.src = src;
+            if (alt) img.alt = alt;
+
+            panX = 0;
+            panY = 0;
+            currentZoom = 1;
+
+            // Rotate 90 degrees on mobile portrait so landscape charts fill the entire mobile screen
+            if (isMobilePortrait()) {
+                currentRotation = 90;
+                if (hintText) hintText.textContent = 'Girada 90° para ver los detalles en el móvil • Arrastra para desplazarte';
+            } else {
+                currentRotation = 0;
+                if (hintText) hintText.textContent = 'Arrastra para desplazarte • Usa la barra o la rueda para hacer zoom';
+            }
+
+            applyTransform(false);
+
+            overlay.style.display = 'flex';
+            lockBodyScroll();
+
+            if (hint) {
+                hint.style.opacity = '1';
+                clearTimeout(hintTimeout);
+                hintTimeout = setTimeout(() => {
+                    hint.style.opacity = '0';
+                }, 3500);
+            }
+        }
+
+        function closeOverlay() {
+            const overlay = document.getElementById('image-overlay');
+            overlay.style.display = 'none';
+            unlockBodyScroll();
+            clearTimeout(hintTimeout);
+            isDragging = false;
+        }
+
+        function zoomImage(delta) {
+            currentZoom = Math.min(Math.max(0.5, currentZoom + delta), 3.5);
+            applyTransform(false);
+        }
+
+        function rotateImage() {
+            currentRotation = (currentRotation + 90) % 360;
+            panX = 0;
+            panY = 0;
+            applyTransform(false);
+        }
+
+        function resetImageView() {
+            currentZoom = 1;
+            currentRotation = isMobilePortrait() ? 90 : 0;
+            panX = 0;
+            panY = 0;
+            applyTransform(false);
+        }
+
+        // Setup interaction listeners
+        const stage = document.getElementById('overlay-stage');
+        const overlayImg = document.getElementById('overlay-img');
+
+        // Click outside image on stage to close
+        stage.addEventListener('click', (e) => {
+            if (e.target === stage) {
+                closeOverlay();
+            }
+        });
+
+        // Double click to toggle zoom
+        overlayImg.addEventListener('dblclick', (e) => {
+            e.stopPropagation();
+            if (currentZoom > 1.1) {
+                currentZoom = 1;
+                panX = 0;
+                panY = 0;
+            } else {
+                currentZoom = 1.8;
+            }
+            applyTransform(false);
+        });
+
+        // Pointer events for dragging
+        stage.addEventListener('pointerdown', (e) => {
+            if (e.pointerType === 'mouse' && e.button !== 0) return;
+            isDragging = true;
+            startX = e.clientX - panX;
+            startY = e.clientY - panY;
+            stage.classList.add('is-dragging');
+            overlayImg.classList.add('no-transition');
+        });
+
+        window.addEventListener('pointermove', (e) => {
+            if (!isDragging) return;
+            panX = e.clientX - startX;
+            panY = e.clientY - startY;
+            applyTransform(true);
+        });
+
+        window.addEventListener('pointerup', () => {
+            if (isDragging) {
+                isDragging = false;
+                stage.classList.remove('is-dragging');
+                overlayImg.classList.remove('no-transition');
+            }
+        });
+
+        window.addEventListener('pointercancel', () => {
+            if (isDragging) {
+                isDragging = false;
+                stage.classList.remove('is-dragging');
+                overlayImg.classList.remove('no-transition');
+            }
+        });
+
+        // Wheel Zoom
+        stage.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            const delta = e.deltaY < 0 ? 0.2 : -0.2;
+            zoomImage(delta);
+        }, { passive: false });
+
+        // Pinch-to-zoom for touch devices
+        stage.addEventListener('touchstart', (e) => {
+            if (e.touches.length === 2) {
+                isDragging = false;
+                const dx = e.touches[0].clientX - e.touches[1].clientX;
+                const dy = e.touches[0].clientY - e.touches[1].clientY;
+                initialDistance = Math.hypot(dx, dy);
+                initialZoom = currentZoom;
+            }
+        }, { passive: true });
+
+        stage.addEventListener('touchmove', (e) => {
+            if (e.touches.length === 2 && initialDistance > 0) {
+                e.preventDefault();
+                const dx = e.touches[0].clientX - e.touches[1].clientX;
+                const dy = e.touches[0].clientY - e.touches[1].clientY;
+                const distance = Math.hypot(dx, dy);
+                const scale = distance / initialDistance;
+                currentZoom = Math.min(Math.max(0.5, initialZoom * scale), 4.0);
+                applyTransform(true);
+            }
+        }, { passive: false });
+
+        stage.addEventListener('touchend', (e) => {
+            if (e.touches.length < 2) {
+                initialDistance = 0;
+                overlayImg.classList.remove('no-transition');
+            }
+        }, { passive: true });
+
+        // Keyboard Shortcuts
+        document.addEventListener('keydown', (e) => {
+            const overlay = document.getElementById('image-overlay');
+            if (overlay.style.display !== 'flex') return;
+
+            if (e.key === 'Escape') {
+                closeOverlay();
+            } else if (e.key === '+' || e.key === '=') {
+                zoomImage(0.25);
+            } else if (e.key === '-' || e.key === '_') {
+                zoomImage(-0.25);
+            } else if (e.key === 'r' || e.key === 'R') {
+                rotateImage();
+            } else if (e.key === '0') {
+                resetImageView();
+            }
+        });
+
+        // Attach click listeners to all study media wrappers
+        document.querySelectorAll('.study-media-wrapper').forEach(wrapper => {
+            wrapper.addEventListener('click', () => {
+                const img = wrapper.querySelector('.study-img');
+                if (img) {
+                    openOverlay(img.src, img.alt);
+                }
+            });
+        });
+
+        // Topic Filtering Logic
+        const filterPills = document.querySelectorAll('.filter-pill');
+        const studyCards = document.querySelectorAll('.study-card');
+        
+        filterPills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                filterPills.forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+                
+                const filter = pill.getAttribute('data-filter');
+                studyCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Expand / Collapse All Highlights Logic
+        let allExpanded = false;
+        function toggleAllHighlights() {
+            const accordions = document.querySelectorAll('.study-accordion');
+            const toggleText = document.getElementById('toggle-all-text');
+            const toggleBtn = document.getElementById('btn-toggle-details');
+            allExpanded = !allExpanded;
+            
+            accordions.forEach(acc => {
+                acc.open = allExpanded;
+            });
+            
+            if (toggleText) {
+                toggleText.textContent = allExpanded ? 'Contraer todos los aspectos destacados' : 'Desplegar todos los aspectos destacados';
+            }
+            if (toggleBtn) {
+                toggleBtn.classList.toggle('is-expanded', allExpanded);
+            }
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="site-footer bg-black">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="/es/">Inicio</a>
+                <a href="/es/research/">Investigación</a>
+                <a href="https://www.linkedin.com/in/jensenearth/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-copy">
+                Hecho con ♥️ e IA en la Tierra © JENSEN S.Z. <span class="footer-rainbow" role="button" tabindex="0" title="¡Haz que lluevan arcoíris! 🌈" aria-label="Haz que lluevan arcoíris">🌈</span>✨¡Haz que lluevan arcoíris! 🌈" aria-label="Haz que lluevan arcoíris">🌈</span>✨
+            </div>
+        </div>
+    </footer>
+<script src="/layout.js"></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "41fc70af798e4e2aa996b03e42a0018c"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
