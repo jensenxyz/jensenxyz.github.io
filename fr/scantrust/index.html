@@ -1,0 +1,2748 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/theme.js"></script>
+    <!-- i18n:head -->
+    <link rel="alternate" hreflang="en" href="https://jensenxyz.github.io/scantrust/">
+    <link rel="alternate" hreflang="it" href="https://jensenxyz.github.io/it/scantrust/">
+    <link rel="alternate" hreflang="fr" href="https://jensenxyz.github.io/fr/scantrust/">
+    <link rel="alternate" hreflang="es" href="https://jensenxyz.github.io/es/scantrust/">
+    <link rel="alternate" hreflang="x-default" href="https://jensenxyz.github.io/scantrust/">
+    <!-- /i18n:head -->
+    <title>Scantrust : QR codes produits et SaaS | JENSEN</title>
+    
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="JENSEN">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        body {
+            background-color: var(--bg-white) !important;
+        }
+        .scantrust-hero-banner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .scantrust-hero-img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            object-fit: cover;
+            border-radius: var(--border-radius, 30px);
+            margin: 16px auto 28px auto;
+            display: block;
+        }
+        .scantrust-story {
+            max-width: 800px;
+            margin: 0 auto 60px auto;
+        }
+        .scantrust-story .study-accordions-group {
+            border-top: 1px solid var(--line-medium);
+            margin-top: 24px;
+        }
+        .scantrust-story .study-accordion.accordion-flush {
+            border-bottom: 1px solid var(--line-medium) !important;
+            border-top: none !important;
+            padding: 4px 0 !important;
+        }
+        .scantrust-story-title {
+            font-size: 3.2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 1.2;
+        }
+        .scantrust-story-subtitle {
+            font-size: 1.15rem;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 400;
+            color: var(--text-grey);
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+        .story-text {
+            font-size: 1.0rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--text-grey);
+            margin-bottom: 16px;
+            padding: 8px;
+        }
+        .story-text .text-accent,
+        .text-accent {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        .story-text:last-child {
+            margin-bottom: 0;
+        }
+        .story-list {
+            list-style: disc;
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .story-list li {
+            font-size: 1.0rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--text-grey);
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 992px) {
+            .scantrust-story-title {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .scantrust-hero-img {
+                max-width: 100%;
+                border-radius: 24px;
+                margin: 12px auto 20px auto;
+            }
+            .scantrust-story-title {
+                font-size: 1.95rem;
+                margin-bottom: 14px;
+            }
+            .scantrust-story-subtitle {
+                font-size: 0.98rem;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+            .story-text,
+            .story-list li {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+        }
+
+        /* --- The Challenge Section --- */
+        .challenge-photo-wrapper {
+            position: relative;
+            margin-top: 64px;
+            background: transparent;
+            padding: 200px 20px;
+            color: var(--text-light);
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            overflow: hidden;
+        }
+        /* Dedicated Mountain Picture Background Layer */
+        .challenge-mountain-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .challenge-mountain-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+            /* Freedom of editing: customize brightness, contrast, position, or scale independently */
+            filter: brightness(0.85) contrast(1.05);
+            transform: translateZ(0);
+        }
+        .challenge-mountain-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Dedicated overlay: adjust opacity or color gradient freely */
+            background: linear-gradient(135deg, rgba(8, 12, 18, 0.42) 0%, rgba(15, 20, 28, 0.50) 100%);
+        }
+        /* Text Container - explicitly has no background */
+        .challenge-photo-inner {
+            position: relative;
+            z-index: 1;
+            background: transparent;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .challenge-white-wrapper {
+            background: var(--bg-white);
+            padding: 40px 0;
+        }
+        .challenge-header {
+            margin-bottom: 24px;
+            text-align: left;
+        }
+        .challenge-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .challenge-pov-sheet-top {
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+            margin-left: 0;
+            margin-right: auto;
+        }
+        .challenge-pov-sheet-bottom {
+            text-align: left;
+            margin-bottom: 12px;
+        }
+        .challenge-pov-phrase {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            letter-spacing: -0.2px;
+            margin: 0 0 8px 0;
+            text-align: left;
+        }
+        .challenge-pov-phrase-dark {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            letter-spacing: -0.2px;
+            margin: 0 0 8px 0;
+            text-align: left;
+        }
+        .challenge-pov-desc {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--band-text-soft-2);
+            margin: 0 0 20px 0;
+            text-align: left;
+        }
+        .challenge-pov-desc-dark {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-gray-700);
+            margin: 0 0 20px 0;
+            text-align: left;
+        }
+        .challenge-pov-desc:last-child {
+            margin-bottom: 0;
+        }
+        
+        .challenge-tabs-unified {
+            margin-top: 8px;
+            background: var(--bg-white);
+            border: 1px solid var(--line-soft);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+        }
+        .challenge-tabs-header {
+            padding: 12px 18px;
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--line-soft);
+            display: flex;
+            align-items: center;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .challenge-tabs-nav {
+            position: relative;
+            display: inline-flex;
+            gap: 0;
+            padding: 4px;
+            background: var(--tabs-nav-bg);
+            border-radius: 30px;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .challenge-tab-indicator {
+            position: absolute;
+            top: 4px;
+            bottom: 4px;
+            left: 0;
+            width: 0;
+            background: var(--tab-indicator);
+            border-radius: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), width 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .challenge-tab-btn {
+            position: relative;
+            z-index: 2;
+            background: transparent;
+            border: none;
+            outline: none;
+            padding: 8px 24px;
+            border-radius: 24px;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-50);
+            cursor: pointer;
+            transition: color 0.25s ease;
+            white-space: nowrap;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+        .challenge-tab-btn:focus,
+        .challenge-tab-btn:focus-visible,
+        .challenge-tab-btn:active {
+            outline: none !important;
+            box-shadow: none !important;
+            transform: none !important;
+            -webkit-tap-highlight-color: transparent !important;
+            background: transparent !important;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            .challenge-tab-btn:hover {
+                color: var(--text-dark);
+            }
+        }
+        .challenge-tab-btn.active {
+            background: transparent;
+            color: var(--text-dark);
+            box-shadow: none;
+        }
+        .challenge-tabs-viewport {
+            overflow: hidden;
+            width: 100%;
+        }
+        .challenge-tabs-track {
+            display: flex;
+            width: 200%;
+            transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1);
+            will-change: transform;
+        }
+        .challenge-tab-panel {
+            width: 50%;
+            box-sizing: border-box;
+            padding: 28px 32px;
+            flex-shrink: 0;
+        }
+        .challenge-tab-panel ul {
+            list-style: disc;
+            padding-left: 22px;
+            margin: 0;
+        }
+        .challenge-tab-panel li {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-gray-700);
+            margin-bottom: 12px;
+        }
+        .challenge-tab-panel li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* The Platform Section: Bounded Card */
+        .scantrust-platform-card {
+            margin-top: 52px;
+            background: var(--bg-light);
+            border: 2px solid var(--outline-strong);
+            border-radius: 32px;
+            padding: 58px 40px 42px 40px;
+            box-sizing: border-box;
+            color: var(--text-dark);
+            position: relative;
+        }
+        .platform-card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.35rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: var(--text-dark);
+            margin-bottom: 28px;
+            text-align: center;
+        }
+        .platform-card-intro {
+            max-width: 820px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .platform-intro-p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.98rem;
+            line-height: 1.55;
+            color: var(--text-ink);
+            margin-bottom: 8px;
+        }
+        .platform-intro-p:last-child {
+            margin-bottom: 0;
+        }
+
+        .platform-pillar-swiper {
+            --center-size: 230px;
+            --stage-height: 250px;
+            --side-offset: 195px;
+            --pillar-radius: calc(var(--center-size) * 0.2);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 8px;
+            user-select: none;
+            -webkit-user-select: none;
+            width: 100%;
+        }
+        .pillar-viewport-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        
+        .pillar-viewport {
+            width: 100%;
+            height: var(--stage-height);
+            overflow: visible;
+            position: relative;
+            cursor: grab;
+            touch-action: pan-y;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pillar-viewport.is-dragging {
+            cursor: grabbing;
+        }
+        .pillar-track-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: visible;
+            z-index: 1;
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+        }
+        .pillar-track {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pillar-slide {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: var(--center-size);
+            height: var(--center-size);
+            margin-left: calc(-0.5 * var(--center-size));
+            margin-top: calc(-0.5 * var(--center-size));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-origin: center center;
+            will-change: transform;
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-user-drag: none;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .pillar-card-wrap {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--pillar-radius, 46px);
+            overflow: hidden;
+            box-sizing: border-box;
+            background-color: #FFFFFF;
+            border: 4px solid var(--pillar-line);
+            filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.09));
+        }
+        .pillar-white-bg {
+            position: absolute;
+            inset: 0;
+            background-color: #FFFFFF;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .pillar-img {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-drag: none;
+            border-radius: calc(var(--pillar-radius, 46px) - 4px);
+            box-shadow: inset 0 0 0 2px var(--pillar-line);
+            box-sizing: border-box;
+            will-change: opacity;
+            transition: opacity 0.05s linear;
+        }
+
+        .pillar-nav-group {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 10px;
+        }
+        .pillar-nav-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            flex-shrink: 0;
+            color: var(--text-dark);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50% !important;
+            transition: transform 0.18s ease, background-color 0.18s ease, opacity 0.18s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            .pillar-nav-btn:hover {
+                background-color: rgba(0, 0, 0, 0.08);
+                transform: scale(1.15);
+            }
+        }
+        .pillar-nav-btn:active {
+            transform: scale(0.92);
+        }
+        .pillar-active-title {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            letter-spacing: -0.2px;
+            text-align: center;
+            min-width: 220px;
+            transition: opacity 0.15s ease, transform 0.15s ease;
+            white-space: nowrap;
+            cursor: default !important;
+        }
+
+        .scantrust-subsection {
+            margin-top: 64px;
+            padding-top: 36px;
+            border-top: 1px solid var(--line-soft);
+        }
+        .scantrust-core-tech-section {
+            margin-top: 56px;
+            padding-top: 0;
+            border-top: none;
+        }
+        .scantrust-subsection-title {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            letter-spacing: -0.2px;
+            line-height: 1.25;
+            margin-bottom: 18px;
+            text-align: left;
+        }
+        .core-tech-section-title {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            letter-spacing: -0.2px;
+            line-height: 1.25;
+            margin-bottom: 18px;
+            text-align: left;
+        }
+        .scantrust-intro-text,
+        .core-tech-intro-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.0rem;
+            font-weight: 300;
+            line-height: 1.68;
+            color: var(--text-ink);
+            margin-bottom: 20px;
+            max-width: 900px;
+            text-align: left;
+        }
+        .scantrust-intro-lead,
+        .core-tech-intro-lead {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.0rem;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--text-ink);
+            margin-bottom: 28px;
+            text-align: left;
+        }
+
+        .scantrust-platform-card .project-card {
+            box-shadow: none !important;
+            border: 1px solid var(--card-border-cool) !important;
+            border-radius: 30px !important;
+            overflow: hidden !important;
+            background-color: var(--bg-white) !important;
+        }
+        .scantrust-platform-card .project-card img {
+            border-top-left-radius: 29px;
+            border-top-right-radius: 29px;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            background-color: var(--bg-light);
+            width: 100%;
+            display: block;
+        }
+        .scantrust-platform-card .project-info {
+            padding: 22px 28px 30px 28px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            text-align: left;
+        }
+        .scantrust-platform-card .project-info h3 {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-size: 1.22rem;
+            font-weight: 800;
+            letter-spacing: -0.2px;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+            line-height: 1.35;
+        }
+        .scantrust-platform-card .project-info p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.94rem;
+            color: var(--text-slate);
+            margin-bottom: 0;
+            line-height: 1.62;
+            flex: 1;
+        }
+        .scantrust-platform-card .project-info p strong {
+            color: var(--text-ink);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .color-block-placeholder {
+            border-top-left-radius: 29px;
+            border-top-right-radius: 29px;
+            aspect-ratio: 16 / 10;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            box-sizing: border-box;
+            position: relative;
+            text-align: left;
+            user-select: none;
+            -webkit-user-select: none;
+            overflow: hidden;
+            transition: filter 0.25s ease;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            .project-card:hover .color-block-placeholder {
+                filter: brightness(1.04);
+            }
+        }
+        .color-block-placeholder::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.08;
+            background-image: radial-gradient(#FFFFFF 1.5px, transparent 1.5px);
+            background-size: 16px 16px;
+            pointer-events: none;
+        }
+        .placeholder-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 16px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 0.4px;
+            margin-bottom: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+        }
+        .placeholder-hint {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78rem;
+            opacity: 0.9;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+
+        .physical-expandables-group {
+            border-top: 1px solid var(--line-soft);
+            margin-top: 24px;
+        }
+        .physical-expandable {
+            border-bottom: 1px solid var(--line-soft);
+            margin-bottom: 0;
+        }
+        .physical-expandable-summary {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+            padding: 16px 4px;
+            border-bottom: none;
+            transition: background-color 0.2s ease;
+        }
+        .physical-expandable-summary::-webkit-details-marker {
+            display: none;
+        }
+        .physical-expandable-summary::marker {
+            display: none;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            .physical-expandable-summary:hover {
+                background-color: rgba(0, 0, 0, 0.03);
+                border-radius: 8px;
+            }
+            #antiCounterfeitExpandable > .physical-expandable-summary:hover,
+            #securityLabelsExpandable > .physical-expandable-summary:hover {
+                background-color: transparent !important;
+                border-radius: 0 !important;
+            }
+        }
+        .expandable-heading-text {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 500;
+            font-size: 1.12rem;
+            color: var(--text-ink);
+        }
+        .physical-expandable-icon {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-right: 12px;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+        .physical-expandable-icon::before,
+        .physical-expandable-icon::after {
+            content: '';
+            position: absolute;
+            background-color: var(--text-ink);
+            border-radius: 1px;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+        }
+        /* Horizontal bar of the + and - */
+        .physical-expandable-icon::before {
+            width: 14px;
+            height: 2px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        /* Vertical bar of the + */
+        .physical-expandable-icon::after {
+            width: 2px;
+            height: 14px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        /* When open, animate + and transition into - */
+        .physical-expandable[open] .physical-expandable-icon {
+            transform: rotate(180deg);
+        }
+        .physical-expandable[open] .physical-expandable-icon::after {
+            transform: translate(-50%, -50%) rotate(90deg);
+            opacity: 0;
+        }
+        .physical-expandable-content {
+            padding: 16px 0 12px 0;
+            text-align: left;
+        }
+        .physical-tech-intro {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 300;
+            color: var(--text-slate);
+            line-height: 1.45;
+            margin: 0 0 10px 0;
+        }
+        .physical-tech-list {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 300;
+            color: var(--text-gray-700);
+            line-height: 1.45;
+            padding-left: 20px;
+            margin: 0 0 16px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .physical-tech-list li {
+            padding-left: 4px;
+            font-weight: 300;
+        }
+        .physical-labels-body {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            color: var(--text-slate);
+            line-height: 1.6;
+            margin: 0 0 20px 0;
+        }
+        .label-sample-category {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: #9CA3AF;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .labels-carousel-wrapper {
+            position: relative;
+            margin-top: 4px;
+            margin-left: -20px;
+            margin-right: -20px;
+            width: calc(100% + 40px);
+        }
+        .labels-carousel-container {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 24px 20px 40px 20px;
+            scroll-padding-left: 20px;
+            scroll-padding-right: 20px;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .labels-carousel-container::-webkit-scrollbar {
+            display: none;
+        }
+        .labels-carousel-container .label-card {
+            flex: 0 0 280px;
+            width: 280px;
+            min-width: 280px;
+            scroll-snap-align: start;
+            box-sizing: border-box;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 30px;
+            overflow: hidden;
+            background: var(--bg-white);
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transform: translateZ(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            will-change: transform;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            .labels-carousel-container .label-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            }
+        }
+        .labels-carousel-wrapper .carousel-controls {
+            padding: 0 20px 8px 20px;
+        }
+        .labels-carousel-container .label-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .labels-carousel-container .label-card .label-card-info {
+            padding: 18px 18px 22px 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .labels-carousel-container .label-card h4 {
+            margin: 0 0 6px 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-ink);
+            text-align: center;
+        }
+        .labels-carousel-container .label-card p {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 400;
+            color: var(--text-slate);
+            text-align: center;
+            line-height: 1.45;
+        }
+
+        /* --- The Impact Section --- */
+        .scantrust-impact-section {
+            margin-top: 64px;
+            padding-top: 64px;
+            padding-bottom: 24px;
+            border-top: none;
+            position: relative;
+        }
+        .scantrust-impact-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: -20px;
+            left: calc(-50vw + 50%);
+            right: calc(-50vw + 50%);
+            background-color: var(--band-grey);
+            z-index: -1;
+        }
+        .scantrust-impact-section > * {
+            position: relative;
+            z-index: 1;
+        }
+        .impact-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .impact-lead-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.68;
+            color: var(--text-ink);
+            max-width: 900px;
+            text-align: left;
+            margin-bottom: 48px;
+        }
+
+        .impact-metrics-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto 52px auto;
+        }
+        @media (max-width: 768px) {
+            .impact-metrics-container {
+                flex-direction: column;
+            }
+        }
+        .impact-metric-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+            width: 100%;
+        }
+        .impact-metric-icon {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            display: block;
+            margin-bottom: 16px;
+            filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.08));
+            transition: transform 0.25s ease;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            .impact-metric-icon:hover {
+                transform: scale(1.05);
+            }
+        }
+        .impact-metric-label {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 800;
+            font-size: 1.45rem;
+            letter-spacing: -0.3px;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+
+        .impact-footnotes {
+            max-width: 820px;
+            margin: 0 auto;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .impact-footnotes p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 300;
+            line-height: 1.45;
+            color: #6B7280;
+            margin: 0;
+        }
+        .impact-footnotes p:last-child {
+            margin-bottom: 0;
+        }
+
+        .brands-subsection {
+            margin-top: 76px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .brands-subsection-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: var(--text-dark);
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 8px 0;
+            text-align: center;
+        }
+        
+        .brands-slideshow-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 0 auto;
+            max-width: 1160px;
+            width: 100%;
+        }
+        @media (min-width: 768px) {
+            .brands-slideshow-card {
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        .brands-logo-viewport {
+            width: 100%;
+            height: auto !important;
+            min-height: 0 !important;
+            position: relative;
+            overflow: visible !important;
+            display: flex !important;
+            flex-wrap: wrap !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 20px 32px !important;
+            padding: 24px 8px 36px 8px !important;
+            margin-bottom: 24px !important;
+        }
+        .brand-logo-slide {
+            position: static !important;
+            top: auto !important;
+            left: auto !important;
+            transform: none !important;
+            opacity: 0.9 !important;
+            pointer-events: auto !important;
+            animation: none !important;
+            height: 72px;
+            max-width: 140px;
+            width: auto;
+            object-fit: contain;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            cursor: default;
+        }
+        .brand-logo-slide:hover {
+            opacity: 1 !important;
+            transform: scale(1.08) !important;
+        }
+
+        /* Desktop & Computers */
+        @media (min-width: 900px), (min-width: 768px) and (orientation: landscape) {
+            .brands-slideshow-card {
+                max-width: 1160px;
+                width: 100%;
+                margin: 0 auto;
+            }
+            .brands-logo-viewport {
+                gap: 24px 40px !important;
+            }
+            .brand-logo-slide {
+                height: 86px;
+                max-width: 165px;
+            }
+        }
+
+        .exec-summary-subsection {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            text-align: center;
+            background: #000000;
+            color: var(--text-light);
+            padding: 80px 40px;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+        }
+        .exec-summary-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .exec-summary-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: var(--text-light);
+            letter-spacing: -0.5px;
+            line-height: 1.15;
+            margin: 0 auto 48px auto;
+            padding: 0;
+            text-align: center;
+        }
+        .exec-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            align-items: stretch;
+            max-width: 980px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        @media (min-width: 992px) {
+            .exec-summary-grid {
+                gap: 36px;
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+        }
+        .exec-pillar-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin: 0;
+            padding: 32px 28px;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.04);
+            background-image: 
+                radial-gradient(ellipse at 15% 0%, rgba(255, 255, 255, 0.08) 0%, transparent 65%),
+                linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.015) 100%),
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 1  0 1 0 0 1  0 0 1 0 1  0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 
+                0 20px 40px -10px rgba(0, 0, 0, 0.65),
+                inset 0 1px 1px 0 rgba(255, 255, 255, 0.18),
+                inset 0 -1px 1px 0 rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            overflow: hidden;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .exec-pillar-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.24);
+            box-shadow: 
+                0 24px 48px -10px rgba(0, 0, 0, 0.8),
+                inset 0 1px 1px 0 rgba(255, 255, 255, 0.28);
+        }
+        .exec-pillar-heading {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-light);
+            letter-spacing: -0.2px;
+            line-height: 1.25;
+            margin: 0 0 18px 0;
+            padding: 0 0 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .exec-pillar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex-grow: 1;
+        }
+        .exec-pillar-list li {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.92rem;
+            font-weight: 300;
+            line-height: 1.45;
+            color: var(--band-text-soft);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 2px 0;
+            margin: 0;
+            white-space: normal;
+            word-break: normal;
+        }
+        .exec-pillar-list li::before {
+            content: '•';
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            line-height: 1.45;
+            margin-top: 0px;
+            flex-shrink: 0;
+        }
+
+        .scantrust-contact-section {
+            padding-top: 60px;
+            padding-bottom: 24px;
+            background-color: transparent;
+        }
+        .scantrust-contact-section .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: var(--text-dark);
+            white-space: nowrap;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .challenge-photo-wrapper {
+                padding: 80px 20px;
+                margin-top: 48px;
+            }
+            .challenge-title {
+                font-size: 1.95rem;
+            }
+            .challenge-pov-sheet-top, .challenge-pov-sheet-bottom {
+                padding: 0;
+            }
+            .challenge-white-wrapper {
+                padding: 24px 0;
+            }
+            .challenge-pov-phrase {
+                font-size: 1.02rem;
+                margin-bottom: 6px;
+                margin-left: 0;
+            }
+            .challenge-pov-desc {
+                font-size: 0.98rem;
+                line-height: 1.6;
+                margin-bottom: 16px;
+                margin-left: 0;
+            }
+            .challenge-tabs-unified {
+                border-radius: 16px;
+            }
+            .challenge-tabs-header {
+                padding: 10px 12px;
+            }
+            .challenge-tabs-nav {
+                width: 100%;
+                display: flex;
+                gap: 0;
+            }
+            .challenge-tab-btn {
+                flex: 1;
+                text-align: center;
+                justify-content: center;
+                padding: 8px 12px;
+                font-size: 0.88rem;
+            }
+            .challenge-tab-panel {
+                padding: 20px 18px;
+            }
+            .challenge-tab-panel li {
+                font-size: 0.98rem;
+                line-height: 1.6;
+            }
+            .scantrust-platform-card {
+                margin-top: 40px;
+                padding: 46px 20px 30px 20px;
+                border-radius: 24px;
+            }
+            .platform-card-title {
+                font-size: 1.95rem;
+                margin-bottom: 22px;
+            }
+            .platform-intro-p {
+                font-size: 0.92rem;
+                line-height: 1.5;
+                margin-bottom: 6px;
+            }
+            .platform-pillar-swiper {
+                --center-size: 180px;
+                --stage-height: 200px;
+                --side-offset: 140px;
+            }
+            .pillar-viewport {
+                height: var(--stage-height);
+            }
+            .pillar-nav-group {
+                gap: 8px;
+                margin-top: 8px;
+            }
+            .pillar-active-title {
+                font-size: 1.08rem;
+                min-width: 170px;
+            }
+            .scantrust-subsection {
+                margin-top: 48px;
+                padding-top: 24px;
+            }
+            .scantrust-core-tech-section {
+                margin-top: 40px;
+            }
+            .scantrust-subsection-title,
+            .core-tech-section-title {
+                font-size: 1.35rem;
+                margin-bottom: 14px;
+            }
+            .scantrust-intro-text,
+            .core-tech-intro-text {
+                font-size: 0.95rem;
+                line-height: 1.6;
+                margin-bottom: 16px;
+            }
+            .scantrust-intro-lead,
+            .core-tech-intro-lead {
+                font-size: 0.95rem;
+                margin-bottom: 20px;
+            }
+            .scantrust-platform-card .carousel-wrapper {
+                margin-top: -8px;
+                margin-left: -20px;
+                margin-right: -20px;
+            }
+            .scantrust-platform-card .carousel-container {
+                padding: 16px 20px 14px 20px;
+                gap: 18px;
+                scroll-padding-left: 20px;
+                scroll-padding-right: 20px;
+            }
+            .scantrust-platform-card .project-card { 
+                flex: 0 0 290px;
+                width: 290px;
+                min-width: min(290px, 82vw);
+                max-width: 82vw;
+            }
+            .scantrust-platform-card .project-info {
+                padding: 18px 20px 24px 20px;
+            }
+            .scantrust-platform-card .project-info h3 {
+                font-size: 1.15rem;
+                margin-bottom: 8px;
+            }
+            .scantrust-platform-card .project-info p {
+                font-size: 0.88rem;
+                line-height: 1.55;
+            }
+            .scantrust-platform-card .carousel-controls {
+                margin-top: -2px;
+                margin-right: 0;
+                padding: 0 20px 8px 20px;
+                gap: 12px;
+            }
+            .expandable-heading-text {
+                font-size: 1.18rem;
+            }
+            .physical-expandable-content {
+                padding: 12px 0 8px 0;
+            }
+            .impact-title {
+                font-size: 1.95rem;
+                margin-bottom: 18px;
+            }
+            .impact-lead-text {
+                font-size: 1.02rem;
+                line-height: 1.6;
+                margin-bottom: 32px;
+            }
+            .impact-metric-icon {
+                width: 100px;
+                height: 100px;
+            }
+            .impact-metric-label {
+                font-size: 1.25rem;
+            }
+            .impact-footnotes p {
+                font-size: 0.72rem;
+            }
+            .brands-subsection-title {
+                font-size: 1.8rem;
+            }
+            .exec-summary-title {
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 800;
+                font-size: 1.95rem;
+                letter-spacing: -0.5px;
+                line-height: 1.2;
+                margin-bottom: 32px;
+                text-align: center;
+            }
+            .exec-pillar-heading {
+                font-size: 1.25rem;
+                margin-bottom: 12px;
+                white-space: nowrap;
+            }
+            .scantrust-contact-section .section-title {
+                font-size: 1.95rem;
+                white-space: nowrap;
+                margin-bottom: 24px;
+            }
+            .exec-summary-subsection {
+                padding: 48px 20px;
+            }
+            .exec-summary-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            .exec-pillar-card {
+                padding: 24px 20px;
+                border-radius: 18px;
+            }
+            .exec-pillar-heading {
+                font-size: 1.18rem;
+                margin-bottom: 14px;
+                padding-bottom: 12px;
+            }
+            .exec-pillar-list li {
+                font-size: 0.86rem;
+                line-height: 1.42;
+                white-space: normal;
+            }
+            
+            .brands-logo-viewport {
+                gap: 16px 20px !important;
+                padding: 16px 4px 24px 4px !important;
+            }
+            .brand-logo-slide {
+                height: 58px !important;
+                max-width: 115px !important;
+                width: auto !important;
+            }
+            .labels-carousel-wrapper {
+                margin-left: -18px;
+                margin-right: -18px;
+                width: calc(100% + 36px);
+            }
+            .labels-carousel-container {
+                padding: 20px 18px 34px 18px;
+                scroll-padding-left: 18px;
+                scroll-padding-right: 18px;
+                gap: 16px;
+            }
+            .labels-carousel-container .label-card {
+                flex: 0 0 260px;
+                width: 260px;
+                min-width: min(260px, 80vw);
+                max-width: 80vw;
+            }
+            .labels-carousel-wrapper .carousel-controls {
+                padding: 0 18px 8px 18px;
+            }
+        }
+
+        /* Mobile View: Vertical stacking for Executive Summary cards (<= 640px) */
+        @media (max-width: 640px) {
+            .exec-summary-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+            #execCardDev,
+            #execCardDesign {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                float: none;
+                margin: 0;
+            }
+            .exec-pillar-card {
+                padding: 24px 20px;
+                border-radius: 18px;
+            }
+            .exec-pillar-heading {
+                font-size: 1.15rem;
+                margin-bottom: 14px;
+                padding-bottom: 12px;
+            }
+            .exec-pillar-list {
+                gap: 9px;
+            }
+            .exec-pillar-list li {
+                font-size: 0.88rem;
+                line-height: 1.42;
+            }
+            .platform-pillar-swiper {
+                --center-size: 160px;
+                --stage-height: 180px;
+                --side-offset: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .platform-pillar-swiper {
+                --center-size: 140px;
+                --stage-height: 160px;
+                --side-offset: 100px;
+            }
+            .pillar-active-title {
+                font-size: 1.05rem;
+                min-width: 160px;
+            }
+        }
+
+        /* Mobile & Tablet View: Explicitly Disable All Hover Effects */
+        @media (max-width: 1024px), (hover: none), (pointer: coarse) {
+            .project-card,
+            .project-card:hover {
+                transform: none !important;
+                box-shadow: none !important;
+            }
+            .label-card:hover,
+            .labels-carousel-container .label-card:hover {
+                transform: none !important;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+            }
+            .project-card:hover .color-block-placeholder {
+                filter: none !important;
+            }
+            .physical-expandable-summary:hover {
+                background-color: transparent !important;
+            }
+            .impact-metric-icon:hover {
+                transform: none !important;
+            }
+            .pillar-nav-btn:hover {
+                transform: none !important;
+                background-color: transparent !important;
+            }
+            .challenge-tab-btn:not(.active):hover {
+                color: var(--text-50) !important;
+            }
+            .carousel-controls button:hover:not(:disabled) {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .btn-black:hover {
+                background-color: var(--text-dark) !important;
+                color: var(--on-inverse) !important;
+                transform: none !important;
+            }
+            .study-accordion-summary:hover,
+            .accordion-flush .study-accordion-summary:hover {
+                background-color: transparent !important;
+            }
+        }
+
+        
+        
+        /* Digital products carousel card overrides */
+        #digital-products-carousel .project-card {
+            box-shadow: none !important;
+            border: 1px solid var(--line-soft) !important;
+            flex: 0 0 270px !important;
+            width: 270px !important;
+            min-width: 270px !important;
+        }
+        #digital-products-carousel .project-info {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+        }
+        #digital-products-carousel .project-info h3 {
+            font-size: 0.92rem !important;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 8px;
+        }
+        @media (max-width: 768px) {
+             #digital-products-carousel .project-card {
+                 flex: 0 0 250px !important;
+                 width: 250px !important;
+                 min-width: 250px !important;
+             }
+             #digital-products-carousel .project-info h3 {
+                 font-size: 0.88rem !important;
+             }
+        }
+
+        /* Core tech carousel card overrides */
+        #core-tech-carousel .project-card {
+            background-color: transparent !important;
+            box-shadow: none !important;
+            border: none !important;
+            border-radius: 0 !important;
+            flex: 0 0 270px !important;
+            width: 270px !important;
+            min-width: 270px !important;
+        }
+        #core-tech-carousel .project-card img {
+            border-radius: 30px;
+            
+        }
+        #core-tech-carousel .project-info {
+            padding: 20px 4px 0 4px;
+        }
+        @media (max-width: 768px) {
+            #core-tech-carousel .project-card {
+                flex: 0 0 250px !important;
+                width: 250px !important;
+                min-width: 250px !important;
+            }
+        }
+    
+        /* --- Dark theme tweaks --- */
+        /* Client logos are opaque light images: present them as tidy tiles */
+        /* Dashed belt behind the pillar icons follows the theme (SVG stroke attribute is the fallback) */
+        .pillar-dynamic-belt { stroke: var(--pillar-line); }
+        [data-theme="dark"] .brand-logo-slide { border-radius: 10px; }
+        /* Keep the mountain photo's own contrast while shading it like other images */
+        [data-theme="dark"] .challenge-mountain-img { filter: brightness(0.72) contrast(1.05); }
+        /* Label cards keep a visible edge on dark surfaces */
+        [data-theme="dark"] .labels-carousel-container .label-card { border-color: var(--card-border); }
+</style>
+</head>
+<body class="bg-beige">
+
+    <!-- Header Navigation (Sticky & Translucent) -->
+    <header class="site-header">
+        <div class="container header-flex">
+            <a href="/fr/" class="logo">JENSEN ✨</a>
+            <div class="header-actions">
+                <a href="/fr/" class="link-underline back-to-home">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Retour à l’accueil
+                </a>
+                <!-- i18n:menu -->
+                <details class="lang-menu">
+                    <summary class="lang-menu-btn" aria-label="Langue: Français" title="Langue">FR</summary>
+                    <ul class="lang-menu-list">
+                        <li><a href="/scantrust/" hreflang="en" lang="en" data-lang="en">English</a></li>
+                        <li><a href="/it/scantrust/" hreflang="it" lang="it" data-lang="it">Italiano</a></li>
+                        <li><a href="/fr/scantrust/" hreflang="fr" lang="fr" data-lang="fr" aria-current="page">Français</a></li>
+                        <li><a href="/es/scantrust/" hreflang="es" lang="es" data-lang="es">Español</a></li>
+                    </ul>
+                </details>
+                <!-- /i18n:menu -->
+                <button type="button" class="theme-toggle" aria-label="Mode sombre" aria-pressed="false">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container pt-medium pb-large">
+        <div class="scantrust-hero-banner">
+            <div class="breadcrumb">
+                <a href="/fr/">Accueil</a> > Scantrust : QR codes produits et SaaS
+            </div>
+            
+            <img src="/assets/scantrust/st-solution-hero-banner.png" alt="Scantrust : solutions QR code produits et SaaS" class="scantrust-hero-img" width="2500" height="1875" loading="eager">
+            
+            <div class="scantrust-story">
+                <h1 class="scantrust-story-title">L’histoire :</h1>
+                <h2 class="scantrust-story-subtitle">Et si l’on pouvait vérifier instantanément n’importe quel produit dans le monde ? Voici mon histoire avec Scantrust.</h2>
+                
+                <div class="study-accordions-group">
+                    <details class="study-accordion accordion-flush">
+                        <summary class="study-accordion-summary">
+                            <span class="summary-left">
+                                <span class="summary-title">👨‍🎨 Designer fondateur</span>
+                            </span>
+                            <svg class="summary-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="study-accordion-body">
+                            <p class="story-text">
+                                Chacun mérite de savoir si le produit qu’il achète est authentique : c’est de cette idée simple et puissante qu’est née Scantrust. Le problème central que Scantrust voulait résoudre était le <strong class="text-accent">fléau mondial des contrefaçons</strong>.
+                            </p>
+                            <p class="story-text">
+                                En 2014, j’ai rencontré les fondateurs dans un espace de coworking à Shanghai et le courant est passé. J’ai rejoint l’aventure en tant que <strong class="text-accent">designer fondateur</strong>, transformant leur idée en interfaces et parcours concrets. Depuis, j’ai participé à tous les aspects du développement produit et de la croissance de Scantrust.
+                            </p>
+                        </div>
+                    </details>
+                    
+                    <details class="study-accordion accordion-flush">
+                        <summary class="study-accordion-summary">
+                            <span class="summary-left">
+                                <span class="summary-title">🧗 L’effort et la croissance</span>
+                            </span>
+                            <svg class="summary-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="study-accordion-body">
+                            <p class="story-text">
+                                Dès le départ, je suis devenu le lien entre les équipes (ventes, ingénieurs, marketing), en faisant le pont entre profils techniques et non techniques grâce à des spécifications de design soignées et des sessions de questions-réponses. Je suis rapidement devenu un <strong class="text-accent">point de liaison clé</strong> pour presque toute l’entreprise.
+                            </p>
+                            <p class="story-text">
+                                Mon rôle dans la construction de cette startup internationale allait au-delà du design : jongler avec les fuseaux horaires, traduire les besoins business en design et endosser le rôle de product manager officieux pour faire <strong class="text-accent">avancer</strong> chaque projet.
+                            </p>
+                            <p class="story-text">
+                                Dans l’entreprise, j’ai animé de 2015 à 2019 la réunion mondiale de toute l’équipe, toutes les deux semaines. Au sein de l’équipe produit, mon leadership s’est fortement développé, car :
+                            </p>
+                            <ul class="story-list">
+                                <li>j’ai toujours pris l’initiative de rédiger des documents pour organiser, orienter et améliorer l’efficacité globale de la collaboration <strong class="text-accent">transverse</strong> entre les équipes iOS, Android, Web, QA et Core Tech ;</li>
+                                <li>j’ai accompagné plus de 3 product designers juniors et plus de 7 stagiaires au fil des ans.</li>
+                            </ul>
+                        </div>
+                    </details>
+                    
+                    <details class="study-accordion accordion-flush">
+                        <summary class="study-accordion-summary">
+                            <span class="summary-left">
+                                <span class="summary-title">🌏 Des prototypes à l’impact mondial</span>
+                            </span>
+                            <svg class="summary-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="study-accordion-body">
+                            <p class="story-text">
+                                Quand un client du Fortune 500 nous a référencés comme fournisseur, nos nuits blanches ont pris tout leur sens. Voir mes designs et mes efforts passer de prototypes et de démos à des <strong class="text-accent">produits réels à fort impact</strong> a été profondément gratifiant.
+                            </p>
+                            <p class="story-text">
+                                Aujourd’hui, Scantrust connecte des milliards de produits et permet à des millions de personnes d’acheter et de consommer en toute sécurité. Pour moi, c’est la preuve que de petites équipes, grâce à la persévérance et à la collaboration, peuvent créer des solutions qui apportent des <strong class="text-accent">changements positifs</strong> dans la vie des gens.
+                            </p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- The Challenge Section -->
+            <div class="challenge-photo-wrapper" id="challengePhotoWrapper">
+                <!-- Mountain Picture Background Layer (Independent element for full editing freedom) -->
+                <div class="challenge-mountain-bg" id="challengeMountainBg">
+                    <img src="/assets/scantrust/challenge-mountains.jpg" 
+                         alt="Arrière-plan de paysage de montagne" 
+                         class="challenge-mountain-img" 
+                         id="challengeMountainImg"
+                         loading="lazy">
+                    <div class="challenge-mountain-overlay" id="challengeMountainOverlay"></div>
+                </div>
+
+                <!-- Text Container (Clean & completely transparent - no background) -->
+                <div class="challenge-photo-inner" id="challengePhotoInner">
+                    <div class="challenge-header" id="challengeHeader">
+                        <h2 class="challenge-title" id="challengeTitle">Le défi :</h2>
+                    </div>
+                    <div class="challenge-pov-sheet-top" id="challengePovSheetTop">
+                        <p class="challenge-pov-phrase" id="challengePovPhraseTop">Vue d’ensemble :</p>
+                        <p class="challenge-pov-desc" id="challengePovDescTop" style="margin-bottom: 0;">Il n’existait aucun mode d’emploi pour concevoir une plateforme entièrement nouvelle. Tout était à construire de zéro. J’ai dû m’appuyer fortement sur ma capacité à apprendre vite et à m’adapter en permanence.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="challenge-white-wrapper" id="challengeWhiteWrapper">
+                <div class="challenge-pov-sheet-bottom" id="challengePovSheetBottom">
+                    <p class="challenge-pov-phrase-dark" id="challengePovPhraseBottom">Sur le terrain :</p>
+                    <p class="challenge-pov-desc-dark" id="challengePovDescBottom" style="margin-bottom: 0;">Les défis ont évolué avec la croissance de l’entreprise.</p>
+                </div>
+
+                <div class="challenge-tabs-unified">
+                    <div class="challenge-tabs-header" id="challengeTabsHeader">
+                        <div class="challenge-tabs-nav" id="challengeTabsNav" role="tablist" aria-label="Onglets des étapes du défi">
+                            <div class="challenge-tab-indicator" id="challengeTabIndicator"></div>
+                            <button type="button" class="challenge-tab-btn active" role="tab" id="tab-btn-early" aria-selected="true" aria-controls="panel-early" onclick="switchChallengeTab('early')">Lancement</button>
+                            <button type="button" class="challenge-tab-btn" role="tab" id="tab-btn-scaling" aria-selected="false" aria-controls="panel-scaling" onclick="switchChallengeTab('scaling')">Croissance</button>
+                        </div>
+                    </div>
+
+                    <div class="challenge-tabs-viewport">
+                        <div class="challenge-tabs-track" id="challenge-tab-track">
+                            <div class="challenge-tab-panel" id="panel-early" role="tabpanel" aria-labelledby="tab-btn-early">
+                                <ul>
+                                    <li>Concevoir des systèmes complexes pour le B2B2C et le B2P (professionnels aux connaissances spécialisées).</li>
+                                    <li>Avancer vite : se fier à son intuition, tester des fonctionnalités, abandonner ce qui ne marchait pas et itérer rapidement.</li>
+                                    <li>Des démos, des démos, des démos ! Plein de démos :)</li>
+                                </ul>
+                            </div>
+
+                            <div class="challenge-tab-panel" id="panel-scaling" role="tabpanel" aria-labelledby="tab-btn-scaling" aria-hidden="true">
+                                <ul>
+                                    <li>Trouver l’équilibre entre la personnalisation pour les clients payants et la nécessité de garder un produit scalable (personnalisation vs scalabilité).</li>
+                                    <li>Adopter une approche plus guidée par les données : recherche utilisateur plus poussée, davantage de tests.</li>
+                                    <li>Le changement devient plus difficile à mesure que le produit mûrit et que de nouveaux clients arrivent.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Platform Section: Bounded Card -->
+            <section class="scantrust-platform-card" id="platformSection">
+                <h2 class="platform-card-title">La plateforme :</h2>
+
+                <div class="platform-card-intro">
+                    <p class="platform-intro-p">La plateforme Scantrust est conçue pour offrir aux marques internationales une solution QR code complète.</p>
+                    <p class="platform-intro-p">Pour comprendre mon travail chez Scantrust, il faut d’abord connaître les 3 piliers fondamentaux de la plateforme auxquels j’ai contribué : la technologie cœur, les produits numériques et les produits physiques.</p>
+                </div>
+
+                <!-- Platform Pillars Swiper: Direction 4 with White Square Overlay -->
+                <div class="platform-pillar-swiper" id="pillarSwiper">
+                    <div class="pillar-viewport-wrapper">
+                        <div class="pillar-viewport" id="pillarViewport" tabindex="0" role="region" aria-label="Carrousel des piliers de la plateforme">
+                            <svg class="pillar-track-svg" viewBox="0 0 700 250" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                                <line x1="0" y1="125" x2="700" y2="125" stroke="#000000" stroke-width="3" stroke-dasharray="14 10" class="pillar-dynamic-belt" />
+                            </svg>
+                            <div class="pillar-track" id="pillarTrack">
+                                <div class="pillar-slide" id="pillarSlideCore" data-pillar="core" data-index="0" aria-label="Technologie cœur">
+                                    <div class="pillar-card-wrap">
+                                        <div class="pillar-white-bg" aria-hidden="true"></div>
+                                        <img src="/assets/scantrust/1-core-noline.png" alt="Technologie cœur" class="pillar-img" width="640" height="640" draggable="false">
+                                    </div>
+                                </div>
+                                <div class="pillar-slide" id="pillarSlideDigital" data-pillar="digital" data-index="1" aria-label="Produits numériques">
+                                    <div class="pillar-card-wrap">
+                                        <div class="pillar-white-bg" aria-hidden="true"></div>
+                                        <img src="/assets/scantrust/2-digital-noline.png" alt="Produits numériques" class="pillar-img" width="640" height="640" draggable="false">
+                                    </div>
+                                </div>
+                                <div class="pillar-slide" id="pillarSlidePhysical" data-pillar="physical" data-index="2" aria-label="Produits physiques">
+                                    <div class="pillar-card-wrap">
+                                        <div class="pillar-white-bg" aria-hidden="true"></div>
+                                        <img src="/assets/scantrust/3-physical-noline.png" alt="Produits physiques" class="pillar-img" width="640" height="640" draggable="false">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pillar-nav-group">
+                        <button type="button" class="pillar-nav-btn pillar-prev-btn" id="pillarPrevBtn" aria-label="Pilier précédent">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="19" y1="12" x2="5" y2="12"></line>
+                                <polyline points="12 19 5 12 12 5"></polyline>
+                            </svg>
+                        </button>
+                        <span class="pillar-active-title" id="pillarTitle">1. Technologie cœur</span>
+                        <button type="button" class="pillar-nav-btn pillar-next-btn" id="pillarNextBtn" aria-label="Pilier suivant">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 1. Core Technology Subsection -->
+            <section class="scantrust-core-tech-section" id="coreTechnologySection">
+                <h2 class="core-tech-section-title">1. Technologie cœur</h2>
+                
+                <p class="core-tech-intro-text">
+                    Sans faire directement partie de l’équipe Core Tech, j’ai travaillé en étroite collaboration avec elle les premières années pour traduire cette technologie anticontrefaçon brevetée et complexe, fondée sur le <strong class="text-accent">machine learning</strong>, en quelque chose de concret et compréhensible pour les utilisateurs réels : propriétaires de marques, managers et consommateurs.
+                </p>
+                <p class="core-tech-intro-lead">
+                    Ma contribution à la Core Tech comprend :
+                </p>
+
+                <div class="carousel-wrapper">
+                    <div class="carousel-container" id="core-tech-carousel">
+                        <div class="project-card">
+                            <img src="/assets/scantrust/core-SDK.jpg" alt="UI et SDK d’authentification" width="800" height="500" loading="lazy">
+                            <div class="project-info">
+                                <h3>UI et SDK d’authentification</h3>
+                                <p>
+                                    Concevoir la façon dont les utilisateurs finaux scannent et vérifient le QR code Scantrust en quelques secondes. D’innombrables itérations de prototypes et mises à jour de l’UI d’authentification du SDK Scantrust pour les applications Android, iOS et PWA.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <img src="/assets/scantrust/core-printer-app.jpg" alt="L’appli imprimeur" width="800" height="500" loading="lazy">
+                            <div class="project-info">
+                                <h3>L’appli imprimeur</h3>
+                                <p>
+                                    Conçue pour les opérateurs d’impression chez l’imprimeur, elle gère la calibration (entraînement de l’IA) des nouvelles imprimantes, les ordres d’impression des marques et le contrôle qualité des QR codes sécurisés en production.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <img src="/assets/scantrust/core-non-technical.jpg" alt="Communication non technique" width="800" height="500" loading="lazy">
+                            <div class="project-info">
+                                <h3>Communication non technique</h3>
+                                <p>
+                                    Concevoir des visuels et animations clés pour rendre accessibles des concepts complexes de machine learning et la technologie cœur fondée sur l’IA aux équipes internes et aux parties prenantes externes, dans les applis, sites web et supports marketing.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <img src="/assets/scantrust/core-implementation.jpg" alt="Expertise de mise en œuvre" width="800" height="500" loading="lazy">
+                            <div class="project-info">
+                                <h3>Expertise de mise en œuvre</h3>
+                                <p>
+                                    Accompagner les marques grâce à une connaissance approfondie des spécifications des QR codes sécurisés Scantrust pour leur impression et leur intégration dans les étiquettes ou les emballages des produits.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-controls">
+                        <span class="carousel-hint" id="core-carousel-hint">Faites défiler pour parcourir</span>
+                        <div class="carousel-arrows">
+                            <button id="core-scroll-left" aria-label="Fiche Core Tech précédente">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                                    <polyline points="12 19 5 12 12 5"></polyline>
+                                </svg>
+                            </button>
+                            <button id="core-scroll-right" aria-label="Fiche Core Tech suivante">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Digital Products Subsection -->
+            <section class="scantrust-subsection scantrust-digital-products-section" id="digitalProductsSection">
+                <h2 class="scantrust-subsection-title">2. Produits numériques</h2>
+                
+                <p class="scantrust-intro-text">
+                    J’ai dirigé le design UI et UX de bout en bout de l’ensemble des systèmes web et mobiles de Scantrust, dont le portail client (B2B), les logiciels en marque blanche, une application Windows à usage industriel et les principaux produits et offres numériques ci-dessous :
+                </p>
+
+                <div class="carousel-wrapper">
+                    <div class="carousel-container" id="digital-products-carousel">
+                        <div class="project-card">
+                            <img src="/assets/scantrust/qr-manager.png" alt="Générateur de QR codes pour entreprises" width="800" height="500" loading="lazy">
+                            <div class="project-info">
+                                <h3>Générateur de QR codes pour entreprises</h3>
+                                <ul style="font-weight: 400; padding-left: 20px; list-style-type: disc; margin: 0; color: var(--text-slate); font-size: 0.94rem; line-height: 1.62;">
+                                    <li>Moteur de redirection intelligent intégré.</li>
+                                    <li>Environnement sans code.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <img src="/assets/scantrust/no-code-lp-builder.png" alt="Créateur de landing pages pour QR codes" width="800" height="500" loading="lazy">
+                            <div class="project-info">
+                                <h3>Créateur de landing pages pour QR codes</h3>
+                                <ul style="font-weight: 400; padding-left: 20px; list-style-type: disc; margin: 0; color: var(--text-slate); font-size: 0.94rem; line-height: 1.62;">
+                                    <li>Outils no-code conçus pour les PME.</li>
+                                    <li>Designs de landing pages évolutifs.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <img src="/assets/scantrust/dupont-water-app.png" alt="Applis mobiles à la marque des clients" width="800" height="500" loading="lazy">
+                            <div class="project-info">
+                                <h3>Applis mobiles à la marque des clients</h3>
+                                <ul style="font-weight: 400; padding-left: 20px; list-style-type: disc; margin: 0; color: var(--text-slate); font-size: 0.94rem; line-height: 1.62;">
+                                    <li>iOS, Android, Web, WeChat</li>
+                                    <li>Réunions grands comptes</li>
+                                    <li>Éléments de design prêts pour la production</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <img src="/assets/scantrust/supply-chain-workflow-app.png" alt="Appli de workflows supply chain" width="800" height="500" loading="lazy">
+                            <div class="project-info">
+                                <h3>Appli de workflows supply chain</h3>
+                                <ul style="font-weight: 400; padding-left: 20px; list-style-type: disc; margin: 0; color: var(--text-slate); font-size: 0.94rem; line-height: 1.62;">
+                                    <li>UX de scan par lots/NFC</li>
+                                    <li>Association de codes parent-enfant</li>
+                                    <li>Gestion des tâches</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-controls">
+                        <span class="carousel-hint" id="digital-carousel-hint">Faites défiler pour parcourir</span>
+                        <div class="carousel-arrows">
+                            <button id="digital-scroll-left" aria-label="Fiche produits numériques précédente">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                                    <polyline points="12 19 5 12 12 5"></polyline>
+                                </svg>
+                            </button>
+                            <button id="digital-scroll-right" aria-label="Fiche produits numériques suivante">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Physical Products Subsection -->
+            <section class="scantrust-subsection scantrust-physical-products-section" id="physicalProductsSection">
+                <h2 class="scantrust-subsection-title">3. Produits physiques</h2>
+                
+                <p class="scantrust-intro-text">
+                    Les produits physiques de Scantrust sont les QR codes sécurisés imprimés, catalyseurs essentiels qui relient les biens matériels à la plateforme numérique de Scantrust et rendent possibles des solutions allant de l’authentification et de la traçabilité à la conformité et à l’engagement client.
+                </p>
+                <p class="scantrust-intro-text" style="margin-top: 14px; margin-bottom: 24px;">
+                    J’ai conçu une large gamme d’étiquettes de sécurité, c’est-à-dire des étiquettes anticontrefaçon, intégrant des technologies comme les QR codes sécurisés ScanTrust pour empêcher les faux et garantir l’intégrité des produits.
+                </p>
+
+                <div class="physical-expandables-group">
+                    <details class="physical-expandable" id="antiCounterfeitExpandable">
+                        <summary class="physical-expandable-summary">
+                            <span class="physical-expandable-icon" aria-hidden="true"></span>
+                            <span class="expandable-heading-text">Technologies anticontrefaçon</span>
+                        </summary>
+                        <div class="physical-expandable-content" style="padding: 0 0 20px 32px;">
+                            <p class="physical-tech-intro">
+                                J’ai l’expérience de la conception et de l’utilisation de ces technologies anticontrefaçon :
+                            </p>
+                            <ol class="physical-tech-list">
+                                <li>Hologrammes</li>
+                                <li>Dispositifs d’inviolabilité (« void », autodestructibles)</li>
+                                <li>Encres et impressions spéciales (chaleur, UV, infrarouge)</li>
+                                <li>Codes-barres ou QR codes sérialisés (suivi, traçabilité, authentification produit à l’unité)</li>
+                                <li>Étiquettes/puces RFID/NFC</li>
+                                <li>Microtexte ou nanotexte</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="physical-expandable" id="securityLabelsExpandable">
+                        <summary class="physical-expandable-summary">
+                            <span class="physical-expandable-icon" aria-hidden="true"></span>
+                            <span class="expandable-heading-text">Étiquettes de sécurité de pointe</span>
+                        </summary>
+                        <div class="physical-expandable-content" style="padding: 0 0 20px 0;">
+                            <div class="carousel-wrapper labels-carousel-wrapper">
+                                <div class="carousel-container labels-carousel-container" id="physical-labels-carousel">
+                                     <div class="label-card">
+                                         <img src="/assets/scantrust/label-designs-1.jpg" alt="Cadeaux WWF" loading="lazy">
+                                         <div class="label-card-info">
+                                             <h4>Cadeaux WWF</h4>
+                                             <p>Étiquette de sécurité traçable pour l’authenticité</p>
+                                         </div>
+                                     </div>
+                                     <div class="label-card">
+                                         <img src="/assets/scantrust/label-designs-2.jpg" alt="Cadeaux WWF" loading="lazy">
+                                         <div class="label-card-info">
+                                             <h4>Cadeaux WWF</h4>
+                                             <p>Design d’étiquette unique</p>
+                                         </div>
+                                     </div>
+                                     <div class="label-card">
+                                         <img src="/assets/scantrust/label-designs-3.jpg" alt="Manuels scolaires du collège" loading="lazy">
+                                         <div class="label-card-info">
+                                             <h4>Manuels scolaires du collège</h4>
+                                             <p>Oxford University Press Pakistan</p>
+                                         </div>
+                                     </div>
+                                     <div class="label-card">
+                                         <img src="/assets/scantrust/label-designs-4.jpg" alt="Réponse au Covid-19" loading="lazy">
+                                         <div class="label-card-info">
+                                             <h4>Réponse au Covid-19</h4>
+                                             <p>Kit de test rapide</p>
+                                         </div>
+                                     </div>
+                                     <div class="label-card">
+                                         <img src="/assets/scantrust/label-designs-5.jpg" alt="Médicaments authentiques" loading="lazy">
+                                         <div class="label-card-info">
+                                             <h4>Médicaments authentiques</h4>
+                                             <p>Pharma-tech au Nigeria</p>
+                                         </div>
+                                     </div>
+                                     <div class="label-card">
+                                         <img src="/assets/scantrust/label-designs-6.jpg" alt="Gants médicaux" loading="lazy">
+                                         <div class="label-card-info">
+                                             <h4>Gants médicaux</h4>
+                                             <p>Haute performance pendant la pandémie</p>
+                                         </div>
+                                     </div>
+                                     <div class="label-card">
+                                         <img src="/assets/scantrust/label-designs-7.jpg" alt="Filtres à eau DuPont" loading="lazy">
+                                         <div class="label-card-info">
+                                             <h4>Filtres à eau DuPont</h4>
+                                             <p>Gammes résidentielles et industrielles</p>
+                                         </div>
+                                     </div>
+                                     <div class="label-card">
+                                         <img src="/assets/scantrust/label-designs-8.jpg" alt="Farine de poisson TASA" loading="lazy">
+                                         <div class="label-card-info">
+                                             <h4>Farine de poisson TASA</h4>
+                                             <p>Certificat de qualité</p>
+                                         </div>
+                                     </div>
+                                     <div class="label-card">
+                                         <img src="/assets/scantrust/label-designs-9.jpg" alt="Certificat d’inspection" loading="lazy">
+                                         <div class="label-card-info">
+                                             <h4>Certificat d’inspection</h4>
+                                             <p>SGS Singapour et APAC</p>
+                                         </div>
+                                     </div>
+                                     <div class="label-card">
+                                         <img src="/assets/scantrust/label-designs-10.jpg" alt="Étiquette de vin" loading="lazy">
+                                         <div class="label-card-info">
+                                             <h4>Étiquette de vin</h4>
+                                             <p>Plusieurs sécurités intégrées</p>
+                                         </div>
+                                     </div>
+                                     <div class="label-card">
+                                         <img src="/assets/scantrust/label-designs-11.jpg" alt="Grains de café" loading="lazy">
+                                         <div class="label-card-info">
+                                             <h4>Grains de café</h4>
+                                             <p>Commerce équitable et durabilité</p>
+                                         </div>
+                                     </div>
+                                     <div class="label-card">
+                                         <img src="/assets/scantrust/label-designs-12.jpg" alt="Jantes de luxe Vorsteiner" loading="lazy">
+                                         <div class="label-card-info">
+                                             <h4>Jantes de luxe Vorsteiner</h4>
+                                             <p>Authentification de jantes personnalisées</p>
+                                         </div>
+                                     </div>
+                                     <div class="label-card">
+                                         <img src="/assets/scantrust/label-designs-13.jpg" alt="Zippo One Label™" loading="lazy">
+                                         <div class="label-card-info">
+                                             <h4>Zippo One Label™</h4>
+                                             <p>Briquet Zippo en édition limitée</p>
+                                         </div>
+                                     </div>
+                                     <div class="label-card">
+                                         <img src="/assets/scantrust/label-designs-14.jpg" alt="Zippo One Label™" loading="lazy">
+                                         <div class="label-card-info">
+                                             <h4>Zippo One Label™</h4>
+                                             <p>Variante du design sous lumière UV</p>
+                                         </div>
+                                     </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <span class="carousel-hint" id="physical-carousel-hint">Faites défiler pour parcourir</span>
+                                    <div class="carousel-arrows">
+                                        <button id="physical-scroll-left" aria-label="Fiche étiquettes de sécurité précédente">
+                                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                                <line x1="19" y1="12" x2="5" y2="12"></line>
+                                                <polyline points="12 19 5 12 12 5"></polyline>
+                                            </svg>
+                                        </button>
+                                        <button id="physical-scroll-right" aria-label="Fiche étiquettes de sécurité suivante">
+                                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </section>
+            
+            <!-- The Impact Section -->
+            <section class="scantrust-impact-section" id="impactSection">
+                <h2 class="impact-title">L’impact :</h2>
+                <p class="impact-lead-text">
+                    Aujourd’hui, Scantrust connecte des milliards de produits. Je suis fier de dire que des millions de personnes ont interagi avec les designs numériques et physiques que j’ai créés ou auxquels j’ai contribué.
+                </p>
+
+                <div class="impact-metrics-container">
+                    <div class="impact-metric-item">
+                        <img src="/assets/scantrust/1bn.png" alt="Plus de 1 milliard de produits protégés" class="impact-metric-icon" width="260" height="260" loading="lazy">
+                        <h3 class="impact-metric-label">Produits protégés</h3>
+                    </div>
+
+                    <div class="impact-metric-item">
+                        <img src="/assets/scantrust/185.png" alt="Plus de 185 pays touchés" class="impact-metric-icon" width="260" height="260" loading="lazy">
+                        <h3 class="impact-metric-label">Pays touchés</h3>
+                    </div>
+
+                    <div class="impact-metric-item">
+                        <img src="/assets/scantrust/80+.png" alt="Plus de 80 projets lancés" class="impact-metric-icon" width="260" height="260" loading="lazy">
+                        <h3 class="impact-metric-label">Projets lancés</h3>
+                    </div>
+                </div>
+
+                <div class="impact-footnotes">
+                    <p>* Plus de 1 milliard de produits connectés et protégés.</p>
+                    <p>* Codes Scantrust scannés dans plus de 185 pays.</p>
+                    <p>* Plus de 80 projets auxquels j’ai apporté une contribution essentielle, lancés avec succès.</p>
+                </div>
+            </section>
+            
+            <div class="brands-subsection">
+                <h3 class="brands-subsection-title">🏌️Marques avec lesquelles j’ai travaillé :</h3>
+            </div>
+            
+            <div class="brands-slideshow-card-wrapper">
+                <div class="brands-slideshow-card">
+                        <div class="brands-logo-viewport" id="brandsLogoViewport" aria-label="Logos des marques clientes">
+                            <img src="/assets/scantrust/client-logo-1.png" alt="Logo client 1" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-2.png" alt="Logo client 2" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-3.png" alt="Logo client 3" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-4.png" alt="Logo client 4" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-5.png" alt="Logo client 5" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-6.png" alt="Logo client 6" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-7.png" alt="Logo client 7" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-8.png" alt="Logo client 8" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-9.png" alt="Logo client 9" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-10.png" alt="Logo client 10" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-11.png" alt="Logo client 11" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-12.png" alt="Logo client 12" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-13.png" alt="Logo client 13" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-14.png" alt="Logo client 14" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-15.png" alt="Logo client 15" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-16.png" alt="Logo client 16" class="brand-logo-slide" loading="lazy">
+                            <img src="/assets/scantrust/client-logo-17.png" alt="Logo client 17" class="brand-logo-slide" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <section class="exec-summary-subsection" id="execSummary">
+                    <div class="exec-summary-inner">
+                        <h2 class="exec-summary-title">En résumé :</h2>
+                        <div class="exec-summary-grid" id="execSummaryGrid">
+                            <div class="exec-pillar-card" id="execCardDev">
+                                <h4 class="exec-pillar-heading" id="execHeadingDev">🛠️ Développement</h4>
+                                <ul class="exec-pillar-list" id="execListDev">
+                                     <li>Expérience de startup internationale</li>
+                                     <li>Équipe fondatrice et collaboration transverse</li>
+                                     <li>Expérience produit B2B / B2C / B2P</li>
+                                     <li>Faire le lien entre design, tech et business</li>
+                                     <li>Product ownership</li>
+                                     <li>Développement à l’écoute du marché et guidé par les données</li>
+                                 </ul>
+                            </div>
+
+                            <div class="exec-pillar-card" id="execCardDesign">
+                                <h4 class="exec-pillar-heading" id="execHeadingDesign">📐 Design</h4>
+                                <ul class="exec-pillar-list" id="execListDesign">
+                                     <li>Poser les bonnes questions</li>
+                                     <li>Design produit concret</li>
+                                     <li>Design centré sur l’humain</li>
+                                     <li>Workflows propulsés par l’IA</li>
+                                     <li>Concevoir pour passer à l’échelle</li>
+                                     <li>La meilleure solution est souvent la plus simple</li>
+                                 </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            <!-- Contact Me Section -->
+            <section id="contact" class="contact-section scantrust-contact-section bg-white text-center">
+                <div class="container">
+                    <h2 class="section-title text-center">Me contacter :</h2>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <div class="icon-wrapper">
+                                <img src="/assets/icon-linkedin.png" alt="Logo LinkedIn" class="icon-outline">
+                            </div>
+                            <a href="https://www.linkedin.com/in/jensenearth/" target="_blank" class="btn btn-black">LINKEDIN</a>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-wrapper">
+                                <img src="/assets/icon-email.png" alt="Icône e-mail" class="icon-outline">
+                            </div>
+                            <a href="mailto:slick.87.wackos@icloud.com" class="btn btn-black">E-MAIL</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer bg-black">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="/fr/">Accueil</a>
+                <a href="/fr/research/">Recherche</a>
+                <a href="https://www.linkedin.com/in/jensenearth/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-copy">
+                Fait avec ♥️ et l’IA sur Terre © JENSEN S.Z. <span class="footer-rainbow" role="button" tabindex="0" title="Faire pleuvoir des arcs-en-ciel ! 🌈" aria-label="Faire pleuvoir des arcs-en-ciel">🌈</span>✨Faire pleuvoir des arcs-en-ciel ! 🌈" aria-label="Faire pleuvoir des arcs-en-ciel">🌈</span>✨
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function updateTabIndicator(activeBtn) {
+            const indicator = document.getElementById('challengeTabIndicator');
+            if (!indicator || !activeBtn) return;
+            indicator.style.width = `${activeBtn.offsetWidth}px`;
+            indicator.style.transform = `translateX(${activeBtn.offsetLeft}px)`;
+        }
+
+        function switchChallengeTab(tabName) {
+            const earlyBtn = document.getElementById('tab-btn-early');
+            const scalingBtn = document.getElementById('tab-btn-scaling');
+            const track = document.getElementById('challenge-tab-track');
+            const earlyPanel = document.getElementById('panel-early');
+            const scalingPanel = document.getElementById('panel-scaling');
+            if (!earlyBtn || !scalingBtn || !track || !earlyPanel || !scalingPanel) return;
+
+            if (tabName === 'early') {
+                earlyBtn.classList.add('active');
+                earlyBtn.setAttribute('aria-selected', 'true');
+                scalingBtn.classList.remove('active');
+                scalingBtn.setAttribute('aria-selected', 'false');
+                earlyPanel.removeAttribute('aria-hidden');
+                scalingPanel.setAttribute('aria-hidden', 'true');
+                track.style.transform = 'translateX(0%)';
+                updateTabIndicator(earlyBtn);
+            } else {
+                scalingBtn.classList.add('active');
+                scalingBtn.setAttribute('aria-selected', 'true');
+                earlyBtn.classList.remove('active');
+                earlyBtn.setAttribute('aria-selected', 'false');
+                scalingPanel.removeAttribute('aria-hidden');
+                earlyPanel.setAttribute('aria-hidden', 'true');
+                track.style.transform = 'translateX(-50%)';
+                updateTabIndicator(scalingBtn);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const activeBtn = document.querySelector('.challenge-tab-btn.active');
+            if (activeBtn) updateTabIndicator(activeBtn);
+        });
+        window.addEventListener('resize', () => {
+            const activeBtn = document.querySelector('.challenge-tab-btn.active');
+            if (activeBtn) updateTabIndicator(activeBtn);
+        });
+        setTimeout(() => {
+            const activeBtn = document.querySelector('.challenge-tab-btn.active');
+            if (activeBtn) updateTabIndicator(activeBtn);
+        }, 50);
+
+        (function initAllPillarSwipers() {
+            const swipers = document.querySelectorAll('.platform-pillar-swiper');
+            if (!swipers.length) return;
+
+            swipers.forEach((swiper) => {
+                const viewport = swiper.querySelector('.pillar-viewport');
+                const track = swiper.querySelector('.pillar-track');
+                const titleEl = swiper.querySelector('.pillar-active-title');
+                const prevBtn = swiper.querySelector('.pillar-prev-btn');
+                const nextBtn = swiper.querySelector('.pillar-next-btn');
+                const dynamicBelt = swiper.querySelector('.pillar-dynamic-belt');
+
+                if (!viewport || !track || !titleEl || !prevBtn || !nextBtn) return;
+
+                const slideCore = track.querySelector('[data-pillar="core"]');
+                const slideDigital = track.querySelector('[data-pillar="digital"]');
+                const slidePhysical = track.querySelector('[data-pillar="physical"]');
+                if (!slideCore || !slideDigital || !slidePhysical) return;
+
+                // Geometry constants:
+                // 3 pillars spaced 120° (2π / 3) apart on an infinite circular track.
+                // Center is 0 rad (Core Technology, 100% scale)
+                // Left is -120° (-2π / 3 rad) (Digital Products, 60% scale)
+                // Right is +120° (+2π / 3 rad) (Physical Products, 60% scale)
+                const TWO_PI = 2 * Math.PI;
+                const TWO_PI_OVER_3 = (2 * Math.PI) / 3;
+                const SIN_120 = Math.sin(TWO_PI_OVER_3); // ~0.866025
+
+                const pillarData = [
+                    { el: slideCore, img: slideCore.querySelector('.pillar-img'), baseAngle: 0, index: 0, title: "1. Technologie cœur", name: "core" },
+                    { el: slideDigital, img: slideDigital.querySelector('.pillar-img'), baseAngle: -TWO_PI_OVER_3, index: 1, title: "2. Produits numériques", name: "digital" },
+                    { el: slidePhysical, img: slidePhysical.querySelector('.pillar-img'), baseAngle: TWO_PI_OVER_3, index: 2, title: "3. Produits physiques", name: "physical" }
+                ];
+
+                let currentRot = 0;   // Continuous rotation coordinate
+                let targetStep = 0;   // Discrete target step index
+                let animId = null;
+
+                function getSideOffset() {
+                    const computed = window.getComputedStyle(swiper);
+                    const val = parseFloat(computed.getPropertyValue('--side-offset'));
+                    if (!isNaN(val) && val > 0) return val;
+                    const w = window.innerWidth;
+                    if (w <= 480) return 100;
+                    if (w <= 768) return 140;
+                    return 195;
+                }
+
+                // Updates positions, scale along horizontal axis, icon opacity, and z-index for all 3 pillars
+                function updatePositions(r) {
+                    const sideOffset = getSideOffset();
+                    let highestCos = -2;
+                    let activeTitle = "";
+
+                    pillarData.forEach(p => {
+                        const theta = p.baseAngle - r * TWO_PI_OVER_3;
+                        const normTheta = ((theta + Math.PI) % TWO_PI + TWO_PI) % TWO_PI - Math.PI;
+                        const sinVal = Math.sin(normTheta);
+                        const cosVal = Math.cos(normTheta);
+
+                        if (cosVal > highestCos) {
+                            highestCos = cosVal;
+                            activeTitle = p.title;
+                        }
+
+                        const x = (sinVal / SIN_120) * sideOffset;
+
+                        let scale;
+                        if (cosVal >= -0.5) {
+                            const t = (cosVal + 0.5) / 1.5;
+                            scale = 0.60 + t * 0.40;
+                        } else {
+                            const t = (cosVal + 1.0) / 0.5;
+                            scale = 0.48 + t * 0.12;
+                        }
+
+                        // Normalized depth from back (cosVal = -1) to center front (cosVal = 1)
+                        // At the back of the belt: 50% (0.50) opacity
+                        // At the center front: 100% (1.00) opacity
+                        const depthRatio = (cosVal + 1.0) / 2.0; // 0.0 at back, 0.25 at side nodes (-0.5), 1.0 at front
+                        const iconOpacity = 0.50 + depthRatio * 0.50;
+
+                        let zIndex;
+                        let cursor = 'default';
+
+                        if (cosVal > 0.45) {
+                            zIndex = 10;
+                            cursor = 'grab';
+                        } else if (cosVal >= -0.5) {
+                            zIndex = 5;
+                            cursor = 'pointer';
+                        } else {
+                            zIndex = 1;
+                            cursor = 'default';
+                        }
+
+                        p.el.style.transform = `translate3d(${x.toFixed(2)}px, 0, 0) scale(${scale.toFixed(4)})`;
+                        p.el.style.zIndex = zIndex;
+                        p.el.style.opacity = '1';
+                        p.el.style.cursor = cursor;
+                        if (p.img) {
+                            p.img.style.opacity = iconOpacity.toFixed(3);
+                        }
+                        p.currentX = x;
+                        p.cosVal = cosVal;
+                    });
+
+                    if (activeTitle && titleEl.textContent !== activeTitle) {
+                        titleEl.textContent = activeTitle;
+                    }
+
+                    if (dynamicBelt) {
+                        // Dynamically roll the dashed pattern in real-time as rotation advances
+                        dynamicBelt.style.strokeDashoffset = `${(-r * 60).toFixed(2)}px`;
+                    }
+                }
+
+                function easeOutCubic(t) {
+                    return 1 - Math.pow(1 - t, 3);
+                }
+
+                function animateTo(target, duration = 380) {
+                    if (animId) cancelAnimationFrame(animId);
+                    const startRot = currentRot;
+                    const delta = target - startRot;
+                    if (Math.abs(delta) < 0.0005) {
+                        currentRot = target;
+                        targetStep = target;
+                        updatePositions(currentRot);
+                        return;
+                    }
+
+                    const startTime = performance.now();
+
+                    function step(now) {
+                        const elapsed = now - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const eased = easeOutCubic(progress);
+                        currentRot = startRot + delta * eased;
+                        updatePositions(currentRot);
+
+                        if (progress < 1) {
+                            animId = requestAnimationFrame(step);
+                        } else {
+                            currentRot = target;
+                            targetStep = target;
+                            updatePositions(currentRot);
+                            animId = null;
+                        }
+                    }
+                    animId = requestAnimationFrame(step);
+                }
+
+                function rotateBy(deltaSteps) {
+                    targetStep += deltaSteps;
+                    animateTo(targetStep, 380);
+                }
+
+                nextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    rotateBy(1);
+                });
+                prevBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    rotateBy(-1);
+                });
+
+                viewport.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        rotateBy(1);
+                    } else if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        rotateBy(-1);
+                    }
+                });
+
+                let isDragging = false;
+                let startX = 0;
+                let currentXPos = 0;
+                let dragStartRot = 0;
+                let totalMoveDistance = 0;
+
+                function onPointerDown(e) {
+                    if (animId) cancelAnimationFrame(animId);
+                    isDragging = true;
+                    viewport.classList.add('is-dragging');
+                    startX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+                    currentXPos = startX;
+                    dragStartRot = currentRot;
+                    totalMoveDistance = 0;
+                }
+
+                function onPointerMove(e) {
+                    if (!isDragging) return;
+                    currentXPos = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+                    const diffX = currentXPos - startX;
+                    totalMoveDistance = Math.abs(diffX);
+
+                    const sideOffset = getSideOffset();
+                    const rotDelta = -diffX / (sideOffset * 1.25);
+                    currentRot = dragStartRot + rotDelta;
+                    updatePositions(currentRot);
+                }
+
+                function onPointerUp() {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    viewport.classList.remove('is-dragging');
+
+                    const diffX = currentXPos - startX;
+                    const sideOffset = getSideOffset();
+                    const threshold = sideOffset * 0.22;
+
+                    if (diffX < -threshold) {
+                        targetStep = Math.ceil(dragStartRot);
+                        if (targetStep === dragStartRot) targetStep += 1;
+                    } else if (diffX > threshold) {
+                        targetStep = Math.floor(dragStartRot);
+                        if (targetStep === dragStartRot) targetStep -= 1;
+                    } else {
+                        targetStep = Math.round(currentRot);
+                    }
+
+                    animateTo(targetStep, 340);
+                }
+
+                viewport.addEventListener('mousedown', onPointerDown);
+                window.addEventListener('mousemove', onPointerMove);
+                window.addEventListener('mouseup', onPointerUp);
+
+                viewport.addEventListener('touchstart', onPointerDown, { passive: true });
+                viewport.addEventListener('touchmove', onPointerMove, { passive: true });
+                viewport.addEventListener('touchend', onPointerUp);
+                viewport.addEventListener('touchcancel', onPointerUp);
+
+                pillarData.forEach(p => {
+                    p.el.addEventListener('click', (e) => {
+                        if (totalMoveDistance > 8) return;
+                        if (p.cosVal < 0.45 && p.cosVal >= -0.55) {
+                            e.stopPropagation();
+                            if (p.currentX > 0) {
+                                rotateBy(1);
+                            } else if (p.currentX < 0) {
+                                rotateBy(-1);
+                            }
+                        }
+                    });
+                });
+
+                window.addEventListener('resize', () => {
+                    updatePositions(currentRot);
+                });
+
+                updatePositions(0);
+            });
+        })();
+
+        function initSubCarousel(carouselId, leftBtnId, rightBtnId) {
+            const carousel = document.getElementById(carouselId);
+            const scrollLeftBtn = document.getElementById(leftBtnId);
+            const scrollRightBtn = document.getElementById(rightBtnId);
+
+            if (!carousel || !scrollLeftBtn || !scrollRightBtn) return;
+
+            const getScrollAmount = () => {
+                const firstCard = carousel.querySelector('.project-card, .label-card');
+                if (!firstCard) return 320;
+                const carouselStyle = window.getComputedStyle(carousel);
+                const gap = parseFloat(carouselStyle.gap) || 20;
+                return firstCard.offsetWidth + gap;
+            };
+
+            const getMaxScroll = () => {
+                const cards = carousel.querySelectorAll('.project-card, .label-card');
+                if (!cards.length) return 0;
+                const lastCard = cards[cards.length - 1];
+                const carouselStyle = window.getComputedStyle(carousel);
+                const paddingRight = parseFloat(carouselStyle.paddingRight) || 0;
+                const lastCardMax = (lastCard.offsetLeft + lastCard.offsetWidth + paddingRight) - carousel.clientWidth;
+                const standardMax = carousel.scrollWidth - carousel.clientWidth;
+                return Math.max(0, Math.min(lastCardMax, standardMax));
+            };
+
+            const updateButtonStates = () => {
+                const maxScroll = getMaxScroll();
+                const scrollLeft = carousel.scrollLeft;
+                
+                const isAtStart = scrollLeft <= 8;
+                let isAtEnd = scrollLeft >= maxScroll - 8;
+                
+                const cards = carousel.querySelectorAll('.project-card, .label-card');
+                const lastCard = cards[cards.length - 1];
+                if (lastCard) {
+                    const carouselRect = carousel.getBoundingClientRect();
+                    const lastCardRect = lastCard.getBoundingClientRect();
+                    if (lastCardRect.right <= carouselRect.right + 12) {
+                        isAtEnd = true;
+                    }
+                }
+                
+                scrollLeftBtn.disabled = isAtStart;
+                if (isAtStart) {
+                    scrollLeftBtn.classList.add('disabled');
+                    scrollLeftBtn.style.opacity = '0.15';
+                    scrollLeftBtn.style.cursor = 'not-allowed';
+                    scrollLeftBtn.style.pointerEvents = 'none';
+                } else {
+                    scrollLeftBtn.classList.remove('disabled');
+                    scrollLeftBtn.style.opacity = '1';
+                    scrollLeftBtn.style.cursor = 'pointer';
+                    scrollLeftBtn.style.pointerEvents = 'auto';
+                }
+                
+                scrollRightBtn.disabled = isAtEnd;
+                if (isAtEnd) {
+                    scrollRightBtn.classList.add('disabled');
+                    scrollRightBtn.style.opacity = '0.15';
+                    scrollRightBtn.style.cursor = 'not-allowed';
+                    scrollRightBtn.style.pointerEvents = 'none';
+                } else {
+                    scrollRightBtn.classList.remove('disabled');
+                    scrollRightBtn.style.opacity = '1';
+                    scrollRightBtn.style.cursor = 'pointer';
+                    scrollRightBtn.style.pointerEvents = 'auto';
+                }
+            };
+
+            scrollLeftBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                if (scrollLeftBtn.disabled || carousel.scrollLeft <= 5) return;
+                const step = getScrollAmount();
+                const target = Math.max(0, carousel.scrollLeft - step);
+                carousel.scrollTo({ left: target, behavior: "smooth" });
+            });
+
+            scrollRightBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                const maxScroll = getMaxScroll();
+                if (scrollRightBtn.disabled || carousel.scrollLeft >= maxScroll - 5) return;
+                const step = getScrollAmount();
+                const target = Math.min(maxScroll, carousel.scrollLeft + step);
+                carousel.scrollTo({ left: target, behavior: "smooth" });
+            });
+
+            let isScrolling;
+            carousel.addEventListener("scroll", () => {
+                window.cancelAnimationFrame(isScrolling);
+                isScrolling = window.requestAnimationFrame(updateButtonStates);
+            }, { passive: true });
+
+            window.addEventListener("resize", updateButtonStates);
+            setTimeout(updateButtonStates, 100);
+        }
+
+        initSubCarousel("core-tech-carousel", "core-scroll-left", "core-scroll-right");
+        initSubCarousel("digital-products-carousel", "digital-scroll-left", "digital-scroll-right");
+        initSubCarousel("physical-labels-carousel", "physical-scroll-left", "physical-scroll-right");
+
+        const securityLabelsExpandable = document.getElementById("securityLabelsExpandable");
+        if (securityLabelsExpandable) {
+            securityLabelsExpandable.addEventListener("toggle", () => {
+                if (securityLabelsExpandable.open) {
+                    window.dispatchEvent(new Event("resize"));
+                    setTimeout(() => {
+                        window.dispatchEvent(new Event("resize"));
+                    }, 50);
+                }
+            });
+        }
+    </script>
+<script src="/layout.js"></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "41fc70af798e4e2aa996b03e42a0018c"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
