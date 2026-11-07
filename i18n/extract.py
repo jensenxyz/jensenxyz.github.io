@@ -27,6 +27,7 @@ class _P(HTMLParser):
         self.run = None          # [start, end, has_text]
         self.segments = []       # (start, end)
         self.attrs = []          # (start, end) of attribute values
+        self.svg_text = 0        # inside <text>/<tspan> of an inline SVG
 
     def off(self):
         ln, col = self.getpos()
@@ -106,6 +107,10 @@ class _P(HTMLParser):
         start = self.off(); raw = self.get_starttag_text(); end = start + len(raw)
         if not self.skip:
             self._attrs(tag, attrs, start, raw)
+        if self.skip and tag in ('text', 'tspan'):
+            self.svg_text += 1
+            self.svg_text_start = end
+            return
         if tag in SKIP:
             self.close_run()
             if tag not in VOID:
@@ -127,6 +132,13 @@ class _P(HTMLParser):
 
     def handle_endtag(self, tag):
         start = self.off(); end = self.src.index('>', start) + 1
+        if self.skip and tag in ('text', 'tspan'):
+            self.svg_text = max(0, self.svg_text - 1)
+            inner = self.src[self.svg_text_start:start]
+            if '<' not in inner and len(re.findall(r'[^\W\d_]', inner)) >= 2:
+                a = self.svg_text_start + len(inner) - len(inner.lstrip())
+                self.segments.append((a, a + len(inner.strip())))
+            return
         if tag in SKIP:
             if self.skip:
                 self.skip -= 1
@@ -138,6 +150,8 @@ class _P(HTMLParser):
 
     def handle_data(self, data):
         start = self.off()
+        if self.skip and self.svg_text:
+            return   # SVG <text> labels are taken whole at their end tag
         self.extend(start, start + len(data))
 
     def handle_entityref(self, name):

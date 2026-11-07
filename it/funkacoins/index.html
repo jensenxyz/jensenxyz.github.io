@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/theme.js"></script>
+    <!-- i18n:head -->
+    <link rel="alternate" hreflang="en" href="https://jensenxyz.github.io/funkacoins/">
+    <link rel="alternate" hreflang="it" href="https://jensenxyz.github.io/it/funkacoins/">
+    <link rel="alternate" hreflang="fr" href="https://jensenxyz.github.io/fr/funkacoins/">
+    <link rel="alternate" hreflang="es" href="https://jensenxyz.github.io/es/funkacoins/">
+    <link rel="alternate" hreflang="x-default" href="https://jensenxyz.github.io/funkacoins/">
+    <!-- /i18n:head -->
+    <title>FunkaCoins: fidelizzazione e O2O | JENSEN</title>
+    <meta name="description" content="Put Funka In Your Pocket: un sistema completo basato su WeChat e integrato con il POS, pensato per rafforzare la fidelizzazione dei clienti, semplificare le operazioni e ampliare i canali di vendita.">
+    <meta property="og:title" content="FunkaCoins: fidelizzazione e O2O | JENSEN">
+    <meta property="og:description" content="Put Funka In Your Pocket: un sistema completo basato su WeChat e integrato con il POS, pensato per rafforzare la fidelizzazione dei clienti, semplificare le operazioni e ampliare i canali di vendita.">
+    <meta property="og:image" content="/assets/funkacoins/funka-heart-banner.png">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="JENSEN">
+    <link rel="manifest" href="/assets/site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        body {
+            background-color: var(--bg-white) !important;
+        }
+        .funkacoins-page-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Full-width Hero Area matching /happyhour page */
+        .funkacoins-hero-fullbleed {
+            background-color: var(--bg-light);
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            margin-top: -12px;
+            padding: 20px 20px 64px 20px;
+        }
+        .funkacoins-hero-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .funkacoins-hero-fullbleed .breadcrumb {
+            color: var(--text-75);
+            margin-bottom: 12px;
+        }
+        .funkacoins-hero-fullbleed .breadcrumb a {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        .funkacoins-hero-fullbleed .breadcrumb a:hover {
+            opacity: 0.7;
+        }
+        .funkacoins-hero-img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0;
+            margin: 0 auto;
+            display: block;
+        }
+        .funkacoins-story {
+            max-width: 800px;
+            margin: 48px auto 0 auto;
+        }
+        .funkacoins-story .study-accordions-group {
+            border-top: 1px solid var(--line-medium);
+            margin-top: 24px;
+        }
+        .funkacoins-story .study-accordion.accordion-flush {
+            border-bottom: 1px solid var(--line-medium) !important;
+            border-top: none !important;
+            padding: 4px 0 !important;
+        }
+        .funkacoins-story-title {
+            font-size: 3.2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 1.2;
+        }
+        .story-text {
+            font-size: 1.0rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--text-grey);
+            margin-bottom: 16px;
+            padding: 8px;
+        }
+        .story-text .text-accent,
+        .text-accent {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        .story-text:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --- The Challenge Section --- */
+        .challenge-section-wrapper {
+            position: relative;
+            margin-top: 0;
+            background: #070707;
+            padding: 88px 20px;
+            color: var(--text-light);
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            overflow: hidden;
+        }
+        .challenge-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .challenge-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: var(--text-light);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .challenge-lead-p {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.75;
+            color: var(--band-text-soft-2);
+            margin: 0 0 20px 0;
+            text-align: left;
+        }
+        .challenge-goals-card {
+            margin-top: 28px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 24px;
+            padding: 28px 32px;
+        }
+        .challenge-goals-intro {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 600;
+            font-size: 1.08rem;
+            color: var(--text-light);
+            margin: 0 0 16px 0;
+            line-height: 1.5;
+        }
+        .challenge-goals-list {
+            list-style: disc;
+            padding-left: 22px;
+            margin: 0;
+        }
+        .challenge-goals-list li {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-size: 1.02rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--band-text-soft);
+            margin-bottom: 10px;
+        }
+        .challenge-goals-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --- The Solution Section: Bounded Card & Subsections --- */
+        .funkacoins-solution-card {
+            margin-top: 64px;
+            background: var(--bg-light);
+            border: 2px solid var(--outline-strong);
+            border-radius: 32px;
+            padding: 58px 40px 48px 40px;
+            box-sizing: border-box;
+            color: var(--text-dark);
+            position: relative;
+        }
+        .solution-card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.35rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .solution-card-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.45rem;
+            letter-spacing: -0.3px;
+            line-height: 1.3;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .solution-card-intro {
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .solution-intro-p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.02rem;
+            font-weight: 400;
+            line-height: 1.65;
+            color: var(--text-ink);
+            margin-bottom: 0;
+        }
+
+        .funkacoins-subsection {
+            margin-top: 56px;
+            padding-top: 36px;
+            border-top: 1px solid var(--line-soft);
+        }
+        .funkacoins-subsection:first-of-type {
+            margin-top: 56px;
+            padding-top: 0;
+            border-top: none;
+        }
+        .funkacoins-subsection-title {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            letter-spacing: -0.2px;
+            line-height: 1.25;
+            margin-bottom: 16px;
+            text-align: left;
+        }
+        .funkacoins-intro-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.0rem;
+            font-weight: 300;
+            line-height: 1.68;
+            color: var(--text-ink);
+            margin-bottom: 16px;
+            max-width: 900px;
+            text-align: left;
+        }
+        .funkacoins-intro-text:last-child {
+            margin-bottom: 0;
+        }
+        .funkacoins-feature-list {
+            list-style: disc;
+            padding-left: 24px;
+            margin: 12px 0 0 0;
+        }
+        .funkacoins-feature-list li {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.0rem;
+            font-weight: 300;
+            line-height: 1.68;
+            color: var(--text-ink);
+            margin-bottom: 8px;
+        }
+        .funkacoins-feature-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .funkacoins-media-frame {
+            margin: 20px 0 24px 0;
+            width: 100%;
+            text-align: center;
+        }
+        .funkacoins-section-img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        #solutionSection .funkacoins-section-img {
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        /* --- Breaker Banner --- */
+        .funkacoins-breaker-banner {
+            width: 100vw;
+            max-width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            margin-top: 64px;
+            margin-bottom: 0;
+            background-color: #F9F9F2;
+            display: block;
+            overflow: hidden;
+            text-align: center;
+        }
+        .funkacoins-breaker-img {
+            width: 100%;
+            max-width: 800px;
+            height: 280px;
+            max-height: 280px;
+            display: block;
+            margin: 0 auto;
+            object-fit: cover;
+            object-position: center bottom;
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
+        }
+
+        /* --- The Results Section --- */
+        .funkacoins-results-section {
+            margin-top: 0;
+            padding-top: 64px;
+            padding-bottom: 48px;
+            border-top: none;
+            position: relative;
+        }
+        .funkacoins-results-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: calc(-50vw + 50%);
+            right: calc(-50vw + 50%);
+            background-color: var(--band-grey);
+            z-index: -1;
+        }
+        .funkacoins-results-section > * {
+            position: relative;
+            z-index: 1;
+        }
+        .results-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .results-lead-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.68;
+            color: var(--text-ink);
+            max-width: 800px;
+            text-align: left;
+            margin: 0 auto 48px auto;
+        }
+        .results-metrics-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            max-width: 800px;
+            margin: 0 auto 48px auto;
+            align-items: start;
+        }
+        .results-metric-item {
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            box-shadow: none;
+            transition: transform 0.25s ease;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            .results-metric-item:hover {
+                transform: translateY(-4px);
+            }
+        }
+        .results-metric-coin-img {
+            width: 100%;
+            max-width: 170px;
+            height: auto;
+            display: block;
+            margin: 0 auto 16px auto;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
+            transition: transform 0.3s ease;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            .results-metric-item:hover .results-metric-coin-img {
+                transform: scale(1.04);
+            }
+        }
+        .results-metric-label {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: -0.2px;
+            color: var(--text-dark);
+            line-height: 1.35;
+            margin: 0;
+        }
+        .results-footnotes {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .results-footnotes p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 300;
+            line-height: 1.5;
+            color: var(--text-slate);
+            margin: 0;
+        }
+
+        /* --- Product Mind Map Section --- */
+        .mindmap-subsection {
+            margin-top: 72px;
+            margin-bottom: 64px;
+            text-align: center;
+        }
+        .mindmap-subsection-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: var(--text-dark);
+            margin-top: 0;
+            margin-bottom: 32px;
+            padding: 8px 0;
+            text-align: center;
+        }
+        .mindmap-card {
+            background: var(--bg-light);
+            border: 2px solid var(--outline-strong);
+            border-radius: 30px;
+            padding: 36px 28px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        /* Mind map colours follow the theme (SVG attributes are the light-mode fallback) */
+        .mindmap-diagram-svg .mm-line { stroke: var(--diagram-line); }
+        .mindmap-diagram-svg .mm-node { fill: var(--bg-white); stroke: var(--diagram-line); }
+        .mindmap-diagram-svg .mm-title { fill: var(--text-dark); }
+        .mindmap-diagram-svg .mm-sub { fill: var(--text-grey); }
+        .mindmap-diagram-svg .mm-hub { fill: var(--diagram-hub); }
+        .mindmap-diagram-svg .mm-hub-title { fill: var(--text-light); }
+        .mindmap-diagram-svg {
+            width: 100%;
+            height: auto;
+            max-width: 720px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* --- Executive Summary Section --- */
+        .exec-summary-subsection {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            text-align: center;
+            background: #000000;
+            color: var(--text-light);
+            padding: 80px 40px;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+        }
+        .exec-summary-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .exec-summary-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: var(--text-light);
+            letter-spacing: -0.5px;
+            line-height: 1.15;
+            margin: 0 auto 48px auto;
+            padding: 0;
+            text-align: center;
+        }
+        .exec-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            align-items: stretch;
+            max-width: 980px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        @media (min-width: 992px) {
+            .exec-summary-grid {
+                gap: 36px;
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+        }
+        .exec-pillar-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin: 0;
+            padding: 32px 28px;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.04);
+            background-image: 
+                radial-gradient(ellipse at 15% 0%, rgba(255, 255, 255, 0.08) 0%, transparent 65%),
+                linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.015) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 
+                0 20px 40px -10px rgba(0, 0, 0, 0.65),
+                inset 0 1px 1px 0 rgba(255, 255, 255, 0.18),
+                inset 0 -1px 1px 0 rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            overflow: hidden;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .exec-pillar-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.24);
+            box-shadow: 
+                0 24px 48px -10px rgba(0, 0, 0, 0.8),
+                inset 0 1px 1px 0 rgba(255, 255, 255, 0.28);
+        }
+        .exec-pillar-heading {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-light);
+            letter-spacing: -0.2px;
+            line-height: 1.25;
+            margin: 0 0 18px 0;
+            padding: 0 0 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .exec-pillar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex-grow: 1;
+        }
+        .exec-pillar-list li {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.92rem;
+            font-weight: 300;
+            line-height: 1.45;
+            color: var(--band-text-soft);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 2px 0;
+            margin: 0;
+        }
+        .exec-pillar-list li::before {
+            content: '•';
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            line-height: 1.45;
+            margin-top: 0px;
+            flex-shrink: 0;
+        }
+
+        .funkacoins-contact-section {
+            padding-top: 60px;
+            padding-bottom: 24px;
+            background-color: transparent;
+        }
+        .funkacoins-contact-section .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: var(--text-dark);
+            white-space: nowrap;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        @media (max-width: 992px) {
+            .funkacoins-story-title {
+                font-size: 2.3rem;
+            }
+            .funkacoins-breaker-img {
+                max-width: 760px;
+                height: 250px;
+                max-height: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .funkacoins-hero-fullbleed {
+                padding: 16px 20px 48px 20px;
+            }
+            .funkacoins-hero-img {
+                max-width: 100%;
+                border-radius: 0;
+                margin: 0 auto;
+            }
+            .funkacoins-story {
+                margin: 36px auto 0 auto;
+            }
+            .funkacoins-story-title {
+                font-size: 1.95rem;
+                margin-bottom: 14px;
+            }
+            .story-text {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+            .challenge-section-wrapper {
+                padding: 64px 20px;
+                margin-top: 0;
+            }
+            .challenge-title {
+                font-size: 1.95rem;
+            }
+            .challenge-lead-p {
+                font-size: 0.96rem;
+                line-height: 1.65;
+            }
+            .challenge-goals-card {
+                padding: 22px 20px;
+                border-radius: 18px;
+            }
+            .challenge-goals-intro {
+                font-size: 1.0rem;
+            }
+            .challenge-goals-list li {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+            .funkacoins-solution-card {
+                margin-top: 44px;
+                padding: 42px 22px 34px 22px;
+                border-radius: 24px;
+            }
+            .solution-card-title {
+                font-size: 1.95rem;
+            }
+            .solution-card-subtitle {
+                font-size: 1.22rem;
+            }
+            .solution-intro-p {
+                font-size: 0.94rem;
+                line-height: 1.58;
+            }
+            .funkacoins-subsection {
+                margin-top: 44px;
+                padding-top: 24px;
+            }
+            .funkacoins-subsection-title {
+                font-size: 1.18rem;
+                margin-bottom: 12px;
+            }
+            .funkacoins-intro-text,
+            .funkacoins-feature-list li {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+            .funkacoins-section-img {
+                border-radius: 16px;
+            }
+            .funkacoins-breaker-banner {
+                margin-top: 44px;
+            }
+            .funkacoins-breaker-img {
+                max-width: 680px;
+                height: 230px;
+                max-height: 230px;
+            }
+            .results-title {
+                font-size: 1.95rem;
+                margin-bottom: 18px;
+            }
+            .results-lead-text {
+                font-size: 0.96rem;
+                line-height: 1.6;
+                margin-bottom: 32px;
+            }
+            .results-metrics-container {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                margin-bottom: 32px;
+            }
+            .results-metric-item {
+                padding: 0;
+                border-radius: 0;
+            }
+            .results-metric-coin-img {
+                max-width: 100px;
+                margin-bottom: 10px;
+            }
+            .results-metric-label {
+                font-size: 0.98rem;
+            }
+            .mindmap-subsection {
+                margin-top: 52px;
+                margin-bottom: 48px;
+            }
+            .mindmap-subsection-title {
+                font-size: 1.85rem;
+                margin-bottom: 24px;
+            }
+            .mindmap-card {
+                padding: 24px 16px;
+                border-radius: 22px;
+            }
+            .exec-summary-subsection {
+                padding: 48px 20px;
+            }
+            .exec-summary-title {
+                font-size: 1.95rem;
+                margin-bottom: 32px;
+            }
+            .exec-summary-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            .exec-pillar-card {
+                padding: 24px 20px;
+                border-radius: 18px;
+            }
+            .exec-pillar-heading {
+                font-size: 1.18rem;
+                margin-bottom: 14px;
+                padding-bottom: 12px;
+                white-space: nowrap;
+            }
+            .exec-pillar-list li {
+                font-size: 0.86rem;
+                line-height: 1.42;
+            }
+            .funkacoins-contact-section .section-title {
+                font-size: 1.95rem;
+                margin-bottom: 24px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .funkacoins-breaker-img {
+                max-width: 100%;
+                height: auto;
+                max-height: none;
+                object-fit: contain;
+            }
+            .exec-summary-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+        }
+
+        @media (max-width: 1024px), (hover: none), (pointer: coarse) {
+            .results-metric-item:hover,
+            .exec-pillar-card:hover {
+                transform: none !important;
+            }
+            .study-accordion-summary:hover,
+            .accordion-flush .study-accordion-summary:hover {
+                background-color: transparent !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-beige">
+
+    <!-- Header Navigation (Sticky & Translucent) -->
+    <header class="site-header">
+        <div class="container header-flex">
+            <a href="/it/" class="logo">JENSEN ✨</a>
+            <div class="header-actions">
+                <a href="/it/" class="link-underline back-to-home">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Torna alla home
+                </a>
+                <!-- i18n:menu -->
+                <details class="lang-menu">
+                    <summary class="lang-menu-btn" aria-label="Lingua: Italiano" title="Lingua">IT</summary>
+                    <ul class="lang-menu-list">
+                        <li><a href="/funkacoins/" hreflang="en" lang="en" data-lang="en">English</a></li>
+                        <li><a href="/it/funkacoins/" hreflang="it" lang="it" data-lang="it" aria-current="page">Italiano</a></li>
+                        <li><a href="/fr/funkacoins/" hreflang="fr" lang="fr" data-lang="fr">Français</a></li>
+                        <li><a href="/es/funkacoins/" hreflang="es" lang="es" data-lang="es">Español</a></li>
+                    </ul>
+                </details>
+                <!-- /i18n:menu -->
+                <button type="button" class="theme-toggle" aria-label="Modalità scura" aria-pressed="false">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container pt-medium pb-large">
+        <div class="funkacoins-page-content">
+            <!-- Full-Width Hero Area with Background Covering Hero & Idea Section -->
+            <div class="funkacoins-hero-fullbleed">
+                <div class="funkacoins-hero-inner">
+                    <div class="breadcrumb">
+                        <a href="/it/">Home</a> &gt; FunkaCoins: fidelizzazione e O2O
+                    </div>
+
+                    <!-- Hero Banner -->
+                    <img src="/assets/funkacoins/funka-heart-banner.png" alt="FunkaCoins: fidelizzazione e O2O" class="funkacoins-hero-img" width="1600" height="900" loading="eager">
+
+                    <!-- The Idea Section -->
+                    <div class="funkacoins-story" id="ideaSection">
+                        <h1 class="funkacoins-story-title">L’idea:</h1>
+
+                        <div class="study-accordions-group">
+                            <details class="study-accordion accordion-flush">
+                                <summary class="study-accordion-summary">
+                                    <span class="summary-left">
+                                        <span class="summary-title">Un punto d’incontro internazionale</span>
+                                    </span>
+                                    <svg class="summary-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </summary>
+                                <div class="study-accordion-body">
+                                    <p class="story-text">
+                                        Funka Group possiede e gestisce diversi ristoranti e bar italiani e un night club a Shanghai. Uno dei locali, Funkadeli, è da oltre dieci anni il punto d’incontro delle comunità internazionali in Cina per gustare cibo e drink italiani. Residenti e turisti amano i locali di Funka Group per l’atmosfera unica di ciascuno, in tutta la città.
+                                    </p>
+                                </div>
+                            </details>
+
+                            <details class="study-accordion accordion-flush">
+                                <summary class="study-accordion-summary">
+                                    <span class="summary-left">
+                                        <span class="summary-title">«Qualcosa di digitale»</span>
+                                    </span>
+                                    <svg class="summary-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </summary>
+                                <div class="study-accordion-body">
+                                    <p class="story-text">
+                                        Il management di Funka Group voleva rafforzare il legame del brand con la sua ampia e fedele community di clienti. L’idea era avere qualcosa di digitale che unificasse e integrasse senza soluzione di continuità l’esperienza online e offline nei locali.
+                                    </p>
+                                </div>
+                            </details>
+
+                            <details class="study-accordion accordion-flush">
+                                <summary class="study-accordion-summary">
+                                    <span class="summary-left">
+                                        <span class="summary-title">FunkaCoins!</span>
+                                    </span>
+                                    <svg class="summary-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </summary>
+                                <div class="study-accordion-body">
+                                    <p class="story-text">
+                                        Insieme abbiamo ideato una valuta digitale chiamata FunkaCoins, da guadagnare e spendere in qualsiasi locale Funka (bar, ristoranti e persino il night club) e online.
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Challenge Section -->
+            <section class="challenge-section-wrapper" id="challengeSection">
+                <div class="challenge-inner">
+                    <h2 class="challenge-title">La sfida:</h2>
+                    <p class="challenge-lead-p">
+                        La presenza digitale di Funka era frammentata tra le principali app di recensioni e i social media, come TikTok, Xiaohongshu e le piattaforme di delivery di terze parti. Anche se l’idea era vaga, sono riuscito a decifrare quel «qualcosa di digitale» con workshop e ricerche di mercato.
+                    </p>
+                    <div class="challenge-goals-card">
+                        <p class="challenge-goals-intro">
+                            In sostanza, le sfide coincidono con gli obiettivi. Il management voleva:
+                        </p>
+                        <ul class="challenge-goals-list">
+                            <li>uno strumento CRM facile da usare;</li>
+                            <li>raccogliere insight sulle vendite;</li>
+                            <li>migliorare la fidelizzazione e gestire le promozioni;</li>
+                            <li>integrarsi con WeChat per sfruttarne la dimensione social;</li>
+                            <li>diventare il protagonista più cool della scena food &amp; beverage.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Solution Section -->
+            <section class="funkacoins-solution-card" id="solutionSection">
+                <h2 class="solution-card-title">La soluzione:</h2>
+                <h3 class="solution-card-subtitle">Put Funka In Your Pocket</h3>
+                <div class="funkacoins-media-frame">
+                    <img src="/assets/funkacoins/put_funka_in_your_pocket.png" alt="La soluzione: Put Funka In Your Pocket" class="funkacoins-section-img" width="1200" height="800" loading="lazy">
+                </div>
+                <div class="solution-card-intro">
+                    <p class="solution-intro-p">
+                        Un sistema completo basato su WeChat e integrato con il POS, pensato per rafforzare la fidelizzazione dei clienti, semplificare le operazioni e ampliare i canali di vendita.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 1. Holistic O2O Experience. -->
+            <section class="funkacoins-subsection" id="solutionHolisticO2O">
+                <h2 class="funkacoins-subsection-title">1. Un’esperienza O2O a tutto tondo.</h2>
+                <div class="funkacoins-media-frame">
+                    <img src="/assets/funkacoins/Holistic O2O Experience.png" alt="1. Un’esperienza O2O a tutto tondo" class="funkacoins-section-img" width="1200" height="817" loading="lazy">
+                </div>
+                <p class="funkacoins-intro-text">
+                    Per me O2O significa sia online-to-offline sia il contrario. Questo prodotto unisce senza soluzione di continuità il percorso del cliente online e offline. I clienti possono interagire con Funka Group online tramite il mini-programma WeChat per diverse attività che incidono direttamente sull’esperienza nei locali: consumazione sul posto, ritiro o ingresso agli eventi, tutto in uno.
+                </p>
+            </section>
+
+            <!-- 2. User-Friendly, Funky, Loyal. -->
+            <section class="funkacoins-subsection" id="solutionUserFriendly">
+                <h2 class="funkacoins-subsection-title">2. Intuitivo, funky, fidelizzante.</h2>
+                <div class="funkacoins-media-frame">
+                    <img src="/assets/funkacoins/User-Friendly, Funky, Loyal..png" alt="2. Intuitivo, funky, fidelizzante" class="funkacoins-section-img" width="1200" height="900" loading="lazy">
+                </div>
+                <p class="funkacoins-intro-text">
+                    A differenza di altre app per il servizio al tavolo o la consegna, con interfacce macchinose e dispersive, il mini-programma Funka offre elementi visivi chiari, una navigazione semplice e un design unico e audace. Ha ricevuto tantissimo affetto e apprezzamento sia dai clienti fedeli sia da quelli nuovi.
+                </p>
+            </section>
+
+            <!-- 3. Designed to be social. -->
+            <section class="funkacoins-subsection" id="solutionSocial">
+                <h2 class="funkacoins-subsection-title">3. Pensato per essere social.</h2>
+                <div class="funkacoins-media-frame">
+                    <img src="/assets/funkacoins/Designed to be social.jpg" alt="3. Pensato per essere social" class="funkacoins-section-img" width="1200" height="1200" loading="lazy">
+                </div>
+                <p class="funkacoins-intro-text">
+                    Il prodotto è un mini-programma WeChat che gestisce il programma fedeltà e l’e-shop. Questo significa:
+                </p>
+                <ul class="funkacoins-feature-list">
+                    <li>Accesso semplice con l’account WeChat.</li>
+                    <li>Sincronizzazione puntuale con l’account ufficiale WeChat di Funka per marketing e contenuti.</li>
+                    <li>QR code per inviti, coupon e check-in</li>
+                    <li>Promozioni condivise tramite articoli, chat e wallet.</li>
+                    <li>Pagamenti fluidi con WeChat Pay.</li>
+                </ul>
+            </section>
+
+            <!-- 4. Gamification is fun :) -->
+            <section class="funkacoins-subsection" id="solutionGamification">
+                <h2 class="funkacoins-subsection-title">4. La gamification è divertente :)</h2>
+                <div class="funkacoins-media-frame">
+                    <img src="/assets/funkacoins/Gamification is fun.png" alt="4. La gamification è divertente" class="funkacoins-section-img" width="1200" height="874" loading="lazy">
+                </div>
+                <p class="funkacoins-intro-text">
+                    Il meccanismo integrato di guadagno per i promoter permette a promoter dei locali, influencer e partner commerciali di Funka di condividere coupon tracciabili per ottenere ricompense. Strumenti potenti:
+                </p>
+                <ul class="funkacoins-feature-list">
+                    <li>La dashboard mostra copertura totale, riscatti e vendite.</li>
+                    <li>I QR code di referral permettono ai membri di invitare gli amici.</li>
+                    <li>1 FunkaCoin per ogni transazione andata a buon fine con un coupon affiliato.</li>
+                    <li>Ricompense legate all’uso dei coupon, alle vendite o agli obiettivi.</li>
+                    <li>Sistema gamificato: incentiva la condivisione e il monitoraggio dei risultati.</li>
+                </ul>
+            </section>
+
+            <!-- 5. The Ops team is covered! -->
+            <section class="funkacoins-subsection" id="solutionOps">
+                <h2 class="funkacoins-subsection-title">5. Anche lo staff ha i suoi strumenti!</h2>
+                <div class="funkacoins-media-frame">
+                    <img src="/assets/funkacoins/The Ops team is covered.png" alt="5. Anche lo staff ha i suoi strumenti" class="funkacoins-section-img" width="1200" height="939" loading="lazy">
+                </div>
+                <p class="funkacoins-intro-text">
+                    Il mini-programma Funka è pensato anche per l’efficienza dello staff. Direttamente da telefono o tablet, il personale può gestire i tavoli, elaborare gli ordini, scansionare tessere membro e coupon e gestire i pagamenti.
+                </p>
+                <p class="funkacoins-intro-text">
+                    Semplifica il servizio al tavolo, velocizza il servizio e facilita il riscatto dei coupon e le interazioni con i membri.
+                </p>
+            </section>
+
+            <!-- Breaker Banner -->
+            <div class="funkacoins-breaker-banner">
+                <img src="/assets/funkacoins/funkacoins-banner.png" alt="Banner FunkaCoins" class="funkacoins-breaker-img" width="1920" height="700" loading="lazy">
+            </div>
+
+            <!-- The Results Section -->
+            <section class="funkacoins-results-section" id="resultsSection">
+                <h2 class="results-title">I risultati:</h2>
+                <p class="results-lead-text">
+                    Dietro il mini-programma Funka c’è l’Admin Portal, che offre ai soci gestori un potente pannello di backend per supervisionare le operazioni, gestire gli account utente e configurare coupon e campagne promozionali. Dà accesso a dati e insight dettagliati, garantendo piena visibilità e controllo sul sistema FunkaCoins. A un anno dal lancio, i risultati sono stati eccellenti.
+                </p>
+
+                <div class="results-metrics-container">
+                    <div class="results-metric-item">
+                        <img src="/assets/funkacoins/FunkaCoin-200.png" alt="+200% di crescita della base utenti" class="results-metric-coin-img" width="200" height="200" loading="lazy">
+                        <h3 class="results-metric-label">Crescita della base utenti</h3>
+                    </div>
+
+                    <div class="results-metric-item">
+                        <img src="/assets/funkacoins/FunkaCoin-150.png" alt="+150% di visite ripetute" class="results-metric-coin-img" width="200" height="200" loading="lazy">
+                        <h3 class="results-metric-label">Aumento delle visite ripetute</h3>
+                    </div>
+
+                    <div class="results-metric-item">
+                        <img src="/assets/funkacoins/FunkaCoin-91.png" alt="+91% di condivisioni" class="results-metric-coin-img" width="200" height="200" loading="lazy">
+                        <h3 class="results-metric-label">Aumento delle condivisioni</h3>
+                    </div>
+                </div>
+
+                <div class="results-footnotes">
+                    <p>* La base utenti è cresciuta del 200% rispetto al numero di follower dell’account ufficiale WeChat prima del lancio dell’app.</p>
+                    <p>* In precedenza, le visite ripetute venivano stimate manualmente dai responsabili dei locali. Con il mini-programma Funka, i dati mensili sulle visite ripetute sono ora più precisi e mostrano un aumento medio del 150% rispetto ai valori precedenti all’app.</p>
+                    <p>* Per condivisioni si intendono i referral degli utenti e la condivisione di contenuti di marketing dall’app.</p>
+                </div>
+            </section>
+
+            <!-- Product Mind Map Section -->
+            <section class="mindmap-subsection" id="mindMapSection">
+                <h2 class="mindmap-subsection-title">👀 Mappa mentale del prodotto:</h2>
+                <div class="mindmap-card">
+                    <svg class="mindmap-diagram-svg" viewBox="0 0 720 340" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mappa mentale del prodotto FunkaCoins">
+                        <!-- Connector Lines -->
+                        <line class="mm-line" x1="360" y1="170" x2="140" y2="65" stroke="#000000" stroke-width="2" stroke-dasharray="6 4"/>
+                        <line class="mm-line" x1="360" y1="170" x2="580" y2="65" stroke="#000000" stroke-width="2" stroke-dasharray="6 4"/>
+                        <line class="mm-line" x1="360" y1="170" x2="120" y2="170" stroke="#000000" stroke-width="2" stroke-dasharray="6 4"/>
+                        <line class="mm-line" x1="360" y1="170" x2="600" y2="170" stroke="#000000" stroke-width="2" stroke-dasharray="6 4"/>
+                        <line class="mm-line" x1="360" y1="170" x2="140" y2="275" stroke="#000000" stroke-width="2" stroke-dasharray="6 4"/>
+                        <line class="mm-line" x1="360" y1="170" x2="580" y2="275" stroke="#000000" stroke-width="2" stroke-dasharray="6 4"/>
+
+                        <!-- Center Hub -->
+                        <rect class="mm-hub" x="270" y="132" width="180" height="76" rx="22" fill="#000000"/>
+                        <text x="360" y="165" class="mm-hub-title" text-anchor="middle" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-weight="800" font-size="16">FunkaCoins</text>
+                        <text x="360" y="187" text-anchor="middle" fill="#F39C12" font-family="Inter, sans-serif" font-weight="600" font-size="12">Sistema fedeltà e O2O</text>
+
+                        <!-- Node 1: Holistic O2O -->
+                        <rect class="mm-node" x="30" y="35" width="200" height="60" rx="16" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+                        <text x="130" y="61" class="mm-title" text-anchor="middle" fill="#000000" font-family="Inter, sans-serif" font-weight="700" font-size="13">1. O2O a tutto tondo</text>
+                        <text x="130" y="79" class="mm-sub" text-anchor="middle" fill="#666666" font-family="Inter, sans-serif" font-weight="400" font-size="11">Al tavolo · Ritiro · Eventi</text>
+
+                        <!-- Node 2: WeChat Social -->
+                        <rect class="mm-node" x="490" y="35" width="200" height="60" rx="16" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+                        <text x="590" y="61" class="mm-title" text-anchor="middle" fill="#000000" font-family="Inter, sans-serif" font-weight="700" font-size="13">2. Mini-app WeChat</text>
+                        <text x="590" y="79" class="mm-sub" text-anchor="middle" fill="#666666" font-family="Inter, sans-serif" font-weight="400" font-size="11">Fedeltà · E-shop · WeChat Pay</text>
+
+                        <!-- Node 3: Gamification -->
+                        <rect class="mm-node" x="20" y="140" width="200" height="60" rx="16" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+                        <text x="120" y="166" class="mm-title" text-anchor="middle" fill="#000000" font-family="Inter, sans-serif" font-weight="700" font-size="13">3. Gamification</text>
+                        <text x="120" y="184" class="mm-sub" text-anchor="middle" fill="#666666" font-family="Inter, sans-serif" font-weight="400" font-size="11">Promoter · Referral · Premi</text>
+
+                        <!-- Node 4: Staff & POS Ops -->
+                        <rect class="mm-node" x="500" y="140" width="200" height="60" rx="16" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+                        <text x="600" y="166" class="mm-title" text-anchor="middle" fill="#000000" font-family="Inter, sans-serif" font-weight="700" font-size="13">4. Staff e POS</text>
+                        <text x="600" y="184" class="mm-sub" text-anchor="middle" fill="#666666" font-family="Inter, sans-serif" font-weight="400" font-size="11">Tavoli · Ordini · Scansione QR</text>
+
+                        <!-- Node 5: CRM & Promotions -->
+                        <rect class="mm-node" x="30" y="245" width="200" height="60" rx="16" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+                        <text x="130" y="271" class="mm-title" text-anchor="middle" fill="#000000" font-family="Inter, sans-serif" font-weight="700" font-size="13">5. CRM e fidelizzazione</text>
+                        <text x="130" y="289" class="mm-sub" text-anchor="middle" fill="#666666" font-family="Inter, sans-serif" font-weight="400" font-size="11">Coupon · Campagne · Wallet</text>
+
+                        <!-- Node 6: Admin Portal -->
+                        <rect class="mm-node" x="490" y="245" width="200" height="60" rx="16" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+                        <text x="590" y="271" class="mm-title" text-anchor="middle" fill="#000000" font-family="Inter, sans-serif" font-weight="700" font-size="13">6. Portale admin</text>
+                        <text x="590" y="289" class="mm-sub" text-anchor="middle" fill="#666666" font-family="Inter, sans-serif" font-weight="400" font-size="11">Vendite · Dati · Controllo</text>
+                    </svg>
+                </div>
+            </section>
+
+            <!-- Executive Summary Section -->
+            <section class="exec-summary-subsection" id="execSummary">
+                <div class="exec-summary-inner">
+                    <h2 class="exec-summary-title">In sintesi:</h2>
+                    <div class="exec-summary-grid" id="execSummaryGrid">
+                        <div class="exec-pillar-card" id="execCardDev">
+                            <h4 class="exec-pillar-heading" id="execHeadingDev">🛠️ Sviluppo</h4>
+                            <ul class="exec-pillar-list" id="execListDev">
+                                <li>Digital &amp; Tech Director / O2O / Programma fedeltà</li>
+                                <li>Sviluppo agile / Project management</li>
+                                <li>Integrazione WeChat / Integrazione POS</li>
+                                <li>Collaborazione con terze parti</li>
+                            </ul>
+                        </div>
+
+                        <div class="exec-pillar-card" id="execCardDesign">
+                            <h4 class="exec-pillar-heading" id="execHeadingDesign">📐 Design</h4>
+                            <ul class="exec-pillar-list" id="execListDesign">
+                                <li>UI/UX mobile-first centrata sul cliente</li>
+                                <li>Interfaccia bilingue e UX copywriting</li>
+                                <li>Gamification / Coinvolgimento degli utenti</li>
+                                <li>Product design per i titolari d’impresa</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Me Section -->
+            <section id="contact" class="contact-section funkacoins-contact-section bg-white text-center">
+                <div class="container">
+                    <h2 class="section-title text-center">Contattami:</h2>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <div class="icon-wrapper">
+                                <img src="/assets/icon-linkedin.png" alt="Logo LinkedIn" class="icon-outline">
+                            </div>
+                            <a href="https://www.linkedin.com/in/jensenearth/" target="_blank" class="btn btn-black">LINKEDIN</a>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-wrapper">
+                                <img src="/assets/icon-email.png" alt="Icona email" class="icon-outline">
+                            </div>
+                            <a href="mailto:slick.87.wackos@icloud.com" class="btn btn-black">EMAIL</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer bg-black">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="/it/">Home</a>
+                <a href="/research">Ricerca</a>
+                <a href="https://www.linkedin.com/in/jensenearth/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-copy">
+                Fatto con ♥️ e IA sulla Terra © JENSEN S.Z. <span class="footer-rainbow" role="button" tabindex="0" title="Fai piovere arcobaleni! 🌈" aria-label="Fai piovere arcobaleni">🌈</span>✨Fai piovere arcobaleni! 🌈" aria-label="Fai piovere arcobaleni">🌈</span>✨
+            </div>
+        </div>
+    </footer>
+
+    <script src="/layout.js"></script>
+    <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "41fc70af798e4e2aa996b03e42a0018c"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
