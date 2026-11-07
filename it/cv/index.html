@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/theme.js"></script>
+    <!-- i18n:head -->
+    <link rel="alternate" hreflang="en" href="https://jensenxyz.github.io/cv/">
+    <link rel="alternate" hreflang="it" href="https://jensenxyz.github.io/it/cv/">
+    <link rel="alternate" hreflang="fr" href="https://jensenxyz.github.io/fr/cv/">
+    <link rel="alternate" hreflang="es" href="https://jensenxyz.github.io/es/cv/">
+    <link rel="alternate" hreflang="x-default" href="https://jensenxyz.github.io/cv/">
+    <!-- /i18n:head -->
+    <title>Scarica il CV | JENSEN</title>
+    
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="JENSEN">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        .download-hub {
+            min-height: calc(100vh - 150px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .download-card {
+            background-color: var(--bg-white);
+            padding: 40px 30px;
+            border-radius: 28px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.05);
+            max-width: 450px;
+            width: 100%;
+        }
+
+        .download-card h1 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .download-card p {
+            color: var(--text-grey);
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+
+        .action-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .btn-download {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            min-height: 56px;
+            font-size: 1rem;
+            border-radius: 14px;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-dark);
+            border: 2px solid var(--pill-border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-dark);
+            background-color: var(--pill-hover-bg);
+        }
+
+        .file-meta {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-faint);
+            margin-top: 4px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="bg-beige">
+
+    <!-- Header Navigation (Sticky & Translucent) -->
+    <header class="site-header">
+        <div class="container header-flex">
+            <a href="/it/" class="logo">JENSEN ✨</a>
+            <div class="header-actions">
+                <a href="/it/" class="link-underline back-to-home">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Torna alla home
+                </a>
+                <!-- i18n:menu -->
+                <details class="lang-menu">
+                    <summary class="lang-menu-btn" aria-label="Lingua: Italiano" title="Lingua">IT</summary>
+                    <ul class="lang-menu-list">
+                        <li><a href="/cv/" hreflang="en" lang="en" data-lang="en">English</a></li>
+                        <li><a href="/it/cv/" hreflang="it" lang="it" data-lang="it" aria-current="page">Italiano</a></li>
+                        <li><a href="/fr/cv/" hreflang="fr" lang="fr" data-lang="fr">Français</a></li>
+                        <li><a href="/es/cv/" hreflang="es" lang="es" data-lang="es">Español</a></li>
+                    </ul>
+                </details>
+                <!-- /i18n:menu -->
+                <button type="button" class="theme-toggle" aria-label="Modalità scura" aria-pressed="false">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="download-hub">
+        <div class="download-card">
+            <h1>Curriculum vitae</h1>
+            <p>Accedi alle versioni più recenti del CV di Jensen, ottimizzate per la lettura su dispositivi mobili. I CV sono in inglese.</p>
+            
+            <div class="action-list">
+                <a href="/cv/jensencv_impact_online-compressed.pdf" class="btn btn-black btn-download" target="_blank" rel="noopener noreferrer">
+                    <div>
+                        Visualizza il CV Impact (compresso)
+                        <span class="file-meta" style="color: var(--on-inverse-muted);">Versione online • ~1,8 MB</span>
+                    </div>
+                </a>
+                
+                <a href="/cv/jensencv_impact_online.pdf" class="btn btn-outline btn-download" target="_blank" rel="noopener noreferrer">
+                    <div>
+                        Visualizza il CV Impact (alta risoluzione)
+                        <span class="file-meta">Versione online • ~9 MB</span>
+                    </div>
+                </a>
+
+                <a href="/cv/jensencv_tech_online-compressed.pdf" class="btn btn-outline btn-download" target="_blank" rel="noopener noreferrer">
+                    <div>
+                        Visualizza il CV Tech (compresso)
+                        <span class="file-meta">Versione online • ~4,3 MB</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer bg-black">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="/it/">Home</a>
+                <a href="/research">Ricerca</a>
+                <a href="https://www.linkedin.com/in/jensenearth/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-copy">
+                Fatto con ♥️ e IA sulla Terra © JENSEN S.Z. <span class="footer-rainbow" role="button" tabindex="0" title="Fai piovere arcobaleni! 🌈" aria-label="Fai piovere arcobaleni">🌈</span>✨Fai piovere arcobaleni! 🌈" aria-label="Fai piovere arcobaleni">🌈</span>✨
+            </div>
+        </div>
+    </footer>
+<script src="/layout.js"></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "41fc70af798e4e2aa996b03e42a0018c"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

@@ -2046,3 +2046,12 @@ ul { list-style: none; }
     background: var(--accent-orange);
     vertical-align: middle;
 }
+
+/* Narrow phones: logo + back link + language menu + theme toggle must share one row.
+   The back link shows only its arrow (its text stays as the accessible name). */
+.logo { white-space: nowrap; }
+@media (max-width: 430px) {
+    .back-to-home { font-size: 0; gap: 0; width: 36px; height: 36px; margin: -3px 0; justify-content: center; border-radius: 50%; }
+    .back-to-home svg { width: 18px; height: 18px; }
+    .header-actions { gap: 10px; }
+}

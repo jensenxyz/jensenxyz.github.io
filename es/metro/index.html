@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/theme.js"></script>
+    <!-- i18n:head -->
+    <link rel="alternate" hreflang="en" href="https://jensenxyz.github.io/metro/">
+    <link rel="alternate" hreflang="it" href="https://jensenxyz.github.io/it/metro/">
+    <link rel="alternate" hreflang="fr" href="https://jensenxyz.github.io/fr/metro/">
+    <link rel="alternate" hreflang="es" href="https://jensenxyz.github.io/es/metro/">
+    <link rel="alternate" hreflang="x-default" href="https://jensenxyz.github.io/metro/">
+    <!-- /i18n:head -->
+    <title>Diseño de metro | JENSEN</title>
+    <meta name="description" content="Una tesis de planificación urbana sobre el diseño de la línea 9 del metro de Pekín. Estudio de viabilidad, cálculos de ingeniería y dibujo CAD.">
+    <meta property="og:title" content="Diseño de metro | JENSEN">
+    <meta property="og:description" content="Una tesis de planificación urbana sobre el diseño de la línea 9 del metro de Pekín. Estudio de viabilidad, cálculos de ingeniería y dibujo CAD.">
+    <meta property="og:image" content="/assets/project-metro.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="JENSEN">
+    <link rel="manifest" href="/assets/site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        body {
+            background-color: var(--bg-white) !important;
+        }
+        .metro-page-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .metro-carousel-section {
+            margin: 24px auto 48px auto;
+            background: transparent !important;
+        }
+        #metroCarouselSection .carousel-wrapper {
+            background: transparent !important;
+            margin: -12px -28px 0 -28px;
+        }
+        #metro-screenshots-carousel {
+            background: transparent !important;
+            gap: 24px;
+            padding: 28px 28px 46px 28px;
+            scroll-padding-left: 28px;
+            scroll-padding-right: 28px;
+        }
+        #metroCarouselSection .carousel-controls {
+            background: transparent !important;
+            margin-top: -12px;
+            margin-right: 0;
+            padding: 0 28px 6px 28px;
+        }
+        #metro-screenshots-carousel .project-card {
+            background-color: transparent !important;
+            border: 1px solid var(--line-soft) !important;
+            border-radius: 28px !important;
+            flex: 0 0 340px !important;
+            width: 340px !important;
+            min-width: 340px !important;
+            overflow: hidden;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06) !important;
+        }
+        #metro-screenshots-carousel .project-card img {
+            width: 100%;
+            height: auto !important;
+            aspect-ratio: auto !important;
+            object-fit: contain !important;
+            display: block;
+            border-radius: 27px;
+            background-color: transparent;
+        }
+
+        .metro-contact-section {
+            padding-top: 40px;
+            padding-bottom: 24px;
+            background-color: transparent;
+        }
+        .metro-contact-section .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: var(--text-dark);
+            white-space: nowrap;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            #metroCarouselSection .carousel-wrapper {
+                margin: -12px -20px 0 -20px;
+            }
+            #metro-screenshots-carousel {
+                padding: 24px 20px 42px 20px;
+                scroll-padding-left: 20px;
+                scroll-padding-right: 20px;
+                gap: 18px;
+            }
+            #metroCarouselSection .carousel-controls {
+                margin-top: -10px;
+                padding: 0 20px 8px 20px;
+            }
+            #metro-screenshots-carousel .project-card {
+                flex: 0 0 min(300px, 80vw) !important;
+                width: min(300px, 80vw) !important;
+                min-width: min(300px, 80vw) !important;
+                max-width: 80vw !important;
+                border-radius: 24px !important;
+            }
+            #metro-screenshots-carousel .project-card img {
+                border-radius: 23px;
+            }
+            .metro-contact-section .section-title {
+                font-size: 1.95rem;
+                margin-bottom: 24px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-beige">
+
+    <!-- Header Navigation (Sticky & Translucent) -->
+    <header class="site-header">
+        <div class="container header-flex">
+            <a href="/es/" class="logo">JENSEN ✨</a>
+            <div class="header-actions">
+                <a href="/es/" class="link-underline back-to-home">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Volver al inicio
+                </a>
+                <!-- i18n:menu -->
+                <details class="lang-menu">
+                    <summary class="lang-menu-btn" aria-label="Idioma: Español" title="Idioma">ES</summary>
+                    <ul class="lang-menu-list">
+                        <li><a href="/metro/" hreflang="en" lang="en" data-lang="en">English</a></li>
+                        <li><a href="/it/metro/" hreflang="it" lang="it" data-lang="it">Italiano</a></li>
+                        <li><a href="/fr/metro/" hreflang="fr" lang="fr" data-lang="fr">Français</a></li>
+                        <li><a href="/es/metro/" hreflang="es" lang="es" data-lang="es" aria-current="page">Español</a></li>
+                    </ul>
+                </details>
+                <!-- /i18n:menu -->
+                <button type="button" class="theme-toggle" aria-label="Modo oscuro" aria-pressed="false">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container pt-medium pb-large">
+        <div class="metro-page-wrapper">
+            <div class="breadcrumb">
+                <a href="/es/">Inicio</a> &gt; Diseño de metro
+            </div>
+
+            <!-- 3-Screenshot Carousel -->
+            <section class="metro-carousel-section" id="metroCarouselSection">
+                <div class="carousel-wrapper">
+                    <div class="carousel-container" id="metro-screenshots-carousel">
+                        <div class="project-card">
+                            <img src="/assets/metro/metro_1.jpg" alt="Diseño de metro, captura 1" width="1254" height="2250" loading="eager">
+                        </div>
+
+                        <div class="project-card">
+                            <img src="/assets/metro/metro_2.jpg" alt="Diseño de metro, captura 2" width="1254" height="2250" loading="lazy">
+                        </div>
+
+                        <div class="project-card">
+                            <img src="/assets/metro/metro_3.jpg" alt="Diseño de metro, captura 3" width="1254" height="2250" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="carousel-controls">
+                        <span class="carousel-hint" id="metro-carousel-hint">Desliza para explorar</span>
+                        <div class="carousel-arrows">
+                            <button id="metro-scroll-left" aria-label="Captura anterior">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                                    <polyline points="12 19 5 12 12 5"></polyline>
+                                </svg>
+                            </button>
+                            <button id="metro-scroll-right" aria-label="Captura siguiente">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Me Section -->
+            <section id="contact" class="contact-section metro-contact-section bg-white text-center">
+                <div class="container">
+                    <h2 class="section-title text-center">Contáctame:</h2>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <div class="icon-wrapper">
+                                <img src="/assets/icon-linkedin.png" alt="Logo de LinkedIn" class="icon-outline">
+                            </div>
+                            <a href="https://www.linkedin.com/in/jensenearth/" target="_blank" class="btn btn-black">LINKEDIN</a>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-wrapper">
+                                <img src="/assets/icon-email.png" alt="Icono de correo" class="icon-outline">
+                            </div>
+                            <a href="mailto:slick.87.wackos@icloud.com" class="btn btn-black">CORREO</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer bg-black">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="/es/">Inicio</a>
+                <a href="/research">Investigación</a>
+                <a href="https://www.linkedin.com/in/jensenearth/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-copy">
+                Hecho con ♥️ e IA en la Tierra © JENSEN S.Z. <span class="footer-rainbow" role="button" tabindex="0" title="¡Haz que lluevan arcoíris! 🌈" aria-label="Haz que lluevan arcoíris">🌈</span>✨¡Haz que lluevan arcoíris! 🌈" aria-label="Haz que lluevan arcoíris">🌈</span>✨
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function initSubCarousel(carouselId, leftBtnId, rightBtnId) {
+            const carousel = document.getElementById(carouselId);
+            const scrollLeftBtn = document.getElementById(leftBtnId);
+            const scrollRightBtn = document.getElementById(rightBtnId);
+
+            if (!carousel || !scrollLeftBtn || !scrollRightBtn) return;
+
+            const getScrollAmount = () => {
+                const firstCard = carousel.querySelector('.project-card');
+                if (!firstCard) return 320;
+                const carouselStyle = window.getComputedStyle(carousel);
+                const gap = parseFloat(carouselStyle.gap) || 24;
+                return firstCard.offsetWidth + gap;
+            };
+
+            const getMaxScroll = () => {
+                const cards = carousel.querySelectorAll('.project-card');
+                if (!cards.length) return 0;
+                const lastCard = cards[cards.length - 1];
+                const carouselStyle = window.getComputedStyle(carousel);
+                const paddingRight = parseFloat(carouselStyle.paddingRight) || 0;
+                const lastCardMax = (lastCard.offsetLeft + lastCard.offsetWidth + paddingRight) - carousel.clientWidth;
+                const standardMax = carousel.scrollWidth - carousel.clientWidth;
+                return Math.max(0, Math.min(lastCardMax, standardMax));
+            };
+
+            const updateButtonStates = () => {
+                const maxScroll = getMaxScroll();
+                const scrollLeft = carousel.scrollLeft;
+
+                const isAtStart = scrollLeft <= 8;
+                let isAtEnd = scrollLeft >= maxScroll - 8;
+
+                const cards = carousel.querySelectorAll('.project-card');
+                const lastCard = cards[cards.length - 1];
+                if (lastCard) {
+                    const carouselRect = carousel.getBoundingClientRect();
+                    const lastCardRect = lastCard.getBoundingClientRect();
+                    if (lastCardRect.right <= carouselRect.right + 12) {
+                        isAtEnd = true;
+                    }
+                }
+
+                scrollLeftBtn.disabled = isAtStart;
+                if (isAtStart) {
+                    scrollLeftBtn.classList.add('disabled');
+                    scrollLeftBtn.style.opacity = '0.15';
+                    scrollLeftBtn.style.cursor = 'not-allowed';
+                    scrollLeftBtn.style.pointerEvents = 'none';
+                } else {
+                    scrollLeftBtn.classList.remove('disabled');
+                    scrollLeftBtn.style.opacity = '1';
+                    scrollLeftBtn.style.cursor = 'pointer';
+                    scrollLeftBtn.style.pointerEvents = 'auto';
+                }
+
+                scrollRightBtn.disabled = isAtEnd;
+                if (isAtEnd) {
+                    scrollRightBtn.classList.add('disabled');
+                    scrollRightBtn.style.opacity = '0.15';
+                    scrollRightBtn.style.cursor = 'not-allowed';
+                    scrollRightBtn.style.pointerEvents = 'none';
+                } else {
+                    scrollRightBtn.classList.remove('disabled');
+                    scrollRightBtn.style.opacity = '1';
+                    scrollRightBtn.style.cursor = 'pointer';
+                    scrollRightBtn.style.pointerEvents = 'auto';
+                }
+            };
+
+            scrollLeftBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                if (scrollLeftBtn.disabled || carousel.scrollLeft <= 5) return;
+                const step = getScrollAmount();
+                const target = Math.max(0, carousel.scrollLeft - step);
+                carousel.scrollTo({ left: target, behavior: "smooth" });
+            });
+
+            scrollRightBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                const maxScroll = getMaxScroll();
+                if (scrollRightBtn.disabled || carousel.scrollLeft >= maxScroll - 5) return;
+                const step = getScrollAmount();
+                const target = Math.min(maxScroll, carousel.scrollLeft + step);
+                carousel.scrollTo({ left: target, behavior: "smooth" });
+            });
+
+            let isScrolling;
+            carousel.addEventListener("scroll", () => {
+                window.cancelAnimationFrame(isScrolling);
+                isScrolling = window.requestAnimationFrame(updateButtonStates);
+            }, { passive: true });
+
+            window.addEventListener("resize", updateButtonStates);
+            setTimeout(updateButtonStates, 100);
+        }
+
+        initSubCarousel("metro-screenshots-carousel", "metro-scroll-left", "metro-scroll-right");
+    </script>
+    <script src="/layout.js"></script>
+    <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "41fc70af798e4e2aa996b03e42a0018c"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

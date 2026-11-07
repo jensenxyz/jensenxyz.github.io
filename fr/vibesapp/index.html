@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/theme.js"></script>
+    <!-- i18n:head -->
+    <link rel="alternate" hreflang="en" href="https://jensenxyz.github.io/vibesapp/">
+    <link rel="alternate" hreflang="it" href="https://jensenxyz.github.io/it/vibesapp/">
+    <link rel="alternate" hreflang="fr" href="https://jensenxyz.github.io/fr/vibesapp/">
+    <link rel="alternate" hreflang="es" href="https://jensenxyz.github.io/es/vibesapp/">
+    <link rel="alternate" hreflang="x-default" href="https://jensenxyz.github.io/vibesapp/">
+    <!-- /i18n:head -->
+    <title>VibesApp : MarTech IA en temps réel | JENSEN</title>
+    <meta name="description" content="Née à l’ère post-pandémique, VibesApp est une appli sociale en temps réel qui met en relation les amateurs de sorties spontanées et les PME locales.">
+    <meta property="og:title" content="VibesApp : MarTech IA en temps réel | JENSEN">
+    <meta property="og:description" content="Née à l’ère post-pandémique, VibesApp est une appli sociale en temps réel qui met en relation les amateurs de sorties spontanées et les PME locales.">
+    <meta property="og:image" content="/assets/vibesapp/vibesapp_user_journey.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="JENSEN">
+    <link rel="manifest" href="/assets/site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        body {
+            background-color: var(--bg-white) !important;
+        }
+        .vibesapp-page-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- Concept Section & User Journey Banner --- */
+        .vibesapp-concept-section {
+            margin: 40px auto 0 auto;
+            max-width: 800px;
+        }
+        .vibesapp-concept-box {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto 32px auto;
+            padding: 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            text-align: center;
+        }
+        .vibesapp-concept-title {
+            font-size: 2.8rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 18px;
+            text-align: center;
+            line-height: 1.2;
+            color: var(--text-dark, #000000);
+            text-shadow: none;
+        }
+        .vibesapp-concept-text {
+            font-size: 1.15rem;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 400;
+            color: var(--text-grey, #555555);
+            line-height: 1.7;
+            margin: 0 auto;
+            max-width: 760px;
+            text-align: center;
+            text-shadow: none;
+        }
+        .vibesapp-journey-banner {
+            width: 100%;
+            margin: 0 auto;
+            background: transparent;
+        }
+        .vibesapp-journey-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 0 !important;
+            border: none;
+            box-shadow: none;
+        }
+
+        /* --- The Niche Section --- */
+        .niche-section-wrapper {
+            position: relative;
+            margin-top: 64px;
+            background: #070707;
+            padding: 88px 20px;
+            color: var(--text-light);
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            overflow: hidden;
+        }
+        .niche-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .niche-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: var(--text-light);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .niche-lead-p {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.75;
+            color: var(--band-text-soft-2);
+            margin: 0 0 24px 0;
+            text-align: left;
+        }
+        .niche-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 24px;
+            padding: 28px 32px;
+        }
+        .niche-card-intro {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 600;
+            font-size: 1.08rem;
+            color: var(--text-light);
+            margin: 0 0 14px 0;
+            line-height: 1.5;
+        }
+        .niche-list {
+            list-style: disc;
+            padding-left: 22px;
+            margin: 0;
+        }
+        .niche-list li {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-size: 1.02rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--band-text-soft);
+            margin-bottom: 10px;
+        }
+        .niche-list li::marker {
+            color: var(--accent-orange, #F39C12);
+        }
+        .niche-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --- Powered by AI Section & Screenshots Carousel --- */
+        .vibesapp-ai-card {
+            margin-top: 64px;
+            background: var(--bg-light);
+            border: 2px solid var(--outline-strong);
+            border-radius: 32px;
+            padding: 58px 36px 48px 36px;
+            box-sizing: border-box;
+            color: var(--text-dark);
+            position: relative;
+        }
+        .ai-card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.35rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .ai-card-intro {
+            max-width: 720px;
+            margin: 0 auto 40px auto;
+            text-align: left;
+        }
+        .ai-intro-p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.02rem;
+            font-weight: 300;
+            line-height: 1.68;
+            color: var(--text-ink);
+            margin-bottom: 0;
+        }
+
+        /* Group Containers */
+        .vibes-screenshot-group {
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid var(--line-soft);
+        }
+        .vibes-screenshot-group:first-of-type {
+            margin-top: 24px;
+            padding-top: 0;
+            border-top: none;
+        }
+        .vibes-group-title {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            letter-spacing: -0.2px;
+            line-height: 1.3;
+            margin: 0 0 16px 0;
+            text-align: left;
+        }
+
+        /* Carousel Styles for Screenshot Groups */
+        .vibes-screenshot-group .carousel-wrapper {
+            background: transparent !important;
+            margin: -8px -20px 0 -20px;
+        }
+        .vibes-screenshot-group .carousel-container {
+            background: transparent !important;
+            gap: 22px;
+            padding: 16px 20px 32px 20px;
+            scroll-padding-left: 20px;
+            scroll-padding-right: 20px;
+        }
+        .vibes-screenshot-group .carousel-controls {
+            background: transparent !important;
+            margin-top: -12px;
+            margin-right: 0;
+            padding: 0 20px 6px 20px;
+        }
+        .vibes-card {
+            background-color: var(--bg-white) !important;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07) !important;
+            border: 1px solid var(--line-soft) !important;
+            border-radius: 28px !important;
+            flex: 0 0 260px !important;
+            width: 260px !important;
+            min-width: 260px !important;
+            padding: 12px 12px 18px 12px;
+            box-sizing: border-box;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .vibes-card-img-frame {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            overflow: hidden;
+            background-color: transparent;
+        }
+        .vibes-screenshot-group .project-card img,
+        .vibes-card img,
+        .vibes-card-img {
+            width: 100% !important;
+            height: auto !important;
+            aspect-ratio: auto !important;
+            object-fit: contain !important;
+            display: block !important;
+            border-radius: 20px !important;
+            background-color: transparent !important;
+        }
+        .vibes-card-info {
+            padding: 14px 6px 0 6px;
+            text-align: center;
+            width: 100%;
+        }
+        .vibes-card-info h4 {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-size: 1.02rem;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+            color: var(--text-dark);
+            margin: 0;
+            line-height: 1.35;
+        }
+
+        /* --- Me As Co-founder Section --- */
+        .cofounder-subsection {
+            margin-top: 64px;
+            margin-bottom: 0px;
+            text-align: center;
+            background: #000000;
+            color: var(--text-light);
+            padding: 80px 40px;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+        }
+        .cofounder-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .cofounder-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: var(--text-light);
+            letter-spacing: -0.5px;
+            line-height: 1.15;
+            margin: 0 auto 24px auto;
+            padding: 0;
+            text-align: center;
+        }
+        .cofounder-lead {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.72;
+            color: var(--band-text-soft-2);
+            text-align: left;
+            margin: 0 auto 32px auto;
+        }
+        .cofounder-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin: 0 auto;
+            padding: 32px 32px;
+            border-radius: 22px;
+            background-color: rgba(255, 255, 255, 0.04);
+            background-image: 
+                radial-gradient(ellipse at 15% 0%, rgba(255, 255, 255, 0.08) 0%, transparent 65%),
+                linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.015) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: 
+                0 20px 40px -10px rgba(0, 0, 0, 0.65),
+                inset 0 1px 1px 0 rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-sizing: border-box;
+        }
+        .cofounder-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px 28px;
+        }
+        .cofounder-list li {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.98rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--band-text-soft-3);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 2px 0;
+            margin: 0;
+        }
+        .cofounder-list li::before {
+            content: '•';
+            color: #F39C12;
+            font-size: 1rem;
+            line-height: 1.45;
+            flex-shrink: 0;
+        }
+
+        .vibesapp-contact-section {
+            padding-top: 60px;
+            padding-bottom: 24px;
+            background-color: transparent;
+        }
+        .vibesapp-contact-section .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: var(--text-dark);
+            white-space: nowrap;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        @media (max-width: 992px) {
+            .vibesapp-concept-title {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .vibesapp-concept-box {
+                margin-bottom: 24px;
+            }
+            .vibesapp-concept-title {
+                font-size: 1.95rem;
+                margin-bottom: 14px;
+            }
+            .vibesapp-concept-text {
+                font-size: 0.98rem;
+                line-height: 1.6;
+            }
+            .niche-section-wrapper {
+                padding: 64px 20px;
+                margin-top: 48px;
+            }
+            .niche-title {
+                font-size: 1.95rem;
+            }
+            .niche-lead-p {
+                font-size: 0.96rem;
+                line-height: 1.65;
+            }
+            .niche-card {
+                padding: 22px 20px;
+                border-radius: 18px;
+            }
+            .niche-card-intro {
+                font-size: 1.0rem;
+            }
+            .niche-list li {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+            .vibesapp-ai-card {
+                margin-top: 44px;
+                padding: 38px 18px 32px 18px;
+                border-radius: 24px;
+            }
+            .ai-card-title {
+                font-size: 1.95rem;
+                margin-bottom: 18px;
+            }
+            .ai-intro-p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+            .vibes-group-title {
+                font-size: 1.12rem;
+                margin-bottom: 12px;
+            }
+            .vibes-card {
+                flex: 0 0 min(240px, 72vw) !important;
+                width: min(240px, 72vw) !important;
+                min-width: min(240px, 72vw) !important;
+                border-radius: 24px !important;
+                padding: 10px 10px 14px 10px;
+            }
+            .vibes-card-img-frame,
+            .vibes-card-img,
+            .vibes-screenshot-group .project-card img {
+                border-radius: 16px !important;
+                height: auto !important;
+                aspect-ratio: auto !important;
+            }
+            .vibes-card-info h4 {
+                font-size: 0.94rem;
+            }
+            .cofounder-subsection {
+                margin-top: 48px;
+                padding: 52px 20px;
+            }
+            .cofounder-title {
+                font-size: 1.95rem;
+                margin-bottom: 18px;
+            }
+            .cofounder-lead {
+                font-size: 0.96rem;
+                line-height: 1.62;
+                margin-bottom: 24px;
+            }
+            .cofounder-card {
+                padding: 24px 20px;
+                border-radius: 18px;
+            }
+            .cofounder-list {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            .cofounder-list li {
+                font-size: 0.92rem;
+            }
+            .vibesapp-contact-section .section-title {
+                font-size: 1.95rem;
+                margin-bottom: 24px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-beige">
+
+    <!-- Header Navigation (Sticky & Translucent) -->
+    <header class="site-header">
+        <div class="container header-flex">
+            <a href="/fr/" class="logo">JENSEN ✨</a>
+            <div class="header-actions">
+                <a href="/fr/" class="link-underline back-to-home">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Retour à l’accueil
+                </a>
+                <!-- i18n:menu -->
+                <details class="lang-menu">
+                    <summary class="lang-menu-btn" aria-label="Langue: Français" title="Langue">FR</summary>
+                    <ul class="lang-menu-list">
+                        <li><a href="/vibesapp/" hreflang="en" lang="en" data-lang="en">English</a></li>
+                        <li><a href="/it/vibesapp/" hreflang="it" lang="it" data-lang="it">Italiano</a></li>
+                        <li><a href="/fr/vibesapp/" hreflang="fr" lang="fr" data-lang="fr" aria-current="page">Français</a></li>
+                        <li><a href="/es/vibesapp/" hreflang="es" lang="es" data-lang="es">Español</a></li>
+                    </ul>
+                </details>
+                <!-- /i18n:menu -->
+                <button type="button" class="theme-toggle" aria-label="Mode sombre" aria-pressed="false">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container pt-medium pb-large">
+        <div class="vibesapp-page-wrapper">
+            
+            <div class="breadcrumb">
+                <a href="/fr/">Accueil</a> &gt; VibesApp : MarTech IA en temps réel
+            </div>
+
+            <!-- Concept Section & Plain User Journey Image -->
+            <section class="vibesapp-concept-section" id="conceptSection">
+                <div class="vibesapp-concept-box">
+                    <h1 class="vibesapp-concept-title">Le concept :</h1>
+                    <p class="vibesapp-concept-text">
+                        Née à l’ère post-pandémique, VibesApp est une appli sociale en temps réel qui met en relation les amateurs de sorties spontanées et les PME locales (lieux, événements, communautés sportives ou lifestyle).
+                    </p>
+                </div>
+                <div class="vibesapp-journey-banner">
+                    <img src="/assets/vibesapp/vibesapp_user_journey.jpg" alt="Parcours utilisateur de VibesApp" class="vibesapp-journey-img" loading="lazy">
+                </div>
+            </section>
+
+            <!-- The Niche Section -->
+            <section class="niche-section-wrapper" id="nicheSection">
+                <div class="niche-inner">
+                    <h2 class="niche-title">La niche :</h2>
+                    <p class="niche-lead-p">
+                        Notre niche se situe entre le live streaming (coûteux à mettre en place) et les avis sur les établissements (souvent obsolètes ou faux).
+                    </p>
+                    <div class="niche-card">
+                        <p class="niche-card-intro">
+                            Avec VibesApp —
+                        </p>
+                        <ul class="niche-list">
+                            <li>les utilisateurs peuvent vérifier l’ambiance en temps réel de leurs lieux préférés avant de s’y rendre ;</li>
+                            <li>les propriétaires et gérants disposent d’une plateforme de marketing direct économique et pensée pour le mobile pour mettre en valeur leur ambiance.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Powered by AI Section + 3 Grouped Carousels of App Screenshots -->
+            <section class="vibesapp-ai-card" id="poweredByAiSection">
+                <h2 class="ai-card-title">Propulsée par l’IA :</h2>
+                <div class="ai-card-intro">
+                    <p class="ai-intro-p">
+                        Les fonctionnalités uniques de VibesApp reposent sur l’IA et sur des contraintes précises de lieu et d’horaire. Simple d’utilisation et pensée pour le mobile, c’est une excellente alternative marketing pour les PME qui trouvent les publicités Instagram, TikTok, Dianping ou Xiaohongshu trop chères ou inefficaces.
+                    </p>
+                </div>
+
+                <!-- Group 1: Free User - Discover & Post Vibes -->
+                <div class="vibes-screenshot-group" id="freeUserGroup">
+                    <h3 class="vibes-group-title">Utilisateur gratuit – Découvrir et publier des vibes</h3>
+                    
+                    <div class="carousel-wrapper">
+                        <div class="carousel-container" id="vibes-free-carousel">
+                            <div class="project-card vibes-card">
+                                <div class="vibes-card-img-frame">
+                                    <img src="/assets/vibesapp/Discover.jpg" alt="Découvrir" class="vibes-card-img" width="1242" height="2688" loading="lazy">
+                                </div>
+                                <div class="vibes-card-info">
+                                    <h4>Découvrir</h4>
+                                </div>
+                            </div>
+
+                            <div class="project-card vibes-card">
+                                <div class="vibes-card-img-frame">
+                                    <img src="/assets/vibesapp/Tune_your_preference.jpg" alt="Ajuster ses préférences" class="vibes-card-img" width="1242" height="2688" loading="lazy">
+                                </div>
+                                <div class="vibes-card-info">
+                                    <h4>Ajuster ses préférences</h4>
+                                </div>
+                            </div>
+
+                            <div class="project-card vibes-card">
+                                <div class="vibes-card-img-frame">
+                                    <img src="/assets/vibesapp/Post_Vibes.jpg" alt="Publier des vibes" class="vibes-card-img" width="1242" height="2688" loading="lazy">
+                                </div>
+                                <div class="vibes-card-info">
+                                    <h4>Publier des vibes</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-controls">
+                            <span class="carousel-hint">Faites défiler pour parcourir</span>
+                            <div class="carousel-arrows">
+                                <button id="vibes-free-left" aria-label="Capture précédente">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                                        <polyline points="12 19 5 12 12 5"></polyline>
+                                    </svg>
+                                </button>
+                                <button id="vibes-free-right" aria-label="Capture suivante">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 2: Paid User - Post Vibes with Advanced Features -->
+                <div class="vibes-screenshot-group" id="paidUserGroup">
+                    <h3 class="vibes-group-title">Utilisateur payant – Publier des vibes avec des fonctions avancées</h3>
+                    
+                    <div class="carousel-wrapper">
+                        <div class="carousel-container" id="vibes-paid-carousel">
+                            <div class="project-card vibes-card">
+                                <div class="vibes-card-img-frame">
+                                    <img src="/assets/vibesapp/Become_Premium.jpg" alt="Passer Premium" class="vibes-card-img" width="1242" height="2688" loading="lazy">
+                                </div>
+                                <div class="vibes-card-info">
+                                    <h4>Passer Premium</h4>
+                                </div>
+                            </div>
+
+                            <div class="project-card vibes-card">
+                                <div class="vibes-card-img-frame">
+                                    <img src="/assets/vibesapp/Promote_Mode.jpg" alt="Mode promotion" class="vibes-card-img" width="1242" height="2688" loading="lazy">
+                                </div>
+                                <div class="vibes-card-info">
+                                    <h4>Mode promotion</h4>
+                                </div>
+                            </div>
+
+                            <div class="project-card vibes-card">
+                                <div class="vibes-card-img-frame">
+                                    <img src="/assets/vibesapp/Advanced_filters.jpg" alt="Filtres avancés" class="vibes-card-img" width="1242" height="2688" loading="lazy">
+                                </div>
+                                <div class="vibes-card-info">
+                                    <h4>Filtres avancés</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-controls">
+                            <span class="carousel-hint">Faites défiler pour parcourir</span>
+                            <div class="carousel-arrows">
+                                <button id="vibes-paid-left" aria-label="Capture précédente">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                                        <polyline points="12 19 5 12 12 5"></polyline>
+                                    </svg>
+                                </button>
+                                <button id="vibes-paid-right" aria-label="Capture suivante">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 3: Paid User - Me Page & Analytics -->
+                <div class="vibes-screenshot-group" id="analyticsGroup">
+                    <h3 class="vibes-group-title">Utilisateur payant – Profil et statistiques</h3>
+                    
+                    <div class="carousel-wrapper">
+                        <div class="carousel-container" id="vibes-analytics-carousel">
+                            <div class="project-card vibes-card">
+                                <div class="vibes-card-img-frame">
+                                    <img src="/assets/vibesapp/Pro_Dashboard.jpg" alt="Tableau de bord Pro" class="vibes-card-img" width="1242" height="2688" loading="lazy">
+                                </div>
+                                <div class="vibes-card-info">
+                                    <h4>Tableau de bord Pro</h4>
+                                </div>
+                            </div>
+
+                            <div class="project-card vibes-card">
+                                <div class="vibes-card-img-frame">
+                                    <img src="/assets/vibesapp/Post_Analytics.jpg" alt="Statistiques des publications" class="vibes-card-img" width="1242" height="2688" loading="lazy">
+                                </div>
+                                <div class="vibes-card-info">
+                                    <h4>Statistiques des publications</h4>
+                                </div>
+                            </div>
+
+                            <div class="project-card vibes-card">
+                                <div class="vibes-card-img-frame">
+                                    <img src="/assets/vibesapp/Campaign.jpg" alt="Campagne" class="vibes-card-img" width="1242" height="2688" loading="lazy">
+                                </div>
+                                <div class="vibes-card-info">
+                                    <h4>Campagne</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-controls">
+                            <span class="carousel-hint">Faites défiler pour parcourir</span>
+                            <div class="carousel-arrows">
+                                <button id="vibes-analytics-left" aria-label="Capture précédente">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                                        <polyline points="12 19 5 12 12 5"></polyline>
+                                    </svg>
+                                </button>
+                                <button id="vibes-analytics-right" aria-label="Capture suivante">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Me As Co-founder Section -->
+            <section class="cofounder-subsection" id="cofounderSection">
+                <div class="cofounder-inner">
+                    <h2 class="cofounder-title">Mon rôle de cofondateur :</h2>
+                    <p class="cofounder-lead">
+                        Aux côtés de mes cofondateurs internationaux, issus de Vivo et d’Hoffmann, j’ai dirigé le produit, le design et la tech. Mon travail comprenait notamment :
+                    </p>
+                    <div class="cofounder-card">
+                        <ul class="cofounder-list">
+                            <li>UX produit</li>
+                            <li>Analyse de données</li>
+                            <li>Gamification</li>
+                            <li>Monétisation</li>
+                            <li>Croissance</li>
+                            <li>Rédaction des supports de levée de fonds</li>
+                            <li>et plus encore.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Me Section -->
+            <section id="contact" class="contact-section vibesapp-contact-section bg-white text-center">
+                <div class="container">
+                    <h2 class="section-title text-center">Me contacter :</h2>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <div class="icon-wrapper">
+                                <img src="/assets/icon-linkedin.png" alt="Logo LinkedIn" class="icon-outline">
+                            </div>
+                            <a href="https://www.linkedin.com/in/jensenearth/" target="_blank" class="btn btn-black">LINKEDIN</a>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-wrapper">
+                                <img src="/assets/icon-email.png" alt="Icône e-mail" class="icon-outline">
+                            </div>
+                            <a href="mailto:slick.87.wackos@icloud.com" class="btn btn-black">E-MAIL</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer bg-black">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="/fr/">Accueil</a>
+                <a href="/research">Recherche</a>
+                <a href="https://www.linkedin.com/in/jensenearth/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-copy">
+                Fait avec ♥️ et l’IA sur Terre © JENSEN S.Z. <span class="footer-rainbow" role="button" tabindex="0" title="Faire pleuvoir des arcs-en-ciel ! 🌈" aria-label="Faire pleuvoir des arcs-en-ciel">🌈</span>✨Faire pleuvoir des arcs-en-ciel ! 🌈" aria-label="Faire pleuvoir des arcs-en-ciel">🌈</span>✨
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function initSubCarousel(carouselId, leftBtnId, rightBtnId) {
+            const carousel = document.getElementById(carouselId);
+            const scrollLeftBtn = document.getElementById(leftBtnId);
+            const scrollRightBtn = document.getElementById(rightBtnId);
+
+            if (!carousel || !scrollLeftBtn || !scrollRightBtn) return;
+
+            const getScrollAmount = () => {
+                const firstCard = carousel.querySelector('.project-card');
+                if (!firstCard) return 260;
+                const carouselStyle = window.getComputedStyle(carousel);
+                const gap = parseFloat(carouselStyle.gap) || 22;
+                return firstCard.offsetWidth + gap;
+            };
+
+            const getMaxScroll = () => {
+                const cards = carousel.querySelectorAll('.project-card');
+                if (!cards.length) return 0;
+                const lastCard = cards[cards.length - 1];
+                const carouselStyle = window.getComputedStyle(carousel);
+                const paddingRight = parseFloat(carouselStyle.paddingRight) || 0;
+                const lastCardMax = (lastCard.offsetLeft + lastCard.offsetWidth + paddingRight) - carousel.clientWidth;
+                const standardMax = carousel.scrollWidth - carousel.clientWidth;
+                return Math.max(0, Math.min(lastCardMax, standardMax));
+            };
+
+            const updateButtonStates = () => {
+                const maxScroll = getMaxScroll();
+                const scrollLeft = carousel.scrollLeft;
+
+                const isAtStart = scrollLeft <= 8;
+                let isAtEnd = scrollLeft >= maxScroll - 8;
+
+                const cards = carousel.querySelectorAll('.project-card');
+                const lastCard = cards[cards.length - 1];
+                if (lastCard) {
+                    const carouselRect = carousel.getBoundingClientRect();
+                    const lastCardRect = lastCard.getBoundingClientRect();
+                    if (lastCardRect.right <= carouselRect.right + 12) {
+                        isAtEnd = true;
+                    }
+                }
+
+                scrollLeftBtn.disabled = isAtStart;
+                if (isAtStart) {
+                    scrollLeftBtn.classList.add('disabled');
+                    scrollLeftBtn.style.opacity = '0.15';
+                    scrollLeftBtn.style.cursor = 'not-allowed';
+                    scrollLeftBtn.style.pointerEvents = 'none';
+                } else {
+                    scrollLeftBtn.classList.remove('disabled');
+                    scrollLeftBtn.style.opacity = '1';
+                    scrollLeftBtn.style.cursor = 'pointer';
+                    scrollLeftBtn.style.pointerEvents = 'auto';
+                }
+
+                scrollRightBtn.disabled = isAtEnd;
+                if (isAtEnd) {
+                    scrollRightBtn.classList.add('disabled');
+                    scrollRightBtn.style.opacity = '0.15';
+                    scrollRightBtn.style.cursor = 'not-allowed';
+                    scrollRightBtn.style.pointerEvents = 'none';
+                } else {
+                    scrollRightBtn.classList.remove('disabled');
+                    scrollRightBtn.style.opacity = '1';
+                    scrollRightBtn.style.cursor = 'pointer';
+                    scrollRightBtn.style.pointerEvents = 'auto';
+                }
+            };
+
+            scrollLeftBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                if (scrollLeftBtn.disabled || carousel.scrollLeft <= 5) return;
+                const step = getScrollAmount();
+                const target = Math.max(0, carousel.scrollLeft - step);
+                carousel.scrollTo({ left: target, behavior: "smooth" });
+            });
+
+            scrollRightBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                const maxScroll = getMaxScroll();
+                if (scrollRightBtn.disabled || carousel.scrollLeft >= maxScroll - 5) return;
+                const step = getScrollAmount();
+                const target = Math.min(maxScroll, carousel.scrollLeft + step);
+                carousel.scrollTo({ left: target, behavior: "smooth" });
+            });
+
+            let isScrolling;
+            carousel.addEventListener("scroll", () => {
+                window.cancelAnimationFrame(isScrolling);
+                isScrolling = window.requestAnimationFrame(updateButtonStates);
+            }, { passive: true });
+
+            window.addEventListener("resize", updateButtonStates);
+            setTimeout(updateButtonStates, 100);
+        }
+
+        // Initialize the 3 screenshot carousels
+        initSubCarousel("vibes-free-carousel", "vibes-free-left", "vibes-free-right");
+        initSubCarousel("vibes-paid-carousel", "vibes-paid-left", "vibes-paid-right");
+        initSubCarousel("vibes-analytics-carousel", "vibes-analytics-left", "vibes-analytics-right");
+    </script>
+    <script src="/layout.js"></script>
+    <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "41fc70af798e4e2aa996b03e42a0018c"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
